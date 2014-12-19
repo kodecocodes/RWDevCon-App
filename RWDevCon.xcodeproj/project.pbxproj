@@ -34,8 +34,9 @@
 		78D071971A44E689002AA29A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA2C1A414E57002AAF7F /* Session.swift */; };
 		78D071981A44E689002AA29A /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA2A1A414A94002AAF7F /* Room.swift */; };
 		78D071991A44E689002AA29A /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA281A414A94002AAF7F /* Track.swift */; };
-		78D0719A1A44E69A002AA29A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B7A9DD1A3E9876002AAF7F /* Images.xcassets */; };
 		78D0719B1A44E6B4002AA29A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A62B1A41F776003F8373 /* Config.swift */; };
+		78D0719E1A44EAFC002AA29A /* People.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D0719D1A44EAFC002AA29A /* People.xcassets */; };
+		78D0719F1A44EAFC002AA29A /* People.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D0719D1A44EAFC002AA29A /* People.xcassets */; };
 		78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */; };
 		78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256791A4167F40040AC63 /* LabelTableViewCell.swift */; };
 		78F2567D1A416B950040AC63 /* StickyHeadersLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */; };
@@ -112,6 +113,7 @@
 		78D071841A44E634002AA29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78D071861A44E634002AA29A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		78D071881A44E634002AA29A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		78D0719D1A44EAFC002AA29A /* People.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = People.xcassets; sourceTree = "<group>"; };
 		78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		78F256791A4167F40040AC63 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeadersLayout.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 				78F256871A416BB70040AC63 /* Collection View */,
 				78B7AA321A41561D002AAF7F /* Core Data */,
 				78B7A9DA1A3E9876002AAF7F /* Main.storyboard */,
+				78D0719D1A44EAFC002AA29A /* People.xcassets */,
 				78B7A9DD1A3E9876002AAF7F /* Images.xcassets */,
 				78B7A9DF1A3E9876002AAF7F /* LaunchScreen.xib */,
 				78B7A9D11A3E9876002AAF7F /* Supporting Files */,
@@ -411,6 +414,7 @@
 				78B7A9E11A3E9876002AAF7F /* LaunchScreen.xib in Resources */,
 				78B7A9DE1A3E9876002AAF7F /* Images.xcassets in Resources */,
 				78F256861A416BB20040AC63 /* ScheduleHeader.xib in Resources */,
+				78D0719E1A44EAFC002AA29A /* People.xcassets in Resources */,
 				78B7AA251A413573002AAF7F /* RWDevCon2015.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,7 +430,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78D0719A1A44E69A002AA29A /* Images.xcassets in Resources */,
 				78D0717F1A44E634002AA29A /* RWDevCon WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +438,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D0719F1A44EAFC002AA29A /* People.xcassets in Resources */,
 				78D071871A44E634002AA29A /* Interface.storyboard in Resources */,
 				78D071891A44E634002AA29A /* Images.xcassets in Resources */,
 			);
