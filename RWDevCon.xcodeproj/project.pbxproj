@@ -22,6 +22,13 @@
 		78B7AA2F1A414E58002AAF7F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA2E1A414E58002AAF7F /* Person.swift */; };
 		78B7AA341A415877002AAF7F /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA331A415877002AAF7F /* SessionViewController.swift */; };
 		78B7AA361A415C96002AAF7F /* PresenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA351A415C96002AAF7F /* PresenterTableViewCell.swift */; };
+		78D071771A44E634002AA29A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D071761A44E634002AA29A /* InterfaceController.swift */; };
+		78D071791A44E634002AA29A /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D071781A44E634002AA29A /* GlanceController.swift */; };
+		78D0717B1A44E634002AA29A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D0717A1A44E634002AA29A /* Images.xcassets */; };
+		78D0717F1A44E634002AA29A /* RWDevCon WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 78D0717E1A44E634002AA29A /* RWDevCon WatchKit App.app */; };
+		78D071871A44E634002AA29A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D071851A44E634002AA29A /* Interface.storyboard */; };
+		78D071891A44E634002AA29A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D071881A44E634002AA29A /* Images.xcassets */; };
+		78D0718C1A44E634002AA29A /* RWDevCon WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 78D071721A44E634002AA29A /* RWDevCon WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */; };
 		78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256791A4167F40040AC63 /* LabelTableViewCell.swift */; };
 		78F2567D1A416B950040AC63 /* StickyHeadersLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */; };
@@ -40,7 +47,35 @@
 			remoteGlobalIDString = 78B7A9CD1A3E9876002AAF7F;
 			remoteInfo = RWDevCon;
 		};
+		78D071801A44E634002AA29A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78B7A9C61A3E9876002AAF7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78D0717D1A44E634002AA29A;
+			remoteInfo = "RWDevCon WatchKit App";
+		};
+		78D0718A1A44E634002AA29A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78B7A9C61A3E9876002AAF7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78D071711A44E634002AA29A;
+			remoteInfo = "RWDevCon WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		78D071931A44E634002AA29A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				78D0718C1A44E634002AA29A /* RWDevCon WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7848A62B1A41F776003F8373 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -62,6 +97,15 @@
 		78B7AA2E1A414E58002AAF7F /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		78B7AA331A415877002AAF7F /* SessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		78B7AA351A415C96002AAF7F /* PresenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterTableViewCell.swift; sourceTree = "<group>"; };
+		78D071721A44E634002AA29A /* RWDevCon WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RWDevCon WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78D071751A44E634002AA29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78D071761A44E634002AA29A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		78D071781A44E634002AA29A /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		78D0717A1A44E634002AA29A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		78D0717E1A44E634002AA29A /* RWDevCon WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWDevCon WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		78D071841A44E634002AA29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78D071861A44E634002AA29A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		78D071881A44E634002AA29A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		78F256791A4167F40040AC63 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeadersLayout.swift; sourceTree = "<group>"; };
@@ -87,6 +131,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		78D0716F1A44E634002AA29A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -95,6 +146,8 @@
 			children = (
 				78B7A9D01A3E9876002AAF7F /* RWDevCon */,
 				78B7A9E91A3E9876002AAF7F /* RWDevConTests */,
+				78D071731A44E634002AA29A /* RWDevCon WatchKit Extension */,
+				78D071821A44E634002AA29A /* RWDevCon WatchKit App */,
 				78B7A9CF1A3E9876002AAF7F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -104,6 +157,8 @@
 			children = (
 				78B7A9CE1A3E9876002AAF7F /* RWDevCon.app */,
 				78B7A9E61A3E9876002AAF7F /* RWDevConTests.xctest */,
+				78D071721A44E634002AA29A /* RWDevCon WatchKit Extension.appex */,
+				78D0717E1A44E634002AA29A /* RWDevCon WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -163,6 +218,43 @@
 			name = "Core Data";
 			sourceTree = "<group>";
 		};
+		78D071731A44E634002AA29A /* RWDevCon WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				78D071761A44E634002AA29A /* InterfaceController.swift */,
+				78D071781A44E634002AA29A /* GlanceController.swift */,
+				78D0717A1A44E634002AA29A /* Images.xcassets */,
+				78D071741A44E634002AA29A /* Supporting Files */,
+			);
+			path = "RWDevCon WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		78D071741A44E634002AA29A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78D071751A44E634002AA29A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		78D071821A44E634002AA29A /* RWDevCon WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				78D071851A44E634002AA29A /* Interface.storyboard */,
+				78D071881A44E634002AA29A /* Images.xcassets */,
+				78D071831A44E634002AA29A /* Supporting Files */,
+			);
+			path = "RWDevCon WatchKit App";
+			sourceTree = "<group>";
+		};
+		78D071831A44E634002AA29A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				78D071841A44E634002AA29A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		78F256871A416BB70040AC63 /* Collection View */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,10 +289,12 @@
 				78B7A9CA1A3E9876002AAF7F /* Sources */,
 				78B7A9CB1A3E9876002AAF7F /* Frameworks */,
 				78B7A9CC1A3E9876002AAF7F /* Resources */,
+				78D071931A44E634002AA29A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				78D0718B1A44E634002AA29A /* PBXTargetDependency */,
 			);
 			name = RWDevCon;
 			productName = RWDevCon;
@@ -225,6 +319,39 @@
 			productReference = 78B7A9E61A3E9876002AAF7F /* RWDevConTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		78D071711A44E634002AA29A /* RWDevCon WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78D071901A44E634002AA29A /* Build configuration list for PBXNativeTarget "RWDevCon WatchKit Extension" */;
+			buildPhases = (
+				78D0716E1A44E634002AA29A /* Sources */,
+				78D0716F1A44E634002AA29A /* Frameworks */,
+				78D071701A44E634002AA29A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				78D071811A44E634002AA29A /* PBXTargetDependency */,
+			);
+			name = "RWDevCon WatchKit Extension";
+			productName = "RWDevCon WatchKit Extension";
+			productReference = 78D071721A44E634002AA29A /* RWDevCon WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		78D0717D1A44E634002AA29A /* RWDevCon WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78D0718D1A44E634002AA29A /* Build configuration list for PBXNativeTarget "RWDevCon WatchKit App" */;
+			buildPhases = (
+				78D0717C1A44E634002AA29A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RWDevCon WatchKit App";
+			productName = "RWDevCon WatchKit App";
+			productReference = 78D0717E1A44E634002AA29A /* RWDevCon WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -240,6 +367,12 @@
 					78B7A9E51A3E9876002AAF7F = {
 						CreatedOnToolsVersion = 6.1.1;
 						TestTargetID = 78B7A9CD1A3E9876002AAF7F;
+					};
+					78D071711A44E634002AA29A = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					78D0717D1A44E634002AA29A = {
+						CreatedOnToolsVersion = 6.2;
 					};
 				};
 			};
@@ -258,6 +391,8 @@
 			targets = (
 				78B7A9CD1A3E9876002AAF7F /* RWDevCon */,
 				78B7A9E51A3E9876002AAF7F /* RWDevConTests */,
+				78D071711A44E634002AA29A /* RWDevCon WatchKit Extension */,
+				78D0717D1A44E634002AA29A /* RWDevCon WatchKit App */,
 			);
 		};
 /* End PBXProject section */
@@ -279,6 +414,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78D071701A44E634002AA29A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78D0717F1A44E634002AA29A /* RWDevCon WatchKit App.app in Resources */,
+				78D0717B1A44E634002AA29A /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78D0717C1A44E634002AA29A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78D071871A44E634002AA29A /* Interface.storyboard in Resources */,
+				78D071891A44E634002AA29A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +470,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		78D0716E1A44E634002AA29A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78D071771A44E634002AA29A /* InterfaceController.swift in Sources */,
+				78D071791A44E634002AA29A /* GlanceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -324,6 +486,16 @@
 			isa = PBXTargetDependency;
 			target = 78B7A9CD1A3E9876002AAF7F /* RWDevCon */;
 			targetProxy = 78B7A9E71A3E9876002AAF7F /* PBXContainerItemProxy */;
+		};
+		78D071811A44E634002AA29A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78D0717D1A44E634002AA29A /* RWDevCon WatchKit App */;
+			targetProxy = 78D071801A44E634002AA29A /* PBXContainerItemProxy */;
+		};
+		78D0718B1A44E634002AA29A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78D071711A44E634002AA29A /* RWDevCon WatchKit Extension */;
+			targetProxy = 78D0718A1A44E634002AA29A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -342,6 +514,14 @@
 				78B7A9E01A3E9876002AAF7F /* Base */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		78D071851A44E634002AA29A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				78D071861A44E634002AA29A /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -430,6 +610,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = RWDevCon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -440,6 +621,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = RWDevCon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -480,6 +662,68 @@
 			};
 			name = Release;
 		};
+		78D0718E1A44E634002AA29A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = RWDevCon_WatchKit_Extension;
+				INFOPLIST_FILE = "RWDevCon WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		78D0718F1A44E634002AA29A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				COPY_PHASE_STRIP = NO;
+				IBSC_MODULE = RWDevCon_WatchKit_Extension;
+				INFOPLIST_FILE = "RWDevCon WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
+		78D071911A44E634002AA29A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RWDevCon WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		78D071921A44E634002AA29A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = "RWDevCon WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -509,6 +753,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		78D0718D1A44E634002AA29A /* Build configuration list for PBXNativeTarget "RWDevCon WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78D0718E1A44E634002AA29A /* Debug */,
+				78D0718F1A44E634002AA29A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		78D071901A44E634002AA29A /* Build configuration list for PBXNativeTarget "RWDevCon WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78D071911A44E634002AA29A /* Debug */,
+				78D071921A44E634002AA29A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
