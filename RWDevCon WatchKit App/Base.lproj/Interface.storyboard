@@ -39,10 +39,24 @@
             </objects>
             <point key="canvasLocation" x="164" y="217"/>
         </scene>
-        <!--Interface Controller-->
+        <!--DetailsController-->
         <scene sceneID="PmW-tg-brj">
             <objects>
-                <controller id="CN0-Tj-Ig7"/>
+                <controller identifier="DetailsController" id="CN0-Tj-Ig7" customClass="DetailsController" customModule="RWDevCon_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Title" numberOfLines="3" id="IZV-2I-Bif">
+                            <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                        </label>
+                        <separator alignment="left" id="gwj-RL-8Ed"/>
+                        <imageView width="40" height="40" alignment="center" contentMode="scaleAspectFit" id="8VG-FR-aLH"/>
+                        <label alignment="left" text="Label" numberOfLines="0" id="hjU-6r-t3s"/>
+                    </items>
+                    <connections>
+                        <outlet property="detailsLabel" destination="hjU-6r-t3s" id="GNA-76-VMm"/>
+                        <outlet property="image" destination="8VG-FR-aLH" id="KRY-mI-9yk"/>
+                        <outlet property="titleLabel" destination="IZV-2I-Bif" id="upd-Ry-Aka"/>
+                    </connections>
+                </controller>
             </objects>
             <point key="canvasLocation" x="397" y="217"/>
         </scene>
