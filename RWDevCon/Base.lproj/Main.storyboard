@@ -299,6 +299,7 @@
                                 <segment title="Saturday"/>
                                 <segment title="My Schedule"/>
                             </segments>
+                            <color key="tintColor" red="0.022080962190000001" green="0.3314917127" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="segmentChanged:" destination="CnT-ak-a71" eventType="valueChanged" id="0Tk-La-Vdl"/>
                             </connections>
