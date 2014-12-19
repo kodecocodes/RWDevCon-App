@@ -38,6 +38,8 @@
 		78D0719E1A44EAFC002AA29A /* People.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D0719D1A44EAFC002AA29A /* People.xcassets */; };
 		78D0719F1A44EAFC002AA29A /* People.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D0719D1A44EAFC002AA29A /* People.xcassets */; };
 		78D071A11A44EBBA002AA29A /* ScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D071A01A44EBBA002AA29A /* ScheduleRow.swift */; };
+		78D071A21A44EEC6002AA29A /* RWDevCon2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78B7AA241A413573002AAF7F /* RWDevCon2015.plist */; };
+		78D071A41A44EF68002AA29A /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D071A31A44EF68002AA29A /* DetailsController.swift */; };
 		78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */; };
 		78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256791A4167F40040AC63 /* LabelTableViewCell.swift */; };
 		78F2567D1A416B950040AC63 /* StickyHeadersLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */; };
@@ -116,6 +118,7 @@
 		78D071881A44E634002AA29A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		78D0719D1A44EAFC002AA29A /* People.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = People.xcassets; sourceTree = "<group>"; };
 		78D071A01A44EBBA002AA29A /* ScheduleRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleRow.swift; sourceTree = "<group>"; };
+		78D071A31A44EF68002AA29A /* DetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
 		78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		78F256791A4167F40040AC63 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeadersLayout.swift; sourceTree = "<group>"; };
@@ -234,6 +237,7 @@
 			children = (
 				78D071761A44E634002AA29A /* ScheduleController.swift */,
 				78D071A01A44EBBA002AA29A /* ScheduleRow.swift */,
+				78D071A31A44EF68002AA29A /* DetailsController.swift */,
 				78D071781A44E634002AA29A /* GlanceController.swift */,
 				78D071741A44E634002AA29A /* Supporting Files */,
 			);
@@ -433,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D071A21A44EEC6002AA29A /* RWDevCon2015.plist in Resources */,
 				78D0717F1A44E634002AA29A /* RWDevCon WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +492,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78D071961A44E689002AA29A /* Person.swift in Sources */,
+				78D071A41A44EF68002AA29A /* DetailsController.swift in Sources */,
 				78D071941A44E67F002AA29A /* CoreDataStack.swift in Sources */,
 				78D0719B1A44E6B4002AA29A /* Config.swift in Sources */,
 				78D071981A44E689002AA29A /* Room.swift in Sources */,

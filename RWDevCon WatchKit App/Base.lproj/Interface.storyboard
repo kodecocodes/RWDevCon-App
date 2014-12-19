@@ -19,8 +19,8 @@
                         <separator alignment="left" id="6F6-30-qxN"/>
                         <table alignment="left" id="W2b-Nc-3nT">
                             <items>
-                                <tableRow id="IcH-Ws-MlT" customClass="ScheduleRow" customModule="RWDevCon_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" id="5tY-G7-OBn">
+                                <tableRow identifier="ScheduleRow" id="IcH-Ws-MlT" customClass="ScheduleRow" customModule="RWDevCon_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="5tY-G7-OBn">
                                         <items>
                                             <label alignment="left" text="Label" numberOfLines="3" id="X8A-Dl-dHL"/>
                                         </items>
@@ -38,6 +38,13 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="164" y="217"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="PmW-tg-brj">
+            <objects>
+                <controller id="CN0-Tj-Ig7"/>
+            </objects>
+            <point key="canvasLocation" x="397" y="217"/>
         </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="rjY-Ar-IMT">
