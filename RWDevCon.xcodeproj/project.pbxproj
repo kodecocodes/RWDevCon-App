@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7848A6291A418EA3003F8373 /* CalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A6271A418EA3003F8373 /* CalendarLayout.swift */; };
-		7848A62A1A418EA3003F8373 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A6281A418EA3003F8373 /* CalendarViewController.swift */; };
 		7848A62C1A41F776003F8373 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A62B1A41F776003F8373 /* Config.swift */; };
 		78B7A9D41A3E9876002AAF7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7A9D31A3E9876002AAF7F /* AppDelegate.swift */; };
 		78B7A9D71A3E9876002AAF7F /* RWDevCon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78B7A9D51A3E9876002AAF7F /* RWDevCon.xcdatamodeld */; };
@@ -45,8 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7848A6271A418EA3003F8373 /* CalendarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarLayout.swift; sourceTree = "<group>"; };
-		7848A6281A418EA3003F8373 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		7848A62B1A41F776003F8373 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		78B7A9CE1A3E9876002AAF7F /* RWDevCon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWDevCon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B7A9D21A3E9876002AAF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -170,8 +166,6 @@
 		78F256871A416BB70040AC63 /* Collection View */ = {
 			isa = PBXGroup;
 			children = (
-				7848A6271A418EA3003F8373 /* CalendarLayout.swift */,
-				7848A6281A418EA3003F8373 /* CalendarViewController.swift */,
 				78F2567C1A416B950040AC63 /* StickyHeadersViewController.swift */,
 				78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */,
 				78F2567F1A416BB20040AC63 /* ScheduleCell.swift */,
@@ -302,10 +296,8 @@
 				7848A62C1A41F776003F8373 /* Config.swift in Sources */,
 				78B7A9D41A3E9876002AAF7F /* AppDelegate.swift in Sources */,
 				78F256851A416BB20040AC63 /* ScheduleHeader.swift in Sources */,
-				7848A62A1A418EA3003F8373 /* CalendarViewController.swift in Sources */,
 				78F2567D1A416B950040AC63 /* StickyHeadersLayout.swift in Sources */,
 				78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */,
-				7848A6291A418EA3003F8373 /* CalendarLayout.swift in Sources */,
 				78B7A9D71A3E9876002AAF7F /* RWDevCon.xcdatamodeld in Sources */,
 				78F2567E1A416B950040AC63 /* StickyHeadersViewController.swift in Sources */,
 				78B7AA361A415C96002AAF7F /* PresenterTableViewCell.swift in Sources */,

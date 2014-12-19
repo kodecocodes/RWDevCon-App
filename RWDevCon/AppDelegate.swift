@@ -12,8 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       loadDataFromPlist(conferencePlist)
     }
 
-    (((window?.rootViewController as UITabBarController).viewControllers![0] as UINavigationController).topViewController as StickyHeadersViewController).coreDataStack = coreDataStack
-    (((window?.rootViewController as UITabBarController).viewControllers![1] as UINavigationController).topViewController as CalendarViewController).coreDataStack = coreDataStack
+    ((window?.rootViewController as UINavigationController).topViewController as StickyHeadersViewController).coreDataStack = coreDataStack
     return true
   }
 
