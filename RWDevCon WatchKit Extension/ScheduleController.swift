@@ -2,8 +2,10 @@
 import WatchKit
 import Foundation
 
-class InterfaceController: WKInterfaceController {
+class ScheduleController: WKInterfaceController {
 
+  @IBOutlet weak var scheduleTable: WKInterfaceTable!
+  
   override func awakeWithContext(context: AnyObject?) {
     super.awakeWithContext(context)
 

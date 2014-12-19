@@ -22,7 +22,7 @@
 		78B7AA2F1A414E58002AAF7F /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA2E1A414E58002AAF7F /* Person.swift */; };
 		78B7AA341A415877002AAF7F /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA331A415877002AAF7F /* SessionViewController.swift */; };
 		78B7AA361A415C96002AAF7F /* PresenterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA351A415C96002AAF7F /* PresenterTableViewCell.swift */; };
-		78D071771A44E634002AA29A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D071761A44E634002AA29A /* InterfaceController.swift */; };
+		78D071771A44E634002AA29A /* ScheduleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D071761A44E634002AA29A /* ScheduleController.swift */; };
 		78D071791A44E634002AA29A /* GlanceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D071781A44E634002AA29A /* GlanceController.swift */; };
 		78D0717F1A44E634002AA29A /* RWDevCon WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 78D0717E1A44E634002AA29A /* RWDevCon WatchKit App.app */; };
 		78D071871A44E634002AA29A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D071851A44E634002AA29A /* Interface.storyboard */; };
@@ -37,6 +37,7 @@
 		78D0719B1A44E6B4002AA29A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A62B1A41F776003F8373 /* Config.swift */; };
 		78D0719E1A44EAFC002AA29A /* People.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D0719D1A44EAFC002AA29A /* People.xcassets */; };
 		78D0719F1A44EAFC002AA29A /* People.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D0719D1A44EAFC002AA29A /* People.xcassets */; };
+		78D071A11A44EBBA002AA29A /* ScheduleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D071A01A44EBBA002AA29A /* ScheduleRow.swift */; };
 		78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */; };
 		78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256791A4167F40040AC63 /* LabelTableViewCell.swift */; };
 		78F2567D1A416B950040AC63 /* StickyHeadersLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */; };
@@ -107,13 +108,14 @@
 		78B7AA351A415C96002AAF7F /* PresenterTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresenterTableViewCell.swift; sourceTree = "<group>"; };
 		78D071721A44E634002AA29A /* RWDevCon WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RWDevCon WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D071751A44E634002AA29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78D071761A44E634002AA29A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		78D071761A44E634002AA29A /* ScheduleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleController.swift; sourceTree = "<group>"; };
 		78D071781A44E634002AA29A /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
 		78D0717E1A44E634002AA29A /* RWDevCon WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RWDevCon WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D071841A44E634002AA29A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78D071861A44E634002AA29A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		78D071881A44E634002AA29A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		78D0719D1A44EAFC002AA29A /* People.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = People.xcassets; sourceTree = "<group>"; };
+		78D071A01A44EBBA002AA29A /* ScheduleRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleRow.swift; sourceTree = "<group>"; };
 		78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		78F256791A4167F40040AC63 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeadersLayout.swift; sourceTree = "<group>"; };
@@ -230,7 +232,8 @@
 		78D071731A44E634002AA29A /* RWDevCon WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
-				78D071761A44E634002AA29A /* InterfaceController.swift */,
+				78D071761A44E634002AA29A /* ScheduleController.swift */,
+				78D071A01A44EBBA002AA29A /* ScheduleRow.swift */,
 				78D071781A44E634002AA29A /* GlanceController.swift */,
 				78D071741A44E634002AA29A /* Supporting Files */,
 			);
@@ -490,8 +493,9 @@
 				78D071991A44E689002AA29A /* Track.swift in Sources */,
 				78D071971A44E689002AA29A /* Session.swift in Sources */,
 				78D071951A44E684002AA29A /* RWDevCon.xcdatamodeld in Sources */,
-				78D071771A44E634002AA29A /* InterfaceController.swift in Sources */,
+				78D071771A44E634002AA29A /* ScheduleController.swift in Sources */,
 				78D071791A44E634002AA29A /* GlanceController.swift in Sources */,
+				78D071A11A44EBBA002AA29A /* ScheduleRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
