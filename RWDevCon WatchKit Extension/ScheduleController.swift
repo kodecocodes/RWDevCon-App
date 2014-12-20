@@ -34,6 +34,19 @@ class ScheduleController: WKInterfaceController {
     for (index, session) in enumerate(sessions) {
       let row = scheduleTable.rowControllerAtIndex(index) as ScheduleRow
       row.rowLabel.setText(session.fullTitle)
+      row.dateLabel.setText(session.startDateTimeShortString)
+
+      row.image.setHidden(true)
+      if session.track.name == "Beginner" {
+        row.image.setHidden(false)
+        row.image.setImageNamed("beginner")
+      } else if session.track.name == "Intermediate" {
+        row.image.setHidden(false)
+        row.image.setImageNamed("intermediate")
+      } else if session.track.name == "Advanced" {
+        row.image.setHidden(false)
+        row.image.setImageNamed("advanced")
+      }
     }
   }
 

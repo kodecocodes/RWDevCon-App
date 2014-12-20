@@ -26,6 +26,10 @@ class Session: NSManagedObject {
     return formatDate("EEEE h:mm a")
   }
 
+  var startDateTimeShortString: String {
+    return formatDate("EEE h:mm a")
+  }
+
   var startTimeString: String {
     return formatDate("h:mm a")
   }

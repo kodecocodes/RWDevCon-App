@@ -20,12 +20,22 @@
                         <table alignment="left" id="W2b-Nc-3nT">
                             <items>
                                 <tableRow identifier="ScheduleRow" id="IcH-Ws-MlT" customClass="ScheduleRow" customModule="RWDevCon_WatchKit_Extension">
-                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="5tY-G7-OBn">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="5tY-G7-OBn">
                                         <items>
+                                            <group width="1" alignment="left" id="0D0-yj-k8t">
+                                                <items>
+                                                    <imageView width="30" height="30" alignment="left" contentMode="scaleAspectFit" id="EZH-YJ-d2E"/>
+                                                    <label alignment="left" verticalAlignment="center" text="Label" id="Xex-W5-8Jj">
+                                                        <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                                    </label>
+                                                </items>
+                                            </group>
                                             <label alignment="left" text="Label" numberOfLines="3" id="X8A-Dl-dHL"/>
                                         </items>
                                     </group>
                                     <connections>
+                                        <outlet property="dateLabel" destination="Xex-W5-8Jj" id="hPt-Ua-dnn"/>
+                                        <outlet property="image" destination="EZH-YJ-d2E" id="GS9-rv-hpH"/>
                                         <outlet property="rowLabel" destination="X8A-Dl-dHL" id="ved-5l-fJb"/>
                                     </connections>
                                 </tableRow>
