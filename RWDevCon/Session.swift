@@ -67,4 +67,26 @@ class Session: NSManagedObject {
   class func sessionByIdentifierOrNew(identifier: String, context: NSManagedObjectContext) -> Session {
     return sessionByIdentifier(identifier, context: context) ?? Session(entity: NSEntityDescription.entityForName("Session", inManagedObjectContext: context)!, insertIntoManagedObjectContext: context)
   }
+
+  class func sessionsForPredicate(predicate: NSPredicate?, context: NSManagedObjectContext) -> [Session] {
+    let fetch = NSFetchRequest(entityName: "Session")
+    fetch.predicate = predicate?
+    fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true)]
+
+    if let results = context.executeFetchRequest(fetch, error: nil) as? [Session] {
+      return results
+    }
+
+    return []
+  }
+
+  class func allSessionsInContext(context: NSManagedObjectContext) -> [Session] {
+    let predicate = NSPredicate(format: "active = %@", argumentArray: [true])
+    return sessionsForPredicate(predicate, context: context)
+  }
+
+  class func sessionsForTrack(trackId: Int, context: NSManagedObjectContext) -> [Session] {
+    let predicate = NSPredicate(format: "active = %@ AND track.trackId = %@", argumentArray: [true, trackId])
+    return sessionsForPredicate(predicate, context: context)
+  }
 }

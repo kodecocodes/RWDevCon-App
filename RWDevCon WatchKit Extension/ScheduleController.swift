@@ -16,24 +16,25 @@ class ScheduleController: WKInterfaceController {
       coreDataStack.saveContext()
     }
 
-    let fetch = NSFetchRequest(entityName: "Session")
-    fetch.predicate = NSPredicate(format: "active = %@", argumentArray: [true])
-    fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true)]
-
-    if let results = coreDataStack.context.executeFetchRequest(fetch, error: nil) as? [Session] {
-      sessions = results
-
-      scheduleTable.setNumberOfRows(results.count, withRowType: "ScheduleRow")
-
-      for (index, session) in enumerate(results) {
-        let row = scheduleTable.rowControllerAtIndex(index) as ScheduleRow
-        row.rowLabel.setText(session.fullTitle)
-      }
-    }
+    showAllSessions()
   }
 
   override func willActivate() {
     super.willActivate()
+  }
+
+  private func showAllSessions() {
+    sessions = Session.allSessionsInContext(coreDataStack.context)
+    refreshTable()
+  }
+
+  private func refreshTable() {
+    scheduleTable.setNumberOfRows(sessions.count, withRowType: "ScheduleRow")
+
+    for (index, session) in enumerate(sessions) {
+      let row = scheduleTable.rowControllerAtIndex(index) as ScheduleRow
+      row.rowLabel.setText(session.fullTitle)
+    }
   }
 
   override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
