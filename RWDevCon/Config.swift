@@ -3,10 +3,12 @@ import Foundation
 import CoreData
 
 class Config {
+  /** Get the user defaults object */
   class func userDefaults() -> NSUserDefaults {
     return NSUserDefaults.standardUserDefaults()
   }
 
+  /** Load conference data from a plist into Core Data */
   class func loadDataFromPlist(url: NSURL, context: NSManagedObjectContext) {
     if let data = NSDictionary(contentsOfURL: url) {
       typealias PlistDict = [String: NSDictionary]
@@ -88,6 +90,7 @@ class Config {
     }
   }
 
+  /** Get a list of all favorite sessions. Keys are the start date time string and values are the session identifiers */
   class func favoriteSessions() -> [String: String] {
     if let favs = userDefaults().dictionaryForKey("favoriteSessions") as? [String: String] {
       return favs
@@ -95,6 +98,7 @@ class Config {
     return [:]
   }
 
+  /** Register a session as a favorite. Note that only one session per time slot can be favorited! */
   class func registerFavorite(session: Session) {
     var favs = favoriteSessions()
     favs[session.startDateTimeString] = session.identifier
@@ -103,6 +107,7 @@ class Config {
     userDefaults().synchronize()
   }
 
+  /** Unregister a session as a favorite */
   class func unregisterFavorite(session: Session) {
     var favs = favoriteSessions()
     favs[session.startDateTimeString] = nil
