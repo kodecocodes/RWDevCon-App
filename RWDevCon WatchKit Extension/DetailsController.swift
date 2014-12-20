@@ -14,5 +14,15 @@ class DetailsController: WKInterfaceController {
       detailsLabel.setText("\(session.startDateTimeString)\n\(session.sessionDescription)")
       image.setHidden(true)
     }
+
+    if let person = context as? Person {
+      titleLabel.setText(person.fullName)
+      detailsLabel.setText(person.bio)
+      if let avatar = UIImage(named: person.identifier) {
+        image.setImage(avatar)
+      } else {
+        image.setHidden(true)
+      }
+    }
   }
 }

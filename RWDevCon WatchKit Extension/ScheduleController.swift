@@ -39,8 +39,9 @@ class ScheduleController: WKInterfaceController {
 
   override func table(table: WKInterfaceTable, didSelectRowAtIndex rowIndex: Int) {
     let session = sessions[rowIndex]
+    let presenters = session.presenters.array
 
-    presentControllerWithName("DetailsController", context: session)
+    presentControllerWithNames(Array<String>(count: presenters.count + 1, repeatedValue: "DetailsController") , contexts: [session] + presenters)
   }
 
   override func didDeactivate() {
