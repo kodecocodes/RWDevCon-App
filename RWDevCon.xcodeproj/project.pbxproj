@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		783F5A181A490E1B00199736 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F5A171A490E1B00199736 /* NotificationCenter.framework */; };
+		783F5A1D1A490E1B00199736 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F5A1C1A490E1B00199736 /* TodayViewController.swift */; };
+		783F5A1F1A490E1B00199736 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F5A1E1A490E1B00199736 /* MainInterface.storyboard */; };
+		783F5A221A490E1B00199736 /* RWDevCon Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 783F5A151A490E1B00199736 /* RWDevCon Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7848A6291A418EA3003F8373 /* CalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A6271A418EA3003F8373 /* CalendarLayout.swift */; };
 		7848A62A1A418EA3003F8373 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A6281A418EA3003F8373 /* CalendarViewController.swift */; };
 		7848A62C1A41F776003F8373 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A62B1A41F776003F8373 /* Config.swift */; };
@@ -35,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		783F5A201A490E1B00199736 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 78B7A9C61A3E9876002AAF7F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 783F5A141A490E1B00199736;
+			remoteInfo = "RWDevCon Today";
+		};
 		78B7A9E71A3E9876002AAF7F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 78B7A9C61A3E9876002AAF7F /* Project object */;
@@ -44,7 +55,28 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		783F5A261A490E1B00199736 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				783F5A221A490E1B00199736 /* RWDevCon Today.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		783F5A101A490DE900199736 /* RWDevCon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RWDevCon.entitlements; sourceTree = "<group>"; };
+		783F5A151A490E1B00199736 /* RWDevCon Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RWDevCon Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		783F5A171A490E1B00199736 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		783F5A1B1A490E1B00199736 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		783F5A1C1A490E1B00199736 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		783F5A1E1A490E1B00199736 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		783F5A271A490E2100199736 /* RWDevCon Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "RWDevCon Today.entitlements"; sourceTree = "<group>"; };
 		7848A6271A418EA3003F8373 /* CalendarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarLayout.swift; sourceTree = "<group>"; };
 		7848A6281A418EA3003F8373 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		7848A62B1A41F776003F8373 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -77,6 +109,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		783F5A121A490E1B00199736 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				783F5A181A490E1B00199736 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78B7A9CB1A3E9876002AAF7F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -94,11 +134,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		783F5A161A490E1B00199736 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				783F5A171A490E1B00199736 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		783F5A191A490E1B00199736 /* RWDevCon Today */ = {
+			isa = PBXGroup;
+			children = (
+				783F5A271A490E2100199736 /* RWDevCon Today.entitlements */,
+				783F5A1C1A490E1B00199736 /* TodayViewController.swift */,
+				783F5A1E1A490E1B00199736 /* MainInterface.storyboard */,
+				783F5A1A1A490E1B00199736 /* Supporting Files */,
+			);
+			path = "RWDevCon Today";
+			sourceTree = "<group>";
+		};
+		783F5A1A1A490E1B00199736 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				783F5A1B1A490E1B00199736 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		78B7A9C51A3E9876002AAF7F = {
 			isa = PBXGroup;
 			children = (
 				78B7A9D01A3E9876002AAF7F /* RWDevCon */,
 				78B7A9E91A3E9876002AAF7F /* RWDevConTests */,
+				783F5A191A490E1B00199736 /* RWDevCon Today */,
+				783F5A161A490E1B00199736 /* Frameworks */,
 				78B7A9CF1A3E9876002AAF7F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +177,7 @@
 			children = (
 				78B7A9CE1A3E9876002AAF7F /* RWDevCon.app */,
 				78B7A9E61A3E9876002AAF7F /* RWDevConTests.xctest */,
+				783F5A151A490E1B00199736 /* RWDevCon Today.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +185,7 @@
 		78B7A9D01A3E9876002AAF7F /* RWDevCon */ = {
 			isa = PBXGroup;
 			children = (
+				783F5A101A490DE900199736 /* RWDevCon.entitlements */,
 				78B7A9D31A3E9876002AAF7F /* AppDelegate.swift */,
 				7848A62B1A41F776003F8373 /* Config.swift */,
 				78F256881A416BC40040AC63 /* Session Details */,
@@ -196,6 +267,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		783F5A141A490E1B00199736 /* RWDevCon Today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 783F5A231A490E1B00199736 /* Build configuration list for PBXNativeTarget "RWDevCon Today" */;
+			buildPhases = (
+				783F5A111A490E1B00199736 /* Sources */,
+				783F5A121A490E1B00199736 /* Frameworks */,
+				783F5A131A490E1B00199736 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "RWDevCon Today";
+			productName = "RWDevCon Today";
+			productReference = 783F5A151A490E1B00199736 /* RWDevCon Today.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		78B7A9CD1A3E9876002AAF7F /* RWDevCon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 78B7A9F01A3E9876002AAF7F /* Build configuration list for PBXNativeTarget "RWDevCon" */;
@@ -203,10 +291,12 @@
 				78B7A9CA1A3E9876002AAF7F /* Sources */,
 				78B7A9CB1A3E9876002AAF7F /* Frameworks */,
 				78B7A9CC1A3E9876002AAF7F /* Resources */,
+				783F5A261A490E1B00199736 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				783F5A211A490E1B00199736 /* PBXTargetDependency */,
 			);
 			name = RWDevCon;
 			productName = RWDevCon;
@@ -240,8 +330,23 @@
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Razeware LLC";
 				TargetAttributes = {
+					783F5A141A490E1B00199736 = {
+						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = KFCNEC27GU;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					78B7A9CD1A3E9876002AAF7F = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = KFCNEC27GU;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					78B7A9E51A3E9876002AAF7F = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -264,11 +369,20 @@
 			targets = (
 				78B7A9CD1A3E9876002AAF7F /* RWDevCon */,
 				78B7A9E51A3E9876002AAF7F /* RWDevConTests */,
+				783F5A141A490E1B00199736 /* RWDevCon Today */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		783F5A131A490E1B00199736 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				783F5A1F1A490E1B00199736 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78B7A9CC1A3E9876002AAF7F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -291,6 +405,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		783F5A111A490E1B00199736 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				783F5A1D1A490E1B00199736 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		78B7A9CA1A3E9876002AAF7F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -328,6 +450,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		783F5A211A490E1B00199736 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 783F5A141A490E1B00199736 /* RWDevCon Today */;
+			targetProxy = 783F5A201A490E1B00199736 /* PBXContainerItemProxy */;
+		};
 		78B7A9E81A3E9876002AAF7F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 78B7A9CD1A3E9876002AAF7F /* RWDevCon */;
@@ -355,6 +482,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		783F5A241A490E1B00199736 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RWDevCon Today/RWDevCon Today.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RWDevCon Today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		783F5A251A490E1B00199736 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "RWDevCon Today/RWDevCon Today.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "RWDevCon Today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		78B7A9EE1A3E9876002AAF7F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -438,9 +597,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RWDevCon/RWDevCon.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = RWDevCon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -448,9 +612,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RWDevCon/RWDevCon.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = RWDevCon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -491,6 +660,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		783F5A231A490E1B00199736 /* Build configuration list for PBXNativeTarget "RWDevCon Today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				783F5A241A490E1B00199736 /* Debug */,
+				783F5A251A490E1B00199736 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		78B7A9C91A3E9876002AAF7F /* Build configuration list for PBXProject "RWDevCon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
