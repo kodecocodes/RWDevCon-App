@@ -51,6 +51,12 @@ class Session: NSManagedObject {
     return formatter.stringFromDate(date)
   }
 
+  class func sessionCount(context: NSManagedObjectContext) -> Int {
+    let fetch = NSFetchRequest(entityName: "Session")
+    fetch.includesSubentities = false
+    return context.countForFetchRequest(fetch, error: nil)
+  }
+
   class func sessionByIdentifier(identifier: String, context: NSManagedObjectContext) -> Session? {
     let fetch = NSFetchRequest(entityName: "Session")
     fetch.predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])

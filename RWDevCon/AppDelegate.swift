@@ -1,6 +1,9 @@
-
+import Foundation
 import UIKit
 import CoreData
+
+// A date before the bundled plist date
+private let beginningOfTimeDate = NSDate(timeIntervalSince1970: 1417348800)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,13 +11,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   lazy var coreDataStack = CoreDataStack()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    if let conferencePlist = NSBundle.mainBundle().URLForResource("RWDevCon2015", withExtension: "plist") {
-      loadDataFromPlist(conferencePlist)
+    // If 0 sessions, start with the bundled plist data
+    if Session.sessionCount(coreDataStack.context) == 0 {
+      if let conferencePlist = NSBundle.mainBundle().URLForResource("RWDevCon2015", withExtension: "plist") {
+        loadDataFromPlist(conferencePlist)
+      }
     }
+
+    // kick off the background refresh from the server
+    updateFromServer()
 
     (((window?.rootViewController as UITabBarController).viewControllers![0] as UINavigationController).topViewController as StickyHeadersViewController).coreDataStack = coreDataStack
     (((window?.rootViewController as UITabBarController).viewControllers![1] as UINavigationController).topViewController as CalendarViewController).coreDataStack = coreDataStack
     return true
+  }
+
+  func updateFromServer() {
+    let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2015_lastUpdate.txt")!,
+      completionHandler: { (data, response, error) -> Void in
+        if let rawDateString = NSString(data: data, encoding: NSUTF8StringEncoding) {
+          let dateString = rawDateString.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+          let formatter = NSDateFormatter()
+          formatter.timeZone = NSTimeZone(name: "US/Eastern")!
+          formatter.locale = NSLocale(localeIdentifier: "en_US")
+          formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+          if let serverLastUpdatedDate = formatter.dateFromString(dateString) {
+            let localLastUpdatedDate = (Config.userDefaults().objectForKey("lastUpdated") as? NSDate) ?? beginningOfTimeDate
+
+            NSLog("local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
+
+            if localLastUpdatedDate.compare(serverLastUpdatedDate) == NSComparisonResult.OrderedAscending {
+              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
+                if let dict = NSDictionary(contentsOfURL: NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2015.plist")!) {
+                  let localPlistURL = Config.applicationDocumentsDirectory().URLByAppendingPathComponent("RWDevCon2015-latest.plist")
+                  dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    dict.writeToURL(localPlistURL, atomically: true)
+                    self.loadDataFromPlist(localPlistURL)
+                  })
+                }
+              })
+            }
+          }
+        }
+    })
+    task.resume()
   }
 
   func loadDataFromPlist(url: NSURL) {
@@ -31,9 +71,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return
       }
 
-      let lastUpdated = metadata["lastUpdated"] as? NSDate ?? NSDate(timeIntervalSince1970: 1389528000)
-
-      // TODO: store last updated to NSUserDefaults
+      let lastUpdated = metadata["lastUpdated"] as? NSDate ?? beginningOfTimeDate
+      Config.userDefaults().setObject(lastUpdated, forKey: "lastUpdated")
 
       var allRooms = [Room]()
       var allTracks = [Track]()
@@ -75,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         session.identifier = identifier
         session.active = dict["active"] as? Bool ?? false
-        session.date = dict["date"] as? NSDate ?? NSDate(timeIntervalSince1970: 1389528000)
+        session.date = dict["date"] as? NSDate ?? beginningOfTimeDate
         session.duration = Int32(dict["duration"] as? Int ?? 0)
         session.column = Int32(dict["column"] as? Int ?? 0)
         session.sessionNumber = dict["sessionNumber"] as? String ?? ""
@@ -97,6 +136,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
 
       coreDataStack.saveContext()
+
+      NSNotificationCenter.defaultCenter().postNotificationName(SessionDataUpdatedNotification, object: self)
     }
   }
 
