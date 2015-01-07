@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		783071DC1A58E74700B21224 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A62B1A41F776003F8373 /* Config.swift */; };
+		783071DD1A58E76200B21224 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA261A4147DC002AAF7F /* CoreDataStack.swift */; };
+		783071DE1A58E76200B21224 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA2E1A414E58002AAF7F /* Person.swift */; };
+		783071DF1A58E76200B21224 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA2C1A414E57002AAF7F /* Session.swift */; };
+		783071E01A58E76200B21224 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA2A1A414A94002AAF7F /* Room.swift */; };
+		783071E11A58E76200B21224 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA281A414A94002AAF7F /* Track.swift */; };
+		783071E21A58E76600B21224 /* RWDevCon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78B7A9D51A3E9876002AAF7F /* RWDevCon.xcdatamodeld */; };
 		783F5A181A490E1B00199736 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 783F5A171A490E1B00199736 /* NotificationCenter.framework */; };
 		783F5A1D1A490E1B00199736 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F5A1C1A490E1B00199736 /* TodayViewController.swift */; };
 		783F5A1F1A490E1B00199736 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F5A1E1A490E1B00199736 /* MainInterface.storyboard */; };
@@ -409,7 +416,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				783071DF1A58E76200B21224 /* Session.swift in Sources */,
+				783071DD1A58E76200B21224 /* CoreDataStack.swift in Sources */,
+				783071E01A58E76200B21224 /* Room.swift in Sources */,
 				783F5A1D1A490E1B00199736 /* TodayViewController.swift in Sources */,
+				783071DE1A58E76200B21224 /* Person.swift in Sources */,
+				783071E21A58E76600B21224 /* RWDevCon.xcdatamodeld in Sources */,
+				783071DC1A58E74700B21224 /* Config.swift in Sources */,
+				783071E11A58E76200B21224 /* Track.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +681,7 @@
 				783F5A251A490E1B00199736 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		78B7A9C91A3E9876002AAF7F /* Build configuration list for PBXProject "RWDevCon" */ = {
 			isa = XCConfigurationList;
