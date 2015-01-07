@@ -1,9 +1,22 @@
 
 import Foundation
 
+let SessionDataUpdatedNotification = "com.razeware.rwdevcon.notification.sessionDataUpdated"
+
 class Config {
+  class func applicationDocumentsDirectory() -> NSURL {
+    let fileManager = NSFileManager.defaultManager()
+
+    if let containerURL = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.com.razeware.rwdevcon") {
+      return containerURL
+    }
+
+    let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask) as [NSURL]
+    return urls[0]
+  }
+  
   class func userDefaults() -> NSUserDefaults {
-    return NSUserDefaults.standardUserDefaults()
+    return NSUserDefaults(suiteName: "group.com.razeware.rwdevcon") ?? NSUserDefaults.standardUserDefaults()
   }
 
   class func favoriteSessions() -> [String: String] {

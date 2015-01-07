@@ -42,7 +42,7 @@ public class CoreDataStack {
     context = NSManagedObjectContext()
     context.persistentStoreCoordinator = psc
     
-    let documentsURL = applicationDocumentsDirectory()
+    let documentsURL = Config.applicationDocumentsDirectory()
     let storeURL = documentsURL.URLByAppendingPathComponent("\(modelName).sqlite")
 
     NSLog("Store is at \(storeURL)")
@@ -70,14 +70,6 @@ public class CoreDataStack {
         abort()
       }
     }
-  }
-  
-  func applicationDocumentsDirectory() -> NSURL {
-    let fileManager = NSFileManager.defaultManager()
-  
-    let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask) as [NSURL]
-  
-    return urls[0]
   }
   
   func saveContext() {
