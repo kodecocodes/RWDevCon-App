@@ -12,6 +12,10 @@ class CalendarViewController: UICollectionViewController {
   var coreDataStack: CoreDataStack!
   weak var dataSource: ScheduleDataSource!
 
+  deinit {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
+  }
+
   // MARK: UIViewController
   
   override func viewDidLoad() {
@@ -40,8 +44,13 @@ class CalendarViewController: UICollectionViewController {
     }
     
     navigationController?.interactivePopGestureRecognizer.enabled = false
+
+    NSNotificationCenter.defaultCenter().addObserverForName(SessionDataUpdatedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+      NSLog("Data was updated, says the notification!")
+      self.collectionView?.reloadData()
+    }
   }
-  
+
   override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
     super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
     collectionView!.collectionViewLayout.invalidateLayout()

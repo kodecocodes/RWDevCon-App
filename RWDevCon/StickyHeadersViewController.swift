@@ -18,6 +18,10 @@ class StickyHeadersViewController: UICollectionViewController, UICollectionViewD
 
   @IBOutlet weak var segmentedControl: UISegmentedControl!
 
+  deinit {
+    NSNotificationCenter.defaultCenter().removeObserver(self)
+  }
+
   // MARK: UIViewController
   
   override func viewDidLoad() {
@@ -47,6 +51,11 @@ class StickyHeadersViewController: UICollectionViewController, UICollectionViewD
     dataSource.headerConfigurationBlock = {(header: ScheduleHeader, indexPath: NSIndexPath, group: NSDictionary, kind: String) in
       let groupHeader = group["Header"] as NSString
       header.titleLabel.text = groupHeader.uppercaseString
+    }
+
+    NSNotificationCenter.defaultCenter().addObserverForName(SessionDataUpdatedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+      NSLog("Data was updated, says the notification!")
+      self.collectionView?.reloadData()
     }
   }
 
