@@ -139,6 +139,9 @@
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
                                             <color key="textColor" red="0.022080962190000001" green="0.3314917127" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                <rect key="frame" x="92" y="8" width="243" height="25"/>
+                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="Bio" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWP-Ea-5vt">
                                             <rect key="frame" x="16" y="76" width="568" height="45"/>
@@ -164,12 +167,33 @@
                                         <constraint firstItem="uiD-py-boS" firstAttribute="top" secondItem="5Uw-Nd-uHa" secondAttribute="top" constant="8" id="CSs-if-8HJ"/>
                                         <constraint firstItem="uiD-py-boS" firstAttribute="centerY" secondItem="F9d-LL-fQK" secondAttribute="centerY" id="DOw-4d-QJK"/>
                                         <constraint firstItem="uiD-py-boS" firstAttribute="leading" secondItem="5Uw-Nd-uHa" secondAttribute="leading" constant="16" id="Hqr-na-sik"/>
+                                        <constraint firstItem="b9k-aX-UWz" firstAttribute="leading" secondItem="F9d-LL-fQK" secondAttribute="leading" id="LU0-ef-Tvu"/>
+                                        <constraint firstItem="b9k-aX-UWz" firstAttribute="bottom" secondItem="uiD-py-boS" secondAttribute="bottom" id="POz-Es-WO6"/>
                                         <constraint firstItem="F9d-LL-fQK" firstAttribute="centerY" secondItem="b9k-aX-UWz" secondAttribute="centerY" id="RIh-4U-bMo"/>
                                         <constraint firstItem="LWP-Ea-5vt" firstAttribute="leading" secondItem="5Uw-Nd-uHa" secondAttribute="leading" constant="16" id="SRH-pP-5kB"/>
+                                        <constraint firstItem="F9d-LL-fQK" firstAttribute="top" secondItem="uiD-py-boS" secondAttribute="top" id="Z4q-zc-AqN"/>
                                         <constraint firstAttribute="trailing" secondItem="LWP-Ea-5vt" secondAttribute="trailing" constant="16" id="an4-9e-wkM"/>
                                         <constraint firstItem="F9d-LL-fQK" firstAttribute="leading" secondItem="uiD-py-boS" secondAttribute="trailing" constant="16" id="oeR-0n-yRL"/>
                                         <constraint firstAttribute="bottom" secondItem="LWP-Ea-5vt" secondAttribute="bottom" constant="8" id="pr1-gk-BI0"/>
                                     </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Z4q-zc-AqN"/>
+                                            <exclude reference="LU0-ef-Tvu"/>
+                                            <exclude reference="POz-Es-WO6"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <exclude reference="DOw-4d-QJK"/>
+                                            <exclude reference="RIh-4U-bMo"/>
+                                            <include reference="Z4q-zc-AqN"/>
+                                            <exclude reference="9Ar-WV-bOG"/>
+                                            <exclude reference="A15-cT-aLd"/>
+                                            <include reference="LU0-ef-Tvu"/>
+                                            <include reference="POz-Es-WO6"/>
+                                        </mask>
+                                    </variation>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bioLabel" destination="LWP-Ea-5vt" id="b2t-1q-LJa"/>

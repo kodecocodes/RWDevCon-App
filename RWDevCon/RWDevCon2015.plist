@@ -5,7 +5,7 @@
 	<key>metadata</key>
 	<dict>
 		<key>lastUpdated</key>
-		<date>2014-12-01T16:14:45Z</date>
+		<date>2015-01-02T16:14:45Z</date>
 	</dict>
 	<key>sessions</key>
 	<dict>
@@ -913,7 +913,7 @@
 			<key>last</key>
 			<string>Galloway</string>
 			<key>twitter</key>
-			<string></string>
+			<string>mattjgalloway</string>
 			<key>bio</key>
 			<string>Matt is the founder of SwipeStack, a mobile development company based in London, UK which create apps for clients and also a few of their own. One client&apos;s app was featured by Apple in the best apps of 2011, the App Rewind in the newsstand category. </string>
 		</dict>
@@ -965,7 +965,7 @@
 			<key>last</key>
 			<string>Wagner</string>
 			<key>twitter</key>
-			<string></string>
+			<string>cwagdev</string>
 			<key>bio</key>
 			<string>Chris Wagner currently works as the lead iOS developer at Infusionsoft and started “programming” by playing with QBASIC and the Lego Mindstorms kit (thanks Dad). The next big thing was the web, as an avid gamer for many years (Rogue Spear, Counter-Strike, WOW) he continued to feed his passion for software development by building web sites for his gaming clan and others. After graduating with a Computer Systems Engineering degree from ASU he worked as a Java web app developer before moving on to leading multiple iOS development teams.</string>
 		</dict>
@@ -978,7 +978,7 @@
 			<key>last</key>
 			<string>Todorov</string>
 			<key>twitter</key>
-			<string></string>
+			<string>icanzilb</string>
 			<key>bio</key>
 			<string>Marin Todorov is an independent iOS consultant and publisher with complimentary background in server and desktop development.
 
@@ -1060,7 +1060,7 @@ Besides crafting code, Marin also enjoys bloging, writing books, teaching and tr
 			<key>last</key>
 			<string>Rocchi</string>
 			<key>twitter</key>
-			<string></string>
+			<string>_funkyboy</string>
 			<key>bio</key>
 			<string>Cesare Rocchi is a speaker, writer, UX designer and developer specializing in web and mobile applications. He began working on interactive applications while he was a researcher in the academia. He runs Studio Magnolia, an interactive studio that creates compelling web and mobile applications. He blogs at upbeat.it.</string>
 		</dict>
@@ -1112,7 +1112,7 @@ Besides crafting code, Marin also enjoys bloging, writing books, teaching and tr
 			<key>last</key>
 			<string>Gundersen</string>
 			<key>twitter</key>
-			<string></string>
+			<string>fattjake</string>
 			<key>bio</key>
 			<string>Jacob is an indie game developer and runs the Indie Ambitions blog. Check out his latest app - Factor Samurai!</string>
 		</dict>
@@ -1125,7 +1125,7 @@ Besides crafting code, Marin also enjoys bloging, writing books, teaching and tr
 			<key>last</key>
 			<string>Davies</string>
 			<key>twitter</key>
-			<string></string>
+			<string>iwantmyrealname</string>
 			<key>bio</key>
 			<string>Sam is a Technical Evangelist for ShinobiControls - purveyors of the finest UI controls for iOS and Android - including charts, grids and much more. By day you&apos;ll find him attending conferences, writing tutorials, meeting people and generally being a good guy. By night he&apos;s likely to be out entertaining people, armed with his trombone and killer dance moves.</string>
 		</dict>
@@ -1136,7 +1136,7 @@ Besides crafting code, Marin also enjoys bloging, writing books, teaching and tr
 			<key>last</key>
 			<string>Moakley</string>
 			<key>twitter</key>
-			<string></string>
+			<string>zombietreats</string>
 			<key>bio</key>
 			<string>Brian is not only an iOS developer and fiction writer, he also holds the honor being Razeware‘s first fulltime employee. 
 
@@ -1153,7 +1153,7 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<key>last</key>
 			<string>Wenderlich</string>
 			<key>twitter</key>
-			<string></string>
+			<string>vwenderlich</string>
 			<key>bio</key>
 			<string>Vicki Wenderlich discovered a love of digital art in 2009, and has been making app art and digital illustrations ever since. She is passionate about helping people pursue their dreams, and makes free app art for developers available on her website, www.gameartguppy.com.</string>
 		</dict>
@@ -1188,7 +1188,7 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 	<array>
 		<string>RWDevCon</string>
 		<string>The Hill</string>
-		<string>Metropolitan East &amp; West</string>
+		<string>The Grid/Hub</string>
 		<string>Metropolitan Center</string>
 	</array>
 	<key>tracks</key>
