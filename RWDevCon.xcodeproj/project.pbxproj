@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		781EBAD51A5F7461009A7AA5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781EBAD41A5F7461009A7AA5 /* AboutViewController.swift */; };
+		781EBAD81A5F74D0009A7AA5 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 781EBAD71A5F74D0009A7AA5 /* about.html */; };
+		781EBADA1A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781EBAD91A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg */; };
 		783071DC1A58E74700B21224 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A62B1A41F776003F8373 /* Config.swift */; };
 		783071DD1A58E76200B21224 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA261A4147DC002AAF7F /* CoreDataStack.swift */; };
 		783071DE1A58E76200B21224 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA2E1A414E58002AAF7F /* Person.swift */; };
@@ -77,6 +80,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		781EBAD41A5F7461009A7AA5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		781EBAD71A5F74D0009A7AA5 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
+		781EBAD91A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "affinia-liaison-floorplan.jpg"; sourceTree = "<group>"; };
 		783F5A101A490DE900199736 /* RWDevCon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = RWDevCon.entitlements; sourceTree = "<group>"; };
 		783F5A151A490E1B00199736 /* RWDevCon Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "RWDevCon Today.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		783F5A171A490E1B00199736 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -141,6 +147,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		781EBAD61A5F74C0009A7AA5 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				781EBAD41A5F7461009A7AA5 /* AboutViewController.swift */,
+				781EBAD71A5F74D0009A7AA5 /* about.html */,
+				781EBAD91A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 		783F5A161A490E1B00199736 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +211,7 @@
 				783F5A101A490DE900199736 /* RWDevCon.entitlements */,
 				78B7A9D31A3E9876002AAF7F /* AppDelegate.swift */,
 				7848A62B1A41F776003F8373 /* Config.swift */,
+				781EBAD61A5F74C0009A7AA5 /* About */,
 				78F256881A416BC40040AC63 /* Session Details */,
 				78F256871A416BB70040AC63 /* Collection View */,
 				78B7AA321A41561D002AAF7F /* Core Data */,
@@ -394,9 +411,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781EBAD81A5F74D0009A7AA5 /* about.html in Resources */,
 				78B7A9DC1A3E9876002AAF7F /* Main.storyboard in Resources */,
 				78B7A9E11A3E9876002AAF7F /* LaunchScreen.xib in Resources */,
 				78B7A9DE1A3E9876002AAF7F /* Images.xcassets in Resources */,
+				781EBADA1A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg in Resources */,
 				78F256861A416BB20040AC63 /* ScheduleHeader.xib in Resources */,
 				78B7AA251A413573002AAF7F /* RWDevCon2015.plist in Resources */,
 			);
@@ -449,6 +468,7 @@
 				78B7AA2F1A414E58002AAF7F /* Person.swift in Sources */,
 				78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */,
 				78B7AA271A4147DC002AAF7F /* CoreDataStack.swift in Sources */,
+				781EBAD51A5F7461009A7AA5 /* AboutViewController.swift in Sources */,
 				78F256841A416BB20040AC63 /* ScheduleDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
