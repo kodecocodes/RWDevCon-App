@@ -1,4 +1,4 @@
-
+import Foundation
 import UIKit
 
 class SessionViewController: UITableViewController {
@@ -26,6 +26,10 @@ class SessionViewController: UITableViewController {
     super.viewWillAppear(animated)
 
     navigationController?.setNavigationBarHidden(false, animated: animated)
+    navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pattern-64tall"), forBarMetrics: UIBarMetrics.Default)
+    navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+    navigationController?.navigationBar.barStyle = .Black
   }
 
   override func didReceiveMemoryWarning() {
@@ -74,7 +78,7 @@ class SessionViewController: UITableViewController {
     if indexPath.section == Sections.info && indexPath.row == 3 {
       let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as DetailTableViewCell
 
-      cell.keyLabel.text = "My Schedule"
+      cell.keyLabel.text = "My Schedule".uppercaseString
       if session.isFavorite {
         cell.valueButton.setTitle("Remove from My Schedule", forState: .Normal)
       } else {
@@ -87,13 +91,13 @@ class SessionViewController: UITableViewController {
       let cell = tableView.dequeueReusableCellWithIdentifier("detail", forIndexPath: indexPath) as DetailTableViewCell
 
       if indexPath.row == 0 {
-        cell.keyLabel.text = "Track"
+        cell.keyLabel.text = "Track".uppercaseString
         cell.valueLabel.text = session.track.name
       } else if indexPath.row == 1 {
-        cell.keyLabel.text = "Where"
+        cell.keyLabel.text = "Where".uppercaseString
         cell.valueLabel.text = session.room.name
       } else if indexPath.row == 2 {
-        cell.keyLabel.text = "When"
+        cell.keyLabel.text = "When".uppercaseString
         cell.valueLabel.text = session.startDateTimeString
       }
 
@@ -138,5 +142,4 @@ class SessionViewController: UITableViewController {
   func twitterButton(sender: UIButton) {
     UIApplication.sharedApplication().openURL(NSURL(string: "http://twitter.com/\(sender.titleForState(.Normal)!)")!)
   }
-
 }
