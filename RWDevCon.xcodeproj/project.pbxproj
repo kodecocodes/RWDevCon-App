@@ -22,8 +22,6 @@
 		783F5A1D1A490E1B00199736 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783F5A1C1A490E1B00199736 /* TodayViewController.swift */; };
 		783F5A1F1A490E1B00199736 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783F5A1E1A490E1B00199736 /* MainInterface.storyboard */; };
 		783F5A221A490E1B00199736 /* RWDevCon Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 783F5A151A490E1B00199736 /* RWDevCon Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7848A6291A418EA3003F8373 /* CalendarLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A6271A418EA3003F8373 /* CalendarLayout.swift */; };
-		7848A62A1A418EA3003F8373 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A6281A418EA3003F8373 /* CalendarViewController.swift */; };
 		7848A62C1A41F776003F8373 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7848A62B1A41F776003F8373 /* Config.swift */; };
 		78B7A9D41A3E9876002AAF7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7A9D31A3E9876002AAF7F /* AppDelegate.swift */; };
 		78B7A9D71A3E9876002AAF7F /* RWDevCon.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 78B7A9D51A3E9876002AAF7F /* RWDevCon.xcdatamodeld */; };
@@ -43,12 +41,7 @@
 		78CBC28D1A653A3F00FC839A /* ScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CBC28C1A653A3F00FC839A /* ScheduleTableViewCell.swift */; };
 		78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */; };
 		78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256791A4167F40040AC63 /* LabelTableViewCell.swift */; };
-		78F2567D1A416B950040AC63 /* StickyHeadersLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */; };
-		78F2567E1A416B950040AC63 /* StickyHeadersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2567C1A416B950040AC63 /* StickyHeadersViewController.swift */; };
-		78F256831A416BB20040AC63 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F2567F1A416BB20040AC63 /* ScheduleCell.swift */; };
 		78F256841A416BB20040AC63 /* ScheduleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256801A416BB20040AC63 /* ScheduleDataSource.swift */; };
-		78F256851A416BB20040AC63 /* ScheduleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256811A416BB20040AC63 /* ScheduleHeader.swift */; };
-		78F256861A416BB20040AC63 /* ScheduleHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78F256821A416BB20040AC63 /* ScheduleHeader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,8 +87,6 @@
 		783F5A1C1A490E1B00199736 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		783F5A1E1A490E1B00199736 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		783F5A271A490E2100199736 /* RWDevCon Today.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "RWDevCon Today.entitlements"; sourceTree = "<group>"; };
-		7848A6271A418EA3003F8373 /* CalendarLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarLayout.swift; sourceTree = "<group>"; };
-		7848A6281A418EA3003F8373 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		7848A62B1A41F776003F8373 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		78B7A9CE1A3E9876002AAF7F /* RWDevCon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWDevCon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B7A9D21A3E9876002AAF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,12 +110,7 @@
 		78CBC28C1A653A3F00FC839A /* ScheduleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		78F256791A4167F40040AC63 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
-		78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeadersLayout.swift; sourceTree = "<group>"; };
-		78F2567C1A416B950040AC63 /* StickyHeadersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickyHeadersViewController.swift; sourceTree = "<group>"; };
-		78F2567F1A416BB20040AC63 /* ScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
 		78F256801A416BB20040AC63 /* ScheduleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataSource.swift; sourceTree = "<group>"; };
-		78F256811A416BB20040AC63 /* ScheduleHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleHeader.swift; sourceTree = "<group>"; };
-		78F256821A416BB20040AC63 /* ScheduleHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScheduleHeader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +206,6 @@
 				78CBC2891A6537DB00FC839A /* Schedule View */,
 				781EBAD61A5F74C0009A7AA5 /* About */,
 				78F256881A416BC40040AC63 /* Session Details */,
-				78F256871A416BB70040AC63 /* Collection View */,
 				78B7AA321A41561D002AAF7F /* Core Data */,
 				78B7A9DA1A3E9876002AAF7F /* Main.storyboard */,
 				78B7A9DD1A3E9876002AAF7F /* Images.xcassets */,
@@ -275,23 +260,9 @@
 				783A17D51A6540B600EE7E88 /* ScheduleViewController.swift */,
 				78CBC28A1A6537F200FC839A /* ScheduleTableViewController.swift */,
 				78CBC28C1A653A3F00FC839A /* ScheduleTableViewCell.swift */,
+				78F256801A416BB20040AC63 /* ScheduleDataSource.swift */,
 			);
 			name = "Schedule View";
-			sourceTree = "<group>";
-		};
-		78F256871A416BB70040AC63 /* Collection View */ = {
-			isa = PBXGroup;
-			children = (
-				7848A6271A418EA3003F8373 /* CalendarLayout.swift */,
-				7848A6281A418EA3003F8373 /* CalendarViewController.swift */,
-				78F2567C1A416B950040AC63 /* StickyHeadersViewController.swift */,
-				78F2567B1A416B950040AC63 /* StickyHeadersLayout.swift */,
-				78F2567F1A416BB20040AC63 /* ScheduleCell.swift */,
-				78F256801A416BB20040AC63 /* ScheduleDataSource.swift */,
-				78F256811A416BB20040AC63 /* ScheduleHeader.swift */,
-				78F256821A416BB20040AC63 /* ScheduleHeader.xib */,
-			);
-			name = "Collection View";
 			sourceTree = "<group>";
 		};
 		78F256881A416BC40040AC63 /* Session Details */ = {
@@ -433,7 +404,6 @@
 				78B7A9E11A3E9876002AAF7F /* LaunchScreen.xib in Resources */,
 				78B7A9DE1A3E9876002AAF7F /* Images.xcassets in Resources */,
 				781EBADA1A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg in Resources */,
-				78F256861A416BB20040AC63 /* ScheduleHeader.xib in Resources */,
 				78B7AA251A413573002AAF7F /* RWDevCon2015.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,15 +445,9 @@
 				7848A62C1A41F776003F8373 /* Config.swift in Sources */,
 				78B7A9D41A3E9876002AAF7F /* AppDelegate.swift in Sources */,
 				783A17D61A6540B600EE7E88 /* ScheduleViewController.swift in Sources */,
-				78F256851A416BB20040AC63 /* ScheduleHeader.swift in Sources */,
-				7848A62A1A418EA3003F8373 /* CalendarViewController.swift in Sources */,
-				78F2567D1A416B950040AC63 /* StickyHeadersLayout.swift in Sources */,
 				78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */,
-				7848A6291A418EA3003F8373 /* CalendarLayout.swift in Sources */,
 				78B7A9D71A3E9876002AAF7F /* RWDevCon.xcdatamodeld in Sources */,
-				78F2567E1A416B950040AC63 /* StickyHeadersViewController.swift in Sources */,
 				78B7AA361A415C96002AAF7F /* PresenterTableViewCell.swift in Sources */,
-				78F256831A416BB20040AC63 /* ScheduleCell.swift in Sources */,
 				78B7AA2F1A414E58002AAF7F /* Person.swift in Sources */,
 				78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */,
 				78B7AA271A4147DC002AAF7F /* CoreDataStack.swift in Sources */,
