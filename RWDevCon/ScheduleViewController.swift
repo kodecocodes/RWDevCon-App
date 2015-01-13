@@ -28,7 +28,7 @@ class ScheduleViewController: UIViewController {
 
     let backgroundGrey = UIView()
     backgroundGrey.setTranslatesAutoresizingMaskIntoConstraints(false)
-    backgroundGrey.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
+//    backgroundGrey.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
     view.addSubview(backgroundGrey)
     NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[backgroundGrey]|", options: nil, metrics: nil, views: ["backgroundGrey": backgroundGrey]))
     NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[backgroundGrey]|", options: nil, metrics: nil, views: ["backgroundGrey": backgroundGrey]))

@@ -47,7 +47,7 @@ class ScheduleDataSource: NSObject {
     return []
   }
 
-  private var distinctTimes: [String] {
+  var distinctTimes: [String] {
     var times = [String]()
 
     if favoritesOnly {
@@ -100,11 +100,11 @@ extension ScheduleDataSource: UITableViewDataSource {
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return arrayOfSessionsForSection(section).count;
+    return arrayOfSessionsForSection(section).count
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableViewCell", forIndexPath: indexPath) as ScheduleTableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableViewCell") as ScheduleTableViewCell
     let session = sessionForIndexPath(indexPath)
     if let configureBlock = tableCellConfigurationBlock {
       configureBlock(cell: cell, indexPath: indexPath, session: session)

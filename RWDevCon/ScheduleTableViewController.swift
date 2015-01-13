@@ -1,4 +1,4 @@
-
+import Foundation
 import UIKit
 
 class ScheduleTableViewController: UITableViewController {
@@ -17,7 +17,9 @@ class ScheduleTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    tableView.backgroundColor = UIColor.clearColor()
+    tableView.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
+
+//    tableView.backgroundColor = UIColor.clearColor()
     dataSource = tableView.dataSource! as ScheduleDataSource
     dataSource.coreDataStack = coreDataStack
     dataSource.startDate = startDate
@@ -51,6 +53,20 @@ class ScheduleTableViewController: UITableViewController {
     tableView.tableHeaderView = logoImageView
   }
 
+  override func viewWillAppear(animated: Bool) {
+    if dataSource.favoritesOnly {
+      if selectedIndexPath != nil && selectedSession != nil && !selectedSession!.isFavorite {
+        // selected session is no longer a favorite!
+        tableView.deleteRowsAtIndexPaths([selectedIndexPath!], withRowAnimation: .Automatic)
+      }
+      return
+    }
+
+    if let selected = tableView.indexPathForSelectedRow() {
+      tableView.reloadSections(NSIndexSet(index: selected.section), withRowAnimation: .Automatic)
+    }
+  }
+
   override func willMoveToParentViewController(parent: UIViewController?) {
     super.willMoveToParentViewController(parent)
 
@@ -73,4 +89,25 @@ class ScheduleTableViewController: UITableViewController {
     return 62
   }
 
+  override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    return 44
+  }
+
+  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let header = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.bounds), height: 40))
+    header.backgroundColor = UIColor.clearColor()
+
+    let label = UILabel()
+    label.setTranslatesAutoresizingMaskIntoConstraints(false)
+    label.text = dataSource.distinctTimes[section].uppercaseString
+    label.textColor = UIColor.whiteColor()
+    label.font = UIFont(name: "AvenirNext-Medium", size: 18)
+    header.addSubview(label)
+
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-20-[label]-|", options: nil, metrics: nil, views: ["label": label]) +
+      [NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: header, attribute: .CenterY, multiplier: 1.0, constant: 0)])
+
+
+    return header
+  }
 }
