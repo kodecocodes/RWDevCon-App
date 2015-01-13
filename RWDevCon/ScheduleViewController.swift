@@ -8,7 +8,7 @@
 
 import UIKit
 
-let bottomHeight: CGFloat = 64
+let bottomHeight: CGFloat = 54
 
 class ScheduleViewController: UIViewController {
   var coreDataStack: CoreDataStack!
