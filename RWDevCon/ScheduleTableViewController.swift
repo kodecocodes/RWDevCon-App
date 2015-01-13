@@ -90,13 +90,15 @@ class ScheduleTableViewController: UITableViewController {
   }
 
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let dest = segue.destinationViewController as? SessionViewController {
-      dest.coreDataStack = coreDataStack
+    if let destNav = segue.destinationViewController as? UINavigationController {
+      if let dest = destNav.topViewController as? SessionViewController {
+        dest.coreDataStack = coreDataStack
 
-      if let parent = parentViewController as? ScheduleViewController {
-        selectedIndexPath = tableView.indexPathForSelectedRow()
-        selectedSession = dataSource.sessionForIndexPath(selectedIndexPath!)
-        dest.session = selectedSession
+        if let parent = parentViewController as? ScheduleViewController {
+          selectedIndexPath = tableView.indexPathForSelectedRow()
+          selectedSession = dataSource.sessionForIndexPath(selectedIndexPath!)
+          dest.session = selectedSession
+        }
       }
     }
   }
@@ -126,4 +128,9 @@ class ScheduleTableViewController: UITableViewController {
 
     return header
   }
+
+  override func preferredStatusBarStyle() -> UIStatusBarStyle {
+    return UIStatusBarStyle.LightContent
+  }
+
 }

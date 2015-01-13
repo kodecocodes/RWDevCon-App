@@ -14,22 +14,22 @@ class SessionViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    assert(session != nil, "Session view controller needs a session!")
-
-    title = session.title
+    title = session?.title
 
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 76
+
+    navigationController?.navigationBar.barStyle = UIBarStyle.Default
+    navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pattern-64tall"), forBarMetrics: UIBarMetrics.Default)
+    navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
   }
 
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
 
+    NSLog("session view controller nav? \(navigationController)")
     navigationController?.setNavigationBarHidden(false, animated: animated)
-    navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pattern-64tall"), forBarMetrics: UIBarMetrics.Default)
-    navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-    navigationController?.navigationBar.barStyle = .Black
   }
 
   override func didReceiveMemoryWarning() {
@@ -40,7 +40,11 @@ class SessionViewController: UITableViewController {
   // MARK: - Table view data source
 
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return 3
+    if session == nil {
+      return 0
+    } else {
+      return 3
+    }
   }
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

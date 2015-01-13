@@ -21,6 +21,15 @@ class ScheduleViewController: UIViewController {
 
   var firstTime = true
 
+  override func awakeFromNib() {
+    super.awakeFromNib()
+
+    if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+      self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
+      self.splitViewController?.preferredDisplayMode = .AllVisible
+    }
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
 
@@ -82,11 +91,17 @@ class ScheduleViewController: UIViewController {
       ])
     segmentedControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
 
+    navigationController?.navigationBar.barStyle = UIBarStyle.Default
+    navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pattern-64tall"), forBarMetrics: UIBarMetrics.Default)
+    navigationController?.navigationBar.tintColor = UIColor.whiteColor()
+    navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+
   }
 
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
 
+    NSLog("schedule view controller nav? \(navigationController)")
     navigationController?.setNavigationBarHidden(true, animated: animated)
   }
 
