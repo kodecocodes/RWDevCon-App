@@ -81,6 +81,7 @@ class ScheduleViewController: UIViewController {
       NSLayoutConstraint(item: segmentedControl, attribute: .CenterY, relatedBy: .Equal, toItem: bottomView, attribute: .CenterY, multiplier: 1.0, constant: 0),
       ])
     segmentedControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
+
   }
 
   override func viewWillAppear(animated: Bool) {
@@ -117,7 +118,7 @@ class ScheduleViewController: UIViewController {
       addChildViewController(toVC)
 
       if toVC.tableView.contentInset.top == 0 {
-        toVC.tableView.contentOffset.y = -20
+//        toVC.tableView.contentOffset.y = -20
       }
 
       UIView.transitionFromView(fromVC.view, toView: toVC.view, duration: animated ? 0.25 : 0, options: .TransitionCrossDissolve, completion: { (_) -> Void in
@@ -126,13 +127,13 @@ class ScheduleViewController: UIViewController {
         fromVC.removeFromParentViewController()
 
         if toVC.tableView.contentInset.top == 0 {
-          toVC.tableView.contentInset.top = 20
+//          toVC.tableView.contentInset.top = 20
         }
       })
     }
   }
 
   override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return UIStatusBarStyle.BlackOpaque
+    return UIStatusBarStyle.LightContent
   }
 }

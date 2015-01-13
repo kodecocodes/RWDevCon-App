@@ -19,7 +19,6 @@ class ScheduleTableViewController: UITableViewController {
 
     tableView.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
 
-//    tableView.backgroundColor = UIColor.clearColor()
     dataSource = tableView.dataSource! as ScheduleDataSource
     dataSource.coreDataStack = coreDataStack
     dataSource.startDate = startDate
@@ -48,16 +47,20 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     let logoImageView = UIImageView(image: UIImage(named: "logo-rwdevcon"))
-    logoImageView.contentMode = UIViewContentMode.Center
+    logoImageView.contentMode = UIViewContentMode.Bottom
     logoImageView.frame.size.height += 40
     tableView.tableHeaderView = logoImageView
   }
 
   override func viewWillAppear(animated: Bool) {
     if dataSource.favoritesOnly {
-      if selectedIndexPath != nil && selectedSession != nil && !selectedSession!.isFavorite {
-        // selected session is no longer a favorite!
-        tableView.deleteRowsAtIndexPaths([selectedIndexPath!], withRowAnimation: .Automatic)
+      if let selectedIndexPath = selectedIndexPath {
+        if selectedSession != nil && !selectedSession!.isFavorite {
+          // selected session is no longer a favorite!
+          tableView.deleteRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .Automatic)
+        } else {
+          tableView.deselectRowAtIndexPath(selectedIndexPath, animated: true)
+        }
       }
       return
     }
@@ -65,6 +68,8 @@ class ScheduleTableViewController: UITableViewController {
     if let selected = tableView.indexPathForSelectedRow() {
       tableView.reloadSections(NSIndexSet(index: selected.section), withRowAnimation: .Automatic)
     }
+
+    
   }
 
   override func willMoveToParentViewController(parent: UIViewController?) {
@@ -90,12 +95,12 @@ class ScheduleTableViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return 44
+    return 48
   }
 
   override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let header = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.bounds), height: 40))
-    header.backgroundColor = UIColor.clearColor()
+    let header = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.bounds), height: 48))
+    header.backgroundColor = UIColor(red: 34.0/255, green: 34.0/255, blue: 34.0/255, alpha: 0.85)
 
     let label = UILabel()
     label.setTranslatesAutoresizingMaskIntoConstraints(false)
@@ -105,7 +110,7 @@ class ScheduleTableViewController: UITableViewController {
     header.addSubview(label)
 
     NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-20-[label]-|", options: nil, metrics: nil, views: ["label": label]) +
-      [NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: header, attribute: .CenterY, multiplier: 1.0, constant: 0)])
+      [NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: header, attribute: .CenterY, multiplier: 1.0, constant: 4)])
 
 
     return header
