@@ -100,7 +100,7 @@ class ScheduleTableViewController: UITableViewController {
 
   override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let header = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.bounds), height: 48))
-    header.backgroundColor = UIColor(red: 34.0/255, green: 34.0/255, blue: 34.0/255, alpha: 0.85)
+    header.backgroundColor = UIColor(red: 34.0/255, green: 34.0/255, blue: 34.0/255, alpha: 0.4)
 
     let label = UILabel()
     label.setTranslatesAutoresizingMaskIntoConstraints(false)
