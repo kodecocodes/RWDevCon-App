@@ -53,6 +53,7 @@ class ScheduleTableViewController: UITableViewController {
   }
 
   override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
     if dataSource.favoritesOnly {
       if let selectedIndexPath = selectedIndexPath {
         if selectedSession != nil && !selectedSession!.isFavorite {
@@ -62,14 +63,24 @@ class ScheduleTableViewController: UITableViewController {
           tableView.deselectRowAtIndexPath(selectedIndexPath, animated: true)
         }
       }
+
+      self.selectedIndexPath = nil
+
       return
     }
 
-    if let selected = tableView.indexPathForSelectedRow() {
-      tableView.reloadSections(NSIndexSet(index: selected.section), withRowAnimation: .Automatic)
+    if let selectedIndexPath = selectedIndexPath {
+      tableView.reloadSections(NSIndexSet(index: selectedIndexPath.section), withRowAnimation: .Automatic)
     }
+    self.selectedIndexPath = nil
+  }
 
-    
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
+
+    if let visibleRows = tableView.indexPathsForVisibleRows() {
+      tableView.reloadRowsAtIndexPaths(visibleRows, withRowAnimation: .None)
+    }
   }
 
   override func willMoveToParentViewController(parent: UIViewController?) {
