@@ -121,6 +121,8 @@ class ScheduleViewController: UIViewController {
 //        toVC.tableView.contentOffset.y = -20
       }
 
+      toVC.view.frame = contentView.bounds
+
       UIView.transitionFromView(fromVC.view, toView: toVC.view, duration: animated ? 0.25 : 0, options: .TransitionCrossDissolve, completion: { (_) -> Void in
         toVC.didMoveToParentViewController(self)
         fromVC.view.removeFromSuperview()
