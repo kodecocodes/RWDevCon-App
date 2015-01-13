@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
+typealias TableCellConfigurationBlock = (cell: ScheduleTableViewCell, indexPath: NSIndexPath, session: Session) -> ()
 typealias CellConfigurationBlock = (cell: ScheduleCell, indexPath: NSIndexPath, session: Session) -> ()
 typealias HeaderConfigurationBlock = (header: ScheduleHeader, indexPath: NSIndexPath, group: NSDictionary, kind: String) -> ()
 
@@ -28,6 +29,7 @@ class ScheduleDataSource: NSObject, UICollectionViewDataSource {
   let firstHour = 8
   
   var cellConfigurationBlock: CellConfigurationBlock?
+  var tableCellConfigurationBlock: TableCellConfigurationBlock?
   var headerConfigurationBlock: HeaderConfigurationBlock?
 
   private var allSessions: [Session] {
@@ -169,4 +171,24 @@ class ScheduleDataSource: NSObject, UICollectionViewDataSource {
     return ["Header": distinctTimes[section]]
   }
   
+}
+
+extension ScheduleDataSource: UITableViewDataSource {
+
+  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    return distinctTimes.count
+  }
+
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return arrayOfSessionsForSection(section).count;
+  }
+
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableViewCell", forIndexPath: indexPath) as ScheduleTableViewCell
+    let session = sessionForIndexPath(indexPath)
+    if let configureBlock = tableCellConfigurationBlock {
+      configureBlock(cell: cell, indexPath: indexPath, session: session)
+    }
+    return cell
+  }
 }

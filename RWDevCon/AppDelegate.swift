@@ -21,8 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // kick off the background refresh from the server
     updateFromServer()
 
-    (((window?.rootViewController as UITabBarController).viewControllers![0] as UINavigationController).topViewController as StickyHeadersViewController).coreDataStack = coreDataStack
-    (((window?.rootViewController as UITabBarController).viewControllers![1] as UINavigationController).topViewController as CalendarViewController).coreDataStack = coreDataStack
+    ((window?.rootViewController as UINavigationController).topViewController as ScheduleViewController).coreDataStack = coreDataStack
+    
     return true
   }
 
