@@ -10,6 +10,8 @@ class ScheduleTableViewController: UITableViewController {
   var selectedIndexPath: NSIndexPath?
   var selectedSectionCount = 0
 
+  var isActive = false
+  
   deinit {
     NSNotificationCenter.defaultCenter().removeObserver(self)
   }
@@ -50,29 +52,40 @@ class ScheduleTableViewController: UITableViewController {
     logoImageView.contentMode = UIViewContentMode.Bottom
     logoImageView.frame.size.height += 40
     tableView.tableHeaderView = logoImageView
+
+    NSNotificationCenter.defaultCenter().addObserverForName(MyScheduleSomethingChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+      if self.isActive {
+        self.refreshSelectively()
+      }
+    }
   }
 
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
+  func refreshSelectively() {
     if dataSource.favoritesOnly {
       if let selectedIndexPath = selectedIndexPath {
         if selectedSession != nil && !selectedSession!.isFavorite {
           // selected session is no longer a favorite!
           tableView.deleteRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .Automatic)
+
+          self.selectedSession = nil
+          self.selectedIndexPath = nil
+          
+          if splitViewController!.collapsed {
+            navigationController?.popViewControllerAnimated(true)
+          } else {
+            performSegueWithIdentifier("tableShowDetail", sender: self)
+          }
         } else {
           tableView.deselectRowAtIndexPath(selectedIndexPath, animated: true)
         }
       }
 
-      self.selectedIndexPath = nil
-
       return
     }
 
     if let selectedIndexPath = selectedIndexPath {
-      tableView.reloadSections(NSIndexSet(index: selectedIndexPath.section), withRowAnimation: .Automatic)
+      tableView.reloadSections(NSIndexSet(index: selectedIndexPath.section), withRowAnimation: .None)
     }
-    self.selectedIndexPath = nil
   }
 
   override func viewDidAppear(animated: Bool) {
@@ -94,11 +107,13 @@ class ScheduleTableViewController: UITableViewController {
       if let dest = destNav.topViewController as? SessionViewController {
         dest.coreDataStack = coreDataStack
 
-        if let parent = parentViewController as? ScheduleViewController {
-          selectedIndexPath = tableView.indexPathForSelectedRow()
+        selectedIndexPath = tableView.indexPathForSelectedRow()
+        if selectedIndexPath != nil {
           selectedSession = dataSource.sessionForIndexPath(selectedIndexPath!)
-          dest.session = selectedSession
+        } else {
+          selectedSession = nil
         }
+        dest.session = selectedSession
       }
     }
   }

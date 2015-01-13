@@ -129,12 +129,13 @@ class ScheduleViewController: UIViewController {
 
   func swapToViewController(toVC: ScheduleTableViewController, animated: Bool = true) {
     if let fromVC = childViewControllers.first as? ScheduleTableViewController {
+      if let fromSelected = fromVC.selectedIndexPath {
+        fromVC.tableView.deselectRowAtIndexPath(fromSelected, animated: false)
+        fromVC.performSegueWithIdentifier("tableShowDetail", sender: self)
+      }
+
       fromVC.willMoveToParentViewController(nil)
       addChildViewController(toVC)
-
-      if toVC.tableView.contentInset.top == 0 {
-//        toVC.tableView.contentOffset.y = -20
-      }
 
       toVC.view.frame = contentView.bounds
 
@@ -143,8 +144,11 @@ class ScheduleViewController: UIViewController {
         fromVC.view.removeFromSuperview()
         fromVC.removeFromParentViewController()
 
-        if toVC.tableView.contentInset.top == 0 {
-//          toVC.tableView.contentInset.top = 20
+        fromVC.isActive = false
+        toVC.isActive = true
+
+        if let toSelected = toVC.tableView.indexPathForSelectedRow() {
+          toVC.tableView.deselectRowAtIndexPath(toSelected, animated: false)
         }
       })
     }

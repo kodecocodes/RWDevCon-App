@@ -1,6 +1,8 @@
 import Foundation
 import UIKit
 
+let MyScheduleSomethingChangedNotification = "com.razeware.rwdevcon.notifications.myScheduleChanged"
+
 class SessionViewController: UITableViewController {
   var coreDataStack: CoreDataStack!
   var session: Session!
@@ -141,6 +143,7 @@ class SessionViewController: UITableViewController {
     session.isFavorite = !session.isFavorite
 
     tableView.reloadSections(NSIndexSet(index: Sections.info), withRowAnimation: .Automatic)
+    NSNotificationCenter.defaultCenter().postNotificationName(MyScheduleSomethingChangedNotification, object: self, userInfo: ["session": session])
   }
 
   func twitterButton(sender: UIButton) {

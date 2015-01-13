@@ -276,7 +276,7 @@
                                 <connections>
                                     <outlet property="nameLabel" destination="0IP-HJ-jLB" id="5O7-Mh-HAN"/>
                                     <outlet property="timeLabel" destination="rAJ-BD-PeY" id="wPD-NP-vsg"/>
-                                    <segue destination="gKv-uh-Gay" kind="showDetail" id="t46-iL-Maz"/>
+                                    <segue destination="gKv-uh-Gay" kind="showDetail" identifier="tableShowDetail" id="t46-iL-Maz"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -346,6 +346,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gWZ-m2-7ha"/>
+        <segue reference="t46-iL-Maz"/>
     </inferredMetricsTieBreakers>
 </document>
