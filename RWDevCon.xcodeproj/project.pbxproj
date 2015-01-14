@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78048CBB1A66E04A00435241 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78048CBA1A66E04A00435241 /* RoomViewController.swift */; };
 		781EBAD51A5F7461009A7AA5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781EBAD41A5F7461009A7AA5 /* AboutViewController.swift */; };
 		781EBAD81A5F74D0009A7AA5 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 781EBAD71A5F74D0009A7AA5 /* about.html */; };
 		781EBADA1A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781EBAD91A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg */; };
@@ -76,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		78048CBA1A66E04A00435241 /* RoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
 		781EBAD41A5F7461009A7AA5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		781EBAD71A5F74D0009A7AA5 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		781EBAD91A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "affinia-liaison-floorplan.jpg"; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 				78B7AA351A415C96002AAF7F /* PresenterTableViewCell.swift */,
 				78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */,
 				78F256791A4167F40040AC63 /* LabelTableViewCell.swift */,
+				78048CBA1A66E04A00435241 /* RoomViewController.swift */,
 			);
 			name = "Session Details";
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */,
 				78B7AA271A4147DC002AAF7F /* CoreDataStack.swift in Sources */,
 				78CBC28B1A6537F200FC839A /* ScheduleTableViewController.swift in Sources */,
+				78048CBB1A66E04A00435241 /* RoomViewController.swift in Sources */,
 				781EBAD51A5F7461009A7AA5 /* AboutViewController.swift in Sources */,
 				78F256841A416BB20040AC63 /* ScheduleDataSource.swift in Sources */,
 			);

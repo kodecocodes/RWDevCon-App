@@ -98,7 +98,7 @@ class SessionViewController: UITableViewController {
 
       cell.keyLabel.text = "Where".uppercaseString
       cell.valueButton.setTitle(session.room.name, forState: .Normal)
-//      cell.valueButton.addTarget(self, action: "myScheduleButton:", forControlEvents: .TouchUpInside)
+      cell.valueButton.addTarget(self, action: "roomDetails:", forControlEvents: .TouchUpInside)
 
       return cell
     } else if indexPath.section == Sections.info {
@@ -141,6 +141,14 @@ class SessionViewController: UITableViewController {
       assertionFailure("Unhandled session table view section")
       let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
       return cell
+    }
+  }
+
+  func roomDetails(sender: UIButton) {
+    if let roomVC = storyboard?.instantiateViewControllerWithIdentifier("RoomViewController") as? RoomViewController {
+      roomVC.room = session.room
+      roomVC.title = session.room.name
+      navigationController?.pushViewController(roomVC, animated: true)
     }
   }
 

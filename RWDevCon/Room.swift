@@ -6,7 +6,12 @@ import CoreData
 class Room: NSManagedObject {
   @NSManaged var roomId: Int32
   @NSManaged var name: String
+  @NSManaged var roomDescription: String
   @NSManaged var sessions: NSSet
+  @NSManaged var image: String
+  @NSManaged var mapAddress: String
+  @NSManaged var mapLatitude: Double
+  @NSManaged var mapLongitude: Double
 
   class func roomByRoomId(roomId: Int, context: NSManagedObjectContext) -> Room? {
     let fetch = NSFetchRequest(entityName: "Room")

@@ -12,7 +12,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // If 0 sessions, start with the bundled plist data
-    if Session.sessionCount(coreDataStack.context) == 0 {
+    // TODO: FIX to remove true and stop loading the plist each time
+    if true || Session.sessionCount(coreDataStack.context) == 0 {
       if let conferencePlist = NSBundle.mainBundle().URLForResource("RWDevCon2015", withExtension: "plist") {
         loadDataFromPlist(conferencePlist)
       }
@@ -69,11 +70,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func loadDataFromPlist(url: NSURL) {
     if let data = NSDictionary(contentsOfURL: url) {
       typealias PlistDict = [String: NSDictionary]
+      typealias PlistArray = [NSDictionary]
 
       let metadata: NSDictionary! = data["metadata"] as? NSDictionary
       let sessions: PlistDict! = data["sessions"] as? PlistDict
       let people: PlistDict! = data["people"] as? PlistDict
-      let rooms: [String]! = data["rooms"] as? [String]
+      let rooms: PlistArray! = data["rooms"] as? PlistArray
       let tracks: [String]! = data["tracks"] as? [String]
 
       if metadata == nil || sessions == nil || people == nil || rooms == nil || tracks == nil {
@@ -87,11 +89,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       var allTracks = [Track]()
       var allPeople = [String: Person]()
       
-      for (identifier, name) in enumerate(rooms) {
+      for (identifier, dict) in enumerate(rooms) {
         var room = Room.roomByRoomIdOrNew(identifier, context: coreDataStack.context)
 
         room.roomId = Int32(identifier)
-        room.name = name
+        room.name = dict["name"] as? String ?? ""
+        room.image = dict["image"] as? String ?? ""
+        room.roomDescription = dict["roomDescription"] as? String ?? ""
+        room.mapAddress = dict["mapAddress"] as? String ?? ""
+        room.mapLatitude = dict["mapLatitude"] as? Double ?? 0
+        room.mapLongitude = dict["mapLongitude"] as? Double ?? 0
 
         allRooms.append(room)
       }

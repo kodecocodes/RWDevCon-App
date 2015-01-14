@@ -10,7 +10,12 @@
         <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="presenters" inverseEntity="Session" syncable="YES"/>
     </entity>
     <entity name="Room" representedClassName="Room" syncable="YES">
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mapAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mapLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="mapLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="roomDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="roomId" attributeType="Integer 32" defaultValueString="0" indexed="YES" syncable="YES"/>
         <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Session" inverseName="room" inverseEntity="Session" syncable="YES"/>
     </entity>
@@ -34,8 +39,8 @@
     </entity>
     <elements>
         <element name="Person" positionX="-63" positionY="-18" width="128" height="148"/>
+        <element name="Room" positionX="-18" positionY="54" width="128" height="163"/>
         <element name="Session" positionX="-54" positionY="27" width="128" height="208"/>
         <element name="Track" positionX="-36" positionY="45" width="128" height="88"/>
-        <element name="Room" positionX="-18" positionY="54" width="128" height="88"/>
     </elements>
 </model>

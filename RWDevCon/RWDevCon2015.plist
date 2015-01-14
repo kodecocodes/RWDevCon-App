@@ -5,7 +5,7 @@
 	<key>metadata</key>
 	<dict>
 		<key>lastUpdated</key>
-		<date>2015-01-02T16:14:45Z</date>
+		<date>2015-01-13T16:14:45Z</date>
 	</dict>
 	<key>sessions</key>
 	<dict>
@@ -53,7 +53,7 @@
 			<key>presenters</key>
 			<array/>
 			<key>roomId</key>
-			<integer>0</integer>
+			<integer>4</integer>
 		</dict>
 		<key>breakfast1</key>
 		<dict>
@@ -1184,12 +1184,54 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<string>Tammy Coron is an artist, a writer, a musician, and a developer. Not too many people get an opportunity to do what they love. She considers herself to be one of the lucky ones! Check out her blog at www.justwritecode.net.</string>
 		</dict>
 	</dict>
-	<key>rooms</key>
+	<key>oldRooms</key>
 	<array>
 		<string>RWDevCon</string>
 		<string>The Hill</string>
 		<string>The Grid/Hub</string>
 		<string>Metropolitan Center</string>
+	</array>
+	<key>rooms</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>RWDevCon</string>
+			<key>image</key>
+			<string>liaison</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>The Hill</string>
+			<key>image</key>
+			<string>liaison-hill</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>The Grid/Hub</string>
+			<key>image</key>
+			<string>liaison-gridhub</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Metropolitan Center</string>
+			<key>image</key>
+			<string>liaison-metrocenter</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>Penn Social</string>
+			<key>roomDescription</key>
+			<string>801 E Street NW 
+Washington, DC 20004</string>
+			<key>mapAddress</key>
+			<string>801 E Street NW Washington, DC 20004</string>
+			<key>mapLatitude</key>
+			<real>38.896601</real>
+			<key>mapLongitude</key>
+			<real>-77.023394</real>
+			<key>image</key>
+			<string>pennsocial</string>
+		</dict>
 	</array>
 	<key>tracks</key>
 	<array>
