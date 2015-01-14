@@ -19,8 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
     }
 
+    // global style
     application.statusBarStyle = UIStatusBarStyle.LightContent
-
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Normal)
+    
     // kick off the background refresh from the server
     updateFromServer()
 
