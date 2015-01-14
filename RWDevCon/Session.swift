@@ -22,6 +22,10 @@ class Session: NSManagedObject {
     return (sessionNumber != "" ? "\(sessionNumber): " : "") + title
   }
 
+  var startDateDayOfWeek: String {
+    return formatDate("EEEE")
+  }
+
   var startDateTimeString: String {
     return formatDate("EEEE h:mm a")
   }

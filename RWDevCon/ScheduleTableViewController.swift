@@ -65,7 +65,8 @@ class ScheduleTableViewController: UITableViewController {
       if let selectedIndexPath = selectedIndexPath {
         if selectedSession != nil && !selectedSession!.isFavorite {
           // selected session is no longer a favorite!
-          tableView.deleteRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .Automatic)
+          tableView.reloadData()
+//          tableView.deleteRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .Automatic)
 
           self.selectedSession = nil
           self.selectedIndexPath = nil
@@ -85,6 +86,50 @@ class ScheduleTableViewController: UITableViewController {
 
     if let selectedIndexPath = selectedIndexPath {
       tableView.reloadSections(NSIndexSet(index: selectedIndexPath.section), withRowAnimation: .None)
+    }
+  }
+
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+
+    if dataSource.favoritesOnly {
+      if dataSource.allSessions.count == 0 {
+        let footer = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: CGRectGetHeight(view.frame)))
+        let white = UIView()
+        white.setTranslatesAutoresizingMaskIntoConstraints(false)
+        white.backgroundColor = UIColor.whiteColor()
+        white.opaque = true
+        footer.addSubview(white)
+
+        let title = UILabel()
+        title.setTranslatesAutoresizingMaskIntoConstraints(false)
+        title.textColor = UIColor(red: 0, green: 109.0/255, blue: 55.0/255, alpha: 1.0)
+        title.text = "SCHEDULE EMPTY"
+        title.font = UIFont(name: "AvenirNext-Medium", size: 20)
+        white.addSubview(title)
+
+        let label = UILabel()
+        label.setTranslatesAutoresizingMaskIntoConstraints(false)
+        label.numberOfLines = 0
+        label.textAlignment = .Center
+        label.textColor = UIColor.blackColor()
+        label.text = "Add talks to your schedule from each talk's detail page:\n\n1.\nFind the talk in the Friday or Saturday tabs.\n\n2.\nTap the talk title to see its detail page.\n\n3.\nTap 'Add to My Schedule'."
+        label.font = UIFont(name: "AvenirNext-Regular", size: 19)
+        white.addSubview(label)
+
+        NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[white]|", options: nil, metrics: nil, views: ["white": white]))
+        NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[white]|", options: nil, metrics: nil, views: ["white": white]))
+
+        NSLayoutConstraint.activateConstraints([
+          NSLayoutConstraint(item: title, attribute: .CenterX, relatedBy: .Equal, toItem: white, attribute: .CenterX, multiplier: 1.0, constant: 0),
+          NSLayoutConstraint(item: label, attribute: .Width, relatedBy: .Equal, toItem: white, attribute: .Width, multiplier: 0.7, constant: 0),
+        ])
+        NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[title]-20-[label]", options: .AlignAllCenterX, metrics: nil, views: ["title": title, "label": label]))
+
+        tableView.tableFooterView = footer
+      } else {
+        tableView.tableFooterView = nil
+      }
     }
   }
 

@@ -28,7 +28,7 @@ class ScheduleDataSource: NSObject {
   
   var tableCellConfigurationBlock: TableCellConfigurationBlock?
 
-  private var allSessions: [Session] {
+  var allSessions: [Session] {
     let fetch = NSFetchRequest(entityName: "Session")
 
     if self.startDate != nil && self.endDate != nil {
@@ -51,8 +51,14 @@ class ScheduleDataSource: NSObject {
     var times = [String]()
 
     if favoritesOnly {
-      times.append("Friday")
-      times.append("Saturday")
+      for session in self.allSessions {
+        let last = times.last
+        let thisDayOfWeek = session.startDateDayOfWeek
+
+        if (last == nil) || (last != nil && last! != thisDayOfWeek) {
+          times.append(thisDayOfWeek)
+        }
+      }
     } else {
       for session in self.allSessions {
         let last = times.last
@@ -111,4 +117,5 @@ extension ScheduleDataSource: UITableViewDataSource {
     }
     return cell
   }
+
 }

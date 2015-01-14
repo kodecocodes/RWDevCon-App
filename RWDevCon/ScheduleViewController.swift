@@ -140,14 +140,16 @@ class ScheduleViewController: UIViewController {
       addChildViewController(toVC)
 
       toVC.view.frame = contentView.bounds
+      toVC.viewWillAppear(animated)
 
       UIView.transitionFromView(fromVC.view, toView: toVC.view, duration: animated ? 0.25 : 0, options: .TransitionCrossDissolve, completion: { (_) -> Void in
-        toVC.didMoveToParentViewController(self)
-        fromVC.view.removeFromSuperview()
-        fromVC.removeFromParentViewController()
-
         fromVC.isActive = false
         toVC.isActive = true
+
+        toVC.didMoveToParentViewController(self)
+        toVC.viewDidAppear(animated)
+        fromVC.view.removeFromSuperview()
+        fromVC.removeFromParentViewController()
 
         if let toSelected = toVC.tableView.indexPathForSelectedRow() {
           toVC.tableView.deselectRowAtIndexPath(toSelected, animated: false)
