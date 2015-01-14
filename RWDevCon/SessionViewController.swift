@@ -93,6 +93,14 @@ class SessionViewController: UITableViewController {
       cell.valueButton.addTarget(self, action: "myScheduleButton:", forControlEvents: .TouchUpInside)
 
       return cell
+    } else if indexPath.section == Sections.info && indexPath.row == 2 {
+      let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as DetailTableViewCell
+
+      cell.keyLabel.text = "Where".uppercaseString
+      cell.valueButton.setTitle(session.room.name, forState: .Normal)
+//      cell.valueButton.addTarget(self, action: "myScheduleButton:", forControlEvents: .TouchUpInside)
+
+      return cell
     } else if indexPath.section == Sections.info {
       let cell = tableView.dequeueReusableCellWithIdentifier("detail", forIndexPath: indexPath) as DetailTableViewCell
 
@@ -100,9 +108,6 @@ class SessionViewController: UITableViewController {
         cell.keyLabel.text = "Track".uppercaseString
         cell.valueLabel.text = session.track.name
       } else if indexPath.row == 1 {
-        cell.keyLabel.text = "Where".uppercaseString
-        cell.valueLabel.text = session.room.name
-      } else if indexPath.row == 2 {
         cell.keyLabel.text = "When".uppercaseString
         cell.valueLabel.text = session.startDateTimeString
       }
