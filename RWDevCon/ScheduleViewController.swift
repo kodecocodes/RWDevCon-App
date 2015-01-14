@@ -118,41 +118,63 @@ class ScheduleViewController: UIViewController {
     addChildViewController(vc2)
     vc2.didMoveToParentViewController(self)
 
-    swapToViewController(vc1, animated: true)
+    swapToViewController(vc1, animated: false)
   }
 
   func segmentChanged(sender: UISegmentedControl) {
     let toVC = scheduleTableViewControllers[sender.selectedSegmentIndex]
-    swapToViewController(toVC)
+    swapToViewController(toVC, animated: false)
   }
 
   func swapToViewController(toVC: ScheduleTableViewController, animated: Bool = true) {
-    if let fromVC = childViewControllers.first as? ScheduleTableViewController {
-      if let fromSelected = fromVC.selectedIndexPath {
-        fromVC.tableView.deselectRowAtIndexPath(fromSelected, animated: false)
-        if !splitViewController!.collapsed {
-          fromVC.performSegueWithIdentifier("tableShowDetail", sender: self)
-        }
+    var fromVC = childViewControllers.first as? ScheduleTableViewController
+
+    segmentedControl.enabled = false
+
+    if fromVC != nil && fromVC! == toVC {
+      fromVC = nil
+    }
+
+    if let fromSelected = fromVC?.selectedIndexPath {
+      fromVC?.tableView.deselectRowAtIndexPath(fromSelected, animated: false)
+      if !splitViewController!.collapsed {
+        fromVC?.performSegueWithIdentifier("tableShowDetail", sender: self)
+      }
+    }
+
+    fromVC?.willMoveToParentViewController(nil)
+    addChildViewController(toVC)
+
+    toVC.view.frame = contentView.bounds
+    toVC.viewWillAppear(animated)
+
+    if fromVC == nil {
+      toVC.isActive = true
+      contentView.addSubview(toVC.view)
+
+      toVC.didMoveToParentViewController(self)
+      toVC.viewDidAppear(animated)
+
+      if let toSelected = toVC.tableView.indexPathForSelectedRow() {
+        toVC.tableView.deselectRowAtIndexPath(toSelected, animated: false)
       }
 
-      fromVC.willMoveToParentViewController(nil)
-      addChildViewController(toVC)
-
-      toVC.view.frame = contentView.bounds
-      toVC.viewWillAppear(animated)
-
-      UIView.transitionFromView(fromVC.view, toView: toVC.view, duration: animated ? 0.25 : 0, options: .TransitionCrossDissolve, completion: { (_) -> Void in
-        fromVC.isActive = false
+      self.segmentedControl.enabled = true
+    } else {
+      UIView.transitionFromView(fromVC!.view, toView: toVC.view, duration: animated ? 0.2 : 0, options: .TransitionCrossDissolve, completion: { (completed) -> Void in
+        fromVC!.isActive = false
         toVC.isActive = true
 
         toVC.didMoveToParentViewController(self)
         toVC.viewDidAppear(animated)
-        fromVC.view.removeFromSuperview()
-        fromVC.removeFromParentViewController()
+        fromVC!.view.removeFromSuperview()
+        fromVC!.removeFromParentViewController()
 
         if let toSelected = toVC.tableView.indexPathForSelectedRow() {
           toVC.tableView.deselectRowAtIndexPath(toSelected, animated: false)
         }
+
+        self.segmentedControl.enabled = true
       })
     }
   }

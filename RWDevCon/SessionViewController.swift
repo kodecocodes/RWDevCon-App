@@ -30,7 +30,6 @@ class SessionViewController: UITableViewController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
 
-    NSLog("session view controller nav? \(navigationController)")
     navigationController?.setNavigationBarHidden(false, animated: animated)
   }
 
