@@ -94,7 +94,7 @@ class ScheduleTableViewController: UITableViewController {
 
     if dataSource.favoritesOnly {
       if dataSource.allSessions.count == 0 {
-        let footer = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: CGRectGetHeight(view.frame)))
+        let footer = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: 500))
         let white = UIView()
         white.setTranslatesAutoresizingMaskIntoConstraints(false)
         white.backgroundColor = UIColor.whiteColor()
@@ -117,6 +117,10 @@ class ScheduleTableViewController: UITableViewController {
         label.font = UIFont(name: "AvenirNext-Regular", size: 19)
         white.addSubview(label)
 
+        let filler = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
+        filler.setTranslatesAutoresizingMaskIntoConstraints(false)
+        white.addSubview(filler)
+
         NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[white]|", options: nil, metrics: nil, views: ["white": white]))
         NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[white]|", options: nil, metrics: nil, views: ["white": white]))
 
@@ -124,7 +128,7 @@ class ScheduleTableViewController: UITableViewController {
           NSLayoutConstraint(item: title, attribute: .CenterX, relatedBy: .Equal, toItem: white, attribute: .CenterX, multiplier: 1.0, constant: 0),
           NSLayoutConstraint(item: label, attribute: .Width, relatedBy: .Equal, toItem: white, attribute: .Width, multiplier: 0.7, constant: 0),
         ])
-        NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[title]-20-[label]", options: .AlignAllCenterX, metrics: nil, views: ["title": title, "label": label]))
+        NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[title]-20-[label]-20-[filler]", options: .AlignAllCenterX, metrics: nil, views: ["title": title, "label": label, "filler": filler]))
 
         tableView.tableFooterView = footer
       } else {
