@@ -19,8 +19,6 @@ class ScheduleTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    tableView.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
-
     dataSource = tableView.dataSource! as ScheduleDataSource
     dataSource.coreDataStack = coreDataStack
     dataSource.startDate = startDate
@@ -49,9 +47,17 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     let logoImageView = UIImageView(image: UIImage(named: "logo-rwdevcon"))
-    logoImageView.contentMode = UIViewContentMode.Bottom
-    logoImageView.frame.size.height += 40
-    tableView.tableHeaderView = logoImageView
+    logoImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    let header = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: CGRectGetHeight(logoImageView.frame) + 48))
+    header.backgroundColor = UIColor(patternImage: UIImage(named: "pattern-grey")!)
+    header.addSubview(logoImageView)
+
+    NSLayoutConstraint.activateConstraints([
+      NSLayoutConstraint(item: logoImageView, attribute: .CenterX, relatedBy: .Equal, toItem: header, attribute: .CenterX, multiplier: 1.0, constant: 0),
+      NSLayoutConstraint(item: logoImageView, attribute: .CenterY, relatedBy: .Equal, toItem: header, attribute: .CenterY, multiplier: 1.0, constant: 0),
+    ])
+
+    tableView.tableHeaderView = header
 
     NSNotificationCenter.defaultCenter().addObserverForName(MyScheduleSomethingChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
       if self.isActive {
@@ -177,7 +183,7 @@ class ScheduleTableViewController: UITableViewController {
 
   override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     let header = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.bounds), height: 48))
-    header.backgroundColor = UIColor(red: 34.0/255, green: 34.0/255, blue: 34.0/255, alpha: 0.4)
+    header.backgroundColor = UIColor(patternImage: UIImage(named: "pattern-row\(section % 2)")!)
 
     let label = UILabel()
     label.setTranslatesAutoresizingMaskIntoConstraints(false)
