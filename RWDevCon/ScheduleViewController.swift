@@ -131,7 +131,9 @@ class ScheduleViewController: UIViewController {
     if let fromVC = childViewControllers.first as? ScheduleTableViewController {
       if let fromSelected = fromVC.selectedIndexPath {
         fromVC.tableView.deselectRowAtIndexPath(fromSelected, animated: false)
-        fromVC.performSegueWithIdentifier("tableShowDetail", sender: self)
+        if !splitViewController!.collapsed {
+          fromVC.performSegueWithIdentifier("tableShowDetail", sender: self)
+        }
       }
 
       fromVC.willMoveToParentViewController(nil)
