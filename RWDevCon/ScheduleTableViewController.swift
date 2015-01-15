@@ -61,7 +61,7 @@ class ScheduleTableViewController: UITableViewController {
     tableView.tableHeaderView = header
 
     NSNotificationCenter.defaultCenter().addObserverForName(MyScheduleSomethingChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
-      if self.isActive {
+      if self.isActive || self.dataSource.favoritesOnly {
         self.refreshSelectively()
       }
     }
@@ -69,7 +69,7 @@ class ScheduleTableViewController: UITableViewController {
 
   func refreshSelectively() {
     if dataSource.favoritesOnly {
-      if let selectedIndexPath = selectedIndexPath {
+      if let lastSelectedIndexPath = lastSelectedIndexPath {
         if selectedSession != nil && !selectedSession!.isFavorite {
           // selected session is no longer a favorite!
           tableView.reloadData()
@@ -79,13 +79,15 @@ class ScheduleTableViewController: UITableViewController {
           self.selectedIndexPath = nil
           self.lastSelectedIndexPath = nil
           
-          if splitViewController!.collapsed {
-            navigationController?.popViewControllerAnimated(true)
-          } else {
-            performSegueWithIdentifier("tableShowDetail", sender: self)
+          if splitViewController != nil {
+            if splitViewController!.collapsed {
+              navigationController?.popViewControllerAnimated(true)
+            } else {
+              performSegueWithIdentifier("tableShowDetail", sender: self)
+            }
           }
         } else {
-          tableView.deselectRowAtIndexPath(selectedIndexPath, animated: true)
+          tableView.deselectRowAtIndexPath(lastSelectedIndexPath, animated: true)
         }
       }
 
