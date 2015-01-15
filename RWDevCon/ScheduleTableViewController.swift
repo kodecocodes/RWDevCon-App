@@ -8,7 +8,8 @@ class ScheduleTableViewController: UITableViewController {
 
   var selectedSession: Session?
   var selectedIndexPath: NSIndexPath?
-  var selectedSectionCount = 0
+
+  var lastSelectedIndexPath: NSIndexPath?
 
   var isActive = false
   
@@ -76,6 +77,7 @@ class ScheduleTableViewController: UITableViewController {
 
           self.selectedSession = nil
           self.selectedIndexPath = nil
+          self.lastSelectedIndexPath = nil
           
           if splitViewController!.collapsed {
             navigationController?.popViewControllerAnimated(true)
@@ -99,6 +101,24 @@ class ScheduleTableViewController: UITableViewController {
     super.viewWillAppear(animated)
 
     tableFooterOrNot()
+
+    if splitViewController != nil && !(splitViewController!.collapsed) {
+      if selectedIndexPath == nil {
+        selectedIndexPath = lastSelectedIndexPath
+      }
+      if selectedIndexPath == nil && dataSource.allSessions.count > 0 {
+        selectedIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        lastSelectedIndexPath = selectedIndexPath
+      }
+
+      if selectedIndexPath != nil {
+        tableView.selectRowAtIndexPath(selectedIndexPath!, animated: false, scrollPosition: .None)
+      }
+
+      performSegueWithIdentifier("tableShowDetail", sender: self)
+
+      NSLog("NON collapsed")
+    }
   }
 
   func tableFooterOrNot() {
@@ -169,6 +189,7 @@ class ScheduleTableViewController: UITableViewController {
         dest.coreDataStack = coreDataStack
 
         selectedIndexPath = tableView.indexPathForSelectedRow()
+        lastSelectedIndexPath = tableView.indexPathForSelectedRow()
         if selectedIndexPath != nil {
           selectedSession = dataSource.sessionForIndexPath(selectedIndexPath!)
         } else {

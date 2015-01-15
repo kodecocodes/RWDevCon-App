@@ -100,7 +100,6 @@ class ScheduleViewController: UIViewController {
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
 
-    NSLog("schedule view controller nav? \(navigationController)")
     navigationController?.setNavigationBarHidden(true, animated: animated)
   }
 
@@ -137,9 +136,6 @@ class ScheduleViewController: UIViewController {
 
     if let fromSelected = fromVC?.selectedIndexPath {
       fromVC?.tableView.deselectRowAtIndexPath(fromSelected, animated: false)
-      if !splitViewController!.collapsed {
-        fromVC?.performSegueWithIdentifier("tableShowDetail", sender: self)
-      }
     }
 
     fromVC?.willMoveToParentViewController(nil)
