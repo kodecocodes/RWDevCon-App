@@ -11,11 +11,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   lazy var coreDataStack = CoreDataStack()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // If 0 sessions, start with the bundled plist data
-    // TODO: FIX to remove true and stop loading the plist each time
-    if true || Session.sessionCount(coreDataStack.context) == 0 {
-      if let conferencePlist = NSBundle.mainBundle().URLForResource("RWDevCon2015", withExtension: "plist") {
-        loadDataFromPlist(conferencePlist)
+    if let conferencePlist = NSBundle.mainBundle().URLForResource("RWDevCon2015", withExtension: "plist") {
+      if let data = NSDictionary(contentsOfURL: conferencePlist) {
+        let localLastUpdatedDate = (Config.userDefaults().objectForKey("lastUpdated") as? NSDate) ?? beginningOfTimeDate
+        let plistLastUpdatedDate = (data["metadata"] as NSDictionary?)?["lastUpdated"] as? NSDate ?? beginningOfTimeDate
+
+        // If 0 sessions or the plist is newer, load it!
+        if Session.sessionCount(coreDataStack.context) == 0 || localLastUpdatedDate.compare(plistLastUpdatedDate) == NSComparisonResult.OrderedAscending {
+          NSLog("Loading from the local plist")
+          loadDataFromDictionary(data)
+        }
       }
     }
 
@@ -50,18 +55,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           if let serverLastUpdatedDate = formatter.dateFromString(dateString) {
             let localLastUpdatedDate = (Config.userDefaults().objectForKey("lastUpdated") as? NSDate) ?? beginningOfTimeDate
 
-            NSLog("local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
-
             if localLastUpdatedDate.compare(serverLastUpdatedDate) == NSComparisonResult.OrderedAscending {
               dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
                 if let dict = NSDictionary(contentsOfURL: NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2015.plist")!) {
                   let localPlistURL = Config.applicationDocumentsDirectory().URLByAppendingPathComponent("RWDevCon2015-latest.plist")
                   dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                    NSLog("updating from remote: local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
+                    
                     dict.writeToURL(localPlistURL, atomically: true)
-                    self.loadDataFromPlist(localPlistURL)
+                    self.loadDataFromDictionary(dict)
                   })
                 }
               })
+            } else {
+              NSLog("NOT updating from remote: local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
             }
           }
         }
@@ -71,92 +78,96 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func loadDataFromPlist(url: NSURL) {
     if let data = NSDictionary(contentsOfURL: url) {
-      typealias PlistDict = [String: NSDictionary]
-      typealias PlistArray = [NSDictionary]
+      loadDataFromDictionary(data)
+    }
+  }
 
-      let metadata: NSDictionary! = data["metadata"] as? NSDictionary
-      let sessions: PlistDict! = data["sessions"] as? PlistDict
-      let people: PlistDict! = data["people"] as? PlistDict
-      let rooms: PlistArray! = data["rooms"] as? PlistArray
-      let tracks: [String]! = data["tracks"] as? [String]
+  func loadDataFromDictionary(data: NSDictionary) {
+    typealias PlistDict = [String: NSDictionary]
+    typealias PlistArray = [NSDictionary]
 
-      if metadata == nil || sessions == nil || people == nil || rooms == nil || tracks == nil {
-        return
-      }
+    let metadata: NSDictionary! = data["metadata"] as? NSDictionary
+    let sessions: PlistDict! = data["sessions"] as? PlistDict
+    let people: PlistDict! = data["people"] as? PlistDict
+    let rooms: PlistArray! = data["rooms"] as? PlistArray
+    let tracks: [String]! = data["tracks"] as? [String]
 
-      let lastUpdated = metadata["lastUpdated"] as? NSDate ?? beginningOfTimeDate
-      Config.userDefaults().setObject(lastUpdated, forKey: "lastUpdated")
+    if metadata == nil || sessions == nil || people == nil || rooms == nil || tracks == nil {
+      return
+    }
 
-      var allRooms = [Room]()
-      var allTracks = [Track]()
-      var allPeople = [String: Person]()
-      
-      for (identifier, dict) in enumerate(rooms) {
-        var room = Room.roomByRoomIdOrNew(identifier, context: coreDataStack.context)
+    let lastUpdated = metadata["lastUpdated"] as? NSDate ?? beginningOfTimeDate
+    Config.userDefaults().setObject(lastUpdated, forKey: "lastUpdated")
 
-        room.roomId = Int32(identifier)
-        room.name = dict["name"] as? String ?? ""
-        room.image = dict["image"] as? String ?? ""
-        room.roomDescription = dict["roomDescription"] as? String ?? ""
-        room.mapAddress = dict["mapAddress"] as? String ?? ""
-        room.mapLatitude = dict["mapLatitude"] as? Double ?? 0
-        room.mapLongitude = dict["mapLongitude"] as? Double ?? 0
+    var allRooms = [Room]()
+    var allTracks = [Track]()
+    var allPeople = [String: Person]()
 
-        allRooms.append(room)
-      }
+    for (identifier, dict) in enumerate(rooms) {
+      var room = Room.roomByRoomIdOrNew(identifier, context: coreDataStack.context)
 
-      for (identifier, name) in enumerate(tracks) {
-        let track = Track.trackByTrackIdOrNew(identifier, context: coreDataStack.context)
+      room.roomId = Int32(identifier)
+      room.name = dict["name"] as? String ?? ""
+      room.image = dict["image"] as? String ?? ""
+      room.roomDescription = dict["roomDescription"] as? String ?? ""
+      room.mapAddress = dict["mapAddress"] as? String ?? ""
+      room.mapLatitude = dict["mapLatitude"] as? Double ?? 0
+      room.mapLongitude = dict["mapLongitude"] as? Double ?? 0
 
-        track.trackId = Int32(identifier)
-        track.name = name
+      allRooms.append(room)
+    }
 
-        allTracks.append(track)
-      }
+    for (identifier, name) in enumerate(tracks) {
+      let track = Track.trackByTrackIdOrNew(identifier, context: coreDataStack.context)
 
-      for (identifier, dict) in people {
-        let person = Person.personByIdentifierOrNew(identifier, context: coreDataStack.context)
+      track.trackId = Int32(identifier)
+      track.name = name
 
-        person.identifier = identifier
-        person.first = dict["first"] as? String ?? ""
-        person.last = dict["last"] as? String ?? ""
-        person.active = dict["active"] as? Bool ?? false
-        person.twitter = dict["twitter"] as? String ?? ""
-        person.bio = dict["bio"] as? String ?? ""
+      allTracks.append(track)
+    }
 
-        allPeople[identifier] = person
-      }
+    for (identifier, dict) in people {
+      let person = Person.personByIdentifierOrNew(identifier, context: coreDataStack.context)
 
-      for (identifier, dict) in sessions {
-        let session = Session.sessionByIdentifierOrNew(identifier, context: coreDataStack.context)
+      person.identifier = identifier
+      person.first = dict["first"] as? String ?? ""
+      person.last = dict["last"] as? String ?? ""
+      person.active = dict["active"] as? Bool ?? false
+      person.twitter = dict["twitter"] as? String ?? ""
+      person.bio = dict["bio"] as? String ?? ""
 
-        session.identifier = identifier
-        session.active = dict["active"] as? Bool ?? false
-        session.date = dict["date"] as? NSDate ?? beginningOfTimeDate
-        session.duration = Int32(dict["duration"] as? Int ?? 0)
-        session.column = Int32(dict["column"] as? Int ?? 0)
-        session.sessionNumber = dict["sessionNumber"] as? String ?? ""
-        session.sessionDescription = dict["sessionDescription"] as? String ?? ""
-        session.title = dict["title"] as? String ?? ""
+      allPeople[identifier] = person
+    }
 
-        session.track = allTracks[dict["trackId"] as Int]
-        session.room = allRooms[dict["roomId"] as Int]
+    for (identifier, dict) in sessions {
+      let session = Session.sessionByIdentifierOrNew(identifier, context: coreDataStack.context)
 
-        var presenters = [Person]()
-        if let rawPresenters = dict["presenters"] as? [String] {
-          for presenter in rawPresenters {
-            if let person = allPeople[presenter] {
-              presenters.append(person)
-            }
+      session.identifier = identifier
+      session.active = dict["active"] as? Bool ?? false
+      session.date = dict["date"] as? NSDate ?? beginningOfTimeDate
+      session.duration = Int32(dict["duration"] as? Int ?? 0)
+      session.column = Int32(dict["column"] as? Int ?? 0)
+      session.sessionNumber = dict["sessionNumber"] as? String ?? ""
+      session.sessionDescription = dict["sessionDescription"] as? String ?? ""
+      session.title = dict["title"] as? String ?? ""
+
+      session.track = allTracks[dict["trackId"] as Int]
+      session.room = allRooms[dict["roomId"] as Int]
+
+      var presenters = [Person]()
+      if let rawPresenters = dict["presenters"] as? [String] {
+        for presenter in rawPresenters {
+          if let person = allPeople[presenter] {
+            presenters.append(person)
           }
         }
-        session.presenters = NSOrderedSet(array: presenters)
       }
-
-      coreDataStack.saveContext()
-
-      NSNotificationCenter.defaultCenter().postNotificationName(SessionDataUpdatedNotification, object: self)
+      session.presenters = NSOrderedSet(array: presenters)
     }
+
+    coreDataStack.saveContext()
+
+    NSNotificationCenter.defaultCenter().postNotificationName(SessionDataUpdatedNotification, object: self)
   }
 
   func applicationWillResignActive(application: UIApplication) {
