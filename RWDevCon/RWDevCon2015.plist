@@ -386,7 +386,7 @@
 			<key>title</key>
 			<string>WatchKit 2</string>
 			<key>sessionDescription</key>
-			<string>If session #1 whets your appetite for WatchKit, you&apos;ll love the three-course meal that is WatchKit session #2. You&apos;ll start with an entrée of context menus, before being served up a main of Glances mixed with Handoff, then you&apos;ll finish up with a fruity watch-to-app-communication-flavoured desert. Expect to walk away feeling full and satisfied.</string>
+			<string>If session #1 whets your appetite for WatchKit, you&apos;ll love the three-course meal that is WatchKit session #2. You&apos;ll start with an entrée of context menus, before being served up a main of Glances mixed with Handoff, then you&apos;ll finish up with a fruity watch-to-app-communication-flavoured dessert. Expect to walk away feeling full and satisfied.</string>
 			<key>presenters</key>
 			<array>
 				<string>micpringle</string>
