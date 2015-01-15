@@ -4,6 +4,8 @@ import CoreData
 
 // A date before the bundled plist date
 private let beginningOfTimeDate = NSDate(timeIntervalSince1970: 1417348800)
+// The kill switch date to stop phoning the server
+private let endOfTimeDate = NSDate(timeIntervalSince1970: 1423656000)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,9 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     application.statusBarStyle = UIStatusBarStyle.LightContent
     UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Normal)
     
-    // kick off the background refresh from the server
-    updateFromServer()
-
     let splitViewController = self.window!.rootViewController as UISplitViewController
     splitViewController.delegate = self
 
@@ -60,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if let dict = NSDictionary(contentsOfURL: NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2015.plist")!) {
                   let localPlistURL = Config.applicationDocumentsDirectory().URLByAppendingPathComponent("RWDevCon2015-latest.plist")
                   dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                    NSLog("updating from remote: local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
+                    NSLog("New data from remote! local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
                     
                     dict.writeToURL(localPlistURL, atomically: true)
                     self.loadDataFromDictionary(dict)
@@ -68,8 +67,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
               })
             } else {
-              NSLog("NOT updating from remote: local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
+              NSLog("No new data from remote: local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
             }
+
+            Config.userDefaults().setObject(NSDate(), forKey: "lastServerCheck")
+            Config.userDefaults().synchronize()
           }
         }
     })
@@ -185,7 +187,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationDidBecomeActive(application: UIApplication) {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    // kick off the background refresh from the server if hasn't been too soon
+    let tooSoonSeconds: NSTimeInterval = 60 * 30 // how many seconds is too soon?
+    if endOfTimeDate.compare(NSDate()) == NSComparisonResult.OrderedDescending {
+      let lastServerCheck = Config.userDefaults().valueForKey("lastServerCheck") as? NSDate ?? beginningOfTimeDate
+      if NSDate().timeIntervalSinceDate(lastServerCheck) > tooSoonSeconds {
+        NSLog("Checking with the server at \(NSDate()); last check was \(lastServerCheck)")
+        updateFromServer()
+      } else {
+        NSLog("NOT checking with the server at \(NSDate()); last check was \(lastServerCheck)")
+      }
+    }
   }
 
   func applicationWillTerminate(application: UIApplication) {
