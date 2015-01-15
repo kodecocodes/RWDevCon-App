@@ -38,7 +38,7 @@ class ScheduleDataSource: NSObject {
     } else {
       fetch.predicate = NSPredicate(format: "active = %@", argumentArray: [true])
     }
-    fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true)]
+    fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true), NSSortDescriptor(key: "column", ascending: true)]
 
     if let results = self.coreDataStack.context.executeFetchRequest(fetch, error: nil) as? [Session] {
       return results
