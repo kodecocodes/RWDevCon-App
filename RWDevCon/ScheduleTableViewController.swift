@@ -118,8 +118,6 @@ class ScheduleTableViewController: UITableViewController {
       }
 
       performSegueWithIdentifier("tableShowDetail", sender: self)
-
-      NSLog("NON collapsed")
     }
   }
 
