@@ -5,7 +5,7 @@
 	<key>metadata</key>
 	<dict>
 		<key>lastUpdated</key>
-		<date>2015-01-13T16:18:45Z</date>
+		<date>2015-01-15T15:10:10Z</date>
 	</dict>
 	<key>sessions</key>
 	<dict>
@@ -102,7 +102,7 @@
 				<string>vwenderlich</string>
 			</array>
 			<key>roomId</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<key>lunch1</key>
 		<dict>
@@ -217,7 +217,7 @@
 			<key>presenters</key>
 			<array/>
 			<key>roomId</key>
-			<integer>0</integer>
+			<integer>3</integer>
 		</dict>
 		<key>b01</key>
 		<dict>
