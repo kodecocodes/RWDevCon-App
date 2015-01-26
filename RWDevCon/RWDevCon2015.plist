@@ -5,14 +5,14 @@
 	<key>metadata</key>
 	<dict>
 		<key>lastUpdated</key>
-		<date>2015-01-15T16:30:10Z</date>
+		<date>2015-01-26T23:45:00Z</date>
 	</dict>
 	<key>sessions</key>
 	<dict>
 		<key>party0</key>
 		<dict>
 			<key>active</key>
-			<true/>
+			<false/>
 			<key>date</key>
 			<date>2015-02-05T23:00:00Z</date>
 			<key>duration</key>
@@ -171,7 +171,7 @@
 			<key>presenters</key>
 			<array/>
 			<key>roomId</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>boardgames2</key>
 		<dict>
@@ -194,7 +194,7 @@
 			<key>presenters</key>
 			<array/>
 			<key>roomId</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>closing2</key>
 		<dict>
@@ -684,12 +684,13 @@
 			<key>sessionNumber</key>
 			<string>303</string>
 			<key>title</key>
-			<string>AsyncDisplayKit</string>
+			<string>Effortless Responsiveness with AsyncDisplayKit</string>
 			<key>sessionDescription</key>
 			<string>AsyncDisplayKit is an iOS framework that helps make even the most complex user interfaces smooth and responsive. It was originally built for Facebook’s Paper, and goes hand in hand with Pop’s physics-based animations - but it’s just as powerful with conventional app designs. Learn how to use AsyncDisplayKit to make silky-smooth UIs - by one of the authors of the framework!</string>
 			<key>presenters</key>
 			<array>
 				<string>scottgoodson</string>
+				<string>renecacheaux</string>
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
@@ -1340,7 +1341,7 @@ Besides crafting code, Marin also enjoys bloging, writing books, teaching and tr
 			<key>last</key>
 			<string>Rendon Cepeda</string>
 			<key>twitter</key>
-			<string></string>
+			<string>rendoncepeda</string>
 			<key>bio</key>
 			<string>Ricardo is a Mobile Application Developer at Idean, an awesome UX/UI design studio in Palo Alto, CA. He specializes in iOS &amp; OpenGL ES and is always up for a chat!</string>
 		</dict>
@@ -1407,7 +1408,7 @@ Besides crafting code, Marin also enjoys bloging, writing books, teaching and tr
 			<key>twitter</key>
 			<string></string>
 			<key>bio</key>
-			<string>Engineering Manager for Facebook Paper</string>
+			<string>Scott Goodson is a one of the longest continually focused iOS developers in the world, having started at Apple as the tenth engineer building iPhone OS 1.0. In the last few years, he has managed the renowned Facebook Paper and Instagram iOS engineering teams to develop exceptionally polished apps. Since the launch of Paper in January 2014, Scott has championed the release of six major open source projects from its massive codebase — the first iOS projects open sourced by Facebook in 3 years. Scott graduated from UC Berkeley at 18 with a double major in Electrical Engineering and Computer Science.</string>
 		</dict>
 		<key>fattjake</key>
 		<dict>
@@ -1488,6 +1489,19 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<string>paradox927</string>
 			<key>bio</key>
 			<string>Tammy Coron is an artist, a writer, a musician, and a developer. Not too many people get an opportunity to do what they love. She considers herself to be one of the lucky ones! Check out her blog at www.justwritecode.net.</string>
+		</dict>
+		<key>renecacheaux</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>first</key>
+			<string>René</string>
+			<key>last</key>
+			<string>Cacheaux</string>
+			<key>twitter</key>
+			<string>RCachATX</string>
+			<key>bio</key>
+			<string>René is an iOS Architect at Mutual Mobile, where he is known for his expertise in user interface engineering with UIKit, Core Animation, and Core Graphics. He&apos;s also been known to enjoy programming in Swift. He has been engineering iOS apps since 2009 and has experience in mobile client and server engineering, mobile user experience design, and product management. At Mutual Mobile, René has worked on a wide range of apps spanning from industrial sales enablement to mobile payments.</string>
 		</dict>
 	</dict>
 	<key>rooms</key>
