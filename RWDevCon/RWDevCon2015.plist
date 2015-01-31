@@ -5,7 +5,7 @@
 	<key>metadata</key>
 	<dict>
 		<key>lastUpdated</key>
-		<date>2015-01-29T01:45:10Z</date>
+		<date>2015-01-31T02:00:00Z</date>
 	</dict>
 	<key>sessions</key>
 	<dict>
@@ -1248,7 +1248,7 @@
 			<key>twitter</key>
 			<string></string>
 			<key>bio</key>
-			<string>Fosco works at Facebook on all things Parse, and some PHP too.</string>
+			<string>Fosco has worked in IT and software development for almost 2 decades, across nearly every industry. In 2013 he moved to San Francisco to join the Parse team, which was later acquired by Facebook. While helping thousands of developers use Parse, he has also released open­source projects including both the Parse and Facebook PHP SDKs.</string>
 		</dict>
 		<key>gregheo</key>
 		<dict>
@@ -1315,7 +1315,7 @@ Besides crafting code, Marin also enjoys bloging, writing books, teaching and tr
 			<key>last</key>
 			<string>Gallagher</string>
 			<key>twitter</key>
-			<string></string>
+			<string>alexisgallagher</string>
 			<key>bio</key>
 			<string>Alexis Gallagher has been failing to tear himself away from computers for over a dozen years, including tours in e-commerce firms in New York, in scientific research in Oxford, in front-office trading systems in London, and now via iOS in a pocket or corporate briefing room near you. After years breathing the thin airs of abstraction, he is a sucker for beauty and loves how iOS lets you work on ideas you can touch.</string>
 		</dict>
@@ -1328,7 +1328,7 @@ Besides crafting code, Marin also enjoys bloging, writing books, teaching and tr
 			<key>last</key>
 			<string>Pedersen</string>
 			<key>twitter</key>
-			<string></string>
+			<string>twofly3</string>
 			<key>bio</key>
 			<string>When Kim is not working on developing the next treatment for diabetes at a large pharmaceutical company he is spending his spare time developing games for iOS. He started programming on his C64 at the age of 8, and has since then been creating games on Amiga, PC and XBox360. He never thought he would ditch his beloved Windows PC for a Mac - but that changed three years ago and he has since then been dedicated to developing the next big iOS mobile indie hit.</string>
 		</dict>
@@ -1354,7 +1354,7 @@ Besides crafting code, Marin also enjoys bloging, writing books, teaching and tr
 			<key>last</key>
 			<string>Hollemans</string>
 			<key>twitter</key>
-			<string></string>
+			<string>mhollemans</string>
 			<key>bio</key>
 			<string>Matthijs Hollemans is an independent iOS developer and designer who lives to create awesome software. His focus is on iPad apps because he thinks tablets are way cooler than phones. Whenever he is not glued to his screen, Matthijs plays the piano, is into healthy and natural living, and goes out barefoot running.</string>
 		</dict>
@@ -1393,7 +1393,7 @@ Besides crafting code, Marin also enjoys bloging, writing books, teaching and tr
 			<key>last</key>
 			<string>Turton</string>
 			<key>twitter</key>
-			<string></string>
+			<string>richturton</string>
 			<key>bio</key>
 			<string>Richard is an iOS developer for a leading UK mobile agency, prolific Stack Overflow participant and author of a development blog, Command Shift. When he&apos;s not in front of a computer he is usually building Lego horse powered spaceships (don&apos;t ask!) with his daughter.</string>
 		</dict>
