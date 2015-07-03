@@ -37,7 +37,7 @@ class Session: NSManagedObject {
   var isFavorite: Bool {
     get {
       let favorites = Config.favoriteSessions()
-      return find(favorites.values.array, identifier) != nil
+      return favorites.values.array.indexOf(identifier) != nil
     }
     set {
       if newValue {
@@ -65,10 +65,11 @@ class Session: NSManagedObject {
     let fetch = NSFetchRequest(entityName: "Session")
     fetch.predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])
 
-    if let results = context.executeFetchRequest(fetch, error: nil) {
-      if let result = results.first as? Session {
-        return result
-      }
+    do {
+        let results = try context.executeFetchRequest(fetch)
+        return results.first as? Session
+    } catch let fetchError as NSError {
+        print("fetch error: \(fetchError.localizedDescription)")
     }
 
     return nil

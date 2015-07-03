@@ -22,63 +22,80 @@
 
 import CoreData
 
-public class CoreDataStack {
+class CoreDataStack {
   
-  public let context: NSManagedObjectContext
-  let psc: NSPersistentStoreCoordinator
-  let model: NSManagedObjectModel
-  let store: NSPersistentStore?
+  let modelName = "RWDevCon"
   
-  public init() {
-    let modelName = "RWDevCon"
+  lazy var applicationDocumentsDirectory: NSURL = {
+    let urls = NSFileManager.defaultManager().URLsForDirectory(
+      .DocumentDirectory, inDomains: .UserDomainMask)
+    return urls[urls.count-1]
+    }()
+  
+  lazy var managedObjectModel: NSManagedObjectModel = {
+    let modelURL = NSBundle.mainBundle()
+      .URLForResource(self.modelName,
+        withExtension: "momd")!
+    return NSManagedObjectModel(contentsOfURL: modelURL)!
+    }()
+  
+  lazy var psc: NSPersistentStoreCoordinator = {
+    let coordinator = NSPersistentStoreCoordinator(
+      managedObjectModel: self.managedObjectModel)
+    let url =
+    self.applicationDocumentsDirectory
+      .URLByAppendingPathComponent(self.modelName + ".sqlite")
+    let walURL = self.applicationDocumentsDirectory
+      .URLByAppendingPathComponent(self.modelName + ".sqlite-wal")
+    let shmURL = self.applicationDocumentsDirectory
+      .URLByAppendingPathComponent(self.modelName + ".sqlite-shm")
     
-    let bundle = NSBundle.mainBundle()
-    let modelURL =
-    bundle.URLForResource(modelName, withExtension:"momd")!
-    model = NSManagedObjectModel(contentsOfURL: modelURL)!
-    
-    psc = NSPersistentStoreCoordinator(managedObjectModel: model)
-    
-    context = NSManagedObjectContext()
-    context.persistentStoreCoordinator = psc
-    
-    let documentsURL = Config.applicationDocumentsDirectory()
-    let storeURL = documentsURL.URLByAppendingPathComponent("\(modelName).sqlite")
-
-    NSLog("Store is at \(storeURL)")
-
-    let options = [NSInferMappingModelAutomaticallyOption:true,
-        NSMigratePersistentStoresAutomaticallyOption:true]
-
-    var error: NSError? = nil
-    store = psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options, error: &error)
-
-    if store == nil {
-      var fileManagerError:NSError? = nil
-      let didRemoveStore = NSFileManager.defaultManager().removeItemAtURL(storeURL, error: &fileManagerError)
-      if !didRemoveStore {
-        println("Error removing persistent store: \(fileManagerError)")
+    do {
+      try coordinator.addPersistentStoreWithType(
+        NSSQLiteStoreType, configuration: nil, URL: url,
+        options: nil)
+    } catch {
+      print("Model has changed, removing.")
+      do {
+        try NSFileManager.defaultManager().removeItemAtURL(url)
+        try NSFileManager.defaultManager().removeItemAtURL(walURL)
+        try NSFileManager.defaultManager().removeItemAtURL(shmURL)
+        do {
+          try coordinator.addPersistentStoreWithType(
+            NSSQLiteStoreType, configuration: nil, URL: url,
+            options: nil)
+        } catch {
+          let nserror = error as NSError
+          print("Error: \(nserror.localizedDescription)")
+          abort()
+        }
+      } catch {
+        let nserror = error as NSError
+        print("Error removing persistent store: \(nserror)")
         abort()
-      } else {
-        println("Model has changed, removing.")
       }
-      
-      var error: NSError? = nil
-      store = psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options, error: &error)
-      if store == nil {
-        println("Error adding persistent store: \(error)")
+    }
+    
+    return coordinator
+    }()
+  
+  lazy var context: NSManagedObjectContext = {
+    var managedObjectContext = NSManagedObjectContext(
+      concurrencyType: .MainQueueConcurrencyType)
+    managedObjectContext.persistentStoreCoordinator = self.psc
+    return managedObjectContext
+    }()
+  
+  func saveContext () {
+    if context.hasChanges {
+      do {
+        try context.save()
+      } catch {
+        let nserror = error as NSError
+        print("Error: \(nserror.localizedDescription)")
         abort()
       }
     }
   }
-  
-  func saveContext() {
-    var error: NSError? = nil
-    if context.hasChanges && !context.save(&error) {
-      println("Could not save: \(error), \(error?.userInfo)")
-      abort()
-    }
-  }
-  
 }
 

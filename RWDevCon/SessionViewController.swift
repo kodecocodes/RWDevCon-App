@@ -81,7 +81,7 @@ class SessionViewController: UITableViewController {
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     if indexPath.section == Sections.info && indexPath.row == 3 {
-      let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as DetailTableViewCell
+      let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
 
       cell.keyLabel.text = "My Schedule".uppercaseString
       if session.isFavorite {
@@ -93,7 +93,7 @@ class SessionViewController: UITableViewController {
 
       return cell
     } else if indexPath.section == Sections.info && indexPath.row == 2 {
-      let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as DetailTableViewCell
+      let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
 
       cell.keyLabel.text = "Where".uppercaseString
       cell.valueButton.setTitle(session.room.name, forState: .Normal)
@@ -101,7 +101,7 @@ class SessionViewController: UITableViewController {
 
       return cell
     } else if indexPath.section == Sections.info {
-      let cell = tableView.dequeueReusableCellWithIdentifier("detail", forIndexPath: indexPath) as DetailTableViewCell
+      let cell = tableView.dequeueReusableCellWithIdentifier("detail", forIndexPath: indexPath) as! DetailTableViewCell
 
       if indexPath.row == 0 {
         cell.keyLabel.text = "Track".uppercaseString
@@ -113,12 +113,12 @@ class SessionViewController: UITableViewController {
 
       return cell
     } else if indexPath.section == Sections.description {
-      let cell = tableView.dequeueReusableCellWithIdentifier("label", forIndexPath: indexPath) as LabelTableViewCell
+      let cell = tableView.dequeueReusableCellWithIdentifier("label", forIndexPath: indexPath) as! LabelTableViewCell
       cell.label.text = session.sessionDescription
       return cell
     } else if indexPath.section == Sections.presenters {
-      let cell = tableView.dequeueReusableCellWithIdentifier("presenter", forIndexPath: indexPath) as PresenterTableViewCell
-      let presenter = session.presenters[indexPath.row] as Person
+      let cell = tableView.dequeueReusableCellWithIdentifier("presenter", forIndexPath: indexPath) as! PresenterTableViewCell
+      let presenter = session.presenters[indexPath.row] as! Person
 
       if let image = UIImage(named: presenter.identifier) {
         cell.squareImageView.image = image

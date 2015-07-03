@@ -40,8 +40,11 @@ class ScheduleDataSource: NSObject {
     }
     fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true), NSSortDescriptor(key: "column", ascending: true)]
 
-    if let results = self.coreDataStack.context.executeFetchRequest(fetch, error: nil) as? [Session] {
-      return results
+    do {
+        let results = try self.coreDataStack.context.executeFetchRequest(fetch)
+        return results as! [Session]
+    } catch let fetchError as NSError {
+        print("fetch error: \(fetchError.localizedDescription)")
     }
 
     return []
@@ -110,7 +113,7 @@ extension ScheduleDataSource: UITableViewDataSource {
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableViewCell") as ScheduleTableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableViewCell") as! ScheduleTableViewCell
     let session = sessionForIndexPath(indexPath)
     if let configureBlock = tableCellConfigurationBlock {
       configureBlock(cell: cell, indexPath: indexPath, session: session)

@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     if let conferencePlist = NSBundle.mainBundle().URLForResource("RWDevCon2015", withExtension: "plist") {
       if let data = NSDictionary(contentsOfURL: conferencePlist) {
         let localLastUpdatedDate = (Config.userDefaults().objectForKey("lastUpdated") as? NSDate) ?? beginningOfTimeDate
-        let plistLastUpdatedDate = (data["metadata"] as NSDictionary?)?["lastUpdated"] as? NSDate ?? beginningOfTimeDate
+        let plistLastUpdatedDate = (data["metadata"] as! NSDictionary?)?["lastUpdated"] as? NSDate ?? beginningOfTimeDate
 
         // If 0 sessions or the plist is newer, load it!
         if Session.sessionCount(coreDataStack.context) == 0 || localLastUpdatedDate.compare(plistLastUpdatedDate) == NSComparisonResult.OrderedAscending {
@@ -30,14 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     application.statusBarStyle = UIStatusBarStyle.LightContent
     UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Normal)
     
-    let splitViewController = self.window!.rootViewController as UISplitViewController
+    let splitViewController = self.window!.rootViewController as! UISplitViewController
     splitViewController.delegate = self
 
-    let navigationController = splitViewController.viewControllers[0] as UINavigationController
-    (navigationController.topViewController as ScheduleViewController).coreDataStack = coreDataStack
+    let navigationController = splitViewController.viewControllers[0] as! UINavigationController
+    (navigationController.topViewController as! ScheduleViewController).coreDataStack = coreDataStack
 
-    let detailWrapperController = splitViewController.viewControllers[1] as UINavigationController
-    (detailWrapperController.topViewController as SessionViewController).coreDataStack = coreDataStack
+    let detailWrapperController = splitViewController.viewControllers[1] as! UINavigationController
+    (detailWrapperController.topViewController as! SessionViewController).coreDataStack = coreDataStack
 
     return true
   }
@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func updateFromServer() {
     let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2015_lastUpdate.txt")!,
       completionHandler: { (data, response, error) -> Void in
-        if let rawDateString = NSString(data: data, encoding: NSUTF8StringEncoding) {
+        if let rawDateString = NSString(data: data!, encoding: NSUTF8StringEncoding) {
           let dateString = rawDateString.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
           let formatter = NSDateFormatter()
           formatter.timeZone = NSTimeZone(name: "US/Eastern")!
@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           }
         }
     })
-    task.resume()
+    task?.resume()
   }
 
   func loadDataFromPlist(url: NSURL) {
@@ -105,8 +105,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var allTracks = [Track]()
     var allPeople = [String: Person]()
 
-    for (identifier, dict) in enumerate(rooms) {
-      var room = Room.roomByRoomIdOrNew(identifier, context: coreDataStack.context)
+    for (identifier, dict) in rooms.enumerate() {
+      let room = Room.roomByRoomIdOrNew(identifier, context: coreDataStack.context)
 
       room.roomId = Int32(identifier)
       room.name = dict["name"] as? String ?? ""
@@ -119,7 +119,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       allRooms.append(room)
     }
 
-    for (identifier, name) in enumerate(tracks) {
+    for (identifier, name) in tracks.enumerate() {
       let track = Track.trackByTrackIdOrNew(identifier, context: coreDataStack.context)
 
       track.trackId = Int32(identifier)
@@ -153,8 +153,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       session.sessionDescription = dict["sessionDescription"] as? String ?? ""
       session.title = dict["title"] as? String ?? ""
 
-      session.track = allTracks[dict["trackId"] as Int]
-      session.room = allRooms[dict["roomId"] as Int]
+      session.track = allTracks[dict["trackId"] as! Int]
+      session.room = allRooms[dict["roomId"] as! Int]
 
       var presenters = [Person]()
       if let rawPresenters = dict["presenters"] as? [String] {
@@ -209,7 +209,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UISplitViewControllerDelegate {
-  func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController!, ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
+  
+  func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController: UIViewController, ontoPrimaryViewController primaryViewController: UIViewController) -> Bool {
     if let secondaryAsNavController = secondaryViewController as? UINavigationController {
       if let topAsDetailController = secondaryAsNavController.topViewController as? SessionViewController {
         if topAsDetailController.session == nil {

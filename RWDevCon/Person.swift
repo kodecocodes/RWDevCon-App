@@ -20,10 +20,11 @@ class Person: NSManagedObject {
     let fetch = NSFetchRequest(entityName: "Person")
     fetch.predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])
 
-    if let results = context.executeFetchRequest(fetch, error: nil) {
-      if let result = results.first as? Person {
-        return result
-      }
+    do {
+        let results = try context.executeFetchRequest(fetch)
+        return results.first as? Person
+    } catch let fetchError as NSError {
+        print("fetch error: \(fetchError.localizedDescription)")
     }
 
     return nil

@@ -12,10 +12,11 @@ class Track: NSManagedObject {
     let fetch = NSFetchRequest(entityName: "Track")
     fetch.predicate = NSPredicate(format: "trackId = %@", argumentArray: [trackId])
 
-    if let results = context.executeFetchRequest(fetch, error: nil) {
-      if let result = results.first as? Track {
-        return result
-      }
+    do {
+        let results = try context.executeFetchRequest(fetch)
+        return results.first as? Track
+    } catch let fetchError as NSError {
+        print("fetch error: \(fetchError.localizedDescription)")
     }
 
     return nil
