@@ -44,7 +44,7 @@ class ScheduleDataSource: NSObject {
     fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true), NSSortDescriptor(key: "column", ascending: true)]
 
     do {
-        let results = try self.coreDataStack.context.executeFetchRequest(fetch)
+        let results = try coreDataStack.context.executeFetchRequest(fetch)
         return results as! [Session]
     } catch let fetchError as NSError {
         print("fetch error: \(fetchError.localizedDescription)")

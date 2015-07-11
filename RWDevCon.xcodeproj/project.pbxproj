@@ -32,6 +32,8 @@
 		78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */; };
 		78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256791A4167F40040AC63 /* LabelTableViewCell.swift */; };
 		78F256841A416BB20040AC63 /* ScheduleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256801A416BB20040AC63 /* ScheduleDataSource.swift */; };
+		FEFA23981B51420D00D02E4B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA23971B51420D00D02E4B /* VideoViewController.swift */; };
+		FEFA239A1B514B0B00D02E4B /* VideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFA23991B514B0B00D02E4B /* VideoTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		78F256791A4167F40040AC63 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		78F256801A416BB20040AC63 /* ScheduleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataSource.swift; sourceTree = "<group>"; };
 		FE55631D1B4B6E9C0066C5F8 /* RWDevCon2015Videos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RWDevCon2015Videos.xcdatamodel; sourceTree = "<group>"; };
+		FEFA23971B51420D00D02E4B /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		FEFA23991B514B0B00D02E4B /* VideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,7 +250,9 @@
 				78B7AA351A415C96002AAF7F /* PresenterTableViewCell.swift */,
 				78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */,
 				78F256791A4167F40040AC63 /* LabelTableViewCell.swift */,
+				FEFA23991B514B0B00D02E4B /* VideoTableViewCell.swift */,
 				78048CBA1A66E04A00435241 /* RoomViewController.swift */,
+				FEFA23971B51420D00D02E4B /* VideoViewController.swift */,
 			);
 			name = "Session Details";
 			sourceTree = "<group>";
@@ -367,9 +373,11 @@
 				78CBC28D1A653A3F00FC839A /* ScheduleTableViewCell.swift in Sources */,
 				78B7AA291A414A94002AAF7F /* Track.swift in Sources */,
 				78B7AA2B1A414A94002AAF7F /* Room.swift in Sources */,
+				FEFA23981B51420D00D02E4B /* VideoViewController.swift in Sources */,
 				7848A62C1A41F776003F8373 /* Config.swift in Sources */,
 				78B7A9D41A3E9876002AAF7F /* AppDelegate.swift in Sources */,
 				783A17D61A6540B600EE7E88 /* ScheduleViewController.swift in Sources */,
+				FEFA239A1B514B0B00D02E4B /* VideoTableViewCell.swift in Sources */,
 				78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */,
 				78B7A9D71A3E9876002AAF7F /* RWDevCon.xcdatamodeld in Sources */,
 				78B7AA361A415C96002AAF7F /* PresenterTableViewCell.swift in Sources */,

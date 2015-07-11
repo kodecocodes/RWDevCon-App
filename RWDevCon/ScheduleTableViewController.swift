@@ -4,8 +4,9 @@ import UIKit
 class ScheduleTableViewController: UITableViewController {
   var coreDataStack: CoreDataStack!
   weak var dataSource: ScheduleDataSource!
+  
+  var isArchive: Bool = false
   var startDate: NSDate?
-
   var selectedSession: Session?
   var selectedIndexPath: NSIndexPath?
 
@@ -21,30 +22,11 @@ class ScheduleTableViewController: UITableViewController {
     super.viewDidLoad()
 
     dataSource = tableView.dataSource! as! ScheduleDataSource
-    dataSource.coreDataStack = coreDataStack
-    dataSource.startDate = startDate
-    if startDate == nil {
-      dataSource.endDate = nil
-      dataSource.favoritesOnly = true
+    
+    if isArchive {
+      configureVideoArchiveDataSource()
     } else {
-      dataSource.endDate = NSDate(timeInterval: 60*60*24, sinceDate: startDate!)
-      dataSource.favoritesOnly = false
-    }
-
-    dataSource.tableCellConfigurationBlock = { (cell: ScheduleTableViewCell, indexPath: NSIndexPath, session: Session) -> () in
-      let track = session.track.name
-      let room = session.room.name
-      let sessionNumber = session.sessionNumber
-
-      cell.nameLabel.text = (!self.dataSource.favoritesOnly && session.isFavorite ? "★ " : "") + session.title
-
-      if self.dataSource.favoritesOnly {
-        cell.timeLabel.text = "\(session.startTimeString) • \(track) • \(room)"
-      } else if sessionNumber != "" {
-        cell.timeLabel.text = "\(sessionNumber) • \(track) • \(room)"
-      } else {
-        cell.timeLabel.text = "\(track) • \(room)"
-      }
+      configureScheduleDataSource()
     }
 
     let logoImageView = UIImageView(image: UIImage(named: "logo-rwdevcon"))
@@ -63,6 +45,49 @@ class ScheduleTableViewController: UITableViewController {
     NSNotificationCenter.defaultCenter().addObserverForName(MyScheduleSomethingChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
       if self.isActive || self.dataSource.favoritesOnly {
         self.refreshSelectively()
+      }
+    }
+  }
+  
+  func configureVideoArchiveDataSource() {
+    
+    dataSource.coreDataStack = coreDataStack
+    dataSource.hasVideosOnly = true
+    
+    dataSource.tableCellConfigurationBlock = { (cell: ScheduleTableViewCell, indexPath: NSIndexPath, session: Session) -> () in
+      let track = session.track.name
+      let sessionYear = "2015" //add to session
+      
+      cell.nameLabel.text = session.title
+      cell.timeLabel.text = "\(sessionYear) • \(track)"
+    }
+  }
+  
+  func configureScheduleDataSource() {
+    
+    dataSource.coreDataStack = coreDataStack
+    dataSource.startDate = startDate
+    if startDate == nil {
+      dataSource.endDate = nil
+      dataSource.favoritesOnly = true
+    } else {
+      dataSource.endDate = NSDate(timeInterval: 60*60*24, sinceDate: startDate!)
+      dataSource.favoritesOnly = false
+    }
+    
+    dataSource.tableCellConfigurationBlock = { (cell: ScheduleTableViewCell, indexPath: NSIndexPath, session: Session) -> () in
+      let track = session.track.name
+      let room = session.room.name
+      let sessionNumber = session.sessionNumber
+      
+      cell.nameLabel.text = (!self.dataSource.favoritesOnly && session.isFavorite ? "★ " : "") + session.title
+      
+      if self.dataSource.favoritesOnly {
+        cell.timeLabel.text = "\(session.startTimeString) • \(track) • \(room)"
+      } else if sessionNumber != "" {
+        cell.timeLabel.text = "\(sessionNumber) • \(track) • \(room)"
+      } else {
+        cell.timeLabel.text = "\(track) • \(room)"
       }
     }
   }
@@ -187,6 +212,7 @@ class ScheduleTableViewController: UITableViewController {
     if let destNav = segue.destinationViewController as? UINavigationController {
       if let dest = destNav.topViewController as? SessionViewController {
         dest.coreDataStack = coreDataStack
+        dest.sessionMode = isArchive ? .Archived : .Current
 
         selectedIndexPath = tableView.indexPathForSelectedRow
         lastSelectedIndexPath = tableView.indexPathForSelectedRow
@@ -199,7 +225,7 @@ class ScheduleTableViewController: UITableViewController {
       }
     }
   }
-
+    
   override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     return 62
   }

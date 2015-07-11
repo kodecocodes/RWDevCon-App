@@ -60,6 +60,11 @@ class ScheduleViewController: UIViewController {
     vc3.startDate = nil
     scheduleTableViewControllers.append(vc3)
 
+    let vc4 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
+    vc4.coreDataStack = coreDataStack
+    vc4.isArchive = true
+    scheduleTableViewControllers.append(vc4)
+    
     contentView = UIView(frame: view.bounds)
     contentView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(contentView)
@@ -129,8 +134,8 @@ class ScheduleViewController: UIViewController {
   }
 
   func swapToViewController(toVC: ScheduleTableViewController, animated: Bool = true) {
+    
     var fromVC = childViewControllers.first as? ScheduleTableViewController
-
     segmentedControl.enabled = false
 
     if fromVC != nil && fromVC! == toVC {

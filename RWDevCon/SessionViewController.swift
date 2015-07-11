@@ -7,41 +7,47 @@ let MyScheduleSomethingChangedNotification = "com.razeware.rwdevcon.notification
 class SessionViewController: UITableViewController {
   var coreDataStack: CoreDataStack!
   var session: Session!
-  var showVideo: Bool = false
-
-  struct Sections {
+  var sessionMode: SessionMode = .Current
+  
+  enum SessionMode {
+    case Current
+    case Archived
+  }
+  
+  struct Sections_Current {
     static let info = 0
     static let description = 1
     static let presenters = 2
   }
-
+  
+  struct Sections_Archived {
+    static let description = 0
+    static let presenter = 1
+    static let video = 2
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
     title = session?.title
-
+    
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 76
-
+    
     navigationController?.navigationBar.barStyle = UIBarStyle.Default
     navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pattern-64tall"), forBarMetrics: UIBarMetrics.Default)
     navigationController?.navigationBar.tintColor = UIColor.whiteColor()
     navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
   }
-
+  
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
-
+    
     navigationController?.setNavigationBarHidden(false, animated: animated)
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
-
+  
   // MARK: - Table view data source
-
+  
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     if session == nil {
       return 0
@@ -49,29 +55,55 @@ class SessionViewController: UITableViewController {
       return 3
     }
   }
-
+  
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    if section == Sections.info {
-      return 4
-    } else if section == Sections.description {
-      return 1
-    } else if section == Sections.presenters {
-      return session.presenters.count
+    
+    if sessionMode == .Current {
+      return currentSession_numberOfRowsForSection(section)
+    } else if sessionMode == .Archived {
+      return archivedSession_numberOfRowsForSection(section)
     }
-
     return 0
   }
-
+  
+  func currentSession_numberOfRowsForSection(section: Int) -> Int {
+    
+    if section == Sections_Current.info {
+      return 4
+    } else if section == Sections_Current.description {
+      return 1
+    } else if section == Sections_Current.presenters {
+      return session.presenters.count
+    }
+    return 0
+  }
+  
+  func archivedSession_numberOfRowsForSection(section: Int) -> Int {
+    return 1
+  }
+  
   override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-    if section == Sections.info {
+    
+    if sessionMode == .Current {
+      return currentSession_titleForHeaderInSection(section)
+    } else if sessionMode == .Archived {
+      return archivedSession_titleForHeaderInSection(section)
+    }
+    
+    return nil
+  }
+  
+  func currentSession_titleForHeaderInSection(section: Int) -> String? {
+    
+    if section == Sections_Current.info {
       if session.sessionNumber == "" {
         return "Summary"
       } else {
         return "Session #\(session.sessionNumber)"
       }
-    } else if section == Sections.description {
+    } else if section == Sections_Current.description {
       return "Description"
-    } else if section == Sections.presenters {
+    } else if section == Sections_Current.presenters {
       if session.presenters.count == 1 {
         return "Presenter"
       } else if session.presenters.count > 1 {
@@ -80,39 +112,53 @@ class SessionViewController: UITableViewController {
     }
     return nil
   }
-
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    if indexPath.section == Sections.info && indexPath.row == 3 {
-      let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
-
-      if showVideo {
-        cell.keyLabel.text = "Video".uppercaseString
-        cell.valueButton .setTitle("Watch Video", forState: .Normal)
-        cell.valueButton.addTarget(self, action: "showVideoButton:", forControlEvents: .TouchUpInside)
+  
+  func archivedSession_titleForHeaderInSection(section: Int) -> String? {
     
-      } else {
-        
-        cell.keyLabel.text = "My Schedule".uppercaseString
-        if session.isFavorite {
-          cell.valueButton.setTitle("Remove from My Schedule", forState: .Normal)
-        } else {
-          cell.valueButton.setTitle("Add to My Schedule", forState: .Normal)
-        }
-        cell.valueButton.addTarget(self, action: "myScheduleButton:", forControlEvents: .TouchUpInside)
-      }
-      
+    if section == Sections_Archived.description {
+      return "Description"
+    } else if section == Sections_Archived.presenter {
+      return "Presenter"
+    }
+    return nil
+  }
+  
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    if sessionMode == .Current {
+      return currentSession_cellForRowAtIndexPath(indexPath)
+    } else if sessionMode == .Archived {
+      return archivedSession_cellForRowAtIndexPath(indexPath)
+    } else {
+      assertionFailure("Unhandled session table view section")
+      let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
       return cell
-    } else if indexPath.section == Sections.info && indexPath.row == 2 {
+    }
+  }
+  
+  func currentSession_cellForRowAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell {
+    
+    if indexPath.section == Sections_Current.info && indexPath.row == 3 {
       let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
-
+      cell.keyLabel.text = "My Schedule".uppercaseString
+      if session.isFavorite {
+        cell.valueButton.setTitle("Remove from My Schedule", forState: .Normal)
+      } else {
+        cell.valueButton.setTitle("Add to My Schedule", forState: .Normal)
+      }
+      cell.valueButton.addTarget(self, action: "myScheduleButton:", forControlEvents: .TouchUpInside)
+      return cell
+    } else if indexPath.section == Sections_Current.info && indexPath.row == 2 {
+      let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
+      
       cell.keyLabel.text = "Where".uppercaseString
       cell.valueButton.setTitle(session.room.name, forState: .Normal)
       cell.valueButton.addTarget(self, action: "roomDetails:", forControlEvents: .TouchUpInside)
-
+      
       return cell
-    } else if indexPath.section == Sections.info {
+    } else if indexPath.section == Sections_Current.info {
       let cell = tableView.dequeueReusableCellWithIdentifier("detail", forIndexPath: indexPath) as! DetailTableViewCell
-
+      
       if indexPath.row == 0 {
         cell.keyLabel.text = "Track".uppercaseString
         cell.valueLabel.text = session.track.name
@@ -120,16 +166,16 @@ class SessionViewController: UITableViewController {
         cell.keyLabel.text = "When".uppercaseString
         cell.valueLabel.text = session.startDateTimeString
       }
-
+      
       return cell
-    } else if indexPath.section == Sections.description {
+    } else if indexPath.section == Sections_Current.description {
       let cell = tableView.dequeueReusableCellWithIdentifier("label", forIndexPath: indexPath) as! LabelTableViewCell
       cell.label.text = session.sessionDescription
       return cell
-    } else if indexPath.section == Sections.presenters {
+    } else if indexPath.section == Sections_Current.presenters {
       let cell = tableView.dequeueReusableCellWithIdentifier("presenter", forIndexPath: indexPath) as! PresenterTableViewCell
       let presenter = session.presenters[indexPath.row] as! Person
-
+      
       if let image = UIImage(named: presenter.identifier) {
         cell.squareImageView.image = image
       } else {
@@ -144,7 +190,7 @@ class SessionViewController: UITableViewController {
       } else {
         cell.twitterButton.hidden = true
       }
-
+      
       return cell
     } else {
       assertionFailure("Unhandled session table view section")
@@ -152,8 +198,69 @@ class SessionViewController: UITableViewController {
       return cell
     }
   }
+  
+  func archivedSession_cellForRowAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell {
+    
+    if indexPath.section == Sections_Archived.description {
+      let cell = tableView.dequeueReusableCellWithIdentifier("label", forIndexPath: indexPath) as! LabelTableViewCell
+      cell.label.text = session.sessionDescription
+      return cell
+    } else if indexPath.section == Sections_Archived.presenter {
+      let cell = tableView.dequeueReusableCellWithIdentifier("presenter", forIndexPath: indexPath) as! PresenterTableViewCell
+      let presenter = session.presenters[indexPath.row] as! Person
+      
+      if let image = UIImage(named: presenter.identifier) {
+        cell.squareImageView.image = image
+      } else {
+        cell.squareImageView.image = UIImage(named: "RW_logo")
+      }
+      cell.nameLabel.text = presenter.fullName
+      cell.bioLabel.text = presenter.bio
+      if presenter.twitter != "" {
+        cell.twitterButton.hidden = false
+        cell.twitterButton.setTitle("@\(presenter.twitter)", forState: .Normal)
+        cell.twitterButton.addTarget(self, action: "twitterButton:", forControlEvents: .TouchUpInside)
+      } else {
+        cell.twitterButton.hidden = true
+      }
+      
+      return cell
+    } else if indexPath.section == Sections_Archived.presenter {
+      
+      let cell = tableView.dequeueReusableCellWithIdentifier("presenter", forIndexPath: indexPath) as! PresenterTableViewCell
+      let presenter = session.presenters[indexPath.row] as! Person
+      
+      if let image = UIImage(named: presenter.identifier) {
+        cell.squareImageView.image = image
+      } else {
+        cell.squareImageView.image = UIImage(named: "RW_logo")
+      }
+      cell.nameLabel.text = presenter.fullName
+      cell.bioLabel.text = presenter.bio
+      if presenter.twitter != "" {
+        cell.twitterButton.hidden = false
+        cell.twitterButton.setTitle("@\(presenter.twitter)", forState: .Normal)
+        cell.twitterButton.addTarget(self, action: "twitterButton:", forControlEvents: .TouchUpInside)
+      } else {
+        cell.twitterButton.hidden = true
+      }
+      return cell
+      
+    } else if indexPath.section == Sections_Archived.video {
+      
+      let cell = tableView.dequeueReusableCellWithIdentifier("video", forIndexPath: indexPath) as! VideoTableViewCell
+      cell.videoButton.addTarget(self, action: "showVideoButton:", forControlEvents: .TouchUpInside)
+      return cell
 
+    } else {
+      assertionFailure("Unhandled session table view section")
+      let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+      return cell
+    }
+  }
+  
   func roomDetails(sender: UIButton) {
+    
     if let roomVC = storyboard?.instantiateViewControllerWithIdentifier("RoomViewController") as? RoomViewController {
       
       roomVC.room = session.room
@@ -165,7 +272,7 @@ class SessionViewController: UITableViewController {
       presentViewController(navController, animated: true, completion: nil)
     }
   }
-
+  
   func showVideoButton(sender: UIButton) {
     
     if #available(iOS 9.0, *) {
@@ -173,17 +280,17 @@ class SessionViewController: UITableViewController {
       let safariVC = SFSafariViewController(URL: url)
       navigationController?.pushViewController(safariVC, animated: true)
     } else {
-        // Fallback on earlier versions
+      // Fallback on earlier versions
     }
   }
   
   func myScheduleButton(sender: UIButton) {
     session.isFavorite = !session.isFavorite
-
-    tableView.reloadSections(NSIndexSet(index: Sections.info), withRowAnimation: .Automatic)
+    
+    tableView.reloadSections(NSIndexSet(index: Sections_Current.info), withRowAnimation: .Automatic)
     NSNotificationCenter.defaultCenter().postNotificationName(MyScheduleSomethingChangedNotification, object: self, userInfo: ["session": session])
   }
-
+  
   func twitterButton(sender: UIButton) {
     UIApplication.sharedApplication().openURL(NSURL(string: "http://twitter.com/\(sender.titleForState(.Normal)!)")!)
   }

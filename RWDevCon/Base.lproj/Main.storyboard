@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.20" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7rF-ea-tri">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7rF-ea-tri">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.16"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="AvenirNext.ttc">
@@ -310,6 +310,27 @@
                                     <outlet property="label" destination="6li-eU-i93" id="6to-mR-OLj"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="video" id="DaV-ZT-Vot" customClass="VideoTableViewCell" customModule="RWDevCon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="407" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DaV-ZT-Vot" id="6di-eg-Mbr">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgG-3I-wEo">
+                                            <rect key="frame" x="259" y="6" width="82" height="30"/>
+                                            <state key="normal" title="Show Video"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GgG-3I-wEo" firstAttribute="centerX" secondItem="6di-eg-Mbr" secondAttribute="centerX" id="D3d-OD-rSj"/>
+                                        <constraint firstItem="GgG-3I-wEo" firstAttribute="centerY" secondItem="6di-eg-Mbr" secondAttribute="centerY" id="hBl-hW-WOj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="videoButton" destination="GgG-3I-wEo" id="aER-We-7iy"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="k5c-GZ-GbD" id="0Ss-JB-wIK"/>
@@ -445,7 +466,7 @@
         <!--Navigation Controller-->
         <scene sceneID="D2m-TC-JxG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gKv-uh-Gay" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SessionViewController" automaticallyAdjustsScrollViewInsets="NO" id="gKv-uh-Gay" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="h3k-Hg-73b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -462,6 +483,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="gWZ-m2-7ha"/>
+        <segue reference="t46-iL-Maz"/>
     </inferredMetricsTieBreakers>
 </document>
