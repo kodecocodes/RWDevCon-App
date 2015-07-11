@@ -1,4 +1,5 @@
 import Foundation
+import SafariServices
 import UIKit
 
 let MyScheduleSomethingChangedNotification = "com.razeware.rwdevcon.notifications.myScheduleChanged"
@@ -6,6 +7,7 @@ let MyScheduleSomethingChangedNotification = "com.razeware.rwdevcon.notification
 class SessionViewController: UITableViewController {
   var coreDataStack: CoreDataStack!
   var session: Session!
+  var showVideo: Bool = false
 
   struct Sections {
     static let info = 0
@@ -83,14 +85,22 @@ class SessionViewController: UITableViewController {
     if indexPath.section == Sections.info && indexPath.row == 3 {
       let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
 
-      cell.keyLabel.text = "My Schedule".uppercaseString
-      if session.isFavorite {
-        cell.valueButton.setTitle("Remove from My Schedule", forState: .Normal)
+      if showVideo {
+        cell.keyLabel.text = "Video".uppercaseString
+        cell.valueButton .setTitle("Watch Video", forState: .Normal)
+        cell.valueButton.addTarget(self, action: "showVideoButton:", forControlEvents: .TouchUpInside)
+    
       } else {
-        cell.valueButton.setTitle("Add to My Schedule", forState: .Normal)
+        
+        cell.keyLabel.text = "My Schedule".uppercaseString
+        if session.isFavorite {
+          cell.valueButton.setTitle("Remove from My Schedule", forState: .Normal)
+        } else {
+          cell.valueButton.setTitle("Add to My Schedule", forState: .Normal)
+        }
+        cell.valueButton.addTarget(self, action: "myScheduleButton:", forControlEvents: .TouchUpInside)
       }
-      cell.valueButton.addTarget(self, action: "myScheduleButton:", forControlEvents: .TouchUpInside)
-
+      
       return cell
     } else if indexPath.section == Sections.info && indexPath.row == 2 {
       let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
@@ -145,12 +155,28 @@ class SessionViewController: UITableViewController {
 
   func roomDetails(sender: UIButton) {
     if let roomVC = storyboard?.instantiateViewControllerWithIdentifier("RoomViewController") as? RoomViewController {
+      
       roomVC.room = session.room
       roomVC.title = session.room.name
-      navigationController?.pushViewController(roomVC, animated: true)
+      
+      let navController = UINavigationController(rootViewController: roomVC)
+      navController.modalPresentationStyle = .FormSheet
+      
+      presentViewController(navController, animated: true, completion: nil)
     }
   }
 
+  func showVideoButton(sender: UIButton) {
+    
+    if #available(iOS 9.0, *) {
+      let url = NSURL(string: session.videoUrl)!
+      let safariVC = SFSafariViewController(URL: url)
+      navigationController?.pushViewController(safariVC, animated: true)
+    } else {
+        // Fallback on earlier versions
+    }
+  }
+  
   func myScheduleButton(sender: UIButton) {
     session.isFavorite = !session.isFavorite
 

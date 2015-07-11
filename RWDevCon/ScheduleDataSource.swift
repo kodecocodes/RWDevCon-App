@@ -18,6 +18,7 @@ class ScheduleDataSource: NSObject {
   var startDate: NSDate?
   var endDate: NSDate?
   var favoritesOnly = false
+  var hasVideosOnly = false
 
   let hourHeaderHeight: CGFloat = 40
   let numberOfTracksInSchedule = 3
@@ -35,6 +36,8 @@ class ScheduleDataSource: NSObject {
       fetch.predicate = NSPredicate(format: "(active = %@) AND (date >= %@) AND (date <= %@)", argumentArray: [true, self.startDate!, self.endDate!])
     } else if favoritesOnly {
       fetch.predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, Config.favoriteSessions().values.array])
+    } else if hasVideosOnly {
+      fetch.predicate = NSPredicate(format: "(active = %@) AND (videoUrl != \"\")", argumentArray: [true])
     } else {
       fetch.predicate = NSPredicate(format: "active = %@", argumentArray: [true])
     }

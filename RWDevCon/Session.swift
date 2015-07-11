@@ -17,6 +17,7 @@ class Session: NSManagedObject {
   @NSManaged var room: Room
   @NSManaged var track: Track
   @NSManaged var presenters: NSOrderedSet
+  @NSManaged var videoUrl: String
 
   var fullTitle: String {
     return (sessionNumber != "" ? "\(sessionNumber): " : "") + title

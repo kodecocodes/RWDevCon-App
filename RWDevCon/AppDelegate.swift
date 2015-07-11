@@ -152,9 +152,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       session.sessionNumber = dict["sessionNumber"] as? String ?? ""
       session.sessionDescription = dict["sessionDescription"] as? String ?? ""
       session.title = dict["title"] as? String ?? ""
-
+      session.videoUrl = dict["videoUrl"] as? String ?? ""
+      
       session.track = allTracks[dict["trackId"] as! Int]
       session.room = allRooms[dict["roomId"] as! Int]
+      
 
       var presenters = [Person]()
       if let rawPresenters = dict["presenters"] as? [String] {

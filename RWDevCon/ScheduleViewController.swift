@@ -79,7 +79,7 @@ class ScheduleViewController: UIViewController {
     NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomColor]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bottomColor": bottomColor]))
     NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[bottomColor]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bottomColor": bottomColor]))
 
-    segmentedControl = UISegmentedControl(items: ["Friday", "Saturday", "My Schedule"])
+    segmentedControl = UISegmentedControl(items: ["Friday", "Saturday", "Schedule", "Videos"])
     // TODO: default segment
     segmentedControl.selectedSegmentIndex = 0
     segmentedControl.translatesAutoresizingMaskIntoConstraints = false
@@ -87,6 +87,8 @@ class ScheduleViewController: UIViewController {
     segmentedControl.tintColor = UIColor(red: 0, green: 109.0/255, blue: 55.0/255, alpha: 1.0)
     bottomView.addSubview(segmentedControl)
     NSLayoutConstraint.activateConstraints([
+      NSLayoutConstraint(item: segmentedControl, attribute: .Left, relatedBy: .Equal, toItem: bottomView, attribute: .Left, multiplier: 1.0, constant: 10),
+      NSLayoutConstraint(item: segmentedControl, attribute: .Right, relatedBy: .Equal, toItem: bottomView, attribute: .Right, multiplier: 1.0, constant: -10),
       NSLayoutConstraint(item: segmentedControl, attribute: .CenterX, relatedBy: .Equal, toItem: bottomView, attribute: .CenterX, multiplier: 1.0, constant: 0),
       NSLayoutConstraint(item: segmentedControl, attribute: .CenterY, relatedBy: .Equal, toItem: bottomView, attribute: .CenterY, multiplier: 1.0, constant: 0),
       ])
