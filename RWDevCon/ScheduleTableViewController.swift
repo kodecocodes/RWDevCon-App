@@ -240,7 +240,7 @@ class ScheduleTableViewController: UITableViewController {
 
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.text = dataSource.distinctTimes[section].uppercaseString
+    label.text = isArchive ? "2015" : dataSource.distinctTimes[section].uppercaseString
     label.textColor = UIColor.whiteColor()
     label.font = UIFont(name: "AvenirNext-Medium", size: 18)
     header.addSubview(label)

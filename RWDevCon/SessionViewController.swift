@@ -278,7 +278,7 @@ class SessionViewController: UITableViewController {
     if #available(iOS 9.0, *) {
       let url = NSURL(string: session.videoUrl)!
       let safariVC = SFSafariViewController(URL: url)
-      navigationController?.pushViewController(safariVC, animated: true)
+      presentViewController(safariVC, animated: true, completion: nil)
     } else {
       // Fallback on earlier versions
     }

@@ -91,6 +91,8 @@ class ScheduleDataSource: NSObject {
       return allSessions.filter({ (session) -> Bool in
         return session.startDateTimeString.hasPrefix(weekday)
       })
+    } else if hasVideosOnly {
+      return allSessions
     } else {
       let startTimeString = distinctTimes[section]
       return allSessions.filter({ (session) -> Bool in
@@ -108,7 +110,12 @@ class ScheduleDataSource: NSObject {
 extension ScheduleDataSource: UITableViewDataSource {
 
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return distinctTimes.count
+    
+    if hasVideosOnly {
+      return 1
+    } else {
+      return distinctTimes.count
+    }
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
