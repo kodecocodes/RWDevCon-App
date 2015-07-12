@@ -207,7 +207,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Saves changes in the application's managed object context before the application terminates.
     coreDataStack.saveContext()
   }
-
+  
+  //Support for deep linking
+  func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+    
+    if let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: true),
+      let path = components.path, let query = components.query {
+        
+        if path == "/videos" {
+          //Do something with the query
+        }
+        
+    }
+  
+    return false
+  }
+  
+  //Support for iOS 9 search results
+  func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+      return true
+  }
 }
 
 extension AppDelegate: UISplitViewControllerDelegate {
@@ -223,5 +242,4 @@ extension AppDelegate: UISplitViewControllerDelegate {
     }
     return false
   }
-
 }
