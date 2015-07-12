@@ -911,7 +911,7 @@
 			<key>roomId</key>
 			<integer>1</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n02</key>
 		<dict>
@@ -938,7 +938,7 @@
 			<key>roomId</key>
 			<integer>2</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n03</key>
 		<dict>
@@ -965,7 +965,7 @@
 			<key>roomId</key>
 			<integer>3</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n04</key>
 		<dict>
@@ -992,7 +992,7 @@
 			<key>roomId</key>
 			<integer>1</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n05</key>
 		<dict>
@@ -1019,7 +1019,7 @@
 			<key>roomId</key>
 			<integer>2</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n06</key>
 		<dict>
@@ -1046,7 +1046,7 @@
 			<key>roomId</key>
 			<integer>3</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n07</key>
 		<dict>
@@ -1073,7 +1073,7 @@
 			<key>roomId</key>
 			<integer>1</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n08</key>
 		<dict>
@@ -1100,7 +1100,7 @@
 			<key>roomId</key>
 			<integer>2</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n09</key>
 		<dict>
@@ -1127,7 +1127,7 @@
 			<key>roomId</key>
 			<integer>3</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n10</key>
 		<dict>
@@ -1154,7 +1154,7 @@
 			<key>roomId</key>
 			<integer>1</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n11</key>
 		<dict>
@@ -1181,7 +1181,7 @@
 			<key>roomId</key>
 			<integer>2</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n12</key>
 		<dict>
@@ -1208,7 +1208,7 @@
 			<key>roomId</key>
 			<integer>3</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n13</key>
 		<dict>
@@ -1235,7 +1235,7 @@
 			<key>roomId</key>
 			<integer>1</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n14</key>
 		<dict>
@@ -1262,7 +1262,7 @@
 			<key>roomId</key>
 			<integer>2</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 		<key>n15</key>
 		<dict>
@@ -1289,7 +1289,7 @@
 			<key>roomId</key>
 			<integer>3</integer>
 			<key>videoUrl</key>
-			<string>http://www.vimeo.com/video/120550580</string>
+			<string>https://vimeo.com/130393876</string>
 		</dict>
 	</dict>
 	<key>people</key>
