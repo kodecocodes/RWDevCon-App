@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
           }
         }
     })
-    task?.resume()
+    task.resume()
   }
 
   func loadDataFromPlist(url: NSURL) {
@@ -201,7 +201,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       }
     }
   }
-
+  
   func applicationWillTerminate(application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
@@ -209,23 +209,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   //Support for deep linking
-  func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-    
-    if let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: true),
-      let path = components.path, let query = components.query {
-        
-        if path == "/videos" {
-          //Do something with the query
-        }
-        
-    }
-  
-    return false
+  func application(application: UIApplication,
+    openURL url: NSURL, sourceApplication: String?,
+    annotation: AnyObject) -> Bool {
+      
+      if let components = NSURLComponents(URL: url, resolvingAgainstBaseURL: true),
+        let path = components.path, let query = components.query {
+          
+          if path == "/videos" {
+            //Do something with the query
+          }
+      }
+      
+      return false
   }
   
-  //Support for iOS 9 search results
-  func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
-      return true
+  func application(application: UIApplication,
+    continueUserActivity
+    userActivity: NSUserActivity,
+    restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+    
+    if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+      let universalURL = userActivity.webpageURL!
+      //handle universal URL
+      
+    }
+    
+    return true
   }
 }
 

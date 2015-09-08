@@ -37,8 +37,8 @@ class Session: NSManagedObject {
 
   var isFavorite: Bool {
     get {
-      let favorites = Config.favoriteSessions()
-      return favorites.values.array.indexOf(identifier) != nil
+      let favoritesArray = Array(Config.favoriteSessions().values)
+      return favoritesArray.indexOf(identifier) != nil
     }
     set {
       if newValue {

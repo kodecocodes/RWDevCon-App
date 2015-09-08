@@ -35,7 +35,8 @@ class ScheduleDataSource: NSObject {
     if self.startDate != nil && self.endDate != nil {
       fetch.predicate = NSPredicate(format: "(active = %@) AND (date >= %@) AND (date <= %@)", argumentArray: [true, self.startDate!, self.endDate!])
     } else if favoritesOnly {
-      fetch.predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, Config.favoriteSessions().values.array])
+      let favoriteSessionArray = Array(Config.favoriteSessions().values)
+      fetch.predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, favoriteSessionArray])
     } else if hasVideosOnly {
       fetch.predicate = NSPredicate(format: "(active = %@) AND (videoUrl != \"\")", argumentArray: [true])
     } else {

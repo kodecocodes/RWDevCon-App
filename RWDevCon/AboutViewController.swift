@@ -1,6 +1,6 @@
 
 import UIKit
-import AddressBook
+import Contacts
 import MapKit
 
 class AboutViewController: UIViewController {
@@ -27,11 +27,11 @@ extension AboutViewController: UIWebViewDelegate {
     if request.URL!.absoluteString as String == "rwdevcon://location" {
       
       let addressDictionary =
-      [kABPersonAddressStreetKey as String: "415 New Jersey Avenue Northwest",
-        kABPersonAddressCityKey as String: "Washington",
-        kABPersonAddressStateKey as String: "DC",
-        kABPersonAddressZIPKey as String: "20001",
-        kABPersonAddressCountryCodeKey as String: "US"]
+      [CNPostalAddressStreetKey: "415 New Jersey Avenue Northwest",
+        CNPostalAddressCityKey as String: "Washington",
+        CNPostalAddressStateKey as String: "DC",
+        CNPostalAddressPostalCodeKey as String: "20001",
+        CNPostalAddressCountryKey as String: "US"]
       
       let placemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 38.895518, longitude: -77.010729), addressDictionary: addressDictionary)
       let mapItem = MKMapItem(placemark: placemark)
