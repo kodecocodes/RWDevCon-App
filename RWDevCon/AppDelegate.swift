@@ -208,7 +208,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     coreDataStack.saveContext()
   }
   
-  //Support for deep linking
   func application(application: UIApplication,
     openURL url: NSURL, sourceApplication: String?,
     annotation: AnyObject) -> Bool {
@@ -228,14 +227,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     continueUserActivity
     userActivity: NSUserActivity,
     restorationHandler: ([AnyObject]?) -> Void) -> Bool {
-    
-    if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
-      let universalURL = userActivity.webpageURL!
-      //handle universal URL
       
-    }
-    
-    return true
+      if userActivity.activityType == NSUserActivityTypeBrowsingWeb {
+        let universalURL = userActivity.webpageURL!
+        //handle universal URL
+        
+      }
+      
+      return true
   }
 }
 

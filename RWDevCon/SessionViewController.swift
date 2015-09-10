@@ -1,5 +1,6 @@
 import Foundation
-import SafariServices
+import AVFoundation
+import AVKit
 import UIKit
 
 let MyScheduleSomethingChangedNotification = "com.razeware.rwdevcon.notifications.myScheduleChanged"
@@ -274,9 +275,15 @@ class SessionViewController: UITableViewController {
   }
   
   func showVideoButton(sender: UIButton) {
-    let url = NSURL(string: session.videoUrl)!
-    let safariVC = SFSafariViewController(URL: url)
-    presentViewController(safariVC, animated: true, completion: nil)
+  
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let navVideoPlayerVC = storyboard.instantiateViewControllerWithIdentifier("NavPlayerViewController") as! UINavigationController
+    navVideoPlayerVC.modalPresentationStyle = .FormSheet
+    
+    let videoPlayerVC = navVideoPlayerVC.topViewController as! AVPlayerViewController
+    videoPlayerVC.player = AVPlayer(URL: NSURL(string: session.videoUrl)!)
+  
+    presentViewController(navVideoPlayerVC, animated: true, completion: nil)
   }
   
   func myScheduleButton(sender: UIButton) {

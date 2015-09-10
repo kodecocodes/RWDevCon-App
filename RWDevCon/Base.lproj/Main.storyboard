@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8152.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7rF-ea-tri">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7rF-ea-tri">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8124.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="AvenirNext.ttc">
@@ -317,7 +316,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgG-3I-wEo">
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgG-3I-wEo">
                                             <rect key="frame" x="259" y="6" width="82" height="30"/>
                                             <state key="normal" title="Show Video"/>
                                         </button>
@@ -463,6 +462,22 @@
             </objects>
             <point key="canvasLocation" x="2314" y="1048"/>
         </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="yy1-7e-COD">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="jgs-oX-Zw8" customClass="VideoPlayerViewController" customModule="RWDevCon" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VII-sG-6qE">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="2hS-Li-32a">
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="jgs-oX-Zw8" id="xhb-Pe-bOw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M3i-0t-24R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3842" y="-496"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="D2m-TC-JxG">
             <objects>
@@ -481,8 +496,26 @@
             </objects>
             <point key="canvasLocation" x="3857" y="1048"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2eU-TE-qwv">
+            <objects>
+                <navigationController storyboardIdentifier="NavPlayerViewController" automaticallyAdjustsScrollViewInsets="NO" id="Cv5-lV-Pam" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="I96-t8-5j3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jgs-oX-Zw8" kind="relationship" relationship="rootViewController" id="gaQ-N8-Ogb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D75-gI-arI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3105" y="-447"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="t46-iL-Maz"/>
+        <segue reference="gWZ-m2-7ha"/>
     </inferredMetricsTieBreakers>
 </document>
