@@ -4,8 +4,9 @@ import UIKit
 class ScheduleTableViewController: UITableViewController {
   var coreDataStack: CoreDataStack!
   weak var dataSource: ScheduleDataSource!
+  
+  var isArchive: Bool = false
   var startDate: NSDate?
-
   var selectedSession: Session?
   var selectedIndexPath: NSIndexPath?
 
@@ -20,35 +21,16 @@ class ScheduleTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    dataSource = tableView.dataSource! as ScheduleDataSource
-    dataSource.coreDataStack = coreDataStack
-    dataSource.startDate = startDate
-    if startDate == nil {
-      dataSource.endDate = nil
-      dataSource.favoritesOnly = true
+    dataSource = tableView.dataSource! as! ScheduleDataSource
+    
+    if isArchive {
+      configureVideoArchiveDataSource()
     } else {
-      dataSource.endDate = NSDate(timeInterval: 60*60*24, sinceDate: startDate!)
-      dataSource.favoritesOnly = false
-    }
-
-    dataSource.tableCellConfigurationBlock = { (cell: ScheduleTableViewCell, indexPath: NSIndexPath, session: Session) -> () in
-      let track = session.track.name
-      let room = session.room.name
-      let sessionNumber = session.sessionNumber
-
-      cell.nameLabel.text = (!self.dataSource.favoritesOnly && session.isFavorite ? "★ " : "") + session.title
-
-      if self.dataSource.favoritesOnly {
-        cell.timeLabel.text = "\(session.startTimeString) • \(track) • \(room)"
-      } else if sessionNumber != "" {
-        cell.timeLabel.text = "\(sessionNumber) • \(track) • \(room)"
-      } else {
-        cell.timeLabel.text = "\(track) • \(room)"
-      }
+      configureScheduleDataSource()
     }
 
     let logoImageView = UIImageView(image: UIImage(named: "logo-rwdevcon"))
-    logoImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    logoImageView.translatesAutoresizingMaskIntoConstraints = false
     let header = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: CGRectGetHeight(logoImageView.frame) + 48))
     header.backgroundColor = UIColor(patternImage: UIImage(named: "pattern-grey")!)
     header.addSubview(logoImageView)
@@ -63,6 +45,49 @@ class ScheduleTableViewController: UITableViewController {
     NSNotificationCenter.defaultCenter().addObserverForName(MyScheduleSomethingChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
       if self.isActive || self.dataSource.favoritesOnly {
         self.refreshSelectively()
+      }
+    }
+  }
+  
+  func configureVideoArchiveDataSource() {
+    
+    dataSource.coreDataStack = coreDataStack
+    dataSource.hasVideosOnly = true
+    
+    dataSource.tableCellConfigurationBlock = { (cell: ScheduleTableViewCell, indexPath: NSIndexPath, session: Session) -> () in
+      let track = session.track.name
+      let sessionYear = "2015" //add to session
+      
+      cell.nameLabel.text = session.title
+      cell.timeLabel.text = "\(sessionYear) • \(track)"
+    }
+  }
+  
+  func configureScheduleDataSource() {
+    
+    dataSource.coreDataStack = coreDataStack
+    dataSource.startDate = startDate
+    if startDate == nil {
+      dataSource.endDate = nil
+      dataSource.favoritesOnly = true
+    } else {
+      dataSource.endDate = NSDate(timeInterval: 60*60*24, sinceDate: startDate!)
+      dataSource.favoritesOnly = false
+    }
+    
+    dataSource.tableCellConfigurationBlock = { (cell: ScheduleTableViewCell, indexPath: NSIndexPath, session: Session) -> () in
+      let track = session.track.name
+      let room = session.room.name
+      let sessionNumber = session.sessionNumber
+      
+      cell.nameLabel.text = (!self.dataSource.favoritesOnly && session.isFavorite ? "★ " : "") + session.title
+      
+      if self.dataSource.favoritesOnly {
+        cell.timeLabel.text = "\(session.startTimeString) • \(track) • \(room)"
+      } else if sessionNumber != "" {
+        cell.timeLabel.text = "\(sessionNumber) • \(track) • \(room)"
+      } else {
+        cell.timeLabel.text = "\(track) • \(room)"
       }
     }
   }
@@ -129,20 +154,20 @@ class ScheduleTableViewController: UITableViewController {
     if dataSource.allSessions.count == 0 {
       let footer = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: 500))
       let white = UIView()
-      white.setTranslatesAutoresizingMaskIntoConstraints(false)
+      white.translatesAutoresizingMaskIntoConstraints = false
       white.backgroundColor = UIColor.whiteColor()
       white.opaque = true
       footer.addSubview(white)
 
       let title = UILabel()
-      title.setTranslatesAutoresizingMaskIntoConstraints(false)
+      title.translatesAutoresizingMaskIntoConstraints = false
       title.textColor = UIColor(red: 0, green: 109.0/255, blue: 55.0/255, alpha: 1.0)
       title.text = "SCHEDULE EMPTY"
       title.font = UIFont(name: "AvenirNext-Medium", size: 20)
       white.addSubview(title)
 
       let label = UILabel()
-      label.setTranslatesAutoresizingMaskIntoConstraints(false)
+      label.translatesAutoresizingMaskIntoConstraints = false
       label.numberOfLines = 0
       label.textAlignment = .Center
       label.textColor = UIColor.blackColor()
@@ -151,11 +176,11 @@ class ScheduleTableViewController: UITableViewController {
       white.addSubview(label)
 
       let filler = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
-      filler.setTranslatesAutoresizingMaskIntoConstraints(false)
+      filler.translatesAutoresizingMaskIntoConstraints = false
       white.addSubview(filler)
 
-      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[white]|", options: nil, metrics: nil, views: ["white": white]))
-      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[white]|", options: nil, metrics: nil, views: ["white": white]))
+      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[white]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["white": white]))
+      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[white]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["white": white]))
 
       NSLayoutConstraint.activateConstraints([
         NSLayoutConstraint(item: title, attribute: .CenterX, relatedBy: .Equal, toItem: white, attribute: .CenterX, multiplier: 1.0, constant: 0),
@@ -172,7 +197,7 @@ class ScheduleTableViewController: UITableViewController {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
 
-    if let visibleRows = tableView.indexPathsForVisibleRows() {
+    if let visibleRows = tableView.indexPathsForVisibleRows {
       tableView.reloadRowsAtIndexPaths(visibleRows, withRowAnimation: .None)
     }
   }
@@ -187,9 +212,10 @@ class ScheduleTableViewController: UITableViewController {
     if let destNav = segue.destinationViewController as? UINavigationController {
       if let dest = destNav.topViewController as? SessionViewController {
         dest.coreDataStack = coreDataStack
+        dest.sessionMode = isArchive ? .Archived : .Current
 
-        selectedIndexPath = tableView.indexPathForSelectedRow()
-        lastSelectedIndexPath = tableView.indexPathForSelectedRow()
+        selectedIndexPath = tableView.indexPathForSelectedRow
+        lastSelectedIndexPath = tableView.indexPathForSelectedRow
         if selectedIndexPath != nil {
           selectedSession = dataSource.sessionForIndexPath(selectedIndexPath!)
         } else {
@@ -199,7 +225,7 @@ class ScheduleTableViewController: UITableViewController {
       }
     }
   }
-
+    
   override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     return 62
   }
@@ -213,13 +239,13 @@ class ScheduleTableViewController: UITableViewController {
     header.backgroundColor = UIColor(patternImage: UIImage(named: "pattern-row\(section % 2)")!)
 
     let label = UILabel()
-    label.setTranslatesAutoresizingMaskIntoConstraints(false)
-    label.text = dataSource.distinctTimes[section].uppercaseString
+    label.translatesAutoresizingMaskIntoConstraints = false
+    label.text = isArchive ? "2015" : dataSource.distinctTimes[section].uppercaseString
     label.textColor = UIColor.whiteColor()
     label.font = UIFont(name: "AvenirNext-Medium", size: 18)
     header.addSubview(label)
 
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-20-[label]-|", options: nil, metrics: nil, views: ["label": label]) +
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-20-[label]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["label": label]) +
       [NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: header, attribute: .CenterY, multiplier: 1.0, constant: 4)])
 
 

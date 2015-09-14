@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7rF-ea-tri">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7rF-ea-tri">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AvenirNext.ttc">
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Regular</string>
+            <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Split View Controller-->
         <scene sceneID="bhs-7H-8dc">
@@ -113,8 +129,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detail" id="4Jw-rf-Evc" customClass="DetailTableViewCell" customModule="RWDevCon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Jw-rf-Evc" id="jl1-dV-pk7">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lxf-pa-bQc">
@@ -148,8 +166,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="detailButton" id="dbV-0S-guu" customClass="DetailTableViewCell" customModule="RWDevCon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="158" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dbV-0S-guu" id="ThL-jN-2vj">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n2P-mI-TBl">
@@ -183,8 +203,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="presenter" rowHeight="130" id="O89-si-G27" customClass="PresenterTableViewCell" customModule="RWDevCon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="202" width="600" height="130"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O89-si-G27" id="5Uw-Nd-uHa">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="129"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uiD-py-boS">
@@ -263,8 +285,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="label" rowHeight="75" id="auj-sZ-SeY" customClass="LabelTableViewCell" customModule="RWDevCon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="332" width="600" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="auj-sZ-SeY" id="cW4-7B-hLM">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6li-eU-i93">
@@ -283,6 +307,27 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="label" destination="6li-eU-i93" id="6to-mR-OLj"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="video" id="DaV-ZT-Vot" customClass="VideoTableViewCell" customModule="RWDevCon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="407" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DaV-ZT-Vot" id="6di-eg-Mbr">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GgG-3I-wEo">
+                                            <rect key="frame" x="259" y="6" width="82" height="30"/>
+                                            <state key="normal" title="Show Video"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="GgG-3I-wEo" firstAttribute="centerX" secondItem="6di-eg-Mbr" secondAttribute="centerX" id="D3d-OD-rSj"/>
+                                        <constraint firstItem="GgG-3I-wEo" firstAttribute="centerY" secondItem="6di-eg-Mbr" secondAttribute="centerY" id="hBl-hW-WOj"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="videoButton" destination="GgG-3I-wEo" id="aER-We-7iy"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -325,13 +370,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="ScheduleTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="Doe-if-Mwi" customClass="ScheduleTableViewController" customModule="RWDevCon" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="T20-Qt-d2L">
-                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ScheduleTableViewCell" rowHeight="62" id="jaj-pb-R9n" customClass="ScheduleTableViewCell" customModule="RWDevCon" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="22" width="600" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jaj-pb-R9n" id="Ybz-92-yIc">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="61"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Session Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="0IP-HJ-jLB">
@@ -415,10 +462,26 @@
             </objects>
             <point key="canvasLocation" x="2314" y="1048"/>
         </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="yy1-7e-COD">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="jgs-oX-Zw8" customClass="VideoPlayerViewController" customModule="RWDevCon" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="VII-sG-6qE">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="2hS-Li-32a">
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="jgs-oX-Zw8" id="xhb-Pe-bOw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M3i-0t-24R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3842" y="-496"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="D2m-TC-JxG">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gKv-uh-Gay" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SessionViewController" automaticallyAdjustsScrollViewInsets="NO" id="gKv-uh-Gay" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="h3k-Hg-73b">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -433,8 +496,26 @@
             </objects>
             <point key="canvasLocation" x="3857" y="1048"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="2eU-TE-qwv">
+            <objects>
+                <navigationController storyboardIdentifier="NavPlayerViewController" automaticallyAdjustsScrollViewInsets="NO" id="Cv5-lV-Pam" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="I96-t8-5j3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="jgs-oX-Zw8" kind="relationship" relationship="rootViewController" id="gaQ-N8-Ogb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D75-gI-arI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3105" y="-447"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="t46-iL-Maz"/>
+        <segue reference="gWZ-m2-7ha"/>
     </inferredMetricsTieBreakers>
 </document>

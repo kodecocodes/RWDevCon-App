@@ -31,6 +31,8 @@
 			<array/>
 			<key>roomId</key>
 			<integer>0</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>party1</key>
 		<dict>
@@ -54,6 +56,8 @@
 			<array/>
 			<key>roomId</key>
 			<integer>4</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>breakfast1</key>
 		<dict>
@@ -77,6 +81,8 @@
 			<array/>
 			<key>roomId</key>
 			<integer>0</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>keynote1</key>
 		<dict>
@@ -103,6 +109,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>lunch1</key>
 		<dict>
@@ -126,6 +134,8 @@
 			<array/>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>lunch2</key>
 		<dict>
@@ -149,6 +159,8 @@
 			<array/>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>boardgames1</key>
 		<dict>
@@ -172,6 +184,8 @@
 			<array/>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>boardgames2</key>
 		<dict>
@@ -195,6 +209,8 @@
 			<array/>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>closing2</key>
 		<dict>
@@ -218,6 +234,8 @@
 			<array/>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>b01</key>
 		<dict>
@@ -243,6 +261,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>b02</key>
 		<dict>
@@ -268,6 +288,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>b03</key>
 		<dict>
@@ -293,6 +315,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>b04</key>
 		<dict>
@@ -318,6 +342,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>b05</key>
 		<dict>
@@ -343,6 +369,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>b06</key>
 		<dict>
@@ -368,6 +396,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>b07</key>
 		<dict>
@@ -393,6 +423,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>b08</key>
 		<dict>
@@ -418,6 +450,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>i01</key>
 		<dict>
@@ -443,6 +477,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>i02</key>
 		<dict>
@@ -468,6 +504,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>i03</key>
 		<dict>
@@ -493,6 +531,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>i04</key>
 		<dict>
@@ -518,6 +558,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>i05</key>
 		<dict>
@@ -543,6 +585,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>i06</key>
 		<dict>
@@ -568,6 +612,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>i07</key>
 		<dict>
@@ -593,6 +639,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>i08</key>
 		<dict>
@@ -618,6 +666,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>a01</key>
 		<dict>
@@ -643,6 +693,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>a02</key>
 		<dict>
@@ -668,6 +720,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>a03</key>
 		<dict>
@@ -694,6 +748,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>a04</key>
 		<dict>
@@ -719,6 +775,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>a05</key>
 		<dict>
@@ -744,6 +802,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>a06</key>
 		<dict>
@@ -769,6 +829,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>a07</key>
 		<dict>
@@ -794,6 +856,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>a08</key>
 		<dict>
@@ -819,6 +883,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>n01</key>
 		<dict>
@@ -844,6 +910,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Tammy-Coron-Possible.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-tammy-coron-possible.html</string>
 		</dict>
 		<key>n02</key>
 		<dict>
@@ -869,6 +939,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Kim-Pedersen-Finishing.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-kim-pedersen-finishing.html</string>
 		</dict>
 		<key>n03</key>
 		<dict>
@@ -894,6 +968,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Chris-Wagner-Craftsmanship.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-chris-wagner-craftmanship.html</string>
 		</dict>
 		<key>n04</key>
 		<dict>
@@ -919,6 +997,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Jake-Gundersen-Opportunity.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-jake-gundersen-opportunity.html</string>
 		</dict>
 		<key>n05</key>
 		<dict>
@@ -944,6 +1026,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Ellen-Shapiro-Starting-Over.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-ellen-shapiro-starting-over.html</string>
 		</dict>
 		<key>n06</key>
 		<dict>
@@ -969,6 +1055,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Vicki-Wenderlich-Identity.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-vicki-wenderlich-identity.html</string>
 		</dict>
 		<key>n07</key>
 		<dict>
@@ -994,6 +1084,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Ryan-Nystrom-Contributing.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-ryan-nystrom-contributing.html</string>
 		</dict>
 		<key>n08</key>
 		<dict>
@@ -1019,6 +1113,8 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
 		</dict>
 		<key>n09</key>
 		<dict>
@@ -1044,6 +1140,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Alexis-Gallagher-Identity.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-alexis-gallagher-identity.html</string>
 		</dict>
 		<key>n10</key>
 		<dict>
@@ -1069,6 +1169,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string></string>
+			<key>webPath</key>
+			<string></string>
 		</dict>
 		<key>n11</key>
 		<dict>
@@ -1094,6 +1198,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string></string>
+			<key>webPath</key>
+			<string></string>
 		</dict>
 		<key>n12</key>
 		<dict>
@@ -1119,6 +1227,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Marin-Todorov-RW-Folklore.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-marin-todorov-rw-folklore.html</string>
 		</dict>
 		<key>n13</key>
 		<dict>
@@ -1144,6 +1256,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Matthijs-Hollemans-Math-Isnt-Scary.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-matthijs-hollemans-math-isnt-scary.html</string>
 		</dict>
 		<key>n14</key>
 		<dict>
@@ -1169,6 +1285,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Cesare-Rocchi-Cognition.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-cesare-rocchi-cognition.html</string>
 		</dict>
 		<key>n15</key>
 		<dict>
@@ -1194,6 +1314,10 @@
 			</array>
 			<key>roomId</key>
 			<integer>3</integer>
+			<key>videoUrl</key>
+			<string>http://www.rwdevcon.com/videos/Saul-Mora-NSBrief.mp4</string>
+			<key>webPath</key>
+			<string>/videos/talk-saul-mora-nsbrief.html</string>
 		</dict>
 	</dict>
 	<key>people</key>

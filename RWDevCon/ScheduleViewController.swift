@@ -36,56 +36,64 @@ class ScheduleViewController: UIViewController {
     view.backgroundColor = UIColor(red: 34.0/255, green: 34.0/255, blue: 34.0/255, alpha: 1.0)
 
     let backgroundGrey = UIView()
-    backgroundGrey.setTranslatesAutoresizingMaskIntoConstraints(false)
+    backgroundGrey.translatesAutoresizingMaskIntoConstraints = false
 //    backgroundGrey.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
     view.addSubview(backgroundGrey)
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[backgroundGrey]|", options: nil, metrics: nil, views: ["backgroundGrey": backgroundGrey]))
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[backgroundGrey]|", options: nil, metrics: nil, views: ["backgroundGrey": backgroundGrey]))
+
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[backgroundGrey]|", options:  NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["backgroundGrey": backgroundGrey]))
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[backgroundGrey]|", options:  NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["backgroundGrey": backgroundGrey]))
 
     let friday = NSDate(timeIntervalSince1970: 1423202400)
 
-    let vc1 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as ScheduleTableViewController
+    let vc1 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
     vc1.coreDataStack = coreDataStack
     vc1.startDate = friday
     scheduleTableViewControllers.append(vc1)
 
-    let vc2 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as ScheduleTableViewController
+    let vc2 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
     vc2.coreDataStack = coreDataStack
     vc2.startDate = NSDate(timeInterval: 60*60*24, sinceDate: friday)
     scheduleTableViewControllers.append(vc2)
 
-    let vc3 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as ScheduleTableViewController
+    let vc3 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
     vc3.coreDataStack = coreDataStack
     vc3.startDate = nil
     scheduleTableViewControllers.append(vc3)
 
+    let vc4 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
+    vc4.coreDataStack = coreDataStack
+    vc4.isArchive = true
+    scheduleTableViewControllers.append(vc4)
+    
     contentView = UIView(frame: view.bounds)
-    contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    contentView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(contentView)
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView]|", options: nil, metrics: nil, views: ["contentView": contentView]))
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[contentView]|", options: nil, metrics: nil, views: ["contentView": contentView]))
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["contentView": contentView]))
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[contentView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["contentView": contentView]))
 
     bottomView = UIView()
-    bottomView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    bottomView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(bottomView)
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomView]|", options: nil, metrics: nil, views: ["bottomView": bottomView]))
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bottomView(==bottomHeight)]|", options: nil, metrics: ["bottomHeight": bottomHeight], views: ["bottomView": bottomView]))
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomView]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bottomView": bottomView]))
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bottomView(==bottomHeight)]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: ["bottomHeight": bottomHeight], views: ["bottomView": bottomView]))
 
     let bottomColor = UIView()
-    bottomColor.setTranslatesAutoresizingMaskIntoConstraints(false)
+    bottomColor.translatesAutoresizingMaskIntoConstraints = false
     bottomColor.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.95)
     bottomView.addSubview(bottomColor)
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomColor]|", options: nil, metrics: nil, views: ["bottomColor": bottomColor]))
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[bottomColor]|", options: nil, metrics: nil, views: ["bottomColor": bottomColor]))
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomColor]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bottomColor": bottomColor]))
+    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[bottomColor]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["bottomColor": bottomColor]))
 
-    segmentedControl = UISegmentedControl(items: ["Friday", "Saturday", "My Schedule"])
+    segmentedControl = UISegmentedControl(items: ["Friday", "Saturday", "Schedule", "Videos"])
     // TODO: default segment
     segmentedControl.selectedSegmentIndex = 0
-    segmentedControl.setTranslatesAutoresizingMaskIntoConstraints(false)
+    segmentedControl.translatesAutoresizingMaskIntoConstraints = false
     segmentedControl.backgroundColor = UIColor.whiteColor()
     segmentedControl.tintColor = UIColor(red: 0, green: 109.0/255, blue: 55.0/255, alpha: 1.0)
     bottomView.addSubview(segmentedControl)
     NSLayoutConstraint.activateConstraints([
+      NSLayoutConstraint(item: segmentedControl, attribute: .Left, relatedBy: .Equal, toItem: bottomView, attribute: .Left, multiplier: 1.0, constant: 10),
+      NSLayoutConstraint(item: segmentedControl, attribute: .Right, relatedBy: .Equal, toItem: bottomView, attribute: .Right, multiplier: 1.0, constant: -10),
       NSLayoutConstraint(item: segmentedControl, attribute: .CenterX, relatedBy: .Equal, toItem: bottomView, attribute: .CenterX, multiplier: 1.0, constant: 0),
       NSLayoutConstraint(item: segmentedControl, attribute: .CenterY, relatedBy: .Equal, toItem: bottomView, attribute: .CenterY, multiplier: 1.0, constant: 0),
       ])
@@ -126,8 +134,8 @@ class ScheduleViewController: UIViewController {
   }
 
   func swapToViewController(toVC: ScheduleTableViewController, animated: Bool = true) {
+    
     var fromVC = childViewControllers.first as? ScheduleTableViewController
-
     segmentedControl.enabled = false
 
     if fromVC != nil && fromVC! == toVC {
@@ -151,7 +159,7 @@ class ScheduleViewController: UIViewController {
       toVC.didMoveToParentViewController(self)
       toVC.viewDidAppear(animated)
 
-      if let toSelected = toVC.tableView.indexPathForSelectedRow() {
+      if let toSelected = toVC.tableView.indexPathForSelectedRow {
         toVC.tableView.deselectRowAtIndexPath(toSelected, animated: false)
       }
 
@@ -166,7 +174,7 @@ class ScheduleViewController: UIViewController {
         fromVC!.view.removeFromSuperview()
         fromVC!.removeFromParentViewController()
 
-        if let toSelected = toVC.tableView.indexPathForSelectedRow() {
+        if let toSelected = toVC.tableView.indexPathForSelectedRow {
           toVC.tableView.deselectRowAtIndexPath(toSelected, animated: false)
         }
 

@@ -17,12 +17,13 @@ class Room: NSManagedObject {
     let fetch = NSFetchRequest(entityName: "Room")
     fetch.predicate = NSPredicate(format: "roomId = %@", argumentArray: [roomId])
 
-    if let results = context.executeFetchRequest(fetch, error: nil) {
-      if let result = results.first as? Room {
-        return result
-      }
+    do {
+        let results = try context.executeFetchRequest(fetch)
+        return results.first as? Room
+    } catch let fetchError as NSError {
+        print("fetch error: \(fetchError.localizedDescription)")
     }
-
+    
     return nil
   }
 

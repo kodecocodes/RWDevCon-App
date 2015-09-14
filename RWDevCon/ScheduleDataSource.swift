@@ -18,6 +18,7 @@ class ScheduleDataSource: NSObject {
   var startDate: NSDate?
   var endDate: NSDate?
   var favoritesOnly = false
+  var hasVideosOnly = false
 
   let hourHeaderHeight: CGFloat = 40
   let numberOfTracksInSchedule = 3
@@ -34,14 +35,20 @@ class ScheduleDataSource: NSObject {
     if self.startDate != nil && self.endDate != nil {
       fetch.predicate = NSPredicate(format: "(active = %@) AND (date >= %@) AND (date <= %@)", argumentArray: [true, self.startDate!, self.endDate!])
     } else if favoritesOnly {
-      fetch.predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, Config.favoriteSessions().values.array])
+      let favoriteSessionArray = Array(Config.favoriteSessions().values)
+      fetch.predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, favoriteSessionArray])
+    } else if hasVideosOnly {
+      fetch.predicate = NSPredicate(format: "(active = %@) AND (videoUrl != \"\")", argumentArray: [true])
     } else {
       fetch.predicate = NSPredicate(format: "active = %@", argumentArray: [true])
     }
     fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true), NSSortDescriptor(key: "column", ascending: true)]
 
-    if let results = self.coreDataStack.context.executeFetchRequest(fetch, error: nil) as? [Session] {
-      return results
+    do {
+        let results = try coreDataStack.context.executeFetchRequest(fetch)
+        return results as! [Session]
+    } catch let fetchError as NSError {
+        print("fetch error: \(fetchError.localizedDescription)")
     }
 
     return []
@@ -85,6 +92,8 @@ class ScheduleDataSource: NSObject {
       return allSessions.filter({ (session) -> Bool in
         return session.startDateTimeString.hasPrefix(weekday)
       })
+    } else if hasVideosOnly {
+      return allSessions
     } else {
       let startTimeString = distinctTimes[section]
       return allSessions.filter({ (session) -> Bool in
@@ -102,7 +111,12 @@ class ScheduleDataSource: NSObject {
 extension ScheduleDataSource: UITableViewDataSource {
 
   func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-    return distinctTimes.count
+    
+    if hasVideosOnly {
+      return 1
+    } else {
+      return distinctTimes.count
+    }
   }
 
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,7 +124,7 @@ extension ScheduleDataSource: UITableViewDataSource {
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableViewCell") as ScheduleTableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableViewCell") as! ScheduleTableViewCell
     let session = sessionForIndexPath(indexPath)
     if let configureBlock = tableCellConfigurationBlock {
       configureBlock(cell: cell, indexPath: indexPath, session: session)
