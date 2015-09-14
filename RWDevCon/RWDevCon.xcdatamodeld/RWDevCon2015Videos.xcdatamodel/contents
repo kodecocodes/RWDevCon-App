@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.20" systemVersion="14E46" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Automatic">
     <entity name="Person" representedClassName="Person" syncable="YES">
         <attribute name="active" attributeType="Boolean" indexed="YES" syncable="YES"/>
         <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
@@ -29,6 +29,7 @@
         <attribute name="sessionNumber" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="videoUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="webPath" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="presenters" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Person" inverseName="sessions" inverseEntity="Person" syncable="YES"/>
         <relationship name="room" maxCount="1" deletionRule="Nullify" destinationEntity="Room" inverseName="sessions" inverseEntity="Room" syncable="YES"/>
         <relationship name="track" maxCount="1" deletionRule="Nullify" destinationEntity="Track" inverseName="sessions" inverseEntity="Track" syncable="YES"/>
@@ -41,7 +42,7 @@
     <elements>
         <element name="Person" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="Room" positionX="-18" positionY="54" width="128" height="163"/>
-        <element name="Session" positionX="-54" positionY="27" width="128" height="225"/>
+        <element name="Session" positionX="-54" positionY="27" width="128" height="240"/>
         <element name="Track" positionX="-36" positionY="45" width="128" height="88"/>
     </elements>
 </model>

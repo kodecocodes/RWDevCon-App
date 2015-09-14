@@ -51,9 +51,14 @@ class CoreDataStack {
       .URLByAppendingPathComponent(self.modelName + ".sqlite-shm")
     
     do {
+      
+      let options = [NSMigratePersistentStoresAutomaticallyOption : true,
+        NSInferMappingModelAutomaticallyOption: true]
+      
       try coordinator.addPersistentStoreWithType(
         NSSQLiteStoreType, configuration: nil, URL: url,
-        options: nil)
+        options: options)
+      
     } catch {
       print("Model has changed, removing.")
       do {
