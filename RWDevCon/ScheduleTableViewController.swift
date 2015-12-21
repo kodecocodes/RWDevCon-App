@@ -20,7 +20,7 @@ class ScheduleTableViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    dataSource = tableView.dataSource! as ScheduleDataSource
+    dataSource = tableView.dataSource! as! ScheduleDataSource
     dataSource.coreDataStack = coreDataStack
     dataSource.startDate = startDate
     if startDate == nil {
@@ -48,7 +48,7 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     let logoImageView = UIImageView(image: UIImage(named: "logo-rwdevcon"))
-    logoImageView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    logoImageView.translatesAutoresizingMaskIntoConstraints = false
     let header = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: CGRectGetHeight(logoImageView.frame) + 48))
     header.backgroundColor = UIColor(patternImage: UIImage(named: "pattern-grey")!)
     header.addSubview(logoImageView)
@@ -129,20 +129,20 @@ class ScheduleTableViewController: UITableViewController {
     if dataSource.allSessions.count == 0 {
       let footer = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: 500))
       let white = UIView()
-      white.setTranslatesAutoresizingMaskIntoConstraints(false)
+      white.translatesAutoresizingMaskIntoConstraints = false
       white.backgroundColor = UIColor.whiteColor()
       white.opaque = true
       footer.addSubview(white)
 
       let title = UILabel()
-      title.setTranslatesAutoresizingMaskIntoConstraints(false)
+      title.translatesAutoresizingMaskIntoConstraints = false
       title.textColor = UIColor(red: 0, green: 109.0/255, blue: 55.0/255, alpha: 1.0)
       title.text = "SCHEDULE EMPTY"
       title.font = UIFont(name: "AvenirNext-Medium", size: 20)
       white.addSubview(title)
 
       let label = UILabel()
-      label.setTranslatesAutoresizingMaskIntoConstraints(false)
+      label.translatesAutoresizingMaskIntoConstraints = false
       label.numberOfLines = 0
       label.textAlignment = .Center
       label.textColor = UIColor.blackColor()
@@ -151,12 +151,19 @@ class ScheduleTableViewController: UITableViewController {
       white.addSubview(label)
 
       let filler = UIView(frame: CGRect(x: 0, y: 0, width: 1, height: 1))
-      filler.setTranslatesAutoresizingMaskIntoConstraints(false)
+      filler.translatesAutoresizingMaskIntoConstraints = false
       white.addSubview(filler)
 
-      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[white]|", options: nil, metrics: nil, views: ["white": white]))
-      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[white]|", options: nil, metrics: nil, views: ["white": white]))
+//      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[white]|", options: nil, metrics: nil, views: ["white": white]))
+//      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[white]|", options: 0, metrics: nil, views: ["white": white]))
 
+      NSLayoutConstraint.activateConstraints([
+        white.leadingAnchor.constraintEqualToAnchor(footer.leadingAnchor),
+        white.trailingAnchor.constraintEqualToAnchor(footer.trailingAnchor),
+        white.topAnchor.constraintEqualToAnchor(footer.topAnchor, constant: 20),
+        white.bottomAnchor.constraintEqualToAnchor(footer.bottomAnchor)
+      ])
+      
       NSLayoutConstraint.activateConstraints([
         NSLayoutConstraint(item: title, attribute: .CenterX, relatedBy: .Equal, toItem: white, attribute: .CenterX, multiplier: 1.0, constant: 0),
         NSLayoutConstraint(item: label, attribute: .Width, relatedBy: .Equal, toItem: white, attribute: .Width, multiplier: 0.7, constant: 0),
@@ -172,7 +179,7 @@ class ScheduleTableViewController: UITableViewController {
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
 
-    if let visibleRows = tableView.indexPathsForVisibleRows() {
+    if let visibleRows = tableView.indexPathsForVisibleRows {
       tableView.reloadRowsAtIndexPaths(visibleRows, withRowAnimation: .None)
     }
   }
@@ -188,8 +195,8 @@ class ScheduleTableViewController: UITableViewController {
       if let dest = destNav.topViewController as? SessionViewController {
         dest.coreDataStack = coreDataStack
 
-        selectedIndexPath = tableView.indexPathForSelectedRow()
-        lastSelectedIndexPath = tableView.indexPathForSelectedRow()
+        selectedIndexPath = tableView.indexPathForSelectedRow
+        lastSelectedIndexPath = tableView.indexPathForSelectedRow
         if selectedIndexPath != nil {
           selectedSession = dataSource.sessionForIndexPath(selectedIndexPath!)
         } else {
@@ -213,16 +220,21 @@ class ScheduleTableViewController: UITableViewController {
     header.backgroundColor = UIColor(patternImage: UIImage(named: "pattern-row\(section % 2)")!)
 
     let label = UILabel()
-    label.setTranslatesAutoresizingMaskIntoConstraints(false)
+    label.translatesAutoresizingMaskIntoConstraints = false
     label.text = dataSource.distinctTimes[section].uppercaseString
     label.textColor = UIColor.whiteColor()
     label.font = UIFont(name: "AvenirNext-Medium", size: 18)
     header.addSubview(label)
 
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-20-[label]-|", options: nil, metrics: nil, views: ["label": label]) +
-      [NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: header, attribute: .CenterY, multiplier: 1.0, constant: 4)])
-
-
+//    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-20-[label]-|", options: nil, metrics: nil, views: ["label": label]) +
+//      [NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: header, attribute: .CenterY, multiplier: 1.0, constant: 4)])
+    
+    NSLayoutConstraint.activateConstraints([
+      label.leadingAnchor.constraintEqualToAnchor(header.leadingAnchor, constant: 20),
+      label.trailingAnchor.constraintEqualToAnchor(header.trailingAnchor),
+      label.centerYAnchor.constraintEqualToAnchor(header.centerYAnchor, constant: 4)
+    ])
+    
     return header
   }
 

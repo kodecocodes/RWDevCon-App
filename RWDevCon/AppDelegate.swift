@@ -9,35 +9,30 @@ private let endOfTimeDate = NSDate(timeIntervalSince1970: 1423656000)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+  
   var window: UIWindow?
   lazy var coreDataStack = CoreDataStack()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    if let conferencePlist = NSBundle.mainBundle().URLForResource("RWDevCon2015", withExtension: "plist") {
-      if let data = NSDictionary(contentsOfURL: conferencePlist) {
-        let localLastUpdatedDate = (Config.userDefaults().objectForKey("lastUpdated") as? NSDate) ?? beginningOfTimeDate
-        let plistLastUpdatedDate = (data["metadata"] as NSDictionary?)?["lastUpdated"] as? NSDate ?? beginningOfTimeDate
-
-        // If 0 sessions or the plist is newer, load it!
-        if Session.sessionCount(coreDataStack.context) == 0 || localLastUpdatedDate.compare(plistLastUpdatedDate) == NSComparisonResult.OrderedAscending {
-          NSLog("Loading from the local plist")
-          loadDataFromDictionary(data)
-        }
-      }
+    guard let plist = NSBundle.mainBundle().URLForResource("RWDevCon2015", withExtension: "plist"), let data = NSDictionary(contentsOfURL: plist) else { return true }
+    let localLastUpdateDate = Config.userDefaults().objectForKey("lastUpdated") as? NSDate ?? beginningOfTimeDate
+    let plistLastUpdateDate = data["metadata"]?["lastUpdated"] as? NSDate ?? beginningOfTimeDate
+    if Session.sessionCount(coreDataStack.context) == 0 || localLastUpdateDate.compare(plistLastUpdateDate) == .OrderedAscending {
+      loadDataFromDictionary(data)
     }
-
+  
     // global style
     application.statusBarStyle = UIStatusBarStyle.LightContent
     UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Normal)
     
-    let splitViewController = self.window!.rootViewController as UISplitViewController
+    let splitViewController = self.window!.rootViewController as! UISplitViewController
     splitViewController.delegate = self
 
-    let navigationController = splitViewController.viewControllers[0] as UINavigationController
-    (navigationController.topViewController as ScheduleViewController).coreDataStack = coreDataStack
+    let navigationController = splitViewController.viewControllers[0] as! UINavigationController
+    (navigationController.topViewController as! ScheduleViewController).coreDataStack = coreDataStack
 
-    let detailWrapperController = splitViewController.viewControllers[1] as UINavigationController
-    (detailWrapperController.topViewController as SessionViewController).coreDataStack = coreDataStack
+    let detailWrapperController = splitViewController.viewControllers[1] as! UINavigationController
+    (detailWrapperController.topViewController as! SessionViewController).coreDataStack = coreDataStack
 
     return true
   }
@@ -45,6 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func updateFromServer() {
     let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2015_lastUpdate.txt")!,
       completionHandler: { (data, response, error) -> Void in
+        guard let data = data else { return }
         if let rawDateString = NSString(data: data, encoding: NSUTF8StringEncoding) {
           let dateString = rawDateString.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
           let formatter = NSDateFormatter()
@@ -105,8 +101,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var allTracks = [Track]()
     var allPeople = [String: Person]()
 
-    for (identifier, dict) in enumerate(rooms) {
-      var room = Room.roomByRoomIdOrNew(identifier, context: coreDataStack.context)
+    for (identifier, dict) in rooms.enumerate() {
+      let room = Room.roomByRoomIdOrNew(identifier, context: coreDataStack.context)
 
       room.roomId = Int32(identifier)
       room.name = dict["name"] as? String ?? ""
@@ -119,7 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       allRooms.append(room)
     }
 
-    for (identifier, name) in enumerate(tracks) {
+    for (identifier, name) in tracks.enumerate() {
       let track = Track.trackByTrackIdOrNew(identifier, context: coreDataStack.context)
 
       track.trackId = Int32(identifier)
@@ -153,8 +149,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       session.sessionDescription = dict["sessionDescription"] as? String ?? ""
       session.title = dict["title"] as? String ?? ""
 
-      session.track = allTracks[dict["trackId"] as Int]
-      session.room = allRooms[dict["roomId"] as Int]
+      session.track = allTracks[dict["trackId"] as! Int]
+      session.room = allRooms[dict["roomId"] as! Int]
 
       var presenters = [Person]()
       if let rawPresenters = dict["presenters"] as? [String] {
@@ -170,20 +166,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     coreDataStack.saveContext()
 
     NSNotificationCenter.defaultCenter().postNotificationName(SessionDataUpdatedNotification, object: self)
-  }
-
-  func applicationWillResignActive(application: UIApplication) {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-  }
-
-  func applicationDidEnterBackground(application: UIApplication) {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-  }
-
-  func applicationWillEnterForeground(application: UIApplication) {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
   }
 
   func applicationDidBecomeActive(application: UIApplication) {
@@ -209,7 +191,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 
 extension AppDelegate: UISplitViewControllerDelegate {
-  func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController!, ontoPrimaryViewController primaryViewController:UIViewController!) -> Bool {
+  
+  func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
     if let secondaryAsNavController = secondaryViewController as? UINavigationController {
       if let topAsDetailController = secondaryAsNavController.topViewController as? SessionViewController {
         if topAsDetailController.session == nil {

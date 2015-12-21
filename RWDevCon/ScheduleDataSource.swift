@@ -34,17 +34,18 @@ class ScheduleDataSource: NSObject {
     if self.startDate != nil && self.endDate != nil {
       fetch.predicate = NSPredicate(format: "(active = %@) AND (date >= %@) AND (date <= %@)", argumentArray: [true, self.startDate!, self.endDate!])
     } else if favoritesOnly {
-      fetch.predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, Config.favoriteSessions().values.array])
+      fetch.predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, Array(Config.favoriteSessions().values)])
     } else {
       fetch.predicate = NSPredicate(format: "active = %@", argumentArray: [true])
     }
     fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true), NSSortDescriptor(key: "column", ascending: true)]
-
-    if let results = self.coreDataStack.context.executeFetchRequest(fetch, error: nil) as? [Session] {
+    
+    do {
+      guard let results = try coreDataStack.context.executeFetchRequest(fetch) as? [Session] else { return [] }
       return results
+    } catch {
+      return []
     }
-
-    return []
   }
 
   var distinctTimes: [String] {
@@ -110,7 +111,7 @@ extension ScheduleDataSource: UITableViewDataSource {
   }
 
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableViewCell") as ScheduleTableViewCell
+    let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableViewCell") as! ScheduleTableViewCell
     let session = sessionForIndexPath(indexPath)
     if let configureBlock = tableCellConfigurationBlock {
       configureBlock(cell: cell, indexPath: indexPath, session: session)

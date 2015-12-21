@@ -11,14 +11,13 @@ class Track: NSManagedObject {
   class func trackByTrackId(trackId: Int, context: NSManagedObjectContext) -> Track? {
     let fetch = NSFetchRequest(entityName: "Track")
     fetch.predicate = NSPredicate(format: "trackId = %@", argumentArray: [trackId])
-
-    if let results = context.executeFetchRequest(fetch, error: nil) {
-      if let result = results.first as? Track {
-        return result
-      }
+    do {
+      let results = try context.executeFetchRequest(fetch)
+      guard let result = results.first as? Track else { return nil }
+      return result
+    } catch {
+      return nil
     }
-
-    return nil
   }
 
   class func trackByTrackIdOrNew(trackId: Int, context: NSManagedObjectContext) -> Track {

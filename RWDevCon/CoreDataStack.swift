@@ -39,7 +39,7 @@ public class CoreDataStack {
     
     psc = NSPersistentStoreCoordinator(managedObjectModel: model)
     
-    context = NSManagedObjectContext()
+    context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
     context.persistentStoreCoordinator = psc
     
     let documentsURL = Config.applicationDocumentsDirectory()
@@ -49,34 +49,34 @@ public class CoreDataStack {
 
     let options = [NSInferMappingModelAutomaticallyOption:true,
         NSMigratePersistentStoresAutomaticallyOption:true]
-
-    var error: NSError? = nil
-    store = psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options, error: &error)
-
-    if store == nil {
-      var fileManagerError:NSError? = nil
-      let didRemoveStore = NSFileManager.defaultManager().removeItemAtURL(storeURL, error: &fileManagerError)
-      if !didRemoveStore {
-        println("Error removing persistent store: \(fileManagerError)")
+    
+    do {
+      store = try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
+    } catch {
+      do {
+        try NSFileManager.defaultManager().removeItemAtURL(storeURL)
+        print("Model has changed, removing.")
+      } catch {
+        print("Error removing persistent store: \(error)")
         abort()
-      } else {
-        println("Model has changed, removing.")
       }
-      
-      var error: NSError? = nil
-      store = psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options, error: &error)
-      if store == nil {
-        println("Error adding persistent store: \(error)")
+      do {
+       store = try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
+      } catch {
+        print("Error adding persistent store: \(error)")
         abort()
       }
     }
   }
   
   func saveContext() {
-    var error: NSError? = nil
-    if context.hasChanges && !context.save(&error) {
-      println("Could not save: \(error), \(error?.userInfo)")
-      abort()
+    if context.hasChanges {
+      do {
+        try context.save()
+      } catch {
+        print("Could not save: \(error)")
+        abort()
+      }
     }
   }
   

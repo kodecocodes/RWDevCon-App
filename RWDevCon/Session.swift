@@ -37,7 +37,7 @@ class Session: NSManagedObject {
   var isFavorite: Bool {
     get {
       let favorites = Config.favoriteSessions()
-      return find(favorites.values.array, identifier) != nil
+      return Array(favorites.values).contains(identifier)
     }
     set {
       if newValue {
@@ -64,14 +64,13 @@ class Session: NSManagedObject {
   class func sessionByIdentifier(identifier: String, context: NSManagedObjectContext) -> Session? {
     let fetch = NSFetchRequest(entityName: "Session")
     fetch.predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])
-
-    if let results = context.executeFetchRequest(fetch, error: nil) {
-      if let result = results.first as? Session {
-        return result
-      }
+    do {
+      let results = try context.executeFetchRequest(fetch)
+      guard let result = results.first as? Session else { return nil }
+      return result
+    } catch {
+      return nil
     }
-
-    return nil
   }
 
   class func sessionByIdentifierOrNew(identifier: String, context: NSManagedObjectContext) -> Session {

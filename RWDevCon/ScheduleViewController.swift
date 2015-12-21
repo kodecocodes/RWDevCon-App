@@ -36,52 +36,79 @@ class ScheduleViewController: UIViewController {
     view.backgroundColor = UIColor(red: 34.0/255, green: 34.0/255, blue: 34.0/255, alpha: 1.0)
 
     let backgroundGrey = UIView()
-    backgroundGrey.setTranslatesAutoresizingMaskIntoConstraints(false)
-//    backgroundGrey.backgroundColor = UIColor(patternImage: UIImage(named: "pattern")!)
+    backgroundGrey.translatesAutoresizingMaskIntoConstraints = false
+    
     view.addSubview(backgroundGrey)
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[backgroundGrey]|", options: nil, metrics: nil, views: ["backgroundGrey": backgroundGrey]))
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[backgroundGrey]|", options: nil, metrics: nil, views: ["backgroundGrey": backgroundGrey]))
-
+//    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[backgroundGrey]|", options: nil, metrics: nil, views: ["backgroundGrey": backgroundGrey]))
+//    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[backgroundGrey]|", options: nil, metrics: nil, views: ["backgroundGrey": backgroundGrey]))
+    
+    NSLayoutConstraint.activateConstraints([
+      backgroundGrey.topAnchor.constraintEqualToAnchor(view.topAnchor),
+      backgroundGrey.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+      backgroundGrey.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor),
+      backgroundGrey.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor)
+    ])
+    
     let friday = NSDate(timeIntervalSince1970: 1423202400)
 
-    let vc1 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as ScheduleTableViewController
+    let vc1 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
     vc1.coreDataStack = coreDataStack
     vc1.startDate = friday
     scheduleTableViewControllers.append(vc1)
 
-    let vc2 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as ScheduleTableViewController
+    let vc2 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
     vc2.coreDataStack = coreDataStack
     vc2.startDate = NSDate(timeInterval: 60*60*24, sinceDate: friday)
     scheduleTableViewControllers.append(vc2)
 
-    let vc3 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as ScheduleTableViewController
+    let vc3 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
     vc3.coreDataStack = coreDataStack
     vc3.startDate = nil
     scheduleTableViewControllers.append(vc3)
 
     contentView = UIView(frame: view.bounds)
-    contentView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    contentView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(contentView)
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView]|", options: nil, metrics: nil, views: ["contentView": contentView]))
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[contentView]|", options: nil, metrics: nil, views: ["contentView": contentView]))
+//    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView]|", options: nil, metrics: nil, views: ["contentView": contentView]))
+//    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[contentView]|", options: nil, metrics: nil, views: ["contentView": contentView]))
+    NSLayoutConstraint.activateConstraints([
+      contentView.topAnchor.constraintEqualToAnchor(view.topAnchor),
+      contentView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
+      contentView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor),
+      contentView.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor)
+    ])
 
     bottomView = UIView()
-    bottomView.setTranslatesAutoresizingMaskIntoConstraints(false)
+    bottomView.translatesAutoresizingMaskIntoConstraints = false
     view.addSubview(bottomView)
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomView]|", options: nil, metrics: nil, views: ["bottomView": bottomView]))
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bottomView(==bottomHeight)]|", options: nil, metrics: ["bottomHeight": bottomHeight], views: ["bottomView": bottomView]))
+    
+//    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomView]|", options: nil, metrics: nil, views: ["bottomView": bottomView]))
+//    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bottomView(==bottomHeight)]|", options: nil, metrics: ["bottomHeight": bottomHeight], views: ["bottomView": bottomView]))
+    
+    NSLayoutConstraint.activateConstraints([
+      bottomView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor),
+      bottomView.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor),
+      bottomView.heightAnchor.constraintEqualToConstant(bottomHeight),
+      bottomView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor)
+    ])
 
     let bottomColor = UIView()
-    bottomColor.setTranslatesAutoresizingMaskIntoConstraints(false)
+    bottomColor.translatesAutoresizingMaskIntoConstraints = false
     bottomColor.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.95)
     bottomView.addSubview(bottomColor)
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomColor]|", options: nil, metrics: nil, views: ["bottomColor": bottomColor]))
-    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[bottomColor]|", options: nil, metrics: nil, views: ["bottomColor": bottomColor]))
+//    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomColor]|", options: nil, metrics: nil, views: ["bottomColor": bottomColor]))
+//    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[bottomColor]|", options: nil, metrics: nil, views: ["bottomColor": bottomColor]))
+    NSLayoutConstraint.activateConstraints([
+      bottomColor.topAnchor.constraintEqualToAnchor(bottomView.topAnchor),
+      bottomColor.bottomAnchor.constraintEqualToAnchor(bottomView.bottomAnchor),
+      bottomColor.leadingAnchor.constraintEqualToAnchor(bottomView.leadingAnchor),
+      bottomColor.trailingAnchor.constraintEqualToAnchor(bottomView.trailingAnchor)
+    ])
 
     segmentedControl = UISegmentedControl(items: ["Friday", "Saturday", "My Schedule"])
     // TODO: default segment
     segmentedControl.selectedSegmentIndex = 0
-    segmentedControl.setTranslatesAutoresizingMaskIntoConstraints(false)
+    segmentedControl.translatesAutoresizingMaskIntoConstraints = false
     segmentedControl.backgroundColor = UIColor.whiteColor()
     segmentedControl.tintColor = UIColor(red: 0, green: 109.0/255, blue: 55.0/255, alpha: 1.0)
     bottomView.addSubview(segmentedControl)
@@ -151,10 +178,10 @@ class ScheduleViewController: UIViewController {
       toVC.didMoveToParentViewController(self)
       toVC.viewDidAppear(animated)
 
-      if let toSelected = toVC.tableView.indexPathForSelectedRow() {
+      if let toSelected = toVC.tableView.indexPathForSelectedRow {
         toVC.tableView.deselectRowAtIndexPath(toSelected, animated: false)
       }
-
+      
       self.segmentedControl.enabled = true
     } else {
       UIView.transitionFromView(fromVC!.view, toView: toVC.view, duration: animated ? 0.2 : 0, options: .TransitionCrossDissolve, completion: { (completed) -> Void in
@@ -166,7 +193,7 @@ class ScheduleViewController: UIViewController {
         fromVC!.view.removeFromSuperview()
         fromVC!.removeFromParentViewController()
 
-        if let toSelected = toVC.tableView.indexPathForSelectedRow() {
+        if let toSelected = toVC.tableView.indexPathForSelectedRow {
           toVC.tableView.deselectRowAtIndexPath(toSelected, animated: false)
         }
 

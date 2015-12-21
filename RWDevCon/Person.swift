@@ -19,14 +19,13 @@ class Person: NSManagedObject {
   class func personByIdentifier(identifier: String, context: NSManagedObjectContext) -> Person? {
     let fetch = NSFetchRequest(entityName: "Person")
     fetch.predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])
-
-    if let results = context.executeFetchRequest(fetch, error: nil) {
-      if let result = results.first as? Person {
-        return result
-      }
+    do {
+      let results = try context.executeFetchRequest(fetch)
+      guard let result = results.first as? Person else { return nil }
+      return result
+    } catch {
+      return nil
     }
-
-    return nil
   }
 
   class func personByIdentifierOrNew(identifier: String, context: NSManagedObjectContext) -> Person {

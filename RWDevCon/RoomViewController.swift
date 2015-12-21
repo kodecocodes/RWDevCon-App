@@ -1,7 +1,7 @@
-
 import UIKit
 import AddressBook
 import MapKit
+import Contacts
 
 class RoomViewController: UIViewController {
   var room: Room!
@@ -28,10 +28,10 @@ class RoomViewController: UIViewController {
   }
 
   @IBAction func mapButtonTapped(sender: AnyObject) {
-    let placemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: room.mapLatitude, longitude: room.mapLongitude), addressDictionary: [kABPersonAddressStreetKey: room.mapAddress])
+    let placemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: room.mapLatitude, longitude: room.mapLongitude), addressDictionary: [CNPostalAddressStreetKey: room.mapAddress])
     let mapItem = MKMapItem(placemark: placemark)
     mapItem.name = room.name
-
+    
     MKMapItem.openMapsWithItems([mapItem], launchOptions: [:])
   }
 }

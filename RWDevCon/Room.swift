@@ -16,14 +16,13 @@ class Room: NSManagedObject {
   class func roomByRoomId(roomId: Int, context: NSManagedObjectContext) -> Room? {
     let fetch = NSFetchRequest(entityName: "Room")
     fetch.predicate = NSPredicate(format: "roomId = %@", argumentArray: [roomId])
-
-    if let results = context.executeFetchRequest(fetch, error: nil) {
-      if let result = results.first as? Room {
-        return result
-      }
+    do {
+      let results = try context.executeFetchRequest(fetch)
+      guard let result = results.first as? Room else { return nil }
+      return result
+    } catch {
+      return nil
     }
-
-    return nil
   }
 
   class func roomByRoomIdOrNew(roomId: Int, context: NSManagedObjectContext) -> Room {
