@@ -50,7 +50,7 @@ class SessionViewController: UITableViewController {
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if section == Sections.info {
-      return 4
+      return session.isParty ? 4 : 3
     } else if section == Sections.description {
       return 1
     } else if section == Sections.presenters {
@@ -80,7 +80,8 @@ class SessionViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    if indexPath.section == Sections.info && indexPath.row == 3 {
+    if (indexPath.section == Sections.info && indexPath.row == 3 && session.isParty) ||
+      (indexPath.section == Sections.info && indexPath.row == 2 && !session.isParty){
       let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
 
       cell.keyLabel.text = "My Schedule".uppercaseString
@@ -92,7 +93,7 @@ class SessionViewController: UITableViewController {
       cell.valueButton.addTarget(self, action: "myScheduleButton:", forControlEvents: .TouchUpInside)
 
       return cell
-    } else if indexPath.section == Sections.info && indexPath.row == 2 {
+    } else if indexPath.section == Sections.info && session.isParty && indexPath.row == 2 {
       let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
 
       cell.keyLabel.text = "Where".uppercaseString

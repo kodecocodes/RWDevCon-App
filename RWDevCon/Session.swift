@@ -47,6 +47,10 @@ class Session: NSManagedObject {
       }
     }
   }
+  
+  var isParty: Bool {
+    return title.lowercaseString.containsString("party")
+  }
 
   func formatDate(format: String) -> String {
     formatter.dateFormat = format
