@@ -18,7 +18,6 @@
 		78B7A9DC1A3E9876002AAF7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78B7A9DA1A3E9876002AAF7F /* Main.storyboard */; };
 		78B7A9DE1A3E9876002AAF7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B7A9DD1A3E9876002AAF7F /* Images.xcassets */; };
 		78B7A9E11A3E9876002AAF7F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78B7A9DF1A3E9876002AAF7F /* LaunchScreen.xib */; };
-		78B7AA251A413573002AAF7F /* RWDevCon2015.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78B7AA241A413573002AAF7F /* RWDevCon2015.plist */; };
 		78B7AA271A4147DC002AAF7F /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA261A4147DC002AAF7F /* CoreDataStack.swift */; };
 		78B7AA291A414A94002AAF7F /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA281A414A94002AAF7F /* Track.swift */; };
 		78B7AA2B1A414A94002AAF7F /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B7AA2A1A414A94002AAF7F /* Room.swift */; };
@@ -31,6 +30,7 @@
 		78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */; };
 		78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256791A4167F40040AC63 /* LabelTableViewCell.swift */; };
 		78F256841A416BB20040AC63 /* ScheduleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256801A416BB20040AC63 /* ScheduleDataSource.swift */; };
+		7B992F2D1C29778F009BF3C2 /* RWDevCon2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B992F2C1C29778F009BF3C2 /* RWDevCon2016.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -61,7 +61,6 @@
 		78B7A9DB1A3E9876002AAF7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78B7A9DD1A3E9876002AAF7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		78B7A9E01A3E9876002AAF7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		78B7AA241A413573002AAF7F /* RWDevCon2015.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RWDevCon2015.plist; path = RWDevCon/RWDevCon2015.plist; sourceTree = "<group>"; };
 		78B7AA261A4147DC002AAF7F /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		78B7AA281A414A94002AAF7F /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		78B7AA2A1A414A94002AAF7F /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
@@ -74,6 +73,7 @@
 		78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		78F256791A4167F40040AC63 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		78F256801A416BB20040AC63 /* ScheduleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataSource.swift; sourceTree = "<group>"; };
+		7B992F2C1C29778F009BF3C2 /* RWDevCon2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RWDevCon2016.plist; path = RWDevCon/RWDevCon2016.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +185,7 @@
 		7B45155D1C282BDE00F512AA /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				78B7AA241A413573002AAF7F /* RWDevCon2015.plist */,
+				7B992F2C1C29778F009BF3C2 /* RWDevCon2016.plist */,
 			);
 			name = Data;
 			path = ..;
@@ -282,12 +282,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B992F2D1C29778F009BF3C2 /* RWDevCon2016.plist in Resources */,
 				781EBAD81A5F74D0009A7AA5 /* about.html in Resources */,
 				78B7A9DC1A3E9876002AAF7F /* Main.storyboard in Resources */,
 				78B7A9E11A3E9876002AAF7F /* LaunchScreen.xib in Resources */,
 				78B7A9DE1A3E9876002AAF7F /* Images.xcassets in Resources */,
 				781EBADA1A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg in Resources */,
-				78B7AA251A413573002AAF7F /* RWDevCon2015.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

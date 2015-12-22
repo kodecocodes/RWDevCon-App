@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   lazy var coreDataStack = CoreDataStack()
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    guard let plist = NSBundle.mainBundle().URLForResource("RWDevCon2015", withExtension: "plist"), let data = NSDictionary(contentsOfURL: plist) else { return true }
+    guard let plist = NSBundle.mainBundle().URLForResource("RWDevCon2016", withExtension: "plist"), let data = NSDictionary(contentsOfURL: plist) else { return true }
     let localLastUpdateDate = Config.userDefaults().objectForKey("lastUpdated") as? NSDate ?? beginningOfTimeDate
     let plistLastUpdateDate = data["metadata"]?["lastUpdated"] as? NSDate ?? beginningOfTimeDate
     if Session.sessionCount(coreDataStack.context) == 0 || localLastUpdateDate.compare(plistLastUpdateDate) == .OrderedAscending {
@@ -38,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func updateFromServer() {
-    let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2015_lastUpdate.txt")!,
+    let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2016_lastUpdate.txt")!,
       completionHandler: { (data, response, error) -> Void in
         guard let data = data else { return }
         if let rawDateString = NSString(data: data, encoding: NSUTF8StringEncoding) {
@@ -52,8 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             if localLastUpdatedDate.compare(serverLastUpdatedDate) == NSComparisonResult.OrderedAscending {
               dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-                if let dict = NSDictionary(contentsOfURL: NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2015.plist")!) {
-                  let localPlistURL = Config.applicationDocumentsDirectory().URLByAppendingPathComponent("RWDevCon2015-latest.plist")
+                if let dict = NSDictionary(contentsOfURL: NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2016.plist")!) {
+                  let localPlistURL = Config.applicationDocumentsDirectory().URLByAppendingPathComponent("RWDevCon2016-latest.plist")
                   dispatch_async(dispatch_get_main_queue(), { () -> Void in
                     NSLog("New data from remote! local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
                     

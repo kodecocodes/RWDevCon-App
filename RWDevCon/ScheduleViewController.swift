@@ -49,7 +49,7 @@ class ScheduleViewController: UIViewController {
       backgroundGrey.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor)
     ])
     
-    let friday = NSDate(timeIntervalSince1970: 1423202400)
+    let friday = NSDate(timeIntervalSince1970: 1457676000) // WTF Greg!?
 
     let vc1 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
     vc1.coreDataStack = coreDataStack
