@@ -50,7 +50,7 @@ class SessionViewController: UITableViewController {
 
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if section == Sections.info {
-      return session.isParty ? 4 : 3
+      return 4
     } else if section == Sections.description {
       return 1
     } else if section == Sections.presenters {
@@ -80,8 +80,7 @@ class SessionViewController: UITableViewController {
   }
 
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    if (indexPath.section == Sections.info && indexPath.row == 3 && session.isParty) ||
-      (indexPath.section == Sections.info && indexPath.row == 2 && !session.isParty){
+    if (indexPath.section == Sections.info && indexPath.row == 3){
       let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
 
       cell.keyLabel.text = "My Schedule".uppercaseString
@@ -93,13 +92,17 @@ class SessionViewController: UITableViewController {
       cell.valueButton.addTarget(self, action: "myScheduleButton:", forControlEvents: .TouchUpInside)
 
       return cell
-    } else if indexPath.section == Sections.info && session.isParty && indexPath.row == 2 {
+    } else if indexPath.section == Sections.info && indexPath.row == 2 {
       let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
 
       cell.keyLabel.text = "Where".uppercaseString
       cell.valueButton.setTitle(session.room.name, forState: .Normal)
-      cell.valueButton.addTarget(self, action: "roomDetails:", forControlEvents: .TouchUpInside)
-
+      if session.isParty {
+        cell.valueButton.setTitleColor(view.tintColor, forState: .Normal)
+        cell.valueButton.addTarget(self, action: "roomDetails:", forControlEvents: .TouchUpInside)
+      } else {
+        cell.valueButton.setTitleColor(UIColor.darkTextColor(), forState: .Normal)
+      }
       return cell
     } else if indexPath.section == Sections.info {
       let cell = tableView.dequeueReusableCellWithIdentifier("detail", forIndexPath: indexPath) as! DetailTableViewCell
