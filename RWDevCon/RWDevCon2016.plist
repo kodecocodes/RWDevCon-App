@@ -194,7 +194,8 @@
 			<key>title</key>
 			<string>Beginning iOS</string>
 			<key>sessionDescription</key>
-			<string>Time to start developing for iOS! In this session, you’ll build anapp from scratch and learn to assemble your user interface with Storyboards and Auto Layout, display large datasets with Collection Views, and fetch images and JSON data from a server. These core skills will help no matter what path your iOS development takes!</string>
+			<string>Time to start developing for iOS! In this session, you’ll build an
+app from scratch and learn to assemble your user interface with Storyboards and Auto Layout, display large datasets with Collection Views, and fetch images and JSON data from a server. These core skills will help no matter what path your iOS development takes!</string>
 			<key>presenters</key>
 			<array>
 				<string>matt-l</string>
@@ -951,18 +952,20 @@
 	</dict>
 	<key>people</key>
 	<dict>
-		<key>arron</key>
+		<key>aaron</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Aaron</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Douglas</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>astralbodies</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Aaron was that kid taking apart the mechanical and electrical appliances at five years of age to see how they worked. He never grew out of that core interest - to know how things work. He took an early interest in computer programming, figuring out how to get past security to be able to play games on his dad&apos;s computer. He&apos;s still that feisty nerd, but at least now he gets paid to do it. 
+
+Aaron works for Automattic (WordPress.com, Akismet, SimpleNote) as a mobile developer, primarily on WordPress for iOS.</string>
 		</dict>
 		<key>alexis</key>
 		<dict>
@@ -982,13 +985,15 @@
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Audrey</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Tam</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string></string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Audrey Tam retired at the end of 2012 from a 25-year career as a computer science academic. Her teaching included Pascal, C/C++, Java, Java web services, web app development in php and mysql, user interface design and evaluation, and iOS programming. Before moving to Australia, she worked on Fortran and PL/1 simulation software at IBM&apos;s development lab in Silicon Valley.
+
+Audrey now teaches short courses in iOS app development to non-programmers, and organizes venues for Melbourne Cocoaheads monthly meetings.</string>
 		</dict>
 		<key>brian</key>
 		<dict>
@@ -1023,13 +1028,13 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Derek</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Selander</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>lolgrep</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Derek is an iOS developer currently working at GoDaddy. In his free time, he enjoys surfing, playing classical guitar, and consuming bacon.</string>
 		</dict>
 		<key>ellen</key>
 		<dict>
@@ -1049,26 +1054,30 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Eric</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Cerney</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>ecerney</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Eric is an iOS Software Engineer in San Francisco. After being acquired by Capital One, he likes to spend his days at work hanging out with Samuel L. Jackson and asking everyone &quot;What&apos;s in your wallet?&quot;. Lately his main focus has been with Swift and gaining a deeper knowledge of programming languages at the core.
+
+Outside iOS, his interests are tinkering with hardware (Raspberry Pi and Arduino), gaming, exploring San Francisco, and regretting endless Netflix marathons.</string>
 		</dict>
 		<key>erik</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Erik</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Kerber</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>erikkerber</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Erik is an iOS guy from Minneapolis. Currently a Lead iOS developer at Target, and an independent consultant at Distilled Bits.
+
+Outside of coding, he enjoys cramming as much outdoor activity into summer as he can (running, cycling, rowing, fishing, cabin-ing). In the winter, he patiently waits for summer.</string>
 		</dict>
 		<key>greg</key>
 		<dict>
@@ -1088,117 +1097,119 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Jack</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Wu</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>JackTripleU</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Jack is the lead mobile developer at ModiFace. He has built dozens of iOS apps and enjoys it very much. Outside of work, Jack enjoys coding on the beach, coding by the pool, and sometimes just having a quick code in the park.</string>
 		</dict>
 		<key>jaimee</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Jaimee</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Newberry</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>jaimeejaimee</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string></string>
 		</dict>
 		<key>james</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>James</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Dempsey</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>jamesdempsey</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string></string>
 		</dict>
 		<key>janie</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Janie</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Clayton</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>RedQueenCoder</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>I am a Cocoa Developer, author, and speaker from Madison, WI. I live with two pugs who periodically make cameos on the podcast I cohost, NSBrief.</string>
 		</dict>
 		<key>jeremy</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Jeremy</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Olson</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>jerols</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string></string>
 		</dict>
 		<key>jerry</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Jerry</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Beers</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>jerrybeers</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Jerry is a co-founder of Five Pack Creative, a mobile development company specializing in iOS development. He’s worked on client projects, like American Airlines and Match.com, but lately he’s been pouring his focus into Hours, a time tracking app developed in partnership with Tapity. He is passionate about creating well-crafted code and teaching others.
+
+Jerry enjoys spending time on the beach with his wife and kids, SCUBA diving, and watching movies.</string>
 		</dict>
 		<key>joshua</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Joshua</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Greene</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>jrg_developer</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Joshua Greene is a senior iOS developer and advocate for clean code. When he&apos;s not slinging code, he enjoys martial arts, Netflix, and spending time with his wonderful wife and daughter.</string>
 		</dict>
 		<key>kelvin</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Kelvin</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Lau</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>KelvinlauKL</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Kelvin is a physicist turned Swift iOS Developer. Although a former social creature, it&apos;s hard to find him outside nowadays. He spends most of his time in Xcode multiverse, and most recently on an intimate relationship with Parse.</string>
 		</dict>
 		<key>ken</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Ken</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Yarmosh</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>kenyarmosh</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string></string>
 		</dict>
 		<key>matt-g</key>
 		<dict>
@@ -1218,13 +1229,13 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Matt</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Luedke</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>matt_luedke</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Originally from the Chicago area, Matt is currently a Mobile Engineer at Exygy in San Francisco doing iOS and Android development. He&apos;s always working on some kind of new side project involving writing and/or app development and/or general tomhackery.</string>
 		</dict>
 		<key>mic</key>
 		<dict>
@@ -1244,13 +1255,17 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Owen</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Brown</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>o_brown_back40</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Owen L Brown is a software engineer with a strong background in mechanical and electrical design. He has 16+ years of experience in writing microcontroller code for machine automation. 
+
+For the last few years, his focus has been on integrating machine control with iOS using Bluetooth. He has several cool machine-control Bluetooth LE applications on the app store. 
+
+Owen is also the author of a new book called &apos;Integrating iOS Bluetooth LE with PIC18 Microcontrollers&apos;.</string>
 		</dict>
 		<key>ray</key>
 		<dict>
@@ -1276,7 +1291,9 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<key>twitter</key>
 			<string>RCachATX</string>
 			<key>bio</key>
-			<string>René is an iOS Architect at Mutual Mobile, where he is known for his expertise in user interface engineering with UIKit, Core Animation, and Core Graphics. He&apos;s also been known to enjoy programming in Swift. He has been engineering iOS apps since 2009 and has experience in mobile client and server engineering, mobile user experience design, and product management. At Mutual Mobile, René has worked on a wide range of apps spanning from industrial sales enablement to mobile payments.</string>
+			<string>René, is an iOS Client Architect at Atlassian, where he is known for his expertise in user interface engineering with UIKit, Core Animation, and Core Graphics. He has been engineering iOS apps since 2009. 
+
+When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for the Texas Longhorns.</string>
 		</dict>
 		<key>rich</key>
 		<dict>
@@ -1289,7 +1306,7 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<key>twitter</key>
 			<string>richturton</string>
 			<key>bio</key>
-			<string>Richard is an iOS developer for a leading UK mobile agency, prolific Stack Overflow participant and author of a development blog, Command Shift. When he&apos;s not in front of a computer he is usually building Lego horse powered spaceships (don&apos;t ask!) with his daughter.</string>
+			<string>Richard is an iOS developer for MartianCraft, prolific Stack Overflow participant and author of a development blog, Command Shift. When he&apos;s not in front of a computer he is usually building Lego horse-powered spaceships (don&apos;t ask!) with his daughter.</string>
 		</dict>
 		<key>ryan</key>
 		<dict>
@@ -1315,7 +1332,7 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<key>twitter</key>
 			<string>iwantmyrealname</string>
 			<key>bio</key>
-			<string>Sam is a Technical Evangelist for ShinobiControls - purveyors of the finest UI controls for iOS and Android - including charts, grids and much more. By day you&apos;ll find him attending conferences, writing tutorials, meeting people and generally being a good guy. By night he&apos;s likely to be out entertaining people, armed with his trombone and killer dance moves.</string>
+			<string>Sam is a strange mashup of developer, writer and trainer. By day you&apos;ll find him recording videos for Razeware, writing tutorials, attending conferences and generally being a good guy. By night he&apos;s likely to be out entertaining people, armed with his trombone and killer dance moves.</string>
 		</dict>
 		<key>tammy</key>
 		<dict>
@@ -1348,13 +1365,15 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<key>active</key>
 			<true/>
 			<key>first</key>
-			<string>Mic</string>
+			<string>Vincent</string>
 			<key>last</key>
-			<string>Pringle</string>
+			<string>Ngo</string>
 			<key>twitter</key>
-			<string>micpringle</string>
+			<string>VincentNgo2</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+			<string>Vincent is a full time iOS software engineer at IBM. He graduated from Virginia Tech with a Computer Science degree. He has passion for developing, and learning about iOS SDK.
+
+On the side he likes playing video games, strumming his guitar, hitting golf balls, and chilling with friends.</string>
 		</dict>
 	</dict>
 	<key>rooms</key>

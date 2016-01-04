@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "liaison-hill.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "Carlyle.png",
       "scale" : "2x"
     },
     {
