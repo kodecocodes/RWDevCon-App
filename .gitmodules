@@ -1,0 +1,3 @@
+[submodule "Shared/Gloss"]
+	path = Shared/Gloss
+	url = https://micpringle@github.com/hkellaway/Gloss.git

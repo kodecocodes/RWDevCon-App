@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "23F5962A0B73608A25EA5515C134FDF05B812A02",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "23F5962A0B73608A25EA5515C134FDF05B812A02" : 0,
+    "341BD1B40E9F29ECC01D67E748FAB5FA14696CC0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "34FEE9EA-9190-4A3C-800D-1708DD301D22",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "23F5962A0B73608A25EA5515C134FDF05B812A02" : "RWDevCon-App\/",
+    "341BD1B40E9F29ECC01D67E748FAB5FA14696CC0" : "RWDevCon-App\/Shared\/Gloss\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "RWDevCon",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "RWDevCon.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/raywenderlich\/RWDevCon-App.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "23F5962A0B73608A25EA5515C134FDF05B812A02"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hkellaway\/Gloss.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "341BD1B40E9F29ECC01D67E748FAB5FA14696CC0"
+    }
+  ]
+}

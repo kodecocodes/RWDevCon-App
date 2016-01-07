@@ -38,6 +38,17 @@
 		7B7B88631C3EA37100102F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B88621C3EA37100102F5E /* Assets.xcassets */; };
 		7B7B88671C3EA37100102F5E /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7B7B884D1C3EA37000102F5E /* Watch.app */; };
 		7B992F2D1C29778F009BF3C2 /* RWDevCon2016.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B992F2C1C29778F009BF3C2 /* RWDevCon2016.plist */; };
+		7BBE332E1C3EA6AC000C7B04 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE33271C3EA6AC000C7B04 /* Decoder.swift */; };
+		7BBE332F1C3EA6AC000C7B04 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE33281C3EA6AC000C7B04 /* Dictionary.swift */; };
+		7BBE33301C3EA6AC000C7B04 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE33291C3EA6AC000C7B04 /* Encoder.swift */; };
+		7BBE33311C3EA6AC000C7B04 /* Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE332B1C3EA6AC000C7B04 /* Gloss.swift */; };
+		7BBE33331C3EA6AC000C7B04 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE332D1C3EA6AC000C7B04 /* Operators.swift */; };
+		7BBE33351C3EA6E1000C7B04 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE33271C3EA6AC000C7B04 /* Decoder.swift */; };
+		7BBE33361C3EA6FB000C7B04 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE33281C3EA6AC000C7B04 /* Dictionary.swift */; };
+		7BBE33371C3EA6FB000C7B04 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE33291C3EA6AC000C7B04 /* Encoder.swift */; };
+		7BBE33381C3EA6FB000C7B04 /* Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE332B1C3EA6AC000C7B04 /* Gloss.swift */; };
+		7BBE33391C3EA6FB000C7B04 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE332D1C3EA6AC000C7B04 /* Operators.swift */; };
+		7BBE333C1C3EA967000C7B04 /* WatchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE333B1C3EA967000C7B04 /* WatchDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +140,12 @@
 		7B7B88621C3EA37100102F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B7B88641C3EA37100102F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B992F2C1C29778F009BF3C2 /* RWDevCon2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RWDevCon2016.plist; path = RWDevCon/RWDevCon2016.plist; sourceTree = "<group>"; };
+		7BBE33271C3EA6AC000C7B04 /* Decoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		7BBE33281C3EA6AC000C7B04 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		7BBE33291C3EA6AC000C7B04 /* Encoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encoder.swift; sourceTree = "<group>"; };
+		7BBE332B1C3EA6AC000C7B04 /* Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gloss.swift; sourceTree = "<group>"; };
+		7BBE332D1C3EA6AC000C7B04 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		7BBE333B1C3EA967000C7B04 /* WatchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				78B7A9D01A3E9876002AAF7F /* RWDevCon */,
+				7BBE33341C3EA6B0000C7B04 /* Shared */,
 				7B7B884E1C3EA37000102F5E /* Watch */,
 				7B7B885D1C3EA37100102F5E /* Watch Extension */,
 				783F5A161A490E1B00199736 /* Frameworks */,
@@ -271,6 +289,7 @@
 			children = (
 				78B7A9D31A3E9876002AAF7F /* AppDelegate.swift */,
 				7848A62B1A41F776003F8373 /* Config.swift */,
+				7BBE333B1C3EA967000C7B04 /* WatchDataSource.swift */,
 			);
 			name = Other;
 			sourceTree = "<group>";
@@ -302,6 +321,27 @@
 				7B7B88641C3EA37100102F5E /* Info.plist */,
 			);
 			path = "Watch Extension";
+			sourceTree = "<group>";
+		};
+		7BBE33261C3EA6AC000C7B04 /* Gloss */ = {
+			isa = PBXGroup;
+			children = (
+				7BBE33271C3EA6AC000C7B04 /* Decoder.swift */,
+				7BBE33281C3EA6AC000C7B04 /* Dictionary.swift */,
+				7BBE33291C3EA6AC000C7B04 /* Encoder.swift */,
+				7BBE332B1C3EA6AC000C7B04 /* Gloss.swift */,
+				7BBE332D1C3EA6AC000C7B04 /* Operators.swift */,
+			);
+			name = Gloss;
+			path = Shared/Gloss/Sources/Gloss;
+			sourceTree = "<group>";
+		};
+		7BBE33341C3EA6B0000C7B04 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				7BBE33261C3EA6AC000C7B04 /* Gloss */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,8 +488,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				78B7AA2D1A414E57002AAF7F /* Session.swift in Sources */,
+				7BBE332F1C3EA6AC000C7B04 /* Dictionary.swift in Sources */,
+				7BBE333C1C3EA967000C7B04 /* WatchDataSource.swift in Sources */,
+				7BBE33301C3EA6AC000C7B04 /* Encoder.swift in Sources */,
 				78B7AA341A415877002AAF7F /* SessionViewController.swift in Sources */,
 				78CBC28D1A653A3F00FC839A /* ScheduleTableViewCell.swift in Sources */,
+				7BBE332E1C3EA6AC000C7B04 /* Decoder.swift in Sources */,
 				78B7AA291A414A94002AAF7F /* Track.swift in Sources */,
 				78B7AA2B1A414A94002AAF7F /* Room.swift in Sources */,
 				7848A62C1A41F776003F8373 /* Config.swift in Sources */,
@@ -462,6 +506,8 @@
 				78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */,
 				78B7AA271A4147DC002AAF7F /* CoreDataStack.swift in Sources */,
 				78CBC28B1A6537F200FC839A /* ScheduleTableViewController.swift in Sources */,
+				7BBE33311C3EA6AC000C7B04 /* Gloss.swift in Sources */,
+				7BBE33331C3EA6AC000C7B04 /* Operators.swift in Sources */,
 				78048CBB1A66E04A00435241 /* RoomViewController.swift in Sources */,
 				781EBAD51A5F7461009A7AA5 /* AboutViewController.swift in Sources */,
 				78F256841A416BB20040AC63 /* ScheduleDataSource.swift in Sources */,
@@ -472,7 +518,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BBE33381C3EA6FB000C7B04 /* Gloss.swift in Sources */,
 				7B7B88611C3EA37100102F5E /* ExtensionDelegate.swift in Sources */,
+				7BBE33391C3EA6FB000C7B04 /* Operators.swift in Sources */,
+				7BBE33361C3EA6FB000C7B04 /* Dictionary.swift in Sources */,
+				7BBE33371C3EA6FB000C7B04 /* Encoder.swift in Sources */,
+				7BBE33351C3EA6E1000C7B04 /* Decoder.swift in Sources */,
 				7B7B885F1C3EA37100102F5E /* InterfaceController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,6 +787,7 @@
 				7B7B886B1C3EA37100102F5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7B7B886E1C3EA37100102F5E /* Build configuration list for PBXNativeTarget "Watch" */ = {
 			isa = XCConfigurationList;
@@ -744,6 +796,7 @@
 				7B7B88691C3EA37100102F5E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

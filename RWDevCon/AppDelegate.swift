@@ -12,6 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   var window: UIWindow?
   lazy var coreDataStack = CoreDataStack()
+  var watchDataSource: WatchDataSource?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     guard let plist = NSBundle.mainBundle().URLForResource("RWDevCon2016", withExtension: "plist"), let data = NSDictionary(contentsOfURL: plist) else { return true }
@@ -36,7 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let detailWrapperController = splitViewController.viewControllers[1] as! UINavigationController
     (detailWrapperController.topViewController as! SessionViewController).coreDataStack = coreDataStack
-
+    
+    watchDataSource = WatchDataSource(context: coreDataStack.context)
+    watchDataSource?.activate()
+    
     return true
   }
   
