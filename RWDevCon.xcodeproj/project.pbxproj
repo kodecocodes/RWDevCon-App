@@ -49,6 +49,9 @@
 		7BBE33381C3EA6FB000C7B04 /* Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE332B1C3EA6AC000C7B04 /* Gloss.swift */; };
 		7BBE33391C3EA6FB000C7B04 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE332D1C3EA6AC000C7B04 /* Operators.swift */; };
 		7BBE333C1C3EA967000C7B04 /* WatchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE333B1C3EA967000C7B04 /* WatchDataSource.swift */; };
+		7BBE333E1C3EC11E000C7B04 /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE333D1C3EC11E000C7B04 /* Proxy.swift */; };
+		7BBE33451C3EC30C000C7B04 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE33441C3EC30C000C7B04 /* Session.swift */; };
+		7BBE33471C3EC318000C7B04 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBE33461C3EC318000C7B04 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +149,9 @@
 		7BBE332B1C3EA6AC000C7B04 /* Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gloss.swift; sourceTree = "<group>"; };
 		7BBE332D1C3EA6AC000C7B04 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		7BBE333B1C3EA967000C7B04 /* WatchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchDataSource.swift; sourceTree = "<group>"; };
+		7BBE333D1C3EC11E000C7B04 /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
+		7BBE33441C3EC30C000C7B04 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		7BBE33461C3EC318000C7B04 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -315,10 +321,10 @@
 		7B7B885D1C3EA37100102F5E /* Watch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				7B7B885E1C3EA37100102F5E /* InterfaceController.swift */,
-				7B7B88601C3EA37100102F5E /* ExtensionDelegate.swift */,
-				7B7B88621C3EA37100102F5E /* Assets.xcassets */,
-				7B7B88641C3EA37100102F5E /* Info.plist */,
+				7BBE33401C3EC140000C7B04 /* Assets */,
+				7BBE33411C3EC151000C7B04 /* Controllers */,
+				7BBE333F1C3EC126000C7B04 /* Models */,
+				7BBE33421C3EC15F000C7B04 /* Other */,
 			);
 			path = "Watch Extension";
 			sourceTree = "<group>";
@@ -342,6 +348,41 @@
 				7BBE33261C3EA6AC000C7B04 /* Gloss */,
 			);
 			name = Shared;
+			sourceTree = "<group>";
+		};
+		7BBE333F1C3EC126000C7B04 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7BBE33461C3EC318000C7B04 /* Person.swift */,
+				7BBE333D1C3EC11E000C7B04 /* Proxy.swift */,
+				7BBE33441C3EC30C000C7B04 /* Session.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7BBE33401C3EC140000C7B04 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				7B7B88621C3EA37100102F5E /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		7BBE33411C3EC151000C7B04 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B7B885E1C3EA37100102F5E /* InterfaceController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		7BBE33421C3EC15F000C7B04 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				7B7B88601C3EA37100102F5E /* ExtensionDelegate.swift */,
+				7B7B88641C3EA37100102F5E /* Info.plist */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -518,13 +559,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BBE33471C3EC318000C7B04 /* Person.swift in Sources */,
 				7BBE33381C3EA6FB000C7B04 /* Gloss.swift in Sources */,
 				7B7B88611C3EA37100102F5E /* ExtensionDelegate.swift in Sources */,
 				7BBE33391C3EA6FB000C7B04 /* Operators.swift in Sources */,
 				7BBE33361C3EA6FB000C7B04 /* Dictionary.swift in Sources */,
 				7BBE33371C3EA6FB000C7B04 /* Encoder.swift in Sources */,
 				7BBE33351C3EA6E1000C7B04 /* Decoder.swift in Sources */,
+				7BBE333E1C3EC11E000C7B04 /* Proxy.swift in Sources */,
 				7B7B885F1C3EA37100102F5E /* InterfaceController.swift in Sources */,
+				7BBE33451C3EC30C000C7B04 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

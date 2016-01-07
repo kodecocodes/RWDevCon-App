@@ -8,15 +8,7 @@
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
-                    <items>
-                        <button width="1" alignment="left" title="Button" id="NwM-08-Ijh">
-                            <connections>
-                                <action selector="buttonTapped" destination="AgC-eL-Hgc" id="TTj-j7-DgP"/>
-                            </connections>
-                        </button>
-                    </items>
-                </controller>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target"/>
             </objects>
         </scene>
     </scenes>
