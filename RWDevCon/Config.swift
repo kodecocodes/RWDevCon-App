@@ -25,7 +25,12 @@ class Config {
     }
     return [:]
   }
-
+  
+  class func nukeFavorites() {
+    userDefaults().removeObjectForKey("favoriteSessions")
+    userDefaults().synchronize()
+  }
+  
   class func registerFavorite(session: Session) {
     var favs = favoriteSessions()
     favs[session.startDateTimeString] = session.identifier

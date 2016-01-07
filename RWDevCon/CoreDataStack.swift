@@ -24,17 +24,18 @@ import CoreData
 
 public class CoreDataStack {
   
+  public static let modelName = "RWDevCon"
+  
   public let context: NSManagedObjectContext
   let psc: NSPersistentStoreCoordinator
   let model: NSManagedObjectModel
   let store: NSPersistentStore?
   
   public init() {
-    let modelName = "RWDevCon"
     
     let bundle = NSBundle.mainBundle()
     let modelURL =
-    bundle.URLForResource(modelName, withExtension:"momd")!
+    bundle.URLForResource(self.dynamicType.modelName, withExtension:"momd")!
     model = NSManagedObjectModel(contentsOfURL: modelURL)!
     
     psc = NSPersistentStoreCoordinator(managedObjectModel: model)
@@ -43,7 +44,7 @@ public class CoreDataStack {
     context.persistentStoreCoordinator = psc
     
     let documentsURL = Config.applicationDocumentsDirectory()
-    let storeURL = documentsURL.URLByAppendingPathComponent("\(modelName).sqlite")
+    let storeURL = documentsURL.URLByAppendingPathComponent("\(self.dynamicType.modelName).sqlite")
 
     NSLog("Store is at \(storeURL)")
 

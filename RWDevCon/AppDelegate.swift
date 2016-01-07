@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     guard let plist = NSBundle.mainBundle().URLForResource("RWDevCon2016", withExtension: "plist"), let data = NSDictionary(contentsOfURL: plist) else { return true }
+    
+    resetIfNeeded()
+    
     let localLastUpdateDate = Config.userDefaults().objectForKey("lastUpdated") as? NSDate ?? beginningOfTimeDate
     let plistLastUpdateDate = data["metadata"]?["lastUpdated"] as? NSDate ?? beginningOfTimeDate
     if Session.sessionCount(coreDataStack.context) == 0 || localLastUpdateDate.compare(plistLastUpdateDate) == .OrderedAscending {
@@ -36,7 +39,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     return true
   }
-
+  
+  func resetIfNeeded() {
+    let resetForNextConferenceKey = "reset-for-2016"
+    if !Config.userDefaults().boolForKey(resetForNextConferenceKey) {
+      let storeURL = Config.applicationDocumentsDirectory().URLByAppendingPathComponent("\(CoreDataStack.modelName).sqlite")
+      do {
+        try NSFileManager.defaultManager().removeItemAtURL(storeURL)
+      } catch { /* Don't need to do anything here; an error simply means the store didn't exist in the first place */ }
+      Config.nukeFavorites()
+      Config.userDefaults().setBool(true, forKey: resetForNextConferenceKey)
+    }
+  }
+  
   func updateFromServer() {
     let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2016_lastUpdate.txt")!,
       completionHandler: { (data, response, error) -> Void in
