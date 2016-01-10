@@ -9,9 +9,16 @@
 import Foundation
 import WatchConnectivity
 
+enum Schedule: String {
+  case Friday = "friday"
+  case Saturday = "saturday"
+  case Favourites = "favourites"
+}
+
 class Proxy: NSObject {
   
   private var session: WCSession?
+  private var cache = [Schedule: [Session]]()
   
   func activate() -> Bool {
     guard WCSession.isSupported() else { return false }
@@ -21,17 +28,21 @@ class Proxy: NSObject {
     return true
   }
   
-  // Test method only. Should fetch by day, or favorite, and cache
-  func fetchSessions(handler: ([Session]? -> Void)) {
-    session?.sendMessage(["fetch": "sessions"], replyHandler: { results in
-      if let sessions = results["sessions"] as? [JSON] {
-        handler(Session.modelsFromJSONArray(sessions))
-      } else {
-        handler(nil)
-      }
-    }, errorHandler: { error in
-      handler(nil)
-    })
+  func sessionsForSchedule(schedule: Schedule, handler: ([Session] -> Void)) {
+    if let cached = cache[schedule] {
+      handler(cached)
+    } else {
+      session?.sendMessage(["schedule": schedule.rawValue], replyHandler: { response in
+        if let JSON = response["sessions"] as? [JSON], let sessions = Session.modelsFromJSONArray(JSON) {
+          if schedule != .Favourites && sessions.count > 0 { self.cache[schedule] = sessions }
+          handler(sessions)
+        } else {
+          handler([])
+        }
+      }, errorHandler: { error in
+        handler([])
+      })
+    }
   }
   
 }

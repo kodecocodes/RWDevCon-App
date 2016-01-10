@@ -11,15 +11,21 @@ import Foundation
 
 class InterfaceController: WKInterfaceController {
   
+  let proxy = Proxy()
+  
   override func didAppear() {
     super.didAppear()
     
-    let proxy = Proxy()
     proxy.activate()
-    proxy.fetchSessions { sessions in
-      guard let sessions = sessions else { return }
-      print(sessions.count)
-    }
+    
+    
   }
   
+  @IBAction func go() {
+    
+    proxy.sessionsForSchedule(.Friday) { sessions in
+      print(sessions.count)
+    }
+    
+  }
 }

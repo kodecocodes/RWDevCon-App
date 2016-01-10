@@ -10,7 +10,12 @@ import Foundation
 import CoreData
 import WatchConnectivity
 
-class WatchDataSource: NSObject { // Why, oh why, WatchConnectivity? Why?
+class WatchDataSource: NSObject {
+  
+  private let dates = [
+    "friday": (start: NSDate(timeIntervalSince1970: 1457654400), end: NSDate(timeIntervalSince1970: 1457740799)),
+    "saturday": (start: NSDate(timeIntervalSince1970: 1457740800), end: NSDate(timeIntervalSince1970: 1457827199))
+  ]
   
   struct Person: Encodable {
     
@@ -101,9 +106,19 @@ class WatchDataSource: NSObject { // Why, oh why, WatchConnectivity? Why?
     }
   }
   
-  func allSessions() -> [JSON]? {
+  func sessionsBetweenStartDate(startDate: NSDate, andEndDate endDate: NSDate) -> [JSON] {
+    let predicate = NSPredicate(format: "active = %@ AND (date >= %@) AND (date <= %@)", argumentArray: [true, startDate, endDate])
+    return sesssionsForPredicate(predicate)
+  }
+  
+  func sessionsForUser() -> [JSON] {
+    let predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, Array(Config.favoriteSessions().values)])
+    return sesssionsForPredicate(predicate)
+  }
+  
+  private func sesssionsForPredicate(predicate: NSPredicate) -> [JSON] {
     let fetch = NSFetchRequest(entityName: "Session")
-    fetch.predicate = NSPredicate(format: "active = %@", argumentArray: [true])
+    fetch.predicate = predicate
     fetch.sortDescriptors = [
       NSSortDescriptor(key: "date", ascending: true),
       NSSortDescriptor(key: "track.trackId", ascending: true),
@@ -111,14 +126,14 @@ class WatchDataSource: NSObject { // Why, oh why, WatchConnectivity? Why?
     ]
     
     do {
-      guard let results = try context.executeFetchRequest(fetch) as? [RWDevCon.Session] else { return nil }
+      guard let results = try context.executeFetchRequest(fetch) as? [RWDevCon.Session] else { return [] }
       var sessions = [Session]()
       results.forEach { session in
         sessions.append(Session(session: session))
       }
-      return Session.toJSONArray(sessions)
+      return Session.toJSONArray(sessions) ?? []
     } catch {
-      return nil
+      return []
     }
   }
 
@@ -127,7 +142,17 @@ class WatchDataSource: NSObject { // Why, oh why, WatchConnectivity? Why?
 extension WatchDataSource: WCSessionDelegate {
   
   func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-    replyHandler(["sessions": allSessions() ?? []])
+    var sessions = [JSON]()
+    if let schedule = message["schedule"] as? String {
+      if schedule == "favourites" {
+        sessions = sessionsForUser()
+      } else {
+        if let date = dates[schedule] {
+          sessions = sessionsBetweenStartDate(date.start, andEndDate: date.end)
+        }
+      }
+    }
+    replyHandler(["sessions": sessions])
   }
   
 }
