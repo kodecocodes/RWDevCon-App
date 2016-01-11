@@ -23,7 +23,7 @@ class InterfaceController: WKInterfaceController {
   
   @IBAction func go() {
     
-    proxy.sessionsForSchedule(.Friday) { sessions in
+    proxy.sessionsForSchedule(.Saturday) { sessions in
       print(sessions.count)
     }
     

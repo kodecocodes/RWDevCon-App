@@ -12,9 +12,30 @@ import WatchConnectivity
 
 class WatchDataSource: NSObject {
   
-  private let dates = [
-    "friday": (start: NSDate(timeIntervalSince1970: 1457654400), end: NSDate(timeIntervalSince1970: 1457740799)),
-    "saturday": (start: NSDate(timeIntervalSince1970: 1457740800), end: NSDate(timeIntervalSince1970: 1457827199))
+  private let predicates = [
+    "friday": NSPredicate(
+      format: "active = %@ AND (date >= %@) AND (date <= %@)",
+      argumentArray: [
+        true,
+        NSDate(timeIntervalSince1970: 1457654400),
+        NSDate(timeIntervalSince1970: 1457740799)
+      ]
+    ),
+    "saturday": NSPredicate(
+      format: "active = %@ AND (date >= %@) AND (date <= %@)",
+      argumentArray: [
+        true,
+        NSDate(timeIntervalSince1970: 1457740800),
+        NSDate(timeIntervalSince1970: 1457827199)
+      ]
+    ),
+    "favourites": NSPredicate(
+      format: "active = %@ AND identifier IN %@",
+      argumentArray: [
+        true,
+        Array(Config.favoriteSessions().values)
+      ]
+    )
   ]
   
   struct Person: Encodable {
@@ -105,17 +126,7 @@ class WatchDataSource: NSObject {
       session?.activateSession()
     }
   }
-  
-  func sessionsBetweenStartDate(startDate: NSDate, andEndDate endDate: NSDate) -> [JSON] {
-    let predicate = NSPredicate(format: "active = %@ AND (date >= %@) AND (date <= %@)", argumentArray: [true, startDate, endDate])
-    return sesssionsForPredicate(predicate)
-  }
-  
-  func sessionsForUser() -> [JSON] {
-    let predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, Array(Config.favoriteSessions().values)])
-    return sesssionsForPredicate(predicate)
-  }
-  
+    
   private func sesssionsForPredicate(predicate: NSPredicate) -> [JSON] {
     let fetch = NSFetchRequest(entityName: "Session")
     fetch.predicate = predicate
@@ -142,17 +153,11 @@ class WatchDataSource: NSObject {
 extension WatchDataSource: WCSessionDelegate {
   
   func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-    var sessions = [JSON]()
-    if let schedule = message["schedule"] as? String {
-      if schedule == "favourites" {
-        sessions = sessionsForUser()
-      } else {
-        if let date = dates[schedule] {
-          sessions = sessionsBetweenStartDate(date.start, andEndDate: date.end)
-        }
-      }
+    guard let schedule = message["schedule"] as? String, let predicate = predicates[schedule] else {
+      replyHandler(["sessions": [JSON]()])
+      return
     }
-    replyHandler(["sessions": sessions])
+    replyHandler(["sessions": sesssionsForPredicate(predicate)])
   }
   
 }
