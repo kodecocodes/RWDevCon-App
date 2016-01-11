@@ -30,10 +30,13 @@
 		78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */; };
 		78F2567A1A4167F40040AC63 /* LabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256791A4167F40040AC63 /* LabelTableViewCell.swift */; };
 		78F256841A416BB20040AC63 /* ScheduleDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F256801A416BB20040AC63 /* ScheduleDataSource.swift */; };
+		7B020A221C44479B007F67E0 /* MenuInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B020A211C44479B007F67E0 /* MenuInterfaceController.swift */; };
+		7B020A241C444ABE007F67E0 /* ScheduleInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B020A231C444ABE007F67E0 /* ScheduleInterfaceController.swift */; };
+		7B020A261C44547C007F67E0 /* SessionRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B020A251C44547C007F67E0 /* SessionRowController.swift */; };
+		7B020A281C4457B8007F67E0 /* SessionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B020A271C4457B8007F67E0 /* SessionInterfaceController.swift */; };
 		7B7B88511C3EA37100102F5E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B884F1C3EA37100102F5E /* Interface.storyboard */; };
 		7B7B88531C3EA37100102F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B88521C3EA37100102F5E /* Assets.xcassets */; };
 		7B7B885A1C3EA37100102F5E /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B7B88591C3EA37100102F5E /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		7B7B885F1C3EA37100102F5E /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B885E1C3EA37100102F5E /* InterfaceController.swift */; };
 		7B7B88611C3EA37100102F5E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7B88601C3EA37100102F5E /* ExtensionDelegate.swift */; };
 		7B7B88631C3EA37100102F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B88621C3EA37100102F5E /* Assets.xcassets */; };
 		7B7B88671C3EA37100102F5E /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7B7B884D1C3EA37000102F5E /* Watch.app */; };
@@ -133,12 +136,15 @@
 		78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		78F256791A4167F40040AC63 /* LabelTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelTableViewCell.swift; sourceTree = "<group>"; };
 		78F256801A416BB20040AC63 /* ScheduleDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDataSource.swift; sourceTree = "<group>"; };
+		7B020A211C44479B007F67E0 /* MenuInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuInterfaceController.swift; sourceTree = "<group>"; };
+		7B020A231C444ABE007F67E0 /* ScheduleInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleInterfaceController.swift; sourceTree = "<group>"; };
+		7B020A251C44547C007F67E0 /* SessionRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRowController.swift; sourceTree = "<group>"; };
+		7B020A271C4457B8007F67E0 /* SessionInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInterfaceController.swift; sourceTree = "<group>"; };
 		7B7B884D1C3EA37000102F5E /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B88501C3EA37100102F5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		7B7B88521C3EA37100102F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B7B88541C3EA37100102F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B7B88591C3EA37100102F5E /* Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B7B885E1C3EA37100102F5E /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
 		7B7B88601C3EA37100102F5E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		7B7B88621C3EA37100102F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B7B88641C3EA37100102F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -371,7 +377,10 @@
 		7BBE33411C3EC151000C7B04 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7B7B885E1C3EA37100102F5E /* InterfaceController.swift */,
+				7B020A211C44479B007F67E0 /* MenuInterfaceController.swift */,
+				7B020A231C444ABE007F67E0 /* ScheduleInterfaceController.swift */,
+				7B020A271C4457B8007F67E0 /* SessionInterfaceController.swift */,
+				7B020A251C44547C007F67E0 /* SessionRowController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -563,11 +572,14 @@
 				7BBE33381C3EA6FB000C7B04 /* Gloss.swift in Sources */,
 				7B7B88611C3EA37100102F5E /* ExtensionDelegate.swift in Sources */,
 				7BBE33391C3EA6FB000C7B04 /* Operators.swift in Sources */,
+				7B020A241C444ABE007F67E0 /* ScheduleInterfaceController.swift in Sources */,
+				7B020A221C44479B007F67E0 /* MenuInterfaceController.swift in Sources */,
 				7BBE33361C3EA6FB000C7B04 /* Dictionary.swift in Sources */,
+				7B020A261C44547C007F67E0 /* SessionRowController.swift in Sources */,
 				7BBE33371C3EA6FB000C7B04 /* Encoder.swift in Sources */,
 				7BBE33351C3EA6E1000C7B04 /* Decoder.swift in Sources */,
 				7BBE333E1C3EC11E000C7B04 /* Proxy.swift in Sources */,
-				7B7B885F1C3EA37100102F5E /* InterfaceController.swift in Sources */,
+				7B020A281C4457B8007F67E0 /* SessionInterfaceController.swift in Sources */,
 				7BBE33451C3EC30C000C7B04 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

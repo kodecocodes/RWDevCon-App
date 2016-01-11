@@ -1,23 +1,92 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cCo-jV-f1S">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
-        <scene sceneID="aou-V4-d1y">
+        <!--Menu-->
+        <scene sceneID="tvf-Xk-s0K">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Watch" customModuleProvider="target">
+                <controller title="Menu" id="cCo-jV-f1S" customClass="MenuInterfaceController" customModule="Watch_Extension">
                     <items>
-                        <button width="1" alignment="left" title="Button" id="r9w-UF-R45">
+                        <button width="1" alignment="left" title="Friday" id="vX8-Xy-vbw">
                             <connections>
-                                <action selector="go" destination="AgC-eL-Hgc" id="OgM-4P-DIi"/>
+                                <segue destination="3h9-Ys-3Th" kind="push" identifier="Friday" id="rKD-dS-7Wx"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Saturday" id="DTx-e0-rV3">
+                            <connections>
+                                <segue destination="3h9-Ys-3Th" kind="push" identifier="Saturday" id="6uI-OH-Tof"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Favorites" id="4h4-Ob-qJx">
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                            <connections>
+                                <segue destination="3h9-Ys-3Th" kind="push" identifier="Favorites" id="FBz-JM-mhe"/>
                             </connections>
                         </button>
                     </items>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="319" y="432"/>
+        </scene>
+        <!--Schedule Interface Controller-->
+        <scene sceneID="GRQ-0v-M15">
+            <objects>
+                <controller id="3h9-Ys-3Th" customClass="ScheduleInterfaceController" customModule="Watch_Extension">
+                    <items>
+                        <table alignment="left" id="b0Y-QR-E7A">
+                            <items>
+                                <tableRow identifier="Loading" selectable="NO" id="8zw-9r-62r">
+                                    <group key="rootItem" width="1" height="1" heightAdjustment="-14" alignment="left" id="Tvx-2g-ZFk">
+                                        <items>
+                                            <label width="1" height="1" alignment="center" verticalAlignment="center" text="Loading..." textAlignment="center" numberOfLines="0" id="c9a-l9-vBE"/>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </group>
+                                </tableRow>
+                                <tableRow identifier="Empty" selectable="NO" id="zTs-aG-u31">
+                                    <group key="rootItem" width="1" height="1" heightAdjustment="-14" alignment="left" id="CLS-tg-otY">
+                                        <items>
+                                            <label width="1" height="1" alignment="center" verticalAlignment="center" text="Empty" textAlignment="center" id="sEO-0v-46t"/>
+                                        </items>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    </group>
+                                </tableRow>
+                                <tableRow identifier="Session" id="pnj-Mm-4bz" customClass="SessionRowController" customModule="Watch_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" spacing="0.0" id="7kG-dX-GZw">
+                                        <items>
+                                            <label alignment="left" text="Beginning Swift" textAlignment="left" numberOfLines="0" id="DSn-Nk-ujf">
+                                                <fontDescription key="font" type="system" pointSize="12"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="titleLabel" destination="DSn-Nk-ujf" id="vSW-fW-Cl9"/>
+                                        <segue destination="1rA-F7-ZGS" kind="push" identifier="Session" id="Y7x-jA-hzo"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="b0Y-QR-E7A" id="XHD-Hg-CKK"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="539" y="432"/>
+        </scene>
+        <!--Session-->
+        <scene sceneID="KRx-kt-bKV">
+            <objects>
+                <controller title="Session" id="1rA-F7-ZGS" customClass="SessionInterfaceController" customModule="Watch_Extension"/>
+            </objects>
+            <point key="canvasLocation" x="756" y="432"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="rKD-dS-7Wx"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.050980392839999999" green="0.38823530080000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

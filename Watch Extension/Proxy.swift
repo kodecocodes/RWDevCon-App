@@ -12,10 +12,12 @@ import WatchConnectivity
 enum Schedule: String {
   case Friday = "friday"
   case Saturday = "saturday"
-  case Favourites = "favourites"
+  case Favourites = "favorites"
 }
 
 class Proxy: NSObject {
+  
+  static let defaultProxy = Proxy()
   
   private var session: WCSession?
   private var cache = [Schedule: [Session]]()

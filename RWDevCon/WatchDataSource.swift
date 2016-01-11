@@ -29,7 +29,7 @@ class WatchDataSource: NSObject {
         NSDate(timeIntervalSince1970: 1457827199)
       ]
     ),
-    "favourites": NSPredicate(
+    "favorites": NSPredicate(
       format: "active = %@ AND identifier IN %@",
       argumentArray: [
         true,
