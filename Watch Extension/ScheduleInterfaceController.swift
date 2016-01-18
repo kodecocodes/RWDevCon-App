@@ -46,7 +46,7 @@ class ScheduleInterfaceController: WKInterfaceController {
   override func willActivate() {
     super.willActivate()
     guard let schedule = schedule else { return }
-    state = .Loading
+    if !Proxy.defaultProxy.hasCachedSessionsForSchedule(schedule) { state = .Loading }
     Proxy.defaultProxy.sessionsForSchedule(schedule) { sessions in
       self.state = sessions.count > 0 ? .Loaded(sessions) : .Empty
     }
@@ -54,7 +54,12 @@ class ScheduleInterfaceController: WKInterfaceController {
   
   override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
     guard segueIdentifier == "Session" else { return nil }
-    return nil // Need to return a struct??
+    switch state {
+    case .Loading, .Empty:
+      return nil
+    case .Loaded(let sessions):
+      return ["schedule": schedule!.rawValue, "id": sessions[rowIndex].id!]
+    }
   }
   
 }

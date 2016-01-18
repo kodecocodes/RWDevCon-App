@@ -34,6 +34,8 @@
 		7B020A241C444ABE007F67E0 /* ScheduleInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B020A231C444ABE007F67E0 /* ScheduleInterfaceController.swift */; };
 		7B020A261C44547C007F67E0 /* SessionRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B020A251C44547C007F67E0 /* SessionRowController.swift */; };
 		7B020A281C4457B8007F67E0 /* SessionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B020A271C4457B8007F67E0 /* SessionInterfaceController.swift */; };
+		7B5C7FBF1C4D33CE00A052F5 /* Speakers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C7FBE1C4D33CE00A052F5 /* Speakers.xcassets */; };
+		7B5C7FC01C4D33CE00A052F5 /* Speakers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C7FBE1C4D33CE00A052F5 /* Speakers.xcassets */; };
 		7B7B88511C3EA37100102F5E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B884F1C3EA37100102F5E /* Interface.storyboard */; };
 		7B7B88531C3EA37100102F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B88521C3EA37100102F5E /* Assets.xcassets */; };
 		7B7B885A1C3EA37100102F5E /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B7B88591C3EA37100102F5E /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -140,6 +142,7 @@
 		7B020A231C444ABE007F67E0 /* ScheduleInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleInterfaceController.swift; sourceTree = "<group>"; };
 		7B020A251C44547C007F67E0 /* SessionRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRowController.swift; sourceTree = "<group>"; };
 		7B020A271C4457B8007F67E0 /* SessionInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInterfaceController.swift; sourceTree = "<group>"; };
+		7B5C7FBE1C4D33CE00A052F5 /* Speakers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Speakers.xcassets; sourceTree = "<group>"; };
 		7B7B884D1C3EA37000102F5E /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B88501C3EA37100102F5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		7B7B88521C3EA37100102F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -352,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				7BBE33261C3EA6AC000C7B04 /* Gloss */,
+				7B5C7FBE1C4D33CE00A052F5 /* Speakers.xcassets */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -508,6 +512,7 @@
 				781EBAD81A5F74D0009A7AA5 /* about.html in Resources */,
 				78B7A9DC1A3E9876002AAF7F /* Main.storyboard in Resources */,
 				78B7A9E11A3E9876002AAF7F /* LaunchScreen.xib in Resources */,
+				7B5C7FBF1C4D33CE00A052F5 /* Speakers.xcassets in Resources */,
 				78B7A9DE1A3E9876002AAF7F /* Images.xcassets in Resources */,
 				781EBADA1A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg in Resources */,
 			);
@@ -517,6 +522,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5C7FC01C4D33CE00A052F5 /* Speakers.xcassets in Resources */,
 				7B7B88531C3EA37100102F5E /* Assets.xcassets in Resources */,
 				7B7B88511C3EA37100102F5E /* Interface.storyboard in Resources */,
 			);

@@ -30,6 +30,11 @@ class Proxy: NSObject {
     return true
   }
   
+  func hasCachedSessionsForSchedule(schedule: Schedule) -> Bool {
+    guard let _ = cache[schedule] else { return false }
+    return true
+  }
+  
   func sessionsForSchedule(schedule: Schedule, handler: ([Session] -> Void)) {
     if let cached = cache[schedule] {
       handler(cached)

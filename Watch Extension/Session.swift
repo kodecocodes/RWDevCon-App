@@ -20,6 +20,16 @@ struct Session: Decodable {
     }
   }
   
+  static var timeFormatter: NSDateFormatter {
+    get {
+      let formatter = NSDateFormatter()
+      formatter.timeZone = NSTimeZone(name: "US/Eastern")!
+      formatter.locale = NSLocale(localeIdentifier: "en_US")
+      formatter.dateFormat = "h:mm a"
+      return formatter
+    }
+  }
+  
   let date: NSDate?
   let description: String?
   let duration: Int?
@@ -27,6 +37,12 @@ struct Session: Decodable {
   let number: String?
   var presenters: [Person]?
   let room: String?
+  var time: String? {
+    get {
+      guard let date = date else { return nil }
+      return Session.timeFormatter.stringFromDate(date)
+    }
+  }
   let title: String?
   let track: String?
   
