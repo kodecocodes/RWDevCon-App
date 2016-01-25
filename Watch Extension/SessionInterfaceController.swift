@@ -11,7 +11,6 @@ import WatchKit
 class SessionInterfaceController: WKInterfaceController {
   
   @IBOutlet private weak var titleLabel: WKInterfaceLabel!
-  @IBOutlet private weak var presentersGroup: WKInterfaceGroup!
   @IBOutlet private weak var leftPresenterImage: WKInterfaceImage!
   @IBOutlet private weak var rightPresenterImage: WKInterfaceImage!
   @IBOutlet private weak var timeLabel: WKInterfaceLabel!
@@ -24,15 +23,15 @@ class SessionInterfaceController: WKInterfaceController {
       titleLabel.setText(session.title)
       timeLabel.setText(session.time)
       roomLabel.setText(session.room)
-      descriptionLabel.setText(session.description)
-      
+      let paragraphStyle = NSMutableParagraphStyle()
+      paragraphStyle.hyphenationFactor = 1
+      let description = NSAttributedString(string: session.description!, attributes: [NSParagraphStyleAttributeName: paragraphStyle])
+      descriptionLabel.setAttributedText(description)
       guard let presenters = session.presenters else { return }
-      presentersGroup.setHidden(presenters.count == 0)
-      leftPresenterImage.setImageNamed(presenters[0].id)
-      if presenters.count == 1 {
-        rightPresenterImage.setHidden(true)
-      } else {
-        rightPresenterImage.setImageNamed(presenters[1].id)
+      for (index, image) in [leftPresenterImage, rightPresenterImage].enumerate() {
+        guard index < presenters.count else { break }
+        image.setImage(Avatar.cache.avatarForIdentifier(presenters[index].id))
+        image.setHidden(false)
       }
     }
   }

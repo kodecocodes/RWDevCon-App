@@ -1,3 +1,6 @@
 [submodule "Shared/Gloss"]
 	path = Shared/Gloss
 	url = https://micpringle@github.com/hkellaway/Gloss.git
+[submodule "Shared/Toucan"]
+	path = Shared/Toucan
+	url = https://micpringle@github.com/gavinbunney/Toucan.git

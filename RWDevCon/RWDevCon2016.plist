@@ -90,7 +90,7 @@
 			<key>duration</key>
 			<integer>60</integer>
 			<key>trackId</key>
-			<integer>0</integer>
+			<integer>7</integer>
 			<key>column</key>
 			<integer>1</integer>
 			<key>sessionNumber</key>
@@ -113,7 +113,7 @@
 			<key>duration</key>
 			<integer>60</integer>
 			<key>trackId</key>
-			<integer>0</integer>
+			<integer>7</integer>
 			<key>column</key>
 			<integer>1</integer>
 			<key>sessionNumber</key>
@@ -1422,6 +1422,7 @@ On the side he likes playing video games, strumming his guitar, hitting golf bal
 		<string>Inspiration</string>
 		<string>Lab</string>
 		<string>Fun</string>
+		<string>Food</string>
 	</array>
 </dict>
 </plist>

@@ -20,7 +20,7 @@
                                 <segue destination="3h9-Ys-3Th" kind="push" identifier="Saturday" id="6uI-OH-Tof"/>
                             </connections>
                         </button>
-                        <button width="1" alignment="left" title="Favorites" id="4h4-Ob-qJx">
+                        <button width="1" alignment="left" title="My Schedule" id="4h4-Ob-qJx">
                             <fontDescription key="font" type="system" pointSize="15"/>
                             <connections>
                                 <segue destination="3h9-Ys-3Th" kind="push" identifier="Favorites" id="FBz-JM-mhe"/>
@@ -39,20 +39,26 @@
                         <table alignment="left" id="b0Y-QR-E7A">
                             <items>
                                 <tableRow identifier="Loading" selectable="NO" id="8zw-9r-62r">
-                                    <group key="rootItem" width="1" height="1" heightAdjustment="-14" alignment="left" id="Tvx-2g-ZFk">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="Tvx-2g-ZFk">
                                         <items>
-                                            <label width="1" height="1" alignment="center" verticalAlignment="center" text="Loading..." textAlignment="center" numberOfLines="0" id="c9a-l9-vBE"/>
+                                            <group width="1" height="28" alignment="left" id="B7v-ll-LLf"/>
+                                            <imageView width="29" height="29" alignment="center" image="Activity" animationDuration="1" id="AoV-vI-SBl">
+                                                <color key="tintColor" red="0.050980392839999999" green="0.38823530080000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </imageView>
                                         </items>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </group>
                                 </tableRow>
-                                <tableRow identifier="Empty" selectable="NO" id="zTs-aG-u31">
+                                <tableRow identifier="Empty" selectable="NO" id="zTs-aG-u31" customClass="EmptyRowController" customModule="Watch_Extension">
                                     <group key="rootItem" width="1" height="1" heightAdjustment="-14" alignment="left" id="CLS-tg-otY">
                                         <items>
-                                            <label width="1" height="1" alignment="center" verticalAlignment="center" text="Empty" textAlignment="center" id="sEO-0v-46t"/>
+                                            <label width="1" height="1" alignment="center" verticalAlignment="center" text="Empty" textAlignment="center" numberOfLines="0" id="sEO-0v-46t"/>
                                         </items>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     </group>
+                                    <connections>
+                                        <outlet property="messageLabel" destination="sEO-0v-46t" id="sMQ-3J-X9T"/>
+                                    </connections>
                                 </tableRow>
                                 <tableRow identifier="Session" id="pnj-Mm-4bz" customClass="SessionRowController" customModule="Watch_Extension">
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="7kG-dX-GZw">
@@ -104,8 +110,8 @@
                         </label>
                         <group width="1" alignment="left" id="tni-ow-cjo">
                             <items>
-                                <imageView width="44" height="44" alignment="center" id="1Uv-pq-8hX"/>
-                                <imageView width="44" height="44" alignment="center" id="szG-g1-4i8"/>
+                                <imageView width="44" height="44" alignment="center" hidden="YES" id="1Uv-pq-8hX"/>
+                                <imageView width="44" height="44" alignment="center" hidden="YES" id="szG-g1-4i8"/>
                             </items>
                         </group>
                         <group width="1" alignment="left" id="yhE-bF-5Uh">
@@ -128,7 +134,6 @@
                     <connections>
                         <outlet property="descriptionLabel" destination="sXw-bZ-MYd" id="jID-24-MMn"/>
                         <outlet property="leftPresenterImage" destination="1Uv-pq-8hX" id="3oU-mG-gAq"/>
-                        <outlet property="presentersGroup" destination="tni-ow-cjo" id="Ktc-JO-xra"/>
                         <outlet property="rightPresenterImage" destination="szG-g1-4i8" id="DFG-Y9-Mmi"/>
                         <outlet property="roomLabel" destination="ejL-AV-aC7" id="Jnv-n4-IGo"/>
                         <outlet property="timeLabel" destination="9VW-L1-waj" id="4JS-3I-Ypx"/>

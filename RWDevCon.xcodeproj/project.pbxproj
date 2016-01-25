@@ -35,7 +35,11 @@
 		7B020A261C44547C007F67E0 /* SessionRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B020A251C44547C007F67E0 /* SessionRowController.swift */; };
 		7B020A281C4457B8007F67E0 /* SessionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B020A271C4457B8007F67E0 /* SessionInterfaceController.swift */; };
 		7B5C7FBF1C4D33CE00A052F5 /* Speakers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C7FBE1C4D33CE00A052F5 /* Speakers.xcassets */; };
-		7B5C7FC01C4D33CE00A052F5 /* Speakers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C7FBE1C4D33CE00A052F5 /* Speakers.xcassets */; };
+		7B5C7FC21C4D4B5E00A052F5 /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C7FC11C4D4B5E00A052F5 /* Avatar.swift */; };
+		7B5C7FC31C4D4D1200A052F5 /* Speakers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C7FBE1C4D33CE00A052F5 /* Speakers.xcassets */; };
+		7B6F459A1C564E150065DAEE /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6F45991C564E150065DAEE /* Toucan.swift */; };
+		7B6F459B1C564E770065DAEE /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6F45991C564E150065DAEE /* Toucan.swift */; };
+		7B6F459E1C5652B10065DAEE /* EmptyRowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6F459D1C5652B10065DAEE /* EmptyRowController.swift */; };
 		7B7B88511C3EA37100102F5E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B884F1C3EA37100102F5E /* Interface.storyboard */; };
 		7B7B88531C3EA37100102F5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B7B88521C3EA37100102F5E /* Assets.xcassets */; };
 		7B7B885A1C3EA37100102F5E /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B7B88591C3EA37100102F5E /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -143,6 +147,9 @@
 		7B020A251C44547C007F67E0 /* SessionRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionRowController.swift; sourceTree = "<group>"; };
 		7B020A271C4457B8007F67E0 /* SessionInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionInterfaceController.swift; sourceTree = "<group>"; };
 		7B5C7FBE1C4D33CE00A052F5 /* Speakers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Speakers.xcassets; sourceTree = "<group>"; };
+		7B5C7FC11C4D4B5E00A052F5 /* Avatar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		7B6F45991C564E150065DAEE /* Toucan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Toucan.swift; path = Shared/Toucan/Source/Toucan.swift; sourceTree = "<group>"; };
+		7B6F459D1C5652B10065DAEE /* EmptyRowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyRowController.swift; sourceTree = "<group>"; };
 		7B7B884D1C3EA37000102F5E /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B88501C3EA37100102F5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		7B7B88521C3EA37100102F5E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -317,6 +324,23 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		7B6F45981C564DFE0065DAEE /* Toucan */ = {
+			isa = PBXGroup;
+			children = (
+				7B6F45991C564E150065DAEE /* Toucan.swift */,
+			);
+			name = Toucan;
+			sourceTree = "<group>";
+		};
+		7B6F459C1C5652880065DAEE /* Rows */ = {
+			isa = PBXGroup;
+			children = (
+				7B6F459D1C5652B10065DAEE /* EmptyRowController.swift */,
+				7B020A251C44547C007F67E0 /* SessionRowController.swift */,
+			);
+			name = Rows;
+			sourceTree = "<group>";
+		};
 		7B7B884E1C3EA37000102F5E /* Watch */ = {
 			isa = PBXGroup;
 			children = (
@@ -355,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				7BBE33261C3EA6AC000C7B04 /* Gloss */,
+				7B6F45981C564DFE0065DAEE /* Toucan */,
 				7B5C7FBE1C4D33CE00A052F5 /* Speakers.xcassets */,
 			);
 			name = Shared;
@@ -363,6 +388,7 @@
 		7BBE333F1C3EC126000C7B04 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7B5C7FC11C4D4B5E00A052F5 /* Avatar.swift */,
 				7BBE33461C3EC318000C7B04 /* Person.swift */,
 				7BBE333D1C3EC11E000C7B04 /* Proxy.swift */,
 				7BBE33441C3EC30C000C7B04 /* Session.swift */,
@@ -381,10 +407,10 @@
 		7BBE33411C3EC151000C7B04 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7B6F459C1C5652880065DAEE /* Rows */,
 				7B020A211C44479B007F67E0 /* MenuInterfaceController.swift */,
 				7B020A231C444ABE007F67E0 /* ScheduleInterfaceController.swift */,
 				7B020A271C4457B8007F67E0 /* SessionInterfaceController.swift */,
-				7B020A251C44547C007F67E0 /* SessionRowController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -522,7 +548,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B5C7FC01C4D33CE00A052F5 /* Speakers.xcassets in Resources */,
 				7B7B88531C3EA37100102F5E /* Assets.xcassets in Resources */,
 				7B7B88511C3EA37100102F5E /* Interface.storyboard in Resources */,
 			);
@@ -533,6 +558,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B7B88631C3EA37100102F5E /* Assets.xcassets in Resources */,
+				7B5C7FC31C4D4D1200A052F5 /* Speakers.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +577,7 @@
 				78CBC28D1A653A3F00FC839A /* ScheduleTableViewCell.swift in Sources */,
 				7BBE332E1C3EA6AC000C7B04 /* Decoder.swift in Sources */,
 				78B7AA291A414A94002AAF7F /* Track.swift in Sources */,
+				7B6F459A1C564E150065DAEE /* Toucan.swift in Sources */,
 				78B7AA2B1A414A94002AAF7F /* Room.swift in Sources */,
 				7848A62C1A41F776003F8373 /* Config.swift in Sources */,
 				78B7A9D41A3E9876002AAF7F /* AppDelegate.swift in Sources */,
@@ -578,14 +605,17 @@
 				7BBE33381C3EA6FB000C7B04 /* Gloss.swift in Sources */,
 				7B7B88611C3EA37100102F5E /* ExtensionDelegate.swift in Sources */,
 				7BBE33391C3EA6FB000C7B04 /* Operators.swift in Sources */,
+				7B5C7FC21C4D4B5E00A052F5 /* Avatar.swift in Sources */,
 				7B020A241C444ABE007F67E0 /* ScheduleInterfaceController.swift in Sources */,
 				7B020A221C44479B007F67E0 /* MenuInterfaceController.swift in Sources */,
 				7BBE33361C3EA6FB000C7B04 /* Dictionary.swift in Sources */,
+				7B6F459B1C564E770065DAEE /* Toucan.swift in Sources */,
 				7B020A261C44547C007F67E0 /* SessionRowController.swift in Sources */,
 				7BBE33371C3EA6FB000C7B04 /* Encoder.swift in Sources */,
 				7BBE33351C3EA6E1000C7B04 /* Decoder.swift in Sources */,
 				7BBE333E1C3EC11E000C7B04 /* Proxy.swift in Sources */,
 				7B020A281C4457B8007F67E0 /* SessionInterfaceController.swift in Sources */,
+				7B6F459E1C5652B10065DAEE /* EmptyRowController.swift in Sources */,
 				7BBE33451C3EC30C000C7B04 /* Session.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

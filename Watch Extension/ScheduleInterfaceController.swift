@@ -23,6 +23,13 @@ class ScheduleInterfaceController: WKInterfaceController {
         table.setNumberOfRows(1, withRowType: "Loading")
       case .Empty:
         table.setNumberOfRows(1, withRowType: "Empty")
+        guard let schedule = schedule, row = table.rowControllerAtIndex(0) as? EmptyRowController else { return }
+        switch schedule {
+        case .Favourites:
+          row.message = "Failed to load your schedule. Please make sure you have added some sessions, and your phone is within range."
+        case .Friday, .Saturday:
+          row.message = "Failed to load the schedule. Please make sure your phone is within range."
+        }
       case .Loaded(let sessions):
         table.setNumberOfRows(sessions.count, withRowType: "Session")
         for (index, session) in sessions.enumerate() {
