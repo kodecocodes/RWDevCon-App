@@ -64,7 +64,7 @@
                                     <group key="rootItem" width="1" height="0.0" alignment="left" id="7kG-dX-GZw">
                                         <items>
                                             <imageView width="22" height="22" alignment="left" verticalAlignment="center" image="General" contentMode="center" id="SSo-x2-PlW"/>
-                                            <group alignment="left" layout="vertical" spacing="0.0" id="q21-pY-BOe">
+                                            <group width="1" widthAdjustment="-22" alignment="left" layout="vertical" spacing="0.0" id="q21-pY-BOe">
                                                 <items>
                                                     <label alignment="left" text="8:00 AM" id="eQE-z6-z5E">
                                                         <color key="textColor" red="0.050980392839999999" green="0.38823530080000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -145,7 +145,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="rKD-dS-7Wx"/>
+        <segue reference="FBz-JM-mhe"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.050980392839999999" green="0.38823530080000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

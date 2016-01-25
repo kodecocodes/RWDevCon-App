@@ -73,6 +73,7 @@ class WatchDataSource: NSObject {
     let description: String?
     let duration: Int?
     let id: String?
+    let isFavorite: Bool?
     let number: String?
     var presenters: [Person]?
     let room: String?
@@ -84,6 +85,7 @@ class WatchDataSource: NSObject {
       self.description = session.sessionDescription
       self.duration = Int(session.duration)
       self.id = session.identifier
+      self.isFavorite = session.isFavorite
       self.number = session.sessionNumber
       self.presenters = [Person]()
       self.room = session.room.name
@@ -102,6 +104,7 @@ class WatchDataSource: NSObject {
         "description" ~~> self.description,
         "duration" ~~> self.duration,
         "id" ~~> self.id,
+        "isFavorite" ~~> self.isFavorite,
         "number" ~~> self.number,
         "presenters" ~~> Person.toJSONArray(self.presenters ?? [Person]()),
         "room" ~~> self.room,

@@ -34,6 +34,7 @@ struct Session: Decodable {
   let description: String?
   let duration: Int?
   let id: String?
+  var isFavorite: Bool?
   let number: String?
   var presenters: [Person]?
   let room: String?
@@ -51,6 +52,7 @@ struct Session: Decodable {
     self.description = "description" <~~ json
     self.duration = "duration" <~~ json
     self.id = "id" <~~ json
+    self.isFavorite = "isFavorite" <~~ json
     self.number = "number" <~~ json
     self.presenters = "presenters" <~~ json
     self.room = "room" <~~ json

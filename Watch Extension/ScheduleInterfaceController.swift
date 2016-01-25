@@ -25,7 +25,7 @@ class ScheduleInterfaceController: WKInterfaceController {
         table.setNumberOfRows(1, withRowType: "Empty")
         guard let schedule = schedule, row = table.rowControllerAtIndex(0) as? EmptyRowController else { return }
         switch schedule {
-        case .Favourites:
+        case .Favorites:
           row.message = "Failed to load your schedule. Please make sure you have added some sessions, and your phone is within range."
         case .Friday, .Saturday:
           row.message = "Failed to load the schedule. Please make sure your phone is within range."
@@ -47,7 +47,7 @@ class ScheduleInterfaceController: WKInterfaceController {
     super.awakeWithContext(context)
     guard let schedule = context as? String else { return }
     self.schedule = Schedule(rawValue: schedule.lowercaseString)
-    setTitle(schedule)
+    setTitle(schedule == "Favorites" ? "My Schedule" : schedule)
   }
   
   override func willActivate() {
@@ -66,6 +66,12 @@ class ScheduleInterfaceController: WKInterfaceController {
       return nil
     case .Loaded(let sessions):
       return ["schedule": schedule!.rawValue, "id": sessions[rowIndex].id!]
+    }
+  }
+  
+  deinit {
+    if let schedule = schedule where schedule == .Favorites {
+      Proxy.defaultProxy.removeSessionsForSchedule(.Favorites)
     }
   }
   

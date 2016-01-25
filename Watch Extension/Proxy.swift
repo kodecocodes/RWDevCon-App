@@ -12,7 +12,7 @@ import WatchConnectivity
 enum Schedule: String {
   case Friday = "friday"
   case Saturday = "saturday"
-  case Favourites = "favorites"
+  case Favorites = "favorites"
 }
 
 class Proxy: NSObject {
@@ -35,13 +35,17 @@ class Proxy: NSObject {
     return true
   }
   
+  func removeSessionsForSchedule(schedule: Schedule) {
+    cache.removeValueForKey(schedule)
+  }
+  
   func sessionsForSchedule(schedule: Schedule, handler: ([Session] -> Void)) {
     if let cached = cache[schedule] {
       handler(cached)
     } else {
       session?.sendMessage(["schedule": schedule.rawValue], replyHandler: { response in
         if let JSON = response["sessions"] as? [JSON], let sessions = Session.modelsFromJSONArray(JSON) {
-          if schedule != .Favourites && sessions.count > 0 { self.cache[schedule] = sessions }
+          if sessions.count > 0 { self.cache[schedule] = sessions }
           handler(sessions)
         } else {
           handler([])
