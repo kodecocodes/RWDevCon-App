@@ -506,6 +506,7 @@
 					};
 					7B7B88581C3EA37100102F5E = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = KFCNEC27GU;
 					};
 				};
 			};
@@ -821,6 +822,7 @@
 		7B7B886A1C3EA37100102F5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
@@ -837,6 +839,7 @@
 		7B7B886B1C3EA37100102F5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_NO_COMMON_BLOCKS = YES;
