@@ -12,7 +12,7 @@ import WatchConnectivity
 
 class WatchDataSource: NSObject {
   
-  private let predicates = [
+  private var predicates = [
     "friday": NSPredicate(
       format: "active = %@ AND (date >= %@) AND (date <= %@)",
       argumentArray: [
@@ -27,13 +27,6 @@ class WatchDataSource: NSObject {
         true,
         NSDate(timeIntervalSince1970: 1457740800),
         NSDate(timeIntervalSince1970: 1457827199)
-      ]
-    ),
-    "favorites": NSPredicate(
-      format: "active = %@ AND identifier IN %@",
-      argumentArray: [
-        true,
-        Array(Config.favoriteSessions().values)
       ]
     )
   ]
@@ -150,12 +143,23 @@ class WatchDataSource: NSObject {
       return []
     }
   }
+  
+  private func refreshFavoritesPredicate() {
+    predicates["favorites"] = NSPredicate(
+      format: "active = %@ AND identifier IN %@",
+      argumentArray: [
+        true,
+        Array(Config.favoriteSessions().values)
+      ]
+    )
+  }
 
 }
 
 extension WatchDataSource: WCSessionDelegate {
   
   func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+    refreshFavoritesPredicate()
     guard let schedule = message["schedule"] as? String, let predicate = predicates[schedule] else {
       replyHandler(["sessions": [JSON]()])
       return
