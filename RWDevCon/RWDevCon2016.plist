@@ -295,7 +295,7 @@ app from scratch and learn to assemble your user interface with Storyboards and 
 			<key>title</key>
 			<string>Beginning watchOS 2</string>
 			<key>sessionDescription</key>
-			<string>The Apple Watch - ‘nuf said! Learn how to adapt an iOS app with Watch-appropriate layout and UI controls, to create a Watch app you’ll be proud to show o . Warning: both versions of the sample app have been proven by user testing to be highly addictive. ;]</string>
+			<string>The Apple Watch - ‘nuf said! Learn how to adapt an iOS app with Watch-appropriate layout and UI controls, to create a Watch app you’ll be proud to show off. Warning: both versions of the sample app have been proven by user testing to be highly addictive. ;]</string>
 			<key>presenters</key>
 			<array>
 				<string>audrey</string>
@@ -989,7 +989,7 @@ Aaron works for Automattic (WordPress.com, Akismet, SimpleNote) as a mobile deve
 			<key>last</key>
 			<string>Tam</string>
 			<key>twitter</key>
-			<string></string>
+			<string>mataharimau</string>
 			<key>bio</key>
 			<string>Audrey Tam retired at the end of 2012 from a 25-year career as a computer science academic. Her teaching included Pascal, C/C++, Java, Java web services, web app development in php and mysql, user interface design and evaluation, and iOS programming. Before moving to Australia, she worked on Fortran and PL/1 simulation software at IBM&apos;s development lab in Silicon Valley.
 
