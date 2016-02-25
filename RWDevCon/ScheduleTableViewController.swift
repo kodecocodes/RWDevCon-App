@@ -178,10 +178,7 @@ class ScheduleTableViewController: UITableViewController {
 
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-
-    if let visibleRows = tableView.indexPathsForVisibleRows {
-      tableView.reloadRowsAtIndexPaths(visibleRows, withRowAnimation: .None)
-    }
+    tableView.reloadData()
   }
 
   override func willMoveToParentViewController(parent: UIViewController?) {
