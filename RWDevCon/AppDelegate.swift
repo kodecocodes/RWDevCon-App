@@ -3,7 +3,7 @@ import UIKit
 import CoreData
 
 // A date before the bundled plist date
-private let beginningOfTimeDate = NSDate(timeIntervalSince1970: 1451649600) // 01-01-2016 12:00 AM
+private let beginningOfTimeDate = NSDate(timeIntervalSince1970: 1456876800) // 02-03-2016 12:00 AM
 // The kill switch date to stop phoning the server
 private let endOfTimeDate = NSDate(timeIntervalSince1970: 1457827199) // 12-03-2016 11:59 PM
 

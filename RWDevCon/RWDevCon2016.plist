@@ -5,7 +5,7 @@
 	<key>metadata</key>
 	<dict>
 		<key>lastUpdated</key>
-		<date>2015-12-31T00:00:00Z</date>
+		<date>2016-03-01T00:00:00Z</date>
 	</dict>
 	<key>sessions</key>
 	<dict>
@@ -144,7 +144,7 @@
 			<key>title</key>
 			<string>Concluding Remarks</string>
 			<key>sessionDescription</key>
-			<string>Conference wrap-up and concluding remarks. Make sure you stay to the end for a very special event!</string>
+      <string>RWDevCon has a special event at the end of the conference you won’t want to miss, so make sure you stay till the end... or don’t cry to us later! :P</string>
 			<key>presenters</key>
 			<array>
 				<string>ray</string>
@@ -194,8 +194,7 @@
 			<key>title</key>
 			<string>Beginning iOS</string>
 			<key>sessionDescription</key>
-			<string>Time to start developing for iOS! In this session, you’ll build an
-app from scratch and learn to assemble your user interface with Storyboards and Auto Layout, display large datasets with Collection Views, and fetch images and JSON data from a server. These core skills will help no matter what path your iOS development takes!</string>
+			<string>Time to start developing for iOS! In this session, you’ll build an app from scratch and learn to assemble your user interface with Storyboards and Auto Layout, display large datasets with Collection Views, and fetch images and JSON data from a server. These core skills will help no matter what path your iOS development takes!</string>
 			<key>presenters</key>
 			<array>
 				<string>matt-l</string>
@@ -245,7 +244,7 @@ app from scratch and learn to assemble your user interface with Storyboards and 
 			<key>title</key>
 			<string>Beginning App Search</string>
 			<key>sessionDescription</key>
-			<string>Want to increase your app’s exposure and enhance the user’s experience at the same time? Then check out iOS 9’s new App Search APIs. App Search gives you the tools needed to index app content and make it searchable in Spotlight. Also, the look and functionality of Spotlight search results can be customized to better  t the content of the app.</string>
+			<string>Want to increase your app’s exposure and enhance the user’s experience at the same time? Then check out iOS 9’s new App Search APIs. App Search gives you the tools needed to index app content and make it searchable in Spotlight. Also, the look and functionality of Spotlight search results can be customized to better fit the content of the app.</string>
 			<key>presenters</key>
 			<array>
 				<string>owen</string>
@@ -643,9 +642,9 @@ app from scratch and learn to assemble your user interface with Storyboards and 
 			<key>sessionNumber</key>
 			<string>304</string>
 			<key>title</key>
-			<string>Protocol-Oriented Programming in Practice</string>
+			<string>Swift and C Interoperability</string>
 			<key>sessionDescription</key>
-			<string>You’ve heard the term, learnt the theory, and even worked through some high level examples. This session takes Protocol-Oriented Programming out of the classroom and into the real world. Learn how to use this new paradigm to solve everyday coding problems by working through realistic examples, and leave with the knowledge and experience you’ll need to apply POP to your own codebases.</string>
+      <string>Swift’s type system encourages safety and forces us to write better code. However, this can be problematic when working with C. You may not see this as an immediate problem, since you’re coding in Swift, right? But what if your next project includes a legacy C codebase or open source C lib you need to wrap? This session will teach you how to work safely with C from Swift, what the obstacles and caveats are, and how wrap your C code so it’s far more Swift-y.</string>
 			<key>presenters</key>
 			<array>
 				<string>mic</string>
@@ -845,7 +844,7 @@ app from scratch and learn to assemble your user interface with Storyboards and 
 			<key>title</key>
 			<string>Going AFK</string>
 			<key>sessionDescription</key>
-			<string>TBD</string>
+      <string>We all enjoy writing code, but sometimes your career as a coder can benefit from stepping away from the keyboard. Drawing on personal stories from twenty years in technology, James’ examples serve as a guide showing how your own outside interests and experiences can make a difference in your life as a coder in unexpected ways. It may just change the way you look at the time you spend AFK.</string>
 			<key>presenters</key>
 			<array>
 				<string>james</string>
@@ -918,9 +917,11 @@ app from scratch and learn to assemble your user interface with Storyboards and 
 			<key>sessionNumber</key>
 			<string></string>
 			<key>title</key>
-			<string>Couchbase Lab</string>
+			<string>Lab - Building Extraordinary Apps with Firebase</string>
 			<key>sessionDescription</key>
-			<string>TBD</string>
+      <string>CoreData got you down? Sick of setting up servers? Want to focus on building beautiful interfaces or adding new features quickly, rather than tedious boilerplate networking code? Come learn how to build extraordinary iOS apps with Firebase!
+        
+Firebase is a mobile platform that makes building offline first, realtime apps simple. We handle tough problems like authentication, sub-second data synchronization, and disk persistence. In this code lab, we’ll explore how Firebase solves these problems by building a chat application using Swift and JSQMessagesViewController.</string>
 			<key>presenters</key>
 			<array/>
 			<key>roomId</key>
@@ -941,11 +942,11 @@ app from scratch and learn to assemble your user interface with Storyboards and 
 			<key>sessionNumber</key>
 			<string></string>
 			<key>title</key>
-			<string>Firebase Lab</string>
+			<string>Lab - Couchbase</string>
 			<key>sessionDescription</key>
-			<string>TBD</string>
+      <string>Building apps that work offline is hard: worrying about sync, networking code, and security... all while trying to get your app to market. Couchbase Mobile, a full-stack NoSQL mobile database, can help! In this workshop, you’ll build an iOS app in Swift with Couchbase Mobile and see how using an embedded NoSQL database using sync means zero networking code for you and much less time to market.</string>
 			<key>presenters</key>
-			<array/>
+      <array/>
 			<key>roomId</key>
 			<integer>3</integer>
 		</dict>
@@ -963,8 +964,8 @@ app from scratch and learn to assemble your user interface with Storyboards and 
 			<key>twitter</key>
 			<string>astralbodies</string>
 			<key>bio</key>
-			<string>Aaron was that kid taking apart the mechanical and electrical appliances at five years of age to see how they worked. He never grew out of that core interest - to know how things work. He took an early interest in computer programming, figuring out how to get past security to be able to play games on his dad&apos;s computer. He&apos;s still that feisty nerd, but at least now he gets paid to do it. 
-
+			<string>Aaron was that kid taking apart the mechanical and electrical appliances at five years of age to see how they worked. He never grew out of that core interest - to know how things work. He took an early interest in computer programming, figuring out how to get past security to be able to play games on his dad&apos;s computer. He&apos;s still that feisty nerd, but at least now he gets paid to do it.
+        
 Aaron works for Automattic (WordPress.com, Akismet, SimpleNote) as a mobile developer, primarily on WordPress for iOS.</string>
 		</dict>
 		<key>alexis</key>
@@ -992,7 +993,7 @@ Aaron works for Automattic (WordPress.com, Akismet, SimpleNote) as a mobile deve
 			<string>mataharimau</string>
 			<key>bio</key>
 			<string>Audrey Tam retired at the end of 2012 from a 25-year career as a computer science academic. Her teaching included Pascal, C/C++, Java, Java web services, web app development in php and mysql, user interface design and evaluation, and iOS programming. Before moving to Australia, she worked on Fortran and PL/1 simulation software at IBM&apos;s development lab in Silicon Valley.
-
+        
 Audrey now teaches short courses in iOS app development to non-programmers, and organizes venues for Melbourne Cocoaheads monthly meetings.</string>
 		</dict>
 		<key>brian</key>
@@ -1004,8 +1005,8 @@ Audrey now teaches short courses in iOS app development to non-programmers, and 
 			<key>twitter</key>
 			<string>zombietreats</string>
 			<key>bio</key>
-			<string>Brian is not only an iOS developer and fiction writer, he also holds the honor being Razeware‘s first fulltime employee. 
-
+			<string>Brian is not only an iOS developer and fiction writer, he also holds the honor being Razeware‘s first fulltime employee.
+        
 Brian joins Razeware with experience from companies such as ESPN’s online fantasy team and Disney’s Internet Group. When not writing or coding, Brian enjoys story driven first person shooters, reading some great books, and produces his own Minecraft Let&apos;s Play video series on YouTube.</string>
 			<key>active</key>
 			<true/>
@@ -1061,7 +1062,7 @@ Brian joins Razeware with experience from companies such as ESPN’s online fant
 			<string>ecerney</string>
 			<key>bio</key>
 			<string>Eric is an iOS Software Engineer in San Francisco. After being acquired by Capital One, he likes to spend his days at work hanging out with Samuel L. Jackson and asking everyone &quot;What&apos;s in your wallet?&quot;. Lately his main focus has been with Swift and gaining a deeper knowledge of programming languages at the core.
-
+        
 Outside iOS, his interests are tinkering with hardware (Raspberry Pi and Arduino), gaming, exploring San Francisco, and regretting endless Netflix marathons.</string>
 		</dict>
 		<key>erik</key>
@@ -1076,7 +1077,7 @@ Outside iOS, his interests are tinkering with hardware (Raspberry Pi and Arduino
 			<string>erikkerber</string>
 			<key>bio</key>
 			<string>Erik is an iOS guy from Minneapolis. Currently a Lead iOS developer at Target, and an independent consultant at Distilled Bits.
-
+        
 Outside of coding, he enjoys cramming as much outdoor activity into summer as he can (running, cycling, rowing, fishing, cabin-ing). In the winter, he patiently waits for summer.</string>
 		</dict>
 		<key>greg</key>
@@ -1169,7 +1170,7 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<string>jerrybeers</string>
 			<key>bio</key>
 			<string>Jerry is a co-founder of Five Pack Creative, a mobile development company specializing in iOS development. He’s worked on client projects, like American Airlines and Match.com, but lately he’s been pouring his focus into Hours, a time tracking app developed in partnership with Tapity. He is passionate about creating well-crafted code and teaching others.
-
+        
 Jerry enjoys spending time on the beach with his wife and kids, SCUBA diving, and watching movies.</string>
 		</dict>
 		<key>joshua</key>
@@ -1248,7 +1249,9 @@ Jerry enjoys spending time on the beach with his wife and kids, SCUBA diving, an
 			<key>twitter</key>
 			<string>micpringle</string>
 			<key>bio</key>
-			<string>Mic Pringle is a developer, editor, podcaster, and video tutorial maker. He&apos;s also Razeware&apos;s third full-time employee. When not knee-deep in Swift or stood in-front of his green screen, he enjoys spending time with his wife Lucy and their daughter Evie, as-well as attending the football matches of his beloved Fulham FC.</string>
+      <string>Mic Pringle is a developer by trade, but regularly turns his hand to book and tutorial editing, video tutorial making, and hosting the official raywenderlich.com podcast. Mic is 1/6th of Razeware, the team behind raywenderlich.com. An iOS developer by trade, Mic has recently found himself dabbling in Ruby, PHP, and JavaScript.
+        
+When not knee-deep in code, Mic enjoys spending time with his wife Lucy and their daughter Evie, watching his beloved Fulham FC, and weather permitting, tearing up the English countryside on his Harley Davidson.</string>
 		</dict>
 		<key>owen</key>
 		<dict>
@@ -1261,10 +1264,10 @@ Jerry enjoys spending time on the beach with his wife and kids, SCUBA diving, an
 			<key>twitter</key>
 			<string>o_brown_back40</string>
 			<key>bio</key>
-			<string>Owen L Brown is a software engineer with a strong background in mechanical and electrical design. He has 16+ years of experience in writing microcontroller code for machine automation. 
+			<string>Owen L Brown is a software engineer with a strong background in mechanical and electrical design. He has 16+ years of experience in writing microcontroller code for machine automation.
 
-For the last few years, his focus has been on integrating machine control with iOS using Bluetooth. He has several cool machine-control Bluetooth LE applications on the app store. 
-
+For the last few years, his focus has been on integrating machine control with iOS using Bluetooth. He has several cool machine-control Bluetooth LE applications on the app store.
+        
 Owen is also the author of a new book called &apos;Integrating iOS Bluetooth LE with PIC18 Microcontrollers&apos;.</string>
 		</dict>
 		<key>ray</key>
@@ -1291,8 +1294,8 @@ Owen is also the author of a new book called &apos;Integrating iOS Bluetooth LE 
 			<key>twitter</key>
 			<string>RCachATX</string>
 			<key>bio</key>
-			<string>René, is an iOS Client Architect at Atlassian, where he is known for his expertise in user interface engineering with UIKit, Core Animation, and Core Graphics. He has been engineering iOS apps since 2009. 
-
+			<string>René, is an iOS Client Architect at Atlassian, where he is known for his expertise in user interface engineering with UIKit, Core Animation, and Core Graphics. He has been engineering iOS apps since 2009.
+        
 When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for the Texas Longhorns.</string>
 		</dict>
 		<key>rich</key>
@@ -1372,7 +1375,7 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<string>VincentNgo2</string>
 			<key>bio</key>
 			<string>Vincent is a full time iOS software engineer at IBM. He graduated from Virginia Tech with a Computer Science degree. He has passion for developing, and learning about iOS SDK.
-
+        
 On the side he likes playing video games, strumming his guitar, hitting golf balls, and chilling with friends.</string>
 		</dict>
 	</dict>
