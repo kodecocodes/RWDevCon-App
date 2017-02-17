@@ -10,27 +10,27 @@ import Foundation
 
 struct Session: Decodable {
   
-  static var formatter: NSDateFormatter {
+  static var formatter: DateFormatter {
     get {
-      let formatter = NSDateFormatter()
-      formatter.timeZone = NSTimeZone(name: "US/Eastern")!
-      formatter.locale = NSLocale(localeIdentifier: "en_US")
+      let formatter = DateFormatter()
+      formatter.timeZone = TimeZone(identifier: "US/Eastern")!
+      formatter.locale = Locale(identifier: "en_US")
       formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
       return formatter
     }
   }
   
-  static var timeFormatter: NSDateFormatter {
+  static var timeFormatter: DateFormatter {
     get {
-      let formatter = NSDateFormatter()
-      formatter.timeZone = NSTimeZone(name: "US/Eastern")!
-      formatter.locale = NSLocale(localeIdentifier: "en_US")
+      let formatter = DateFormatter()
+      formatter.timeZone = TimeZone(identifier: "US/Eastern")!
+      formatter.locale = Locale(identifier: "en_US")
       formatter.dateFormat = "h:mm a"
       return formatter
     }
   }
   
-  let date: NSDate?
+  let date: Date?
   let description: String?
   let duration: Int?
   let id: String?
@@ -41,7 +41,7 @@ struct Session: Decodable {
   var time: String? {
     get {
       guard let date = date else { return nil }
-      return Session.timeFormatter.stringFromDate(date)
+      return Session.timeFormatter.string(from: date)
     }
   }
   let title: String?

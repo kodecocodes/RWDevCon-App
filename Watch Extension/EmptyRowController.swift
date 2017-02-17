@@ -10,7 +10,7 @@ import WatchKit
 
 class EmptyRowController: NSObject {
   
-  @IBOutlet private weak var messageLabel: WKInterfaceLabel!
+  @IBOutlet fileprivate weak var messageLabel: WKInterfaceLabel!
   
   var message: String? {
     didSet {

@@ -22,29 +22,29 @@
 
 import CoreData
 
-public class CoreDataStack {
+open class CoreDataStack {
   
-  public static let modelName = "RWDevCon"
+  open static let modelName = "RWDevCon"
   
-  public let context: NSManagedObjectContext
+  open let context: NSManagedObjectContext
   let psc: NSPersistentStoreCoordinator
   let model: NSManagedObjectModel
   let store: NSPersistentStore?
   
   public init() {
     
-    let bundle = NSBundle.mainBundle()
+    let bundle = Bundle.main
     let modelURL =
-    bundle.URLForResource(self.dynamicType.modelName, withExtension:"momd")!
-    model = NSManagedObjectModel(contentsOfURL: modelURL)!
+    bundle.url(forResource: type(of: self).modelName, withExtension:"momd")!
+    model = NSManagedObjectModel(contentsOf: modelURL)!
     
     psc = NSPersistentStoreCoordinator(managedObjectModel: model)
     
-    context = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+    context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
     context.persistentStoreCoordinator = psc
     
     let documentsURL = Config.applicationDocumentsDirectory()
-    let storeURL = documentsURL.URLByAppendingPathComponent("\(self.dynamicType.modelName).sqlite")
+    let storeURL = documentsURL.appendingPathComponent("\(type(of: self).modelName).sqlite")
 
     NSLog("Store is at \(storeURL)")
 
@@ -52,17 +52,17 @@ public class CoreDataStack {
         NSMigratePersistentStoresAutomaticallyOption:true]
     
     do {
-      store = try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
+      store = try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: options)
     } catch {
       do {
-        try NSFileManager.defaultManager().removeItemAtURL(storeURL)
+        try FileManager.default.removeItem(at: storeURL)
         print("Model has changed, removing.")
       } catch {
         print("Error removing persistent store: \(error)")
         abort()
       }
       do {
-       store = try psc.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options)
+       store = try psc.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: options)
       } catch {
         print("Error adding persistent store: \(error)")
         abort()

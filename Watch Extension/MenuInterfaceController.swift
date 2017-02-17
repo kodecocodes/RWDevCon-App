@@ -10,12 +10,12 @@ import WatchKit
 
 class MenuInterfaceController: WKInterfaceController {
   
-  override func awakeWithContext(context: AnyObject?) {
-    super.awakeWithContext(context)
+  override func awake(withContext context: Any?) {
+    super.awake(withContext: context)
     Proxy.defaultProxy.activate()
   }
   
-  override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+  override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
     return segueIdentifier
   }
   

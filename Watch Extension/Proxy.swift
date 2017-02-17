@@ -19,27 +19,27 @@ class Proxy: NSObject {
   
   static let defaultProxy = Proxy()
   
-  private var session: WCSession?
-  private var cache = [Schedule: [Session]]()
+  fileprivate var session: WCSession?
+  fileprivate var cache = [Schedule: [Session]]()
   
   func activate() -> Bool {
     guard WCSession.isSupported() else { return false }
-    session = WCSession.defaultSession()
+    session = WCSession.default()
     session?.delegate = self
-    session?.activateSession()
+    session?.activate()
     return true
   }
   
-  func hasCachedSessionsForSchedule(schedule: Schedule) -> Bool {
+  func hasCachedSessionsForSchedule(_ schedule: Schedule) -> Bool {
     guard let _ = cache[schedule] else { return false }
     return true
   }
   
-  func removeSessionsForSchedule(schedule: Schedule) {
-    cache.removeValueForKey(schedule)
+  func removeSessionsForSchedule(_ schedule: Schedule) {
+    cache.removeValue(forKey: schedule)
   }
   
-  func sessionsForSchedule(schedule: Schedule, handler: ([Session] -> Void)) {
+  func sessionsForSchedule(_ schedule: Schedule, handler: @escaping (([Session]) -> Void)) {
     if let cached = cache[schedule] {
       handler(cached)
     } else {
@@ -58,4 +58,10 @@ class Proxy: NSObject {
   
 }
 
-extension Proxy: WCSessionDelegate {}
+extension Proxy: WCSessionDelegate {
+    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
+    @available(watchOS 2.2, *)
+    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+}

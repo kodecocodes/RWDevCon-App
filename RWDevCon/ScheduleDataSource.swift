@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import CoreData
 
-typealias TableCellConfigurationBlock = (cell: ScheduleTableViewCell, indexPath: NSIndexPath, session: Session) -> ()
+typealias TableCellConfigurationBlock = (_ cell: ScheduleTableViewCell, _ indexPath: IndexPath, _ session: Session) -> ()
 
 class ScheduleDataSource: NSObject {
   var coreDataStack: CoreDataStack!
 
-  var startDate: NSDate?
-  var endDate: NSDate?
+  var startDate: Date?
+  var endDate: Date?
   var favoritesOnly = false
 
   let hourHeaderHeight: CGFloat = 40
@@ -29,7 +29,8 @@ class ScheduleDataSource: NSObject {
   var tableCellConfigurationBlock: TableCellConfigurationBlock?
 
   var allSessions: [Session] {
-    let fetch = NSFetchRequest(entityName: "Session")
+    // TODO: use Session as result type
+    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Session")
 
     if self.startDate != nil && self.endDate != nil {
       fetch.predicate = NSPredicate(format: "(active = %@) AND (date >= %@) AND (date <= %@)", argumentArray: [true, self.startDate!, self.endDate!])
@@ -41,7 +42,7 @@ class ScheduleDataSource: NSObject {
     fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true), NSSortDescriptor(key: "column", ascending: true)]
     
     do {
-      guard let results = try coreDataStack.context.executeFetchRequest(fetch) as? [Session] else { return [] }
+      guard let results = try coreDataStack.context.fetch(fetch) as? [Session] else { return [] }
       return results
     } catch {
       return []
@@ -73,14 +74,14 @@ class ScheduleDataSource: NSObject {
   }
 
 
-  internal func sessionForIndexPath(indexPath: NSIndexPath) -> Session {
+  internal func sessionForIndexPath(_ indexPath: IndexPath) -> Session {
     let sessions = arrayOfSessionsForSection(indexPath.section)
     return sessions[indexPath.row]
   }
   
   // MARK: Private Utilities
   
-  private func arrayOfSessionsForSection(section: Int) -> [Session] {
+  fileprivate func arrayOfSessionsForSection(_ section: Int) -> [Session] {
     if favoritesOnly {
       let weekday = distinctTimes[section]
       return allSessions.filter({ (session) -> Bool in
@@ -94,7 +95,7 @@ class ScheduleDataSource: NSObject {
     }
   }
   
-  private func groupDictionaryForSection(section: Int) -> NSDictionary {
+  fileprivate func groupDictionaryForSection(_ section: Int) -> NSDictionary {
     return ["Header": distinctTimes[section]]
   }
   
@@ -102,19 +103,19 @@ class ScheduleDataSource: NSObject {
 
 extension ScheduleDataSource: UITableViewDataSource {
 
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  func numberOfSections(in tableView: UITableView) -> Int {
     return distinctTimes.count
   }
 
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return arrayOfSessionsForSection(section).count
   }
 
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("ScheduleTableViewCell") as! ScheduleTableViewCell
+  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleTableViewCell") as! ScheduleTableViewCell
     let session = sessionForIndexPath(indexPath)
     if let configureBlock = tableCellConfigurationBlock {
-      configureBlock(cell: cell, indexPath: indexPath, session: session)
+      configureBlock(cell, indexPath, session)
     }
     return cell
   }

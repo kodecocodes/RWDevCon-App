@@ -16,11 +16,12 @@ class Person: NSManagedObject {
     return "\(first) \(last)"
   }
   
-  class func personByIdentifier(identifier: String, context: NSManagedObjectContext) -> Person? {
-    let fetch = NSFetchRequest(entityName: "Person")
+  class func personByIdentifier(_ identifier: String, context: NSManagedObjectContext) -> Person? {
+    // TODO: use Person as type of result
+    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
     fetch.predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])
     do {
-      let results = try context.executeFetchRequest(fetch)
+      let results = try context.fetch(fetch)
       guard let result = results.first as? Person else { return nil }
       return result
     } catch {
@@ -28,7 +29,7 @@ class Person: NSManagedObject {
     }
   }
 
-  class func personByIdentifierOrNew(identifier: String, context: NSManagedObjectContext) -> Person {
-    return personByIdentifier(identifier, context: context) ?? Person(entity: NSEntityDescription.entityForName("Person", inManagedObjectContext: context)!, insertIntoManagedObjectContext: context)
+  class func personByIdentifierOrNew(_ identifier: String, context: NSManagedObjectContext) -> Person {
+    return personByIdentifier(identifier, context: context) ?? Person(entity: NSEntityDescription.entity(forEntityName: "Person", in: context)!, insertInto: context)
   }
 }

@@ -12,9 +12,9 @@ class Avatar {
   
   static let cache = Avatar()
   
-  private var avatars = [String: UIImage]()
+  fileprivate var avatars = [String: UIImage]()
   
-  func avatarForIdentifier(identifier: String?) -> UIImage? {
+  func avatarForIdentifier(_ identifier: String?) -> UIImage? {
     guard let identifier = identifier else { return nil }
     if let avatar = avatars[identifier] { return avatar }
     if let image = UIImage(named: identifier) {
