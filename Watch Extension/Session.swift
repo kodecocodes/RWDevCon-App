@@ -48,7 +48,7 @@ struct Session: Decodable {
   let track: String?
   
   init?(json: JSON) {
-    self.date = Decoder.decodeDate("date", dateFormatter: Session.formatter)(json)
+    self.date = Decoder.decode(dateForKey: "date", dateFormatter: Session.formatter)(json)
     self.description = "description" <~~ json
     self.duration = "duration" <~~ json
     self.id = "id" <~~ json

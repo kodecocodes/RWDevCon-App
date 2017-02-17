@@ -94,13 +94,13 @@ class WatchDataSource: NSObject {
     
     func toJSON() -> JSON? {
       return jsonify([
-        Encoder.encodeDate("date", dateFormatter: Session.formatter)(self.date),
+        Encoder.encode(dateForKey: "date", dateFormatter: Session.formatter)(self.date),
         "description" ~~> self.description,
         "duration" ~~> self.duration,
         "id" ~~> self.id,
         "isFavorite" ~~> self.isFavorite,
         "number" ~~> self.number,
-        "presenters" ~~> Person.toJSONArray(self.presenters ?? [Person]()),
+        "presenters" ~~> self.presenters?.toJSONArray(),
         "room" ~~> self.room,
         "title" ~~> self.title,
         "track" ~~> self.track
@@ -139,7 +139,7 @@ class WatchDataSource: NSObject {
       results.forEach { session in
         sessions.append(Session(session: session))
       }
-      return Session.toJSONArray(sessions) ?? []
+      return sessions.toJSONArray() ?? []
     } catch {
       return []
     }

@@ -44,7 +44,7 @@ class Proxy: NSObject {
       handler(cached)
     } else {
       session?.sendMessage(["schedule": schedule.rawValue], replyHandler: { response in
-        if let JSON = response["sessions"] as? [JSON], let sessions = Session.modelsFromJSONArray(JSON) {
+        if let JSON = response["sessions"] as? [JSON], let sessions = [Session].from(jsonArray: JSON) {
           if sessions.count > 0 { self.cache[schedule] = sessions }
           handler(sessions)
         } else {
