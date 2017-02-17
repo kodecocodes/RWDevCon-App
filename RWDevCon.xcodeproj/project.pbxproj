@@ -65,6 +65,7 @@
 		831B33001E56CA0800A6D59A /* ExtensionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B32F41E56C9E400A6D59A /* ExtensionDictionary.swift */; };
 		831B33011E56CA0800A6D59A /* Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B32F51E56C9E400A6D59A /* Gloss.swift */; };
 		831B33021E56CA0800A6D59A /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B32EE1E56C9D800A6D59A /* Operators.swift */; };
+		831B33041E56CF5800A6D59A /* RWDevCon2017.plist in Resources */ = {isa = PBXBuildFile; fileRef = 831B33031E56CF5800A6D59A /* RWDevCon2017.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,6 +175,7 @@
 		831B32F31E56C9E400A6D59A /* ExtensionDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionDecodable.swift; path = Shared/Gloss/Sources/ExtensionDecodable.swift; sourceTree = SOURCE_ROOT; };
 		831B32F41E56C9E400A6D59A /* ExtensionDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionDictionary.swift; path = Shared/Gloss/Sources/ExtensionDictionary.swift; sourceTree = SOURCE_ROOT; };
 		831B32F51E56C9E400A6D59A /* Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gloss.swift; path = Shared/Gloss/Sources/Gloss.swift; sourceTree = SOURCE_ROOT; };
+		831B33031E56CF5800A6D59A /* RWDevCon2017.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RWDevCon2017.plist; path = RWDevCon/RWDevCon2017.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +299,7 @@
 		7B45155D1C282BDE00F512AA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				831B33031E56CF5800A6D59A /* RWDevCon2017.plist */,
 				7B992F2C1C29778F009BF3C2 /* RWDevCon2016.plist */,
 			);
 			name = Data;
@@ -552,6 +555,7 @@
 				78B7A9E11A3E9876002AAF7F /* LaunchScreen.xib in Resources */,
 				7B5C7FBF1C4D33CE00A052F5 /* Speakers.xcassets in Resources */,
 				78B7A9DE1A3E9876002AAF7F /* Images.xcassets in Resources */,
+				831B33041E56CF5800A6D59A /* RWDevCon2017.plist in Resources */,
 				781EBADA1A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
