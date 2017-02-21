@@ -953,7 +953,7 @@ Firebase is a mobile platform that makes building offline first, realtime apps s
 	</dict>
 	<key>people</key>
 	<dict>
-		<key>adrian*</key>
+		<key>adrian</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -962,9 +962,9 @@ Firebase is a mobile platform that makes building offline first, realtime apps s
 			<key>last</key>
 			<string>Strahan</string>
 			<key>twitter</key>
-			<string></string>
+			<string>adrianstrahan</string>
 			<key>bio</key>
-			<string></string>
+			<string>Adrian is a freelance iOS developer and Project Manager living in the South West of England. He&apos;s worked on iPhone and iPad apps since 2010 (iOS3) and specializes in mobile- and web-based application development.</string>
 		</dict>
 		<key>alexis</key>
 		<dict>
@@ -988,7 +988,7 @@ Firebase is a mobile platform that makes building offline first, realtime apps s
 			<key>last</key>
 			<string>Furrow</string>
 			<key>twitter</key>
-			<string></string>
+			<string>ashfurrow</string>
 			<key>bio</key>
 			<string></string>
 		</dict>
@@ -1007,7 +1007,7 @@ Firebase is a mobile platform that makes building offline first, realtime apps s
         
 Audrey now teaches short courses in iOS app development to non-programmers, and organizes venues for Melbourne Cocoaheads monthly meetings.</string>
 		</dict>
-		<key>caroline*</key>
+		<key>caroline</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1016,11 +1016,11 @@ Audrey now teaches short courses in iOS app development to non-programmers, and 
 			<key>last</key>
 			<string>Begbie</string>
 			<key>twitter</key>
-			<string></string>
+			<string>carolinebegbie</string>
 			<key>bio</key>
-			<string></string>
+			<string>I’m an indie iOS developer. When I’m not developing, I’m playing around with 2D and 3D animation software, or learning Arduino and electronics. In my past I’ve taught the elderly how to use their computers, done marionette shows for pre-schools, and created accounting and stock control systems for mining companies.</string>
 		</dict>
-		<key>christine*</key>
+		<key>christine</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1029,9 +1029,9 @@ Audrey now teaches short courses in iOS app development to non-programmers, and 
 			<key>last</key>
 			<string>Abernathy</string>
 			<key>twitter</key>
-			<string></string>
+			<string>abernathyca</string>
 			<key>bio</key>
-			<string></string>
+			<string>Christine is an Engineer on the Developer Advocacy team at Facebook. In this role, she is focused on helping grow the mobile developer ecosystem with emphasis on Android, iOS, and the mobile web. Prior to Facebook, Christine headed up engineering at Mshift, a mobile banking software provider, delivering iPhone apps and mobile browser-based products.</string>
 		</dict>
 		<key>derek</key>
 		<dict>
@@ -1089,7 +1089,7 @@ Outside iOS, his interests are tinkering with hardware (Raspberry Pi and Arduino
         
 Outside of coding, he enjoys cramming as much outdoor activity into summer as he can (running, cycling, rowing, fishing, cabin-ing). In the winter, he patiently waits for summer.</string>
 		</dict>
-		<key>gemma*</key>
+		<key>gemma</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1098,9 +1098,9 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>last</key>
 			<string>Barlow</string>
 			<key>twitter</key>
-			<string></string>
+			<string>gemmakbarlow</string>
 			<key>bio</key>
-			<string></string>
+			<string>Gemma has been an iOS Developer since 2009 and loves travel, coffee, wine and code, not necessarily in that order. Originally from Melbourne, Australia, she currently calls New York home. </string>
 		</dict>
 		<key>jack</key>
 		<dict>
@@ -1115,7 +1115,7 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>bio</key>
 			<string>Jack is the lead mobile developer at ModiFace. He has built dozens of iOS apps and enjoys it very much. Outside of work, Jack enjoys coding on the beach, coding by the pool, and sometimes just having a quick code in the park.</string>
 		</dict>
-		<key>jake*</key>
+		<key>jake</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1124,9 +1124,9 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>last</key>
 			<string>Gunderson</string>
 			<key>twitter</key>
-			<string></string>
+			<string>fattjake</string>
 			<key>bio</key>
-			<string></string>
+			<string>Jacob is an indie game developer and runs the Indie Ambitions blog. Check out his latest app - Factor Samurai! </string>
 		</dict>
 		<key>james</key>
 		<dict>
@@ -1141,7 +1141,7 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>bio</key>
 			<string></string>
 		</dict>
-		<key>jawwad*</key>
+		<key>jawwad</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1150,9 +1150,9 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>last</key>
 			<string>Ahmad</string>
 			<key>twitter</key>
-			<string></string>
+			<string>Jawwad is a freelance iOS Developer that dove into Swift head first and has not looked back. He enjoys mentoring and teaching and was the founder of the of the NYC iOS Study Group and later on the Atlanta iOS Study Group. He&apos;s worked for companies as large as The New York Times, and as small as GateGuru, a 6 person startup.</string>
 			<key>bio</key>
-			<string></string>
+			<string>jawwadahmad</string>
 		</dict>
 		<key>josh*</key>
 		<dict>
@@ -1180,7 +1180,7 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>bio</key>
 			<string>Joshua Greene is a senior iOS developer and advocate for clean code. When he&apos;s not slinging code, he enjoys martial arts, Netflix, and spending time with his wonderful wife and daughter.</string>
 		</dict>
-		<key>kishin*</key>
+		<key>kishin</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1189,11 +1189,11 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>last</key>
 			<string>Manglani</string>
 			<key>twitter</key>
-			<string></string>
+			<string>kishinmanglani</string>
 			<key>bio</key>
-			<string></string>
+			<string>Kishin has extensive experience building apps. He works as a freelance developer. Some of the more notable clients he&apos;s worked with are Cover, Venmo, Bustle, and Hatch Labs, which made Tinder. Kishin also teaches all things iOS at General Assembly in New York.</string>
 		</dict>
-		<key>lea*</key>
+		<key>lea</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1202,11 +1202,11 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>last</key>
 			<string>Marolt Sonnenschein</string>
 			<key>twitter</key>
-			<string></string>
+			<string>hellosunschein</string>
 			<key>bio</key>
-			<string></string>
+			<string>Lea is an iOS Developer and Designer at Rent the Runway. She writes about iOS, UX and UI, teaches iOS classes at GA and volunteers for Girls Who Code. In her free time she plays piano, and tries to use code and technology to make art. Or she just doodles and listens to MIKA.</string>
 		</dict>
-		<key>lyndsey*</key>
+		<key>lyndsey</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1215,11 +1215,11 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>last</key>
 			<string>Scott</string>
 			<key>twitter</key>
-			<string></string>
+			<string>Lyndsey360</string>
 			<key>bio</key>
-			<string></string>
+			<string>Actress, Model, App Developer -- www.LyndseyScott.com</string>
 		</dict>
-		<key>marin*</key>
+		<key>marin</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1228,11 +1228,11 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>last</key>
 			<string>Todorov</string>
 			<key>twitter</key>
-			<string></string>
+			<string>icanzilb</string>
 			<key>bio</key>
-			<string></string>
+			<string>Part of: Realm and raywenderlich.com. Author of books and apps. </string>
 		</dict>
-		<key>matt*</key>
+		<key>matt</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1241,9 +1241,9 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>last</key>
 			<string>Morey</string>
 			<key>twitter</key>
-			<string></string>
+			<string>xzolian</string>
 			<key>bio</key>
-			<string></string>
+			<string>Matthew Morey is an engineer, developer, hacker, creator, and tinkerer. As an active member of the iOS community and Director of Mobile Engineering at MJD Interactive he has led numerous successful mobile projects worldwide. He’s the creator of Buoy Explorer, a marine conditions app for water sports enthusiast, and Wrist Presenter, an app that lets you control presentations wirelessly with your smart watch. When not developing apps he enjoys traveling, snowboarding, and surfing. He blogs about technology and business at matthewmorey.com.</string>
 		</dict>
 		<key>mic</key>
 		<dict>
@@ -1260,7 +1260,7 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
         
 When not knee-deep in code, Mic enjoys spending time with his wife Lucy and their daughter Evie, watching his beloved Fulham FC, and weather permitting, tearing up the English countryside on his Harley Davidson.</string>
 		</dict>
-		<key>michael*</key>
+		<key>michael</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1269,11 +1269,11 @@ When not knee-deep in code, Mic enjoys spending time with his wife Lucy and thei
 			<key>last</key>
 			<string>Katz</string>
 			<key>twitter</key>
-			<string></string>
+			<string>TheMikeKatz</string>
 			<key>bio</key>
-			<string></string>
+			<string>Michael Katz envisions a world where mobile apps always work, respect users’ privacy, and integrate well with their users’ life. When not coding, he can be found with his family playing board games, brewing, gardening, and watching the Yankees.</string>
 		</dict>
-		<key>ray-f*</key>
+		<key>ray-f</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1282,9 +1282,9 @@ When not knee-deep in code, Mic enjoys spending time with his wife Lucy and thei
 			<key>last</key>
 			<string>Fix</string>
 			<key>twitter</key>
-			<string></string>
+			<string>rayfix</string>
 			<key>bio</key>
-			<string></string>
+			<string>Ray Fix is using Swift to help create Revolve--the next generation in research microscopy at Echo Laboratories. In addition to his role as Swift Team Lead for Ray Wenderlich, he organizes several iOS/Swift meetups around Southern California. Ray is mostly-fluent in spoken and written Japanese and stays healthy by walking, jogging, and playing ultimate frisbee. When he is not doing one of those things, he is writing and dreaming of code in Swift. よろしくお願い致します。</string>
 		</dict>
 		<key>ray</key>
 		<dict>
@@ -1336,11 +1336,11 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<key>last</key>
 			<string>Marmelstein</string>
 			<key>twitter</key>
-			<string></string>
+			<string>marmelroy</string>
 			<key>bio</key>
 			<string></string>
 		</dict>
-		<key>ryan*</key>
+		<key>ryan</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1349,9 +1349,9 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<key>last</key>
 			<string>Ackermann</string>
 			<key>twitter</key>
-			<string></string>
+			<string>naturaln0va</string>
 			<key>bio</key>
-			<string></string>
+			<string>Ryan Ackermann is an iOS developer on The Bible App. Developing iOS apps and games is his passion. Four of his apps are published on the App Store and more are coming. He has been dancing with Swift since it was announced back in June 2014. When he&apos;s not programming or designing something in Sketch or Photoshop he spends time with his darling wife Jamie.</string>
 		</dict>
 		<key>sam</key>
 		<dict>
@@ -1392,7 +1392,7 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<key>bio</key>
 			<string>Vicki Wenderlich discovered a love of digital art in 2009, and has been making app art and digital illustrations ever since. She is passionate about helping people pursue their dreams, and makes free app art for developers available on her website, www.gameartguppy.com.</string>
 		</dict>
-		<key>zoltan*</key>
+		<key>zoltan</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1401,9 +1401,9 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<key>last</key>
 			<string>Matók</string>
 			<key>twitter</key>
-			<string></string>
+			<string>ZoltanMatok</string>
 			<key>bio</key>
-			<string></string>
+			<string>Zoltán is an iOS and OS X developer from Hungary. While he is not working or fiddling with new stuff, he likes to read insightful articles from around the development world. https://medium.com/@quinnnorton </string>
 		</dict>
 	</dict>
 	<key>rooms</key>
