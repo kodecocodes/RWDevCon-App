@@ -50,16 +50,22 @@ class ScheduleViewController: UIViewController {
     ])
     
     // TODO: wtf Greg?
-    let friday = Date(timeIntervalSince1970: 1457676000) // WTF Greg!?
+    let thursday = Date(timeIntervalSince1970: 1490853600) // muahahah
+//    let friday = Date(timeIntervalSince1970: 1490940000) // WTF Greg!?
+    
+    let vc0 = storyboard?.instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
+    vc0.coreDataStack = coreDataStack
+    vc0.startDate = thursday
+    scheduleTableViewControllers.append(vc0)
 
     let vc1 = storyboard?.instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
     vc1.coreDataStack = coreDataStack
-    vc1.startDate = friday
+    vc1.startDate = Date(timeInterval: 60*60*24, since: thursday)
     scheduleTableViewControllers.append(vc1)
 
     let vc2 = storyboard?.instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
     vc2.coreDataStack = coreDataStack
-    vc2.startDate = Date(timeInterval: 60*60*24, since: friday)
+    vc2.startDate = Date(timeInterval: 60*60*24*2, since: thursday)
     scheduleTableViewControllers.append(vc2)
 
     let vc3 = storyboard?.instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
@@ -106,18 +112,26 @@ class ScheduleViewController: UIViewController {
       bottomColor.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor)
     ])
 
-    segmentedControl = UISegmentedControl(items: ["Friday", "Saturday", "My Schedule"])
+    segmentedControl = UISegmentedControl(items: ["Thursday", "Friday", "Saturday", "My Schedule"])
     // TODO: default segment
+    
+    
+    segmentedControl.apportionsSegmentWidthsByContent = true
+    
+
     segmentedControl.selectedSegmentIndex = 0
     segmentedControl.translatesAutoresizingMaskIntoConstraints = false
     segmentedControl.backgroundColor = UIColor.white
     segmentedControl.tintColor = UIColor(red: 0, green: 109.0/255, blue: 55.0/255, alpha: 1.0)
     bottomView.addSubview(segmentedControl)
     NSLayoutConstraint.activate([
-      NSLayoutConstraint(item: segmentedControl, attribute: .centerX, relatedBy: .equal, toItem: bottomView, attribute: .centerX, multiplier: 1.0, constant: 0),
+        NSLayoutConstraint(item: segmentedControl, attribute: .leading, relatedBy: .equal, toItem: bottomView, attribute: .leading, multiplier: 1.0, constant: 20),
+        NSLayoutConstraint(item: segmentedControl, attribute: .trailing, relatedBy: .equal, toItem: bottomView, attribute: .trailing, multiplier: 1.0, constant: -20),
+//      NSLayoutConstraint(item: segmentedControl, attribute: .centerX, relatedBy: .equal, toItem: bottomView, attribute: .centerX, multiplier: 1.0, constant: 0),
       NSLayoutConstraint(item: segmentedControl, attribute: .centerY, relatedBy: .equal, toItem: bottomView, attribute: .centerY, multiplier: 1.0, constant: 0),
       ])
     segmentedControl.addTarget(self, action: #selector(ScheduleViewController.segmentChanged(_:)), for: .valueChanged)
+    
 
     navigationController?.navigationBar.barStyle = UIBarStyle.default
     navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pattern-64tall"), for: UIBarMetrics.default)
@@ -129,6 +143,7 @@ class ScheduleViewController: UIViewController {
     super.viewWillAppear(animated)
 
     navigationController?.setNavigationBarHidden(true, animated: animated)
+    
   }
 
   override func viewDidLayoutSubviews() {

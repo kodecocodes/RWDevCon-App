@@ -9,16 +9,141 @@
 	</dict>
 	<key>sessions</key>
 	<dict>
+		<key>lunch0</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>date</key>
+			<date>2017-03-30T16:00:00Z</date>
+			<key>duration</key>
+			<integer>90</integer>
+			<key>trackId</key>
+			<integer>4</integer>
+			<key>column</key>
+			<integer>1</integer>
+			<key>sessionNumber</key>
+			<string></string>
+			<key>title</key>
+			<string>Lunch</string>
+			<key>sessionDescription</key>
+			<string>Grab a bite to eat and get ready for the second half of your workshop.</string>
+			<key>presenters</key>
+			<array/>
+			<key>roomId</key>
+			<integer>7</integer>
+		</dict>
+		<key>ws1p1</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>date</key>
+			<date>2017-03-30T13:00:00Z</date>
+			<key>duration</key>
+			<integer>180</integer>
+			<key>trackId</key>
+			<integer>5</integer>
+			<key>column</key>
+			<integer>1</integer>
+			<key>sessionNumber</key>
+			<string>WS1</string>
+			<key>title</key>
+			<string>Advanced Debugging  &amp; Reverse Engineering</string>
+			<key>sessionDescription</key>
+			<string>Learn to wield the power of LLDB and other debugging tools while exploring code you do(n\’t)? have source for. Create powerful, custom debugging scripts to quickly hunt down any item that piques your interest.</string>
+			<key>presenters</key>
+			<array>
+				<string>derek</string>
+			</array>
+			<key>roomId</key>
+			<integer>4</integer>
+		</dict>
+		<key>ws1p2</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>date</key>
+			<date>2017-03-30T17:30:00Z</date>
+			<key>duration</key>
+			<integer>210</integer>
+			<key>trackId</key>
+			<integer>5</integer>
+			<key>column</key>
+			<integer>1</integer>
+			<key>sessionNumber</key>
+			<string>WS1</string>
+			<key>title</key>
+			<string>Advanced Debugging  &amp; Reverse Engineering</string>
+			<key>sessionDescription</key>
+			<string>Learn to wield the power of LLDB and other debugging tools while exploring code you do(n\’t)? have source for. Create powerful, custom debugging scripts to quickly hunt down any item that piques your interest.</string>
+			<key>presenters</key>
+			<array>
+				<string>derek</string>
+			</array>
+			<key>roomId</key>
+			<integer>4</integer>
+		</dict>
+		<key>ws2p1</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>date</key>
+			<date>2017-03-30T13:00:00Z</date>
+			<key>duration</key>
+			<integer>180</integer>
+			<key>trackId</key>
+			<integer>5</integer>
+			<key>column</key>
+			<integer>2</integer>
+			<key>sessionNumber</key>
+			<string>WS2</string>
+			<key>title</key>
+			<string>Advanced App Architecture</string>
+			<key>sessionDescription</key>
+			<string>Thoughtful design of the boundaries between your apps subsystems is the foundation of a stable codebase. In this workshop, we cover how to create a well designed boundary between subsystems, dependency injection, use case driven development, creating injectable subsystems, and using state management to result in a clean architecture for your apps.</string>
+			<key>presenters</key>
+			<array>
+				<string>josh*</string>
+				<string>rene</string>
+			</array>
+			<key>roomId</key>
+			<integer>5</integer>
+		</dict>
+		<key>ws2p2</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>date</key>
+			<date>2017-03-30T17:30:00Z</date>
+			<key>duration</key>
+			<integer>210</integer>
+			<key>trackId</key>
+			<integer>5</integer>
+			<key>column</key>
+			<integer>2</integer>
+			<key>sessionNumber</key>
+			<string>WS2</string>
+			<key>title</key>
+			<string>Advanced App Architecture</string>
+			<key>sessionDescription</key>
+			<string>Thoughtful design of the boundaries between your apps subsystems is the foundation of a stable codebase. In this workshop, we cover how to create a well designed boundary between subsystems, dependency injection, use case driven development, creating injectable subsystems, and using state management to result in a clean architecture for your apps.</string>
+			<key>presenters</key>
+			<array>
+				<string>josh*</string>
+				<string>rene</string>
+			</array>
+			<key>roomId</key>
+			<integer>5</integer>
+		</dict>
 		<key>reception</key>
 		<dict>
 			<key>active</key>
-			<false/>
+			<true/>
 			<key>date</key>
-			<date>2016-03-10T23:00:00Z</date>
+			<date>2017-03-30T22:00:00Z</date>
 			<key>duration</key>
-			<integer>60</integer>
+			<integer>120</integer>
 			<key>trackId</key>
-			<integer>6</integer>
+			<integer>3</integer>
 			<key>column</key>
 			<integer>0</integer>
 			<key>sessionNumber</key>
@@ -26,7 +151,7 @@
 			<key>title</key>
 			<string>Opening Reception (optional)</string>
 			<key>sessionDescription</key>
-			<string>Come join the team on Thursday evening for a pre-conference reception!</string>
+			<string>Everyone’s invited! Come meet the team and get to know your fellow conference attendees.</string>
 			<key>presenters</key>
 			<array/>
 			<key>roomId</key>
@@ -37,11 +162,11 @@
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-11T23:00:00Z</date>
+			<date>2017-03-31T22:00:00Z</date>
 			<key>duration</key>
 			<integer>240</integer>
 			<key>trackId</key>
-			<integer>6</integer>
+			<integer>3</integer>
 			<key>column</key>
 			<integer>0</integer>
 			<key>sessionNumber</key>
@@ -49,18 +174,18 @@
 			<key>title</key>
 			<string>Party!</string>
 			<key>sessionDescription</key>
-			<string>Join us at the Carlyle Club, an old-school supper club right across the street from the hotel. There will be delicious food, an open bar, and an awesome stage perfect for the ultimate RWDevCon show: James Dempsey and the Breakpoints! You must be 21 or over to attend.</string>
+			<string>Join us at the Carlyle Club, an old-school supper club right across the street from the hotel. There will be delicious food, an open bar, and an awesome stage perfect for the ultimate RWDevCon show: The James Dempsey Game Show! Must be 21 or over.</string>
 			<key>presenters</key>
 			<array/>
 			<key>roomId</key>
-			<integer>5</integer>
+			<integer>8</integer>
 		</dict>
 		<key>keynote</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-11T13:00:00Z</date>
+			<date>2017-03-31T12:00:00Z</date>
 			<key>duration</key>
 			<integer>45</integer>
 			<key>trackId</key>
@@ -79,60 +204,60 @@
 				<string>vicki</string>
 			</array>
 			<key>roomId</key>
-			<integer>1</integer>
+			<integer>7</integer>
 		</dict>
 		<key>lunch1</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-11T17:15:00Z</date>
+			<date>2017-03-31T16:15:00Z</date>
 			<key>duration</key>
 			<integer>60</integer>
 			<key>trackId</key>
-			<integer>7</integer>
+			<integer>4</integer>
 			<key>column</key>
 			<integer>1</integer>
 			<key>sessionNumber</key>
 			<string></string>
 			<key>title</key>
-			<string>Lunch</string>
+			<string>Lunch &amp; Board Games</string>
 			<key>sessionDescription</key>
 			<string>Grab a bite to eat and get ready for the afternoon sessions.</string>
 			<key>presenters</key>
 			<array/>
 			<key>roomId</key>
-			<integer>1</integer>
+			<integer>7</integer>
 		</dict>
 		<key>lunch2</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-12T17:45:00Z</date>
+			<date>2017-04-01T15:30:00Z</date>
 			<key>duration</key>
 			<integer>60</integer>
 			<key>trackId</key>
-			<integer>7</integer>
+			<integer>4</integer>
 			<key>column</key>
 			<integer>1</integer>
 			<key>sessionNumber</key>
 			<string></string>
 			<key>title</key>
-			<string>Lunch</string>
+			<string>Lunch &amp; Board Games</string>
 			<key>sessionDescription</key>
 			<string>Grab a bite to eat and get ready for the afternoon sessions.</string>
 			<key>presenters</key>
 			<array/>
 			<key>roomId</key>
-			<integer>1</integer>
+			<integer>7</integer>
 		</dict>
 		<key>closing</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-12T22:00:00Z</date>
+			<date>2017-04-01T21:30:00Z</date>
 			<key>duration</key>
 			<integer>30</integer>
 			<key>trackId</key>
@@ -142,7 +267,7 @@
 			<key>sessionNumber</key>
 			<string></string>
 			<key>title</key>
-			<string>Concluding Remarks</string>
+			<string>Closing Remarks</string>
 			<key>sessionDescription</key>
 			<string>RWDevCon has a special event at the end of the conference you won’t want to miss, so make sure you stay till the end... or don’t cry to us later! :P</string>
 			<key>presenters</key>
@@ -150,214 +275,112 @@
 				<string>ray</string>
 			</array>
 			<key>roomId</key>
-			<integer>1</integer>
+			<integer>7</integer>
 		</dict>
-		<key>101</key>
+		<key>closing-reception</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-11T14:00:00Z</date>
+			<date>2017-04-01T22:00:00Z</date>
+			<key>duration</key>
+			<integer>60</integer>
+			<key>trackId</key>
+			<integer>0</integer>
+			<key>column</key>
+			<integer>0</integer>
+			<key>sessionNumber</key>
+			<string></string>
+			<key>title</key>
+			<string>Closing Reception</string>
+			<key>sessionDescription</key>
+			<string>It’s so hard to say goodbye. We ease the pain with one last hour to mix and mingle with the speakers and the new friends you’ve met!</string>
+			<key>presenters</key>
+			<array/>
+			<key>roomId</key>
+			<integer>7</integer>
+		</dict>
+		<key>1</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>date</key>
+			<date>2017-03-31T14:00:00Z</date>
 			<key>duration</key>
 			<integer>90</integer>
 			<key>trackId</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>column</key>
 			<integer>1</integer>
 			<key>sessionNumber</key>
-			<string>101</string>
+			<string>1</string>
 			<key>title</key>
-			<string>Beginning Swift</string>
+			<string>Advanced Core Data</string>
 			<key>sessionDescription</key>
-			<string>Swift is Apple’s new programming language. Released in 2014 and open sourced in 2015, it is the new hotness that everyone in the iOS and Mac programming world is talking about. In this session, you’ll take a tour of the language right from the basics. At the end you’ll be comfortable reading and writing Swift, and will be ready for the rest of the conference!</string>
+			<string>Core Data has many advanced features which can make development of complex apps easier while increasing performance. During this talk Matt will show how to take advantage of some of the advanced features of Core Data such as background fetching and child contexts.</string>
 			<key>presenters</key>
 			<array>
-				<string>matt-g</string>
+				<string>matt</string>
 			</array>
 			<key>roomId</key>
-			<integer>1</integer>
+			<integer>4</integer>
 		</dict>
-		<key>102</key>
+		<key>1lab</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-11T15:45:00Z</date>
+			<date>2017-03-31T15:45:00Z</date>
 			<key>duration</key>
 			<integer>90</integer>
 			<key>trackId</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>column</key>
 			<integer>1</integer>
 			<key>sessionNumber</key>
-			<string>102</string>
+			<string>1</string>
 			<key>title</key>
-			<string>Beginning iOS</string>
+			<string>Lab: Advanced Core Data</string>
 			<key>sessionDescription</key>
-			<string>Time to start developing for iOS! In this session, you’ll build an app from scratch and learn to assemble your user interface with Storyboards and Auto Layout, display large datasets with Collection Views, and fetch images and JSON data from a server. These core skills will help no matter what path your iOS development takes!</string>
+			<string>Core Data has many advanced features which can make development of complex apps easier while increasing performance. During this talk Matt will show how to take advantage of some of the advanced features of Core Data such as background fetching and child contexts.</string>
 			<key>presenters</key>
 			<array>
-				<string>matt-l</string>
+				<string>matt</string>
 			</array>
 			<key>roomId</key>
-			<integer>1</integer>
+			<integer>9</integer>
 		</dict>
-		<key>103</key>
+		<key>2</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-11T18:15:00Z</date>
+			<date>2017-03-31T14:00:00Z</date>
 			<key>duration</key>
 			<integer>90</integer>
 			<key>trackId</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>column</key>
-			<integer>1</integer>
+			<integer>2</integer>
 			<key>sessionNumber</key>
-			<string>103</string>
+			<string>2</string>
 			<key>title</key>
-			<string>Beginning UIStackView</string>
+			<string>Advanced Auto Layout</string>
 			<key>sessionDescription</key>
-			<string>Over the past few years you’ve probably come to love Auto Layout; it makes device agnostic layouts a breeze. But you probably find yourself making the same patterns of constraints over and over again. Well, the layout gods have heard your cries for help, and in iOS 9 furnished you with UIStackView. In this session you’ll build your  rst stack view and learn the true power of easily constructing realistic layouts without Auto Layout constraints.</string>
+			<string>Learn how you can use some of Auto Layout’s more advanced features to your advantage while designing complex, dynamic views.</string>
 			<key>presenters</key>
 			<array>
-				<string>sam</string>
+				<string>scott</string>
 			</array>
 			<key>roomId</key>
-			<integer>1</integer>
+			<integer>5</integer>
 		</dict>
-		<key>104</key>
+		<key>2lab</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-11T20:00:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>1</integer>
-			<key>column</key>
-			<integer>1</integer>
-			<key>sessionNumber</key>
-			<string>104</string>
-			<key>title</key>
-			<string>Beginning App Search</string>
-			<key>sessionDescription</key>
-			<string>Want to increase your app’s exposure and enhance the user’s experience at the same time? Then check out iOS 9’s new App Search APIs. App Search gives you the tools needed to index app content and make it searchable in Spotlight. Also, the look and functionality of Spotlight search results can be customized to better fit the content of the app.</string>
-			<key>presenters</key>
-			<array>
-				<string>owen</string>
-			</array>
-			<key>roomId</key>
-			<integer>1</integer>
-		</dict>
-		<key>105</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T13:00:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>1</integer>
-			<key>column</key>
-			<integer>1</integer>
-			<key>sessionNumber</key>
-			<string>105</string>
-			<key>title</key>
-			<string>Beginning Xcode Instruments</string>
-			<key>sessionDescription</key>
-			<string>Have your users ever complained that your app is too slow or crashes all the time? Have you spent hours trying to track down a bug? In this session, you will learn how to use Xcode Instruments to perform analysis and diagnostics to pinpoint exactly where in your code the problem occurs. By incorporating Instruments into your development cycle, you will become a better developer.</string>
-			<key>presenters</key>
-			<array>
-				<string>vincent</string>
-			</array>
-			<key>roomId</key>
-			<integer>1</integer>
-		</dict>
-		<key>106</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T14:45:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>1</integer>
-			<key>column</key>
-			<integer>1</integer>
-			<key>sessionNumber</key>
-			<string>106</string>
-			<key>title</key>
-			<string>Beginning watchOS 2</string>
-			<key>sessionDescription</key>
-			<string>The Apple Watch - ‘nuf said! Learn how to adapt an iOS app with Watch-appropriate layout and UI controls, to create a Watch app you’ll be proud to show off. Warning: both versions of the sample app have been proven by user testing to be highly addictive. ;]</string>
-			<key>presenters</key>
-			<array>
-				<string>audrey</string>
-			</array>
-			<key>roomId</key>
-			<integer>1</integer>
-		</dict>
-		<key>107</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T18:15:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>1</integer>
-			<key>column</key>
-			<integer>1</integer>
-			<key>sessionNumber</key>
-			<string>107</string>
-			<key>title</key>
-			<string>Beginning tvOS Traditional Apps</string>
-			<key>sessionDescription</key>
-			<string>Apple TV is finally here! Now all it needs are some apps. Don’t miss out on an opportunity to learn how to create a traditional (native) tvOS app. The sharks are hungry, and this session will help get your hook in the water.</string>
-			<key>presenters</key>
-			<array>
-				<string>tammy</string>
-			</array>
-			<key>roomId</key>
-			<integer>1</integer>
-		</dict>
-		<key>108</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T20:30:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>1</integer>
-			<key>column</key>
-			<integer>1</integer>
-			<key>sessionNumber</key>
-			<string>108</string>
-			<key>title</key>
-			<string>Beginning tvOS TVML Apps</string>
-			<key>sessionDescription</key>
-			<string>You’ve learned how to make tvOS apps using traditional techniques you’re familiar with, but the Apple has provided a second way to make tvOS apps as well: TVML apps. In this session, you’ll learn what this is and how it works as you make a basic TVML app - and although JavaScript isn’t what the typical iOS developer might sign up for, you’ll be pleasantly surprised at the benefits it can offer.</string>
-			<key>presenters</key>
-			<array>
-				<string>kelvin</string>
-			</array>
-			<key>roomId</key>
-			<integer>1</integer>
-		</dict>
-		<key>201</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-11T14:00:00Z</date>
+			<date>2017-03-31T15:45:00Z</date>
 			<key>duration</key>
 			<integer>90</integer>
 			<key>trackId</key>
@@ -365,590 +388,69 @@
 			<key>column</key>
 			<integer>2</integer>
 			<key>sessionNumber</key>
-			<string>201</string>
+			<string>2</string>
 			<key>title</key>
-			<string>iOS Design Patterns in Swift</string>
+			<string>Lab: Advanced Auto Layout</string>
 			<key>sessionDescription</key>
-			<string>Tired of reinventing the wheel? In this session, you’ll learn about iOS design patterns: reusable solutions to commonly occurring problems. You’ll also learn new and impressive terms — “loose coupling,” “composition over creation,” “polymorphic design” and more sure to impress your friends and loved ones.</string>
+			<string>Learn how you can use some of Auto Layout’s more advanced features to your advantage while designing complex, dynamic views.</string>
 			<key>presenters</key>
 			<array>
-				<string>joshua</string>
+				<string>scott</string>
 			</array>
 			<key>roomId</key>
-			<integer>2</integer>
+			<integer>1</integer>
 		</dict>
-		<key>202</key>
+		<key>3</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-11T15:45:00Z</date>
+			<date>2017-03-31T14:00:00Z</date>
 			<key>duration</key>
 			<integer>90</integer>
 			<key>trackId</key>
-			<integer>2</integer>
-			<key>column</key>
-			<integer>2</integer>
-			<key>sessionNumber</key>
-			<string>202</string>
-			<key>title</key>
-			<string>Programming in a Swift (Rather Than Obj-C) Style</string>
-			<key>sessionDescription</key>
-			<string>Are you just getting started with Swift and need some style tips? Or are you learning Swift, but find yourself writing Swift code with an Objective-C accent? In this session, you’ll see contrasts between the old Objective-C ways and the new Swift-y ways, and you’ll pick up some tips on how to make your types take full advantage of all that Swift has to offer.</string>
-			<key>presenters</key>
-			<array>
-				<string>greg</string>
-			</array>
-			<key>roomId</key>
-			<integer>2</integer>
-		</dict>
-		<key>203</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-11T18:15:00Z</date>
-			<key>duration</key>
-			<integer>75</integer>
-			<key>trackId</key>
-			<integer>2</integer>
-			<key>column</key>
-			<integer>2</integer>
-			<key>sessionNumber</key>
-			<string>203</string>
-			<key>title</key>
-			<string>Custom Controls, Part I</string>
-			<key>sessionDescription</key>
-			<string>Ever wonder how the controls provided by UIKit are engineered? Well wonder no more, as this session will walk you through everything you need to know. You’ll learn how to create a unique custom control by compositing existing views and layers, before making it Interface Builder friendly so you can customize the control at design time and have it appear exactly as it would at run time.</string>
-			<key>presenters</key>
-			<array>
-				<string>mic</string>
-			</array>
-			<key>roomId</key>
-			<integer>2</integer>
-		</dict>
-		<key>204</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-11T20:00:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>2</integer>
-			<key>column</key>
-			<integer>2</integer>
-			<key>sessionNumber</key>
-			<string>204</string>
-			<key>title</key>
-			<string>Custom Controls, Part II</string>
-			<key>sessionDescription</key>
-			<string>Having created a great looking control in Part I, you’ll be wondering how you can make it fully interactive, embracing the unique opportunity that touch-based devices offer. You’ll start out by creating a custom gesture recogniser, before stepping back to a more technical level and discovering how to use iOS frameworks to make a reusable, distributable package that you can share with all your friends!</string>
-			<key>presenters</key>
-			<array>
-				<string>sam</string>
-			</array>
-			<key>roomId</key>
-			<integer>2</integer>
-		</dict>
-		<key>205</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T13:00:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>2</integer>
-			<key>column</key>
-			<integer>2</integer>
-			<key>sessionNumber</key>
-			<string>205</string>
-			<key>title</key>
-			<string>How to Make Delightful UI</string>
-			<key>sessionDescription</key>
-			<string>Add some personality to your apps by moving beyond the iOS standards and adding a pinch of surprise and delight to your apps. In this session, you’ll learn the principles behind custom refresh controls and transitions, and how to make your app stand out from the crowd.</string>
-			<key>presenters</key>
-			<array>
-				<string>rich</string>
-			</array>
-			<key>roomId</key>
-			<integer>2</integer>
-		</dict>
-		<key>206</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T14:45:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>2</integer>
-			<key>column</key>
-			<integer>2</integer>
-			<key>sessionNumber</key>
-			<string>206</string>
-			<key>title</key>
-			<string>3D Touch</string>
-			<key>sessionDescription</key>
-			<string>Ever wanted to take your app to the next dimension? The latest iPhones now have support for capacitive touch, which can tell how hard you are pressing on the screen. New to iOS 9, the 3D Touch APIs let you add home screen shortcuts, peek and pop, and even your own custom gestures! This tutorial will teach you all about these new APIs and show you just how easy they are to add to your apps.</string>
-			<key>presenters</key>
-			<array>
-				<string>ryan</string>
-			</array>
-			<key>roomId</key>
-			<integer>2</integer>
-		</dict>
-		<key>207</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T18:15:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>2</integer>
-			<key>column</key>
-			<integer>2</integer>
-			<key>sessionNumber</key>
-			<string>207</string>
-			<key>title</key>
-			<string>Xcode UI Testing</string>
-			<key>sessionDescription</key>
-			<string>In Xcode 7, Apple introduced the ability to UI test your application without any third-party dependencies using XCUI tests. Learn how to take advantage of the UI test recording feature, how to use accessibility features to verify your application works for your users as expected, and how to pass information into your test target even though it’s running in a totally separate process.</string>
-			<key>presenters</key>
-			<array>
-				<string>ellen</string>
-			</array>
-			<key>roomId</key>
-			<integer>2</integer>
-		</dict>
-		<key>208</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T20:30:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>2</integer>
-			<key>column</key>
-			<integer>2</integer>
-			<key>sessionNumber</key>
-			<string>208</string>
-			<key>title</key>
-			<string>Xcode Tips &amp; Tricks</string>
-			<key>sessionDescription</key>
-			<string>Have you ever spent time traversing Xcode’s interface searching for that one file or feature you want? This session will introduce you to several Xcode tips including hotkeys, behaviors, code snippets, and more! Watch as Xcode does exactly what you want it to at the touch of a button, or even better — without touching anything at all.</string>
-			<key>presenters</key>
-			<array>
-				<string>jack</string>
-			</array>
-			<key>roomId</key>
-			<integer>2</integer>
-		</dict>
-		<key>301</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-11T14:00:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>column</key>
 			<integer>3</integer>
 			<key>sessionNumber</key>
-			<string>301</string>
+			<string>3</string>
 			<key>title</key>
-			<string>Advanced Auto Layout &amp; Adaptive Layout</string>
+			<string>Machine Learning on iOS</string>
 			<key>sessionDescription</key>
-			<string>iPhone 4S, 5, 6, 6 Plus, iPad, and iPad Pro, oh my! In this session, you’ll learn advanced techniques for adapting your layout to multiple screen sizes with minimal effort. And you’ll see how to make layouts work with auto-sizing UICollectionView cells and UIScrollView.</string>
-			<key>presenters</key>
-			<array>
-				<string>jerry</string>
-			</array>
-			<key>roomId</key>
-			<integer>3</integer>
-		</dict>
-		<key>302</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-11T15:45:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>3</integer>
-			<key>column</key>
-			<integer>3</integer>
-			<key>sessionNumber</key>
-			<string>302</string>
-			<key>title</key>
-			<string>Advanced LLDB &amp; Console Debugging</string>
-			<key>sessionDescription</key>
-			<string>With LLDB, you are a puppet master in a vast expanse of memory. Learn how to impress, or scare, your coworkers with your newfound debugging knowledge and gain insight into how Apple solves the same problems you’re up against.</string>
-			<key>presenters</key>
-			<array>
-				<string>derek</string>
-			</array>
-			<key>roomId</key>
-			<integer>3</integer>
-		</dict>
-		<key>303</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-11T18:15:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>3</integer>
-			<key>column</key>
-			<integer>3</integer>
-			<key>sessionNumber</key>
-			<string>303</string>
-			<key>title</key>
-			<string>Introduction to Protocol-Oriented Programming</string>
-			<key>sessionDescription</key>
-			<string>Swift 2 protocols can do things impossible in Objective C, so much that Apple has even argued for “Protocol-Oriented Programming” as an alternative to object-oriented programming. What does this really mean and when is it wise? This talk will walk through a detailed example, illustrating the pros and cons of OOP and protocol-based modelling, to show where Swift protocols are strictly superior, and also where their new benefits introduce fundamental new tradeoffs.</string>
+			<string>Machine Learning. Convolutional Neural Networks. Deep Learning Neural Networks.
+What is all the hype about? What are these technologies, what are they good for, and can we use them for anything useful right now? This session requires no background in any of these areas, and will introduce you to machine learning on iOS with a worked example.</string>
 			<key>presenters</key>
 			<array>
 				<string>alexis</string>
 			</array>
 			<key>roomId</key>
-			<integer>3</integer>
+			<integer>6</integer>
 		</dict>
-		<key>304</key>
+		<key>3lab</key>
 		<dict>
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2016-03-11T20:00:00Z</date>
+			<date>2017-03-31T15:45:00Z</date>
 			<key>duration</key>
 			<integer>90</integer>
 			<key>trackId</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>column</key>
 			<integer>3</integer>
 			<key>sessionNumber</key>
-			<string>304</string>
+			<string>3</string>
 			<key>title</key>
-			<string>Swift and C Interoperability</string>
+			<string>Machine Learning on iOS</string>
 			<key>sessionDescription</key>
-			<string>Swift’s type system encourages safety and forces us to write better code. However, this can be problematic when working with C. You may not see this as an immediate problem, since you’re coding in Swift, right? But what if your next project includes a legacy C codebase or open source C lib you need to wrap? This session will teach you how to work safely with C from Swift, what the obstacles and caveats are, and how wrap your C code so it’s far more Swift-y.</string>
+			<string>Machine Learning. Convolutional Neural Networks. Deep Learning Neural Networks.
+What is all the hype about? What are these technologies, what are they good for, and can we use them for anything useful right now? This session requires no background in any of these areas, and will introduce you to machine learning on iOS with a worked example.</string>
 			<key>presenters</key>
 			<array>
-				<string>mic</string>
+				<string>alexis</string>
 			</array>
 			<key>roomId</key>
-			<integer>3</integer>
-		</dict>
-		<key>305</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T13:00:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>3</integer>
-			<key>column</key>
-			<integer>3</integer>
-			<key>sessionNumber</key>
-			<string>305</string>
-			<key>title</key>
-			<string>App Architecture</string>
-			<key>sessionDescription</key>
-			<string>Is your codebase resilient to change? Can you and your team build features and fix bugs swiftly and easily without inadvertently introducing regressions? In this tutorial, you’ll learn practical core architectural concepts while getting hands on experience writing flexible code. From encapsulating user story logic into asynchronous NSOperations to injecting dependencies, you’ll walk out of here architecting apps like a pro!</string>
-			<key>presenters</key>
-			<array>
-				<string>rene</string>
-			</array>
-			<key>roomId</key>
-			<integer>3</integer>
-		</dict>
-		<key>306</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T14:45:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>3</integer>
-			<key>column</key>
-			<integer>3</integer>
-			<key>sessionNumber</key>
-			<string>306</string>
-			<key>title</key>
-			<string>MVVM in Practice</string>
-			<key>sessionDescription</key>
-			<string>Sick of giant view controllers? Not sure where to put your app’s business logic? Wanting to write tests but can’t for the life of you get started? Lucky for you, the Modal-View-ViewModel pattern is the answer you’ve been looking for! In this session you’ll get hands on experience organizing your code into easy-to-understand testable components using MVVM.</string>
-			<key>presenters</key>
-			<array>
-				<string>eric</string>
-			</array>
-			<key>roomId</key>
-			<integer>3</integer>
-		</dict>
-		<key>307</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T18:15:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>3</integer>
-			<key>column</key>
-			<integer>3</integer>
-			<key>sessionNumber</key>
-			<string>307</string>
-			<key>title</key>
-			<string>Architecting for Multiple Platforms</string>
-			<key>sessionDescription</key>
-			<string>Developing for iOS used to be as straightforward as just targeting an iPhone, iPad, or - if you were feeling adventurous - both! In the past year, however, Apple has introduced a watch, a new Apple TV, and bigger iPads that can run your app in a multitude of size modes. You will learn how to create a single project that shares styling, frameworks, and code across a family of targets including iPhone, iPad, Apple TV, Apple Watch, and a Today Extension.</string>
-			<key>presenters</key>
-			<array>
-				<string>erik</string>
-			</array>
-			<key>roomId</key>
-			<integer>3</integer>
-		</dict>
-		<key>308</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T20:30:00Z</date>
-			<key>duration</key>
-			<integer>90</integer>
-			<key>trackId</key>
-			<integer>3</integer>
-			<key>column</key>
-			<integer>3</integer>
-			<key>sessionNumber</key>
-			<string>308</string>
-			<key>title</key>
-			<string>Core Data to Online Service Synchronization</string>
-			<key>sessionDescription</key>
-			<string>You (hopefully) love using Core Data in your apps but what’s the best way to pull data off the Internet and synchronize it with your app? In this tutorial, you’ll learn how to structure your Core Data calls into services which makes synchronization easier for both unit testing and implementation.</string>
-			<key>presenters</key>
-			<array>
-				<string>aaron</string>
-			</array>
-			<key>roomId</key>
-			<integer>3</integer>
-		</dict>
-		<key>401</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-11T21:45:00Z</date>
-			<key>duration</key>
-			<integer>20</integer>
-			<key>trackId</key>
-			<integer>4</integer>
-			<key>column</key>
-			<integer>1</integer>
-			<key>sessionNumber</key>
-			<string></string>
-			<key>title</key>
-			<string>What’s Your Why?</string>
-			<key>sessionDescription</key>
-			<string>TBD</string>
-			<key>presenters</key>
-			<array>
-				<string>jaimee</string>
-			</array>
-			<key>roomId</key>
-			<integer>4</integer>
-		</dict>
-		<key>402</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-11T22:10:00Z</date>
-			<key>duration</key>
-			<integer>20</integer>
-			<key>trackId</key>
-			<integer>4</integer>
-			<key>column</key>
 			<integer>2</integer>
-			<key>sessionNumber</key>
-			<string></string>
-			<key>title</key>
-			<string>The Weird and Wacky World of App Marketing</string>
-			<key>sessionDescription</key>
-			<string>How do I get TechCrunch or Apple to feature my Apps? How do I market an app to the top of the App Store? It’s not just luck — there is a method to the madness. Apple Design Award winner Jeremy Olson shares how he made the journey from app maker to app marketer and reveals the secrets he has learned marketing Tapity’s top apps Grades, Languages, and Hours.</string>
-			<key>presenters</key>
-			<array>
-				<string>jeremy</string>
-			</array>
-			<key>roomId</key>
-			<integer>4</integer>
-		</dict>
-		<key>403</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-11T22:35:00Z</date>
-			<key>duration</key>
-			<integer>20</integer>
-			<key>trackId</key>
-			<integer>4</integer>
-			<key>column</key>
-			<integer>3</integer>
-			<key>sessionNumber</key>
-			<string></string>
-			<key>title</key>
-			<string>Going Deep</string>
-			<key>sessionDescription</key>
-			<string>When was the last time you wrote some code, designed an interaction, shipped an app, or otherwise did work that you know was your absolute best? In this talk, come hear about how to better operate in the always- on, notification-filled workplace to produce the best work of your career.</string>
-			<key>presenters</key>
-			<array>
-				<string>ken</string>
-			</array>
-			<key>roomId</key>
-			<integer>4</integer>
-		</dict>
-		<key>404</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T16:30:00Z</date>
-			<key>duration</key>
-			<integer>20</integer>
-			<key>trackId</key>
-			<integer>4</integer>
-			<key>column</key>
-			<integer>1</integer>
-			<key>sessionNumber</key>
-			<string></string>
-			<key>title</key>
-			<string>Going AFK</string>
-			<key>sessionDescription</key>
-			<string>We all enjoy writing code, but sometimes your career as a coder can benefit from stepping away from the keyboard. Drawing on personal stories from twenty years in technology, James’ examples serve as a guide showing how your own outside interests and experiences can make a difference in your life as a coder in unexpected ways. It may just change the way you look at the time you spend AFK.</string>
-			<key>presenters</key>
-			<array>
-				<string>james</string>
-			</array>
-			<key>roomId</key>
-			<integer>4</integer>
-		</dict>
-		<key>405</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T16:55:00Z</date>
-			<key>duration</key>
-			<integer>20</integer>
-			<key>trackId</key>
-			<integer>4</integer>
-			<key>column</key>
-			<integer>2</integer>
-			<key>sessionNumber</key>
-			<string></string>
-			<key>title</key>
-			<string>Embracing Failure</string>
-			<key>sessionDescription</key>
-			<string>We, as a society, fear failure. We are terri ed of losing that job that we hate because we’re afraid we won’t find another one. We stay in a relationship with someone we don’t like because we’re afraid of never finding anyone else. We fear change. But what if we didn’t? This talk is about learning to embrace your failures to make a life for yourself that you want to live.</string>
-			<key>presenters</key>
-			<array>
-				<string>janie</string>
-			</array>
-			<key>roomId</key>
-			<integer>4</integer>
-		</dict>
-		<key>406</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T17:20:00Z</date>
-			<key>duration</key>
-			<integer>20</integer>
-			<key>trackId</key>
-			<integer>4</integer>
-			<key>column</key>
-			<integer>3</integer>
-			<key>sessionNumber</key>
-			<string></string>
-			<key>title</key>
-			<string>The Power of Small</string>
-			<key>sessionDescription</key>
-			<string>Smaller homes require less heating. Smaller apps require less time to get acquainted with. In this talk, you will learn about the many advantages of a small team, a small product, a small market and a small launch.</string>
-			<key>presenters</key>
-			<array>
-				<string>cesare</string>
-			</array>
-			<key>roomId</key>
-			<integer>4</integer>
-		</dict>
-		<key>501</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-11T21:45:00Z</date>
-			<key>duration</key>
-			<integer>75</integer>
-			<key>trackId</key>
-			<integer>5</integer>
-			<key>column</key>
-			<integer>3</integer>
-			<key>sessionNumber</key>
-			<string></string>
-			<key>title</key>
-			<string>Lab - Building Extraordinary Apps with Firebase</string>
-			<key>sessionDescription</key>
-			<string>CoreData got you down? Sick of setting up servers? Want to focus on building beautiful interfaces or adding new features quickly, rather than tedious boilerplate networking code? Come learn how to build extraordinary iOS apps with Firebase!
-        
-Firebase is a mobile platform that makes building offline first, realtime apps simple. We handle tough problems like authentication, sub-second data synchronization, and disk persistence. In this code lab, we’ll explore how Firebase solves these problems by building a chat application using Swift and JSQMessagesViewController.</string>
-			<key>presenters</key>
-			<array/>
-			<key>roomId</key>
-			<integer>3</integer>
-		</dict>
-		<key>502</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>date</key>
-			<date>2016-03-12T16:30:00Z</date>
-			<key>duration</key>
-			<integer>75</integer>
-			<key>trackId</key>
-			<integer>5</integer>
-			<key>column</key>
-			<integer>1</integer>
-			<key>sessionNumber</key>
-			<string></string>
-			<key>title</key>
-			<string>Lab - Couchbase</string>
-			<key>sessionDescription</key>
-			<string>Building apps that work offline is hard: worrying about sync, networking code, and security... all while trying to get your app to market. Couchbase Mobile, a full-stack NoSQL mobile database, can help! In this workshop, you’ll build an iOS app in Swift with Couchbase Mobile and see how using an embedded NoSQL database using sync means zero networking code for you and much less time to market.</string>
-			<key>presenters</key>
-			<array/>
-			<key>roomId</key>
-			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>people</key>
@@ -1327,7 +829,7 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<key>bio</key>
 			<string>Richard is an iOS developer for MartianCraft, prolific Stack Overflow participant and author of a development blog, Command Shift. When he&apos;s not in front of a computer he is usually building Lego horse-powered spaceships (don&apos;t ask!) with his daughter.</string>
 		</dict>
-		<key>roy*</key>
+		<key>roy</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -1338,7 +840,7 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<key>twitter</key>
 			<string>marmelroy</string>
 			<key>bio</key>
-			<string></string>
+			<string>Roy does iOS @ Spotify. He is the creator of too many Swift frameworks - including PhoneNumberKit, Interpolate and Zip.</string>
 		</dict>
 		<key>ryan</key>
 		<dict>
@@ -1365,6 +867,19 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<string>iwantmyrealname</string>
 			<key>bio</key>
 			<string>Sam is a strange mashup of developer, writer and trainer. By day you&apos;ll find him recording videos for Razeware, writing tutorials, attending conferences and generally being a good guy. By night he&apos;s likely to be out entertaining people, armed with his trombone and killer dance moves.</string>
+		</dict>
+		<key>scott</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>first</key>
+			<string>Scott</string>
+			<key>last</key>
+			<string>Berrevoets</string>
+			<key>twitter</key>
+			<string>ScottBerrevoets</string>
+			<key>bio</key>
+			<string>Scott is an iOS developer at Lyft and an avid open source contributor. With libraries like SDCAlertView and SDCAutoLayout, he tries to improve those parts where the iOS SDK falls short. He occasionally blogs at ScottBerrevoets.com and is also active on GitHub and Twitter.</string>
 		</dict>
 		<key>tammy</key>
 		<dict>
@@ -1410,6 +925,10 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 	<array>
 		<dict>
 			<key>name</key>
+			<string>Edison Foyer</string>
+		</dict>
+		<dict>
+			<key>name</key>
 			<string>Whitney</string>
 		</dict>
 		<dict>
@@ -1450,6 +969,10 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<key>image</key>
 			<string>carlyle-club</string>
 		</dict>
+		<dict>
+			<key>name</key>
+			<string>Bell</string>
+		</dict>
 	</array>
 	<key>tracks</key>
 	<array>
@@ -1458,6 +981,7 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 		<string>Lab</string>
 		<string>Fun</string>
 		<string>Food</string>
+		<string>Workshop</string>
 	</array>
 </dict>
 </plist>

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // TODO: update plist
-    guard let plist = Bundle.main.url(forResource: "RWDevCon2016", withExtension: "plist"), let data = NSDictionary(contentsOf: plist) else { return true }
+    guard let plist = Bundle.main.url(forResource: "RWDevCon2017", withExtension: "plist"), let data = NSDictionary(contentsOf: plist) else { return true }
     
     resetIfNeeded()
     
@@ -49,15 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func resetIfNeeded() {
     // TODO: update key
-    let resetForNextConferenceKey = "reset-for-2016"
-    if !Config.userDefaults().bool(forKey: resetForNextConferenceKey) {
+    let resetForNextConferenceKey = "reset-for-2017"
+    // TODO: Put this check back in
+//    if !Config.userDefaults().bool(forKey: resetForNextConferenceKey) {
+    
       let storeURL = Config.applicationDocumentsDirectory().appendingPathComponent("\(CoreDataStack.modelName).sqlite")
       do {
         try FileManager.default.removeItem(at: storeURL)
       } catch { /* Don't need to do anything here; an error simply means the store didn't exist in the first place */ }
       Config.nukeFavorites()
       Config.userDefaults().set(true, forKey: resetForNextConferenceKey)
-    }
+//    }
   }
   
   func updateFromServer() {
@@ -200,7 +202,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let lastServerCheck = Config.userDefaults().value(forKey: "lastServerCheck") as? Date ?? beginningOfTimeDate
       if Date().timeIntervalSince(lastServerCheck) > tooSoonSeconds {
         NSLog("Checking with the server at \(Date()); last check was \(lastServerCheck)")
-        updateFromServer()
+        // TODO: put this back in
+//        updateFromServer()
       } else {
         NSLog("NOT checking with the server at \(Date()); last check was \(lastServerCheck)")
       }
