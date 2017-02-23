@@ -29,8 +29,7 @@ class ScheduleDataSource: NSObject {
   var tableCellConfigurationBlock: TableCellConfigurationBlock?
 
   var allSessions: [Session] {
-    // TODO: use Session as result type
-    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Session")
+    let fetch = NSFetchRequest<Session>(entityName: "Session")
 
     if self.startDate != nil && self.endDate != nil {
       fetch.predicate = NSPredicate(format: "(active = %@) AND (date >= %@) AND (date <= %@)", argumentArray: [true, self.startDate!, self.endDate!])
@@ -42,7 +41,7 @@ class ScheduleDataSource: NSObject {
     fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true), NSSortDescriptor(key: "column", ascending: true)]
     
     do {
-      guard let results = try coreDataStack.context.fetch(fetch) as? [Session] else { return [] }
+      let results = try coreDataStack.context.fetch(fetch)
       return results
     } catch {
       return []

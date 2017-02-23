@@ -9,12 +9,11 @@ class Track: NSManagedObject {
   @NSManaged var sessions: NSSet
 
   class func trackByTrackId(_ trackId: Int, context: NSManagedObjectContext) -> Track? {
-    // TODO: Use Track as result type
-    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Track")
+    let fetch = NSFetchRequest<Track>(entityName: "Track")
     fetch.predicate = NSPredicate(format: "trackId = %@", argumentArray: [trackId])
     do {
       let results = try context.fetch(fetch)
-      guard let result = results.first as? Track else { return nil }
+      guard let result = results.first else { return nil }
       return result
     } catch {
       return nil

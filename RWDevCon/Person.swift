@@ -17,12 +17,11 @@ class Person: NSManagedObject {
   }
   
   class func personByIdentifier(_ identifier: String, context: NSManagedObjectContext) -> Person? {
-    // TODO: use Person as type of result
-    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Person")
+    let fetch = NSFetchRequest<Person>(entityName: "Person")
     fetch.predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])
     do {
       let results = try context.fetch(fetch)
-      guard let result = results.first as? Person else { return nil }
+      guard let result = results.first else { return nil }
       return result
     } catch {
       return nil

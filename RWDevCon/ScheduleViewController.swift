@@ -49,9 +49,7 @@ class ScheduleViewController: UIViewController {
       backgroundGrey.trailingAnchor.constraint(equalTo: view.trailingAnchor)
     ])
     
-    // TODO: wtf Greg?
-    let thursday = Date(timeIntervalSince1970: 1490853600) // muahahah
-//    let friday = Date(timeIntervalSince1970: 1490940000) // WTF Greg!?
+    let thursday = Date(timeIntervalSince1970: 1490853600) // WTF Greg!?
     
     let vc0 = storyboard?.instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
     vc0.coreDataStack = coreDataStack
@@ -114,6 +112,7 @@ class ScheduleViewController: UIViewController {
 
     segmentedControl = UISegmentedControl(items: ["Thursday", "Friday", "Saturday", "My Schedule"])
     // TODO: default segment
+
     
     
     segmentedControl.apportionsSegmentWidthsByContent = true
