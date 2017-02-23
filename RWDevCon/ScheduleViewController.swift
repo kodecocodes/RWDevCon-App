@@ -110,15 +110,19 @@ class ScheduleViewController: UIViewController {
       bottomColor.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor)
     ])
 
-    segmentedControl = UISegmentedControl(items: ["Thursday", "Friday", "Saturday", "My Schedule"])
-    // TODO: default segment
-
+    let segmentItems = ["Thursday", "Friday", "Saturday", "My Schedule"]
+    segmentedControl = UISegmentedControl(items: segmentItems)
     
+    
+    // attempt to select the current day
+    var calendar = Calendar.current
+    calendar.locale = Locale(identifier: "en_US")
+    let weekday = calendar.component(.weekday, from: Date())
+    let currentWeekdaySymbol = calendar.weekdaySymbols[weekday - 1]
+    segmentedControl.selectedSegmentIndex = segmentItems.index(of: currentWeekdaySymbol) ?? 0
     
     segmentedControl.apportionsSegmentWidthsByContent = true
-    
 
-    segmentedControl.selectedSegmentIndex = 0
     segmentedControl.translatesAutoresizingMaskIntoConstraints = false
     segmentedControl.backgroundColor = UIColor.white
     segmentedControl.tintColor = UIColor(red: 0, green: 109.0/255, blue: 55.0/255, alpha: 1.0)
