@@ -102,7 +102,7 @@
 			<string>Thoughtful design of the boundaries between your apps subsystems is the foundation of a stable codebase. In this workshop, we cover how to create a well designed boundary between subsystems, dependency injection, use case driven development, creating injectable subsystems, and using state management to result in a clean architecture for your apps.</string>
 			<key>presenters</key>
 			<array>
-				<string>josh*</string>
+				<string>josh</string>
 				<string>rene</string>
 			</array>
 			<key>roomId</key>
@@ -128,7 +128,7 @@
 			<string>Thoughtful design of the boundaries between your apps subsystems is the foundation of a stable codebase. In this workshop, we cover how to create a well designed boundary between subsystems, dependency injection, use case driven development, creating injectable subsystems, and using state management to result in a clean architecture for your apps.</string>
 			<key>presenters</key>
 			<array>
-				<string>josh*</string>
+				<string>josh</string>
 				<string>rene</string>
 			</array>
 			<key>roomId</key>
@@ -495,7 +495,7 @@
 			<string>Learn how to add concurrency to your apps with GCD &amp; Operations. Keep your app’s UI responsive to give your users a great user experience, and learn how to avoid common concurrency problems, like race condition and deadlock.</string>
 			<key>presenters</key>
 			<array>
-				<string>matt</string>
+				<string>audrey</string>
 			</array>
 			<key>roomId</key>
 			<integer>9</integer>
@@ -545,7 +545,7 @@
 			<string>In this session Caroline will examine two high profile apps with gorgeous fluid, tactile interfaces and reconstruct them.</string>
 			<key>presenters</key>
 			<array>
-				<string>scott</string>
+				<string>caroline</string>
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
@@ -570,7 +570,7 @@
 			<string>In this session you’ll learn some of git’s more advanced topics, such as rebasing, hooks and history mutation. You’ll also gain a better understanding of how git works under the covers and gain some experience with realistic day-to-day scenarios.</string>
 			<key>presenters</key>
 			<array>
-				<string>eric</string>
+				<string>sam</string>
 			</array>
 			<key>roomId</key>
 			<integer>6</integer>
@@ -595,7 +595,7 @@
 			<string>In this session you’ll learn some of git’s more advanced topics, such as rebasing, hooks and history mutation. You’ll also gain a better understanding of how git works under the covers and gain some experience with realistic day-to-day scenarios.</string>
 			<key>presenters</key>
 			<array>
-				<string>alexis</string>
+				<string>sam</string>
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
@@ -695,7 +695,7 @@
 			<string>While the design of Swift and the compiler relieve you from much of the drudgery associated with reference counting, it is critical that you understand what the system is doing for you, so that you can create higher performance, bug free apps. Learn how to think about objects and closures and how to use the latest Xcode tools to analyze and debug your code.</string>
 			<key>presenters</key>
 			<array>
-				<string>christine</string>
+				<string>ray-f</string>
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
@@ -745,7 +745,7 @@
 			<string>React Native is a framework for building native apps with React. It’s been used by many developers who are drawn to it’s learn once, write anywhere paradigm and fast development cycle. In this session you’ll learn how to create a cross- platform (iOS and Android) app, learning how to create an app from scratch and how to integrate React Native into an existing native app.</string>
 			<key>presenters</key>
 			<array>
-				<string>alexis</string>
+				<string>christine</string>
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
@@ -867,7 +867,7 @@
 			<key>title</key>
 			<string>How to Make a Platformer Game in Unity</string>
 			<key>sessionDescription</key>
-			<string>Unity is used by thousands of indie development studios, hobbyist game developers, and even AAA game studios. In this session you’ll power through creating a platformer game like Super Meat Boy, and learn  rst hand how easy it is to start becoming productive with this powerful and versatile multi-platform game engine.</string>
+			<string>Unity is used by thousands of indie development studios, hobbyist game developers, and even AAA game studios. In this session you’ll power through creating a platformer game like Super Meat Boy, and learn first hand how easy it is to start becoming productive with this powerful and versatile multi-platform game engine.</string>
 			<key>presenters</key>
 			<array>
 				<string>sean</string>
@@ -892,7 +892,7 @@
 			<key>title</key>
 			<string>Lab: How to Make a Platformer Game in Unity</string>
 			<key>sessionDescription</key>
-			<string>Unity is used by thousands of indie development studios, hobbyist game developers, and even AAA game studios. In this session you’ll power through creating a platformer game like Super Meat Boy, and learn  rst hand how easy it is to start becoming productive with this powerful and versatile multi-platform game engine.</string>
+			<string>Unity is used by thousands of indie development studios, hobbyist game developers, and even AAA game studios. In this session you’ll power through creating a platformer game like Super Meat Boy, and learn first hand how easy it is to start becoming productive with this powerful and versatile multi-platform game engine.</string>
 			<key>presenters</key>
 			<array>
 				<string>sean</string>
@@ -1245,7 +1245,7 @@
 			<string>Users abandon apps when they can’t figure out how to use it fast enough. To lower the abandonment rate for your app, create an on-boarding experience that keeps the user engaged, informed and delighted the  rst time they open your app. In this session we’ll talk about the pros and cons on on-boarding, when to use it, and best practices. Finally, we will brainstorm and implement our own on-boarding experience!</string>
 			<key>presenters</key>
 			<array>
-				<string></string>
+				<string>lea</string>
 			</array>
 			<key>roomId</key>
 			<integer>9</integer>
@@ -1270,7 +1270,7 @@
 			<string>In this “Advanced iOS Design Patterns” talk, you’ll learn design patterns for solving common iOS development problems, including: authentication and auto re-login; networking and domain model management; and data persistence and cache management.</string>
 			<key>presenters</key>
 			<array>
-				<string></string>
+				<string>joshua</string>
 			</array>
 			<key>roomId</key>
 			<integer>5</integer>
@@ -1295,7 +1295,7 @@
 			<string>In this “Advanced iOS Design Patterns” talk, you’ll learn design patterns for solving common iOS development problems, including: authentication and auto re-login; networking and domain model management; and data persistence and cache management.</string>
 			<key>presenters</key>
 			<array>
-				<string></string>
+				<string>joshua</string>
 			</array>
 			<key>roomId</key>
 			<integer>1</integer>
@@ -1517,7 +1517,7 @@
 			<key>title</key>
 			<string>Building Compassionate Software</string>
 			<key>sessionDescription</key>
-			<string>Business success depends on team performance, and building high- performing teams is a well-understood problem. Come hear Ash Furrow discuss the science and mechanics of software team dynamics with useful tips and best practices to help improve any team environment.</string>
+			<string>Business success depends on team performance, and building high-performing teams is a well-understood problem. Come hear Ash Furrow discuss the science and mechanics of software team dynamics with useful tips and best practices to help improve any team environment.</string>
 			<key>presenters</key>
 			<array>
 				<string>ash</string>
@@ -1542,7 +1542,9 @@
 			<key>title</key>
 			<string>I’m an Idiot.</string>
 			<key>sessionDescription</key>
-			<string>Do you ever feel like a fraud, or that you’re bluffing it as a professional developer? You’re not alone.Rich is a professional idiot. If he remembers to turn up, he’ll be talking about how to leverage your inner idiot to make you a better coder, writer and communicator.</string>
+			<string>Do you ever feel like a fraud, or that you’re bluffing it as a professional developer? You’re not alone.
+
+Rich is a professional idiot. If he remembers to turn up, he’ll be talking about how to leverage your inner idiot to make you a better coder, writer and communicator.</string>
 			<key>presenters</key>
 			<array>
 				<string>rich</string>
@@ -1854,7 +1856,7 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>bio</key>
 			<string>Jawwad is a freelance iOS Developer that dove into Swift head first and has not looked back. He enjoys mentoring and teaching and was the founder of the of the NYC iOS Study Group and later on the Atlanta iOS Study Group. He&apos;s worked for companies as large as The New York Times, and as small as GateGuru, a 6 person startup.</string>
 		</dict>
-		<key>josh*</key>
+		<key>josh</key>
 		<dict>
 			<key>active</key>
 			<true/>
@@ -2066,6 +2068,32 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<key>bio</key>
 			<string>Sam is a strange mashup of developer, writer and trainer. By day you&apos;ll find him recording videos for Razeware, writing tutorials, attending conferences and generally being a good guy. By night he&apos;s likely to be out entertaining people, armed with his trombone and killer dance moves.</string>
 		</dict>
+		<key>sarah</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>first</key>
+			<string>Sarah</string>
+			<key>last</key>
+			<string>Olson</string>
+			<key>twitter</key>
+			<string>saraheolson</string>
+			<key>bio</key>
+			<string>iOS dev @Trello, @atlassian. Diversity &amp; inclusion advocate. Director of @WWCodeTC. Nerd. Writer. Artist. Ballroom dancer. Sleep-deprived mommy. Wife. Human.</string>
+		</dict>
+		<key>sean</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>first</key>
+			<string>Sean</string>
+			<key>last</key>
+			<string>Duffy</string>
+			<key>twitter</key>
+			<string>shogan85</string>
+			<key>bio</key>
+			<string>Sean is a software engineer by day, and hobbyist game and tools developer by night. He loves working with Unity, and is also a Unity Asset Store developer with a special focus on 2D tools to help other game developers. Some of Sean&apos;s more popular Unity Assets include his 2D Shooter Bullet and Weapon System and 2D Homing Missiles assets.</string>
+		</dict>
 		<key>scott</key>
 		<dict>
 			<key>active</key>
@@ -2104,19 +2132,6 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<string>vwenderlich</string>
 			<key>bio</key>
 			<string>Vicki Wenderlich discovered a love of digital art in 2009, and has been making app art and digital illustrations ever since. She is passionate about helping people pursue their dreams, and makes free app art for developers available on her website, www.gameartguppy.com.</string>
-		</dict>
-		<key>zoltan</key>
-		<dict>
-			<key>active</key>
-			<true/>
-			<key>first</key>
-			<string>Zoltán</string>
-			<key>last</key>
-			<string>Matók</string>
-			<key>twitter</key>
-			<string>ZoltanMatok</string>
-			<key>bio</key>
-			<string>Zoltán is an iOS and OS X developer from Hungary. While he is not working or fiddling with new stuff, he likes to read insightful articles from around the development world. https://medium.com/@quinnnorton </string>
 		</dict>
 	</dict>
 	<key>rooms</key>
