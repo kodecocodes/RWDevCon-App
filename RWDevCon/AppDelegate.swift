@@ -15,7 +15,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var watchDataSource: WatchDataSource?
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-    // TODO: update plist
     guard let plist = Bundle.main.url(forResource: "RWDevCon2017", withExtension: "plist"), let data = NSDictionary(contentsOf: plist) else { return true }
     
     resetIfNeeded()
@@ -47,10 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func resetIfNeeded() {
-    // TODO: update key
     let resetForNextConferenceKey = "reset-for-2017"
-    // TODO: Put this check back in
-//    if !Config.userDefaults().bool(forKey: resetForNextConferenceKey) {
+    if !Config.userDefaults().bool(forKey: resetForNextConferenceKey) {
     
       let storeURL = Config.applicationDocumentsDirectory().appendingPathComponent("\(CoreDataStack.modelName).sqlite")
       do {
@@ -58,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       } catch { /* Don't need to do anything here; an error simply means the store didn't exist in the first place */ }
       Config.nukeFavorites()
       Config.userDefaults().set(true, forKey: resetForNextConferenceKey)
-//    }
+    }
   }
   
   func updateFromServer() {
