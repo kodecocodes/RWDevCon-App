@@ -2,7 +2,6 @@ import Foundation
 import UIKit
 import CoreData
 
-// TODO: Update these times
 // A date before the bundled plist date
 private let beginningOfTimeDate = Date(timeIntervalSince1970: 1486080000) // 02-03-2017 12:00 AM
 // The kill switch date to stop phoning the server
