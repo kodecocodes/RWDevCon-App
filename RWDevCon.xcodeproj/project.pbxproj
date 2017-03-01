@@ -165,7 +165,7 @@
 		7B7B88641C3EA37100102F5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B992F2C1C29778F009BF3C2 /* RWDevCon2016.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RWDevCon2016.plist; path = RWDevCon/RWDevCon2016.plist; sourceTree = "<group>"; };
 		7BBE333B1C3EA967000C7B04 /* WatchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchDataSource.swift; sourceTree = "<group>"; };
-		7BBE333D1C3EC11E000C7B04 /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
+		7BBE333D1C3EC11E000C7B04 /* Proxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; tabWidth = 2; };
 		7BBE33441C3EC30C000C7B04 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		7BBE33461C3EC318000C7B04 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		831B32EE1E56C9D800A6D59A /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Shared/Gloss/Sources/Operators.swift; sourceTree = SOURCE_ROOT; };
@@ -223,7 +223,9 @@
 				783F5A161A490E1B00199736 /* Frameworks */,
 				78B7A9CF1A3E9876002AAF7F /* Products */,
 			);
+			indentWidth = 2;
 			sourceTree = "<group>";
+			tabWidth = 2;
 		};
 		78B7A9CF1A3E9876002AAF7F /* Products */ = {
 			isa = PBXGroup;

@@ -25,9 +25,9 @@ class ScheduleInterfaceController: WKInterfaceController {
         table.setNumberOfRows(1, withRowType: "Empty")
         guard let schedule = schedule, let row = table.rowController(at: 0) as? EmptyRowController else { return }
         switch schedule {
-        case .Favorites:
+        case .favorites:
           row.message = "Failed to load your schedule. Please make sure you have added some sessions, and your phone is within range."
-        case .Friday, .Saturday:
+        case .thursday, .friday, .saturday:
           row.message = "Failed to load the schedule. Please make sure your phone is within range."
         }
       case .loaded(let sessions):
@@ -70,8 +70,8 @@ class ScheduleInterfaceController: WKInterfaceController {
   }
   
   deinit {
-    if let schedule = schedule, schedule == .Favorites {
-      Proxy.defaultProxy.removeSessionsForSchedule(.Favorites)
+    if let schedule = schedule, schedule == .favorites {
+      Proxy.defaultProxy.removeSessionsForSchedule(.favorites)
     }
   }
   

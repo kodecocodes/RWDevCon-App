@@ -10,9 +10,10 @@ import Foundation
 import WatchConnectivity
 
 enum Schedule: String {
-  case Friday = "friday"
-  case Saturday = "saturday"
-  case Favorites = "favorites"
+  case thursday = "thursday"
+  case friday = "friday"
+  case saturday = "saturday"
+  case favorites = "favorites"
 }
 
 class Proxy: NSObject {

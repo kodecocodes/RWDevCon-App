@@ -12,7 +12,7 @@ class MenuInterfaceController: WKInterfaceController {
   
   override func awake(withContext context: Any?) {
     super.awake(withContext: context)
-    Proxy.defaultProxy.activate()
+    _ = Proxy.defaultProxy.activate()
   }
   
   override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {

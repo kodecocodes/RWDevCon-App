@@ -59,8 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func updateFromServer() {
-    // TODO: get new URL
-    let task = URLSession.shared.dataTask(with: URL(string: "http://www.raywenderlich.com/downloads/RWDevCon2016_lastUpdate.txt")!,
+    let task = URLSession.shared.dataTask(with: URL(string: "https://s3.amazonaws.com/cdn.raywenderlich.com/rwdevcon.com/2017/downloads/RWDevCon_lastUpdate.txt")!,
       completionHandler: { (data, response, error) -> Void in
         guard let data = data else { return }
         if let rawDateString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
@@ -74,8 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             if localLastUpdatedDate.compare(serverLastUpdatedDate) == ComparisonResult.orderedAscending {
               DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: { () -> Void in
-                // TODO: get new url
-                if let dict = NSDictionary(contentsOf: URL(string: "http://www.raywenderlich.com/downloads/RWDevCon2016.plist")!) {
+                if let dict = NSDictionary(contentsOf: URL(string: "https://s3.amazonaws.com/cdn.raywenderlich.com/rwdevcon.com/2017/downloads/RWDevCon.plist")!) {
                   let localPlistURL = Config.applicationDocumentsDirectory().appendingPathComponent("RWDevCon2016-latest.plist")
                   DispatchQueue.main.async(execute: { () -> Void in
                     NSLog("New data from remote! local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
@@ -198,8 +196,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let lastServerCheck = Config.userDefaults().value(forKey: "lastServerCheck") as? Date ?? beginningOfTimeDate
       if Date().timeIntervalSince(lastServerCheck) > tooSoonSeconds {
         NSLog("Checking with the server at \(Date()); last check was \(lastServerCheck)")
-        // TODO: put this back in
-//        updateFromServer()
+        updateFromServer()
       } else {
         NSLog("NOT checking with the server at \(Date()); last check was \(lastServerCheck)")
       }

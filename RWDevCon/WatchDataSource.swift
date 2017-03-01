@@ -10,24 +10,37 @@ import Foundation
 import CoreData
 import WatchConnectivity
 
+let oneDayInSeconds: TimeInterval = 24*60*60
+let thursdayEpoch: TimeInterval = 1490832000
+let fridayEpoch = thursdayEpoch + oneDayInSeconds
+let saturdayEpoch = fridayEpoch + oneDayInSeconds
+
+
 class WatchDataSource: NSObject {
   
-    // TODO: these dates?
   fileprivate var predicates = [
+    "thursday": NSPredicate(
+      format: "active = %@ AND (date >= %@) AND (date <= %@)",
+      argumentArray: [
+        true,
+        Date(timeIntervalSince1970: thursdayEpoch),
+        Date(timeIntervalSince1970: thursdayEpoch + oneDayInSeconds - 1)
+      ]
+    ),
     "friday": NSPredicate(
       format: "active = %@ AND (date >= %@) AND (date <= %@)",
       argumentArray: [
         true,
-        Date(timeIntervalSince1970: 1457654400),
-        Date(timeIntervalSince1970: 1457740799)
+        Date(timeIntervalSince1970: fridayEpoch),
+        Date(timeIntervalSince1970: fridayEpoch + oneDayInSeconds - 1)
       ]
     ),
     "saturday": NSPredicate(
       format: "active = %@ AND (date >= %@) AND (date <= %@)",
       argumentArray: [
         true,
-        Date(timeIntervalSince1970: 1457740800),
-        Date(timeIntervalSince1970: 1457827199)
+        Date(timeIntervalSince1970: saturdayEpoch),
+        Date(timeIntervalSince1970: saturdayEpoch + oneDayInSeconds - 1)
       ]
     )
   ]
@@ -46,7 +59,7 @@ class WatchDataSource: NSObject {
       return jsonify([
         "id" ~~> self.id,
         "name" ~~> self.name
-      ])
+        ])
     }
     
   }
@@ -104,7 +117,7 @@ class WatchDataSource: NSObject {
         "room" ~~> self.room,
         "title" ~~> self.title,
         "track" ~~> self.track
-      ])
+        ])
     }
     
   }
@@ -123,7 +136,7 @@ class WatchDataSource: NSObject {
       session?.activate()
     }
   }
-    
+  
   fileprivate func sesssionsForPredicate(_ predicate: NSPredicate) -> [JSON] {
     let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Session")
     fetch.predicate = predicate
@@ -154,28 +167,28 @@ class WatchDataSource: NSObject {
       ]
     )
   }
-
+  
 }
 
 extension WatchDataSource: WCSessionDelegate {
-    /** Called when all delegate callbacks for the previously selected watch has occurred. The session can be re-activated for the now selected watch using activateSession. */
-    @available(iOS 9.3, *)
-    public func sessionDidDeactivate(_ session: WCSession) {
-        
-    }
-
-    /** Called when the session can no longer be used to modify or add any new transfers and, all interactive messages will be cancelled, but delegate callbacks for background transfers can still occur. This will happen when the selected watch is being changed. */
-    @available(iOS 9.3, *)
-    public func sessionDidBecomeInactive(_ session: WCSession) {
-        
-    }
-
-    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
-    @available(iOS 9.3, *)
-    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-    }
-
+  /** Called when all delegate callbacks for the previously selected watch has occurred. The session can be re-activated for the now selected watch using activateSession. */
+  @available(iOS 9.3, *)
+  public func sessionDidDeactivate(_ session: WCSession) {
+    
+  }
+  
+  /** Called when the session can no longer be used to modify or add any new transfers and, all interactive messages will be cancelled, but delegate callbacks for background transfers can still occur. This will happen when the selected watch is being changed. */
+  @available(iOS 9.3, *)
+  public func sessionDidBecomeInactive(_ session: WCSession) {
+    
+  }
+  
+  /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
+  @available(iOS 9.3, *)
+  public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+    
+  }
+  
   
   func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
     refreshFavoritesPredicate()
