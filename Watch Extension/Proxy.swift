@@ -10,41 +10,42 @@ import Foundation
 import WatchConnectivity
 
 enum Schedule: String {
-  case Friday = "friday"
-  case Saturday = "saturday"
-  case Favorites = "favorites"
+  case thursday = "thursday"
+  case friday = "friday"
+  case saturday = "saturday"
+  case favorites = "favorites"
 }
 
 class Proxy: NSObject {
   
   static let defaultProxy = Proxy()
   
-  private var session: WCSession?
-  private var cache = [Schedule: [Session]]()
+  fileprivate var session: WCSession?
+  fileprivate var cache = [Schedule: [Session]]()
   
   func activate() -> Bool {
     guard WCSession.isSupported() else { return false }
-    session = WCSession.defaultSession()
+    session = WCSession.default()
     session?.delegate = self
-    session?.activateSession()
+    session?.activate()
     return true
   }
   
-  func hasCachedSessionsForSchedule(schedule: Schedule) -> Bool {
+  func hasCachedSessionsForSchedule(_ schedule: Schedule) -> Bool {
     guard let _ = cache[schedule] else { return false }
     return true
   }
   
-  func removeSessionsForSchedule(schedule: Schedule) {
-    cache.removeValueForKey(schedule)
+  func removeSessionsForSchedule(_ schedule: Schedule) {
+    cache.removeValue(forKey: schedule)
   }
   
-  func sessionsForSchedule(schedule: Schedule, handler: ([Session] -> Void)) {
+  func sessionsForSchedule(_ schedule: Schedule, handler: @escaping (([Session]) -> Void)) {
     if let cached = cache[schedule] {
       handler(cached)
     } else {
       session?.sendMessage(["schedule": schedule.rawValue], replyHandler: { response in
-        if let JSON = response["sessions"] as? [JSON], let sessions = Session.modelsFromJSONArray(JSON) {
+        if let JSON = response["sessions"] as? [JSON], let sessions = [Session].from(jsonArray: JSON) {
           if sessions.count > 0 { self.cache[schedule] = sessions }
           handler(sessions)
         } else {
@@ -58,4 +59,10 @@ class Proxy: NSObject {
   
 }
 
-extension Proxy: WCSessionDelegate {}
+extension Proxy: WCSessionDelegate {
+    /** Called when the session has completed activation. If session state is WCSessionActivationStateNotActivated there will be an error with more details. */
+    @available(watchOS 2.2, *)
+    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+    }
+}

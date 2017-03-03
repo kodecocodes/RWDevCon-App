@@ -14,24 +14,24 @@ class RoomViewController: UIViewController {
     super.viewDidLoad()
   }
 
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
     imageView.image = UIImage(named: room.image)
     descriptionLabel.text = room.roomDescription
 
     if room.mapLongitude != 0 && room.mapLatitude != 0 {
-      mapButton.hidden = false
+      mapButton.isHidden = false
     } else {
-      mapButton.hidden = true
+      mapButton.isHidden = true
     }
   }
 
-  @IBAction func mapButtonTapped(sender: AnyObject) {
+  @IBAction func mapButtonTapped(_ sender: AnyObject) {
     let placemark = MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: room.mapLatitude, longitude: room.mapLongitude), addressDictionary: [CNPostalAddressStreetKey: room.mapAddress])
     let mapItem = MKMapItem(placemark: placemark)
     mapItem.name = room.name
     
-    MKMapItem.openMapsWithItems([mapItem], launchOptions: [:])
+    MKMapItem.openMaps(with: [mapItem], launchOptions: [:])
   }
 }

@@ -3,9 +3,9 @@ import UIKit
 import CoreData
 
 // A date before the bundled plist date
-private let beginningOfTimeDate = NSDate(timeIntervalSince1970: 1456876800) // 02-03-2016 12:00 AM
+private let beginningOfTimeDate = Date(timeIntervalSince1970: 1486080000) // 02-03-2017 12:00 AM
 // The kill switch date to stop phoning the server
-private let endOfTimeDate = NSDate(timeIntervalSince1970: 1457827199) // 12-03-2016 11:59 PM
+private let endOfTimeDate = Date(timeIntervalSince1970: 1512345540) // 12-03-2017 11:59 PM
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,20 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   lazy var coreDataStack = CoreDataStack()
   var watchDataSource: WatchDataSource?
 
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    guard let plist = NSBundle.mainBundle().URLForResource("RWDevCon2016", withExtension: "plist"), let data = NSDictionary(contentsOfURL: plist) else { return true }
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    guard let plist = Bundle.main.url(forResource: "RWDevCon2017", withExtension: "plist"), let data = NSDictionary(contentsOf: plist) else { return true }
     
     resetIfNeeded()
     
-    let localLastUpdateDate = Config.userDefaults().objectForKey("lastUpdated") as? NSDate ?? beginningOfTimeDate
-    let plistLastUpdateDate = data["metadata"]?["lastUpdated"] as? NSDate ?? beginningOfTimeDate
-    if Session.sessionCount(coreDataStack.context) == 0 || localLastUpdateDate.compare(plistLastUpdateDate) == .OrderedAscending {
+    let localLastUpdateDate = Config.userDefaults().object(forKey: "lastUpdated") as? Date ?? beginningOfTimeDate
+    let metadata = data["metadata"] as? [String: Any]
+    let plistLastUpdateDate = metadata?["lastUpdated"] as? Date ?? beginningOfTimeDate
+    if Session.sessionCount(coreDataStack.context) == 0 || localLastUpdateDate.compare(plistLastUpdateDate) == .orderedAscending {
       loadDataFromDictionary(data)
     }
   
     // global style
-    application.statusBarStyle = UIStatusBarStyle.LightContent
-    UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.whiteColor()], forState: .Normal)
+    application.statusBarStyle = UIStatusBarStyle.lightContent
+    UIBarButtonItem.appearance().setTitleTextAttributes([NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.white], for: UIControlState())
     
     let splitViewController = self.window!.rootViewController as! UISplitViewController
     splitViewController.delegate = self
@@ -45,38 +46,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func resetIfNeeded() {
-    let resetForNextConferenceKey = "reset-for-2016"
-    if !Config.userDefaults().boolForKey(resetForNextConferenceKey) {
-      let storeURL = Config.applicationDocumentsDirectory().URLByAppendingPathComponent("\(CoreDataStack.modelName).sqlite")
+    let resetForNextConferenceKey = "reset-for-2017"
+    if !Config.userDefaults().bool(forKey: resetForNextConferenceKey) {
+    
+      let storeURL = Config.applicationDocumentsDirectory().appendingPathComponent("\(CoreDataStack.modelName).sqlite")
       do {
-        try NSFileManager.defaultManager().removeItemAtURL(storeURL)
+        try FileManager.default.removeItem(at: storeURL)
       } catch { /* Don't need to do anything here; an error simply means the store didn't exist in the first place */ }
       Config.nukeFavorites()
-      Config.userDefaults().setBool(true, forKey: resetForNextConferenceKey)
+      Config.userDefaults().set(true, forKey: resetForNextConferenceKey)
     }
   }
   
   func updateFromServer() {
-    let task = NSURLSession.sharedSession().dataTaskWithURL(NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2016_lastUpdate.txt")!,
+    let task = URLSession.shared.dataTask(with: URL(string: "https://s3.amazonaws.com/cdn.raywenderlich.com/rwdevcon.com/2017/downloads/RWDevCon_lastUpdate.txt")!,
       completionHandler: { (data, response, error) -> Void in
         guard let data = data else { return }
-        if let rawDateString = NSString(data: data, encoding: NSUTF8StringEncoding) {
-          let dateString = rawDateString.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
-          let formatter = NSDateFormatter()
-          formatter.timeZone = NSTimeZone(name: "US/Eastern")!
-          formatter.locale = NSLocale(localeIdentifier: "en_US")
+        if let rawDateString = NSString(data: data, encoding: String.Encoding.utf8.rawValue) {
+          let dateString = rawDateString.trimmingCharacters(in: CharacterSet.newlines)
+          let formatter = DateFormatter()
+          formatter.timeZone = TimeZone(identifier: "US/Eastern")!
+          formatter.locale = Locale(identifier: "en_US")
           formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-          if let serverLastUpdatedDate = formatter.dateFromString(dateString) {
-            let localLastUpdatedDate = (Config.userDefaults().objectForKey("lastUpdated") as? NSDate) ?? beginningOfTimeDate
+          if let serverLastUpdatedDate = formatter.date(from: dateString) {
+            let localLastUpdatedDate = (Config.userDefaults().object(forKey: "lastUpdated") as? Date) ?? beginningOfTimeDate
 
-            if localLastUpdatedDate.compare(serverLastUpdatedDate) == NSComparisonResult.OrderedAscending {
-              dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-                if let dict = NSDictionary(contentsOfURL: NSURL(string: "http://www.raywenderlich.com/downloads/RWDevCon2016.plist")!) {
-                  let localPlistURL = Config.applicationDocumentsDirectory().URLByAppendingPathComponent("RWDevCon2016-latest.plist")
-                  dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            if localLastUpdatedDate.compare(serverLastUpdatedDate) == ComparisonResult.orderedAscending {
+              DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: { () -> Void in
+                if let dict = NSDictionary(contentsOf: URL(string: "https://s3.amazonaws.com/cdn.raywenderlich.com/rwdevcon.com/2017/downloads/RWDevCon.plist")!) {
+                  let localPlistURL = Config.applicationDocumentsDirectory().appendingPathComponent("RWDevCon2016-latest.plist")
+                  DispatchQueue.main.async(execute: { () -> Void in
                     NSLog("New data from remote! local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
                     
-                    dict.writeToURL(localPlistURL, atomically: true)
+                    dict.write(to: localPlistURL, atomically: true)
                     self.loadDataFromDictionary(dict)
                   })
                 }
@@ -85,7 +87,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
               NSLog("No new data from remote: local \(localLastUpdatedDate) server \(serverLastUpdatedDate)")
             }
 
-            Config.userDefaults().setObject(NSDate(), forKey: "lastServerCheck")
+            Config.userDefaults().set(Date(), forKey: "lastServerCheck")
             Config.userDefaults().synchronize()
           }
         }
@@ -93,13 +95,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     task.resume()
   }
 
-  func loadDataFromPlist(url: NSURL) {
-    if let data = NSDictionary(contentsOfURL: url) {
+  func loadDataFromPlist(_ url: URL) {
+    if let data = NSDictionary(contentsOf: url) {
       loadDataFromDictionary(data)
     }
   }
 
-  func loadDataFromDictionary(data: NSDictionary) {
+  func loadDataFromDictionary(_ data: NSDictionary) {
     typealias PlistDict = [String: NSDictionary]
     typealias PlistArray = [NSDictionary]
 
@@ -113,14 +115,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       return
     }
 
-    let lastUpdated = metadata["lastUpdated"] as? NSDate ?? beginningOfTimeDate
-    Config.userDefaults().setObject(lastUpdated, forKey: "lastUpdated")
+    let lastUpdated = metadata["lastUpdated"] as? Date ?? beginningOfTimeDate
+    Config.userDefaults().set(lastUpdated, forKey: "lastUpdated")
 
     var allRooms = [Room]()
     var allTracks = [Track]()
     var allPeople = [String: Person]()
 
-    for (identifier, dict) in rooms.enumerate() {
+    for (identifier, dict) in rooms.enumerated() {
       let room = Room.roomByRoomIdOrNew(identifier, context: coreDataStack.context)
 
       room.roomId = Int32(identifier)
@@ -134,7 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       allRooms.append(room)
     }
 
-    for (identifier, name) in tracks.enumerate() {
+    for (identifier, name) in tracks.enumerated() {
       let track = Track.trackByTrackIdOrNew(identifier, context: coreDataStack.context)
 
       track.trackId = Int32(identifier)
@@ -161,7 +163,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
       session.identifier = identifier
       session.active = dict["active"] as? Bool ?? false
-      session.date = dict["date"] as? NSDate ?? beginningOfTimeDate
+      session.date = dict["date"] as? Date ?? beginningOfTimeDate
       session.duration = Int32(dict["duration"] as? Int ?? 0)
       session.column = Int32(dict["column"] as? Int ?? 0)
       session.sessionNumber = dict["sessionNumber"] as? String ?? ""
@@ -184,24 +186,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     coreDataStack.saveContext()
 
-    NSNotificationCenter.defaultCenter().postNotificationName(SessionDataUpdatedNotification, object: self)
+    NotificationCenter.default.post(name: Notification.Name(rawValue: SessionDataUpdatedNotification), object: self)
   }
 
-  func applicationDidBecomeActive(application: UIApplication) {
+  func applicationDidBecomeActive(_ application: UIApplication) {
     // kick off the background refresh from the server if hasn't been too soon
-    let tooSoonSeconds: NSTimeInterval = 60 * 30 // how many seconds is too soon?
-    if endOfTimeDate.compare(NSDate()) == NSComparisonResult.OrderedDescending {
-      let lastServerCheck = Config.userDefaults().valueForKey("lastServerCheck") as? NSDate ?? beginningOfTimeDate
-      if NSDate().timeIntervalSinceDate(lastServerCheck) > tooSoonSeconds {
-        NSLog("Checking with the server at \(NSDate()); last check was \(lastServerCheck)")
+    let tooSoonSeconds: TimeInterval = 60 * 30 // how many seconds is too soon?
+    if endOfTimeDate.compare(Date()) == ComparisonResult.orderedDescending {
+      let lastServerCheck = Config.userDefaults().value(forKey: "lastServerCheck") as? Date ?? beginningOfTimeDate
+      if Date().timeIntervalSince(lastServerCheck) > tooSoonSeconds {
+        NSLog("Checking with the server at \(Date()); last check was \(lastServerCheck)")
         updateFromServer()
       } else {
-        NSLog("NOT checking with the server at \(NSDate()); last check was \(lastServerCheck)")
+        NSLog("NOT checking with the server at \(Date()); last check was \(lastServerCheck)")
       }
     }
   }
 
-  func applicationWillTerminate(application: UIApplication) {
+  func applicationWillTerminate(_ application: UIApplication) {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     coreDataStack.saveContext()
@@ -211,7 +213,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate: UISplitViewControllerDelegate {
   
-  func splitViewController(splitViewController: UISplitViewController, collapseSecondaryViewController secondaryViewController:UIViewController, ontoPrimaryViewController primaryViewController:UIViewController) -> Bool {
+  func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
     if let secondaryAsNavController = secondaryViewController as? UINavigationController {
       if let topAsDetailController = secondaryAsNavController.topViewController as? SessionViewController {
         if topAsDetailController.session == nil {

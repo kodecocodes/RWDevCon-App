@@ -21,13 +21,13 @@ class SessionViewController: UITableViewController {
     tableView.rowHeight = UITableViewAutomaticDimension
     tableView.estimatedRowHeight = 76
 
-    navigationController?.navigationBar.barStyle = UIBarStyle.Default
-    navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pattern-64tall"), forBarMetrics: UIBarMetrics.Default)
-    navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-    navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+    navigationController?.navigationBar.barStyle = UIBarStyle.default
+    navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pattern-64tall"), for: UIBarMetrics.default)
+    navigationController?.navigationBar.tintColor = UIColor.white
+    navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.white]
   }
 
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
     navigationController?.setNavigationBarHidden(false, animated: animated)
@@ -40,7 +40,7 @@ class SessionViewController: UITableViewController {
 
   // MARK: - Table view data source
 
-  override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+  override func numberOfSections(in tableView: UITableView) -> Int {
     if session == nil {
       return 0
     } else {
@@ -48,7 +48,7 @@ class SessionViewController: UITableViewController {
     }
   }
 
-  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     if section == Sections.info {
       return 4
     } else if section == Sections.description {
@@ -60,7 +60,7 @@ class SessionViewController: UITableViewController {
     return 0
   }
 
-  override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+  override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     if section == Sections.info {
       if session.sessionNumber == "" {
         return "Summary"
@@ -79,49 +79,49 @@ class SessionViewController: UITableViewController {
     return nil
   }
 
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+  override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     if (indexPath.section == Sections.info && indexPath.row == 3){
-      let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: "detailButton", for: indexPath) as! DetailTableViewCell
 
-      cell.keyLabel.text = "My Schedule".uppercaseString
+      cell.keyLabel.text = "My Schedule".uppercased()
       if session.isFavorite {
-        cell.valueButton.setTitle("Remove from My Schedule", forState: .Normal)
+        cell.valueButton.setTitle("Remove from My Schedule", for: UIControlState())
       } else {
-        cell.valueButton.setTitle("Add to My Schedule", forState: .Normal)
+        cell.valueButton.setTitle("Add to My Schedule", for: UIControlState())
       }
-      cell.valueButton.addTarget(self, action: "myScheduleButton:", forControlEvents: .TouchUpInside)
+      cell.valueButton.addTarget(self, action: #selector(SessionViewController.myScheduleButton(_:)), for: .touchUpInside)
 
       return cell
     } else if indexPath.section == Sections.info && indexPath.row == 2 {
-      let cell = tableView.dequeueReusableCellWithIdentifier("detailButton", forIndexPath: indexPath) as! DetailTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: "detailButton", for: indexPath) as! DetailTableViewCell
 
-      cell.keyLabel.text = "Where".uppercaseString
-      cell.valueButton.setTitle(session.room.name, forState: .Normal)
+      cell.keyLabel.text = "Where".uppercased()
+      cell.valueButton.setTitle(session.room.name, for: UIControlState())
       if session.isParty {
-        cell.valueButton.setTitleColor(view.tintColor, forState: .Normal)
-        cell.valueButton.addTarget(self, action: "roomDetails:", forControlEvents: .TouchUpInside)
+        cell.valueButton.setTitleColor(view.tintColor, for: UIControlState())
+        cell.valueButton.addTarget(self, action: #selector(SessionViewController.roomDetails(_:)), for: .touchUpInside)
       } else {
-        cell.valueButton.setTitleColor(UIColor.darkTextColor(), forState: .Normal)
+        cell.valueButton.setTitleColor(UIColor.darkText, for: UIControlState())
       }
       return cell
     } else if indexPath.section == Sections.info {
-      let cell = tableView.dequeueReusableCellWithIdentifier("detail", forIndexPath: indexPath) as! DetailTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: "detail", for: indexPath) as! DetailTableViewCell
 
       if indexPath.row == 0 {
-        cell.keyLabel.text = "Track".uppercaseString
+        cell.keyLabel.text = "Track".uppercased()
         cell.valueLabel.text = session.track.name
       } else if indexPath.row == 1 {
-        cell.keyLabel.text = "When".uppercaseString
+        cell.keyLabel.text = "When".uppercased()
         cell.valueLabel.text = session.startDateTimeString
       }
 
       return cell
     } else if indexPath.section == Sections.description {
-      let cell = tableView.dequeueReusableCellWithIdentifier("label", forIndexPath: indexPath) as! LabelTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: "label", for: indexPath) as! LabelTableViewCell
       cell.label.text = session.sessionDescription
       return cell
     } else if indexPath.section == Sections.presenters {
-      let cell = tableView.dequeueReusableCellWithIdentifier("presenter", forIndexPath: indexPath) as! PresenterTableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: "presenter", for: indexPath) as! PresenterTableViewCell
       let presenter = session.presenters[indexPath.row] as! Person
 
       if let image = UIImage(named: presenter.identifier) {
@@ -132,37 +132,37 @@ class SessionViewController: UITableViewController {
       cell.nameLabel.text = presenter.fullName
       cell.bioLabel.text = presenter.bio
       if presenter.twitter != "" {
-        cell.twitterButton.hidden = false
-        cell.twitterButton.setTitle("@\(presenter.twitter)", forState: .Normal)
-        cell.twitterButton.addTarget(self, action: "twitterButton:", forControlEvents: .TouchUpInside)
+        cell.twitterButton.isHidden = false
+        cell.twitterButton.setTitle("@\(presenter.twitter)", for: UIControlState())
+        cell.twitterButton.addTarget(self, action: #selector(SessionViewController.twitterButton(_:)), for: .touchUpInside)
       } else {
-        cell.twitterButton.hidden = true
+        cell.twitterButton.isHidden = true
       }
 
       return cell
     } else {
       assertionFailure("Unhandled session table view section")
-      let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath) as UITableViewCell
       return cell
     }
   }
 
-  func roomDetails(sender: UIButton) {
-    if let roomVC = storyboard?.instantiateViewControllerWithIdentifier("RoomViewController") as? RoomViewController {
+  func roomDetails(_ sender: UIButton) {
+    if let roomVC = storyboard?.instantiateViewController(withIdentifier: "RoomViewController") as? RoomViewController {
       roomVC.room = session.room
       roomVC.title = session.room.name
       navigationController?.pushViewController(roomVC, animated: true)
     }
   }
 
-  func myScheduleButton(sender: UIButton) {
+  func myScheduleButton(_ sender: UIButton) {
     session.isFavorite = !session.isFavorite
 
-    tableView.reloadSections(NSIndexSet(index: Sections.info), withRowAnimation: .Automatic)
-    NSNotificationCenter.defaultCenter().postNotificationName(MyScheduleSomethingChangedNotification, object: self, userInfo: ["session": session])
+    tableView.reloadSections(IndexSet(integer: Sections.info), with: .automatic)
+    NotificationCenter.default.post(name: Notification.Name(rawValue: MyScheduleSomethingChangedNotification), object: self, userInfo: ["session": session])
   }
 
-  func twitterButton(sender: UIButton) {
-    UIApplication.sharedApplication().openURL(NSURL(string: "http://twitter.com/\(sender.titleForState(.Normal)!)")!)
+  func twitterButton(_ sender: UIButton) {
+    UIApplication.shared.openURL(URL(string: "http://twitter.com/\(sender.title(for: UIControlState())!)")!)
   }
 }

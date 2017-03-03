@@ -4,17 +4,17 @@ import UIKit
 class ScheduleTableViewController: UITableViewController {
   var coreDataStack: CoreDataStack!
   weak var dataSource: ScheduleDataSource!
-  var startDate: NSDate?
+  var startDate: Date?
 
   var selectedSession: Session?
-  var selectedIndexPath: NSIndexPath?
+  var selectedIndexPath: IndexPath?
 
-  var lastSelectedIndexPath: NSIndexPath?
+  var lastSelectedIndexPath: IndexPath?
 
   var isActive = false
   
   deinit {
-    NSNotificationCenter.defaultCenter().removeObserver(self)
+    NotificationCenter.default.removeObserver(self)
   }
 
   override func viewDidLoad() {
@@ -27,11 +27,11 @@ class ScheduleTableViewController: UITableViewController {
       dataSource.endDate = nil
       dataSource.favoritesOnly = true
     } else {
-      dataSource.endDate = NSDate(timeInterval: 60*60*24, sinceDate: startDate!)
+      dataSource.endDate = Date(timeInterval: 60*60*24, since: startDate!)
       dataSource.favoritesOnly = false
     }
 
-    dataSource.tableCellConfigurationBlock = { (cell: ScheduleTableViewCell, indexPath: NSIndexPath, session: Session) -> () in
+    dataSource.tableCellConfigurationBlock = { (cell: ScheduleTableViewCell, indexPath: IndexPath, session: Session) -> () in
       let track = session.track.name
       let room = session.room.name
       let sessionNumber = session.sessionNumber
@@ -49,18 +49,18 @@ class ScheduleTableViewController: UITableViewController {
 
     let logoImageView = UIImageView(image: UIImage(named: "logo-rwdevcon"))
     logoImageView.translatesAutoresizingMaskIntoConstraints = false
-    let header = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: CGRectGetHeight(logoImageView.frame) + 48))
+    let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: logoImageView.frame.height + 48))
     header.backgroundColor = UIColor(patternImage: UIImage(named: "pattern-grey")!)
     header.addSubview(logoImageView)
 
-    NSLayoutConstraint.activateConstraints([
-      NSLayoutConstraint(item: logoImageView, attribute: .CenterX, relatedBy: .Equal, toItem: header, attribute: .CenterX, multiplier: 1.0, constant: 0),
-      NSLayoutConstraint(item: logoImageView, attribute: .CenterY, relatedBy: .Equal, toItem: header, attribute: .CenterY, multiplier: 1.0, constant: 0),
+    NSLayoutConstraint.activate([
+      NSLayoutConstraint(item: logoImageView, attribute: .centerX, relatedBy: .equal, toItem: header, attribute: .centerX, multiplier: 1.0, constant: 0),
+      NSLayoutConstraint(item: logoImageView, attribute: .centerY, relatedBy: .equal, toItem: header, attribute: .centerY, multiplier: 1.0, constant: 0),
       ])
 
     tableView.tableHeaderView = header
 
-    NSNotificationCenter.defaultCenter().addObserverForName(MyScheduleSomethingChangedNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+    NotificationCenter.default.addObserver(forName: NSNotification.Name(rawValue: MyScheduleSomethingChangedNotification), object: nil, queue: OperationQueue.main) { (notification) -> Void in
       if self.isActive || self.dataSource.favoritesOnly {
         self.refreshSelectively()
       }
@@ -80,14 +80,14 @@ class ScheduleTableViewController: UITableViewController {
           self.lastSelectedIndexPath = nil
           
           if splitViewController != nil {
-            if splitViewController!.collapsed {
-              navigationController?.popViewControllerAnimated(true)
+            if splitViewController!.isCollapsed {
+              navigationController?.popViewController(animated: true)
             } else {
-              performSegueWithIdentifier("tableShowDetail", sender: self)
+              performSegue(withIdentifier: "tableShowDetail", sender: self)
             }
           }
         } else {
-          tableView.deselectRowAtIndexPath(lastSelectedIndexPath, animated: true)
+          tableView.deselectRow(at: lastSelectedIndexPath, animated: true)
         }
       }
 
@@ -95,29 +95,29 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     if let selectedIndexPath = selectedIndexPath {
-      tableView.reloadSections(NSIndexSet(index: selectedIndexPath.section), withRowAnimation: .None)
+      tableView.reloadSections(IndexSet(integer: selectedIndexPath.section), with: .none)
     }
   }
 
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
     tableFooterOrNot()
 
-    if splitViewController != nil && !(splitViewController!.collapsed) {
+    if splitViewController != nil && !(splitViewController!.isCollapsed) {
       if selectedIndexPath == nil {
         selectedIndexPath = lastSelectedIndexPath
       }
       if selectedIndexPath == nil && dataSource.allSessions.count > 0 {
-        selectedIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+        selectedIndexPath = IndexPath(row: 0, section: 0)
         lastSelectedIndexPath = selectedIndexPath
       }
 
       if selectedIndexPath != nil {
-        tableView.selectRowAtIndexPath(selectedIndexPath!, animated: false, scrollPosition: .None)
+        tableView.selectRow(at: selectedIndexPath!, animated: false, scrollPosition: .none)
       }
 
-      performSegueWithIdentifier("tableShowDetail", sender: self)
+      performSegue(withIdentifier: "tableShowDetail", sender: self)
     }
   }
 
@@ -127,11 +127,11 @@ class ScheduleTableViewController: UITableViewController {
     }
 
     if dataSource.allSessions.count == 0 {
-      let footer = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.frame), height: 500))
+      let footer = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 500))
       let white = UIView()
       white.translatesAutoresizingMaskIntoConstraints = false
-      white.backgroundColor = UIColor.whiteColor()
-      white.opaque = true
+      white.backgroundColor = UIColor.white
+      white.isOpaque = true
       footer.addSubview(white)
 
       let title = UILabel()
@@ -144,8 +144,8 @@ class ScheduleTableViewController: UITableViewController {
       let label = UILabel()
       label.translatesAutoresizingMaskIntoConstraints = false
       label.numberOfLines = 0
-      label.textAlignment = .Center
-      label.textColor = UIColor.blackColor()
+      label.textAlignment = .center
+      label.textColor = UIColor.black
       label.text = "Add talks to your schedule from each talk's detail page:\n\n1.\nFind the talk in the Friday or Saturday tabs.\n\n2.\nTap the talk title to see its detail page.\n\n3.\nTap 'Add to My Schedule'."
       label.font = UIFont(name: "AvenirNext-Regular", size: 19)
       white.addSubview(label)
@@ -157,18 +157,18 @@ class ScheduleTableViewController: UITableViewController {
 //      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[white]|", options: nil, metrics: nil, views: ["white": white]))
 //      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[white]|", options: 0, metrics: nil, views: ["white": white]))
 
-      NSLayoutConstraint.activateConstraints([
-        white.leadingAnchor.constraintEqualToAnchor(footer.leadingAnchor),
-        white.trailingAnchor.constraintEqualToAnchor(footer.trailingAnchor),
-        white.topAnchor.constraintEqualToAnchor(footer.topAnchor, constant: 20),
-        white.bottomAnchor.constraintEqualToAnchor(footer.bottomAnchor)
+      NSLayoutConstraint.activate([
+        white.leadingAnchor.constraint(equalTo: footer.leadingAnchor),
+        white.trailingAnchor.constraint(equalTo: footer.trailingAnchor),
+        white.topAnchor.constraint(equalTo: footer.topAnchor, constant: 20),
+        white.bottomAnchor.constraint(equalTo: footer.bottomAnchor)
       ])
       
-      NSLayoutConstraint.activateConstraints([
-        NSLayoutConstraint(item: title, attribute: .CenterX, relatedBy: .Equal, toItem: white, attribute: .CenterX, multiplier: 1.0, constant: 0),
-        NSLayoutConstraint(item: label, attribute: .Width, relatedBy: .Equal, toItem: white, attribute: .Width, multiplier: 0.7, constant: 0),
+      NSLayoutConstraint.activate([
+        NSLayoutConstraint(item: title, attribute: .centerX, relatedBy: .equal, toItem: white, attribute: .centerX, multiplier: 1.0, constant: 0),
+        NSLayoutConstraint(item: label, attribute: .width, relatedBy: .equal, toItem: white, attribute: .width, multiplier: 0.7, constant: 0),
         ])
-      NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-20-[title]-20-[label]-20-[filler]", options: .AlignAllCenterX, metrics: nil, views: ["title": title, "label": label, "filler": filler]))
+      NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|-20-[title]-20-[label]-20-[filler]", options: .alignAllCenterX, metrics: nil, views: ["title": title, "label": label, "filler": filler]))
 
       tableView.tableFooterView = footer
     } else {
@@ -176,19 +176,19 @@ class ScheduleTableViewController: UITableViewController {
     }
   }
 
-  override func viewDidAppear(animated: Bool) {
+  override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
     tableView.reloadData()
   }
 
-  override func willMoveToParentViewController(parent: UIViewController?) {
-    super.willMoveToParentViewController(parent)
+  override func willMove(toParentViewController parent: UIViewController?) {
+    super.willMove(toParentViewController: parent)
 
     tableView.contentInset.bottom = bottomHeight
   }
 
-  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    if let destNav = segue.destinationViewController as? UINavigationController {
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if let destNav = segue.destination as? UINavigationController {
       if let dest = destNav.topViewController as? SessionViewController {
         dest.coreDataStack = coreDataStack
 
@@ -204,39 +204,39 @@ class ScheduleTableViewController: UITableViewController {
     }
   }
 
-  override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 62
   }
 
-  override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+  override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
     return 48
   }
 
-  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    let header = UIView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(view.bounds), height: 48))
+  override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    let header = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 48))
     header.backgroundColor = UIColor(patternImage: UIImage(named: "pattern-row\(section % 2)")!)
 
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.text = dataSource.distinctTimes[section].uppercaseString
-    label.textColor = UIColor.whiteColor()
+    label.text = dataSource.distinctTimes[section].uppercased()
+    label.textColor = UIColor.white
     label.font = UIFont(name: "AvenirNext-Medium", size: 18)
     header.addSubview(label)
 
 //    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|-20-[label]-|", options: nil, metrics: nil, views: ["label": label]) +
 //      [NSLayoutConstraint(item: label, attribute: .CenterY, relatedBy: .Equal, toItem: header, attribute: .CenterY, multiplier: 1.0, constant: 4)])
     
-    NSLayoutConstraint.activateConstraints([
-      label.leadingAnchor.constraintEqualToAnchor(header.leadingAnchor, constant: 20),
-      label.trailingAnchor.constraintEqualToAnchor(header.trailingAnchor),
-      label.centerYAnchor.constraintEqualToAnchor(header.centerYAnchor, constant: 4)
+    NSLayoutConstraint.activate([
+      label.leadingAnchor.constraint(equalTo: header.leadingAnchor, constant: 20),
+      label.trailingAnchor.constraint(equalTo: header.trailingAnchor),
+      label.centerYAnchor.constraint(equalTo: header.centerYAnchor, constant: 4)
     ])
     
     return header
   }
 
-  override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return UIStatusBarStyle.LightContent
+  override var preferredStatusBarStyle : UIStatusBarStyle {
+    return UIStatusBarStyle.lightContent
   }
 
 }

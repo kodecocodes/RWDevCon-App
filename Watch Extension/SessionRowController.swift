@@ -10,10 +10,10 @@ import WatchKit
 
 class SessionRowController: NSObject {
   
-  @IBOutlet private weak var trackImage: WKInterfaceImage!
-  @IBOutlet private weak var timeLabel: WKInterfaceLabel!
-  @IBOutlet private weak var titleLabel: WKInterfaceLabel!
-  @IBOutlet private weak var roomLabel: WKInterfaceLabel!
+  @IBOutlet fileprivate weak var trackImage: WKInterfaceImage!
+  @IBOutlet fileprivate weak var timeLabel: WKInterfaceLabel!
+  @IBOutlet fileprivate weak var titleLabel: WKInterfaceLabel!
+  @IBOutlet fileprivate weak var roomLabel: WKInterfaceLabel!
   
   var session: Session? {
     didSet {

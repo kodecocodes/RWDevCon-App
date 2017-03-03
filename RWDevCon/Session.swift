@@ -2,14 +2,14 @@
 import Foundation
 import CoreData
 
-private let formatter = NSDateFormatter()
+private let formatter = DateFormatter()
 
 @objc(Session)
 class Session: NSManagedObject {
   @NSManaged var identifier: String
   @NSManaged var active: Bool
   @NSManaged var title: String
-  @NSManaged var date: NSDate
+  @NSManaged var date: Date
   @NSManaged var duration: Int32
   @NSManaged var column: Int32
   @NSManaged var sessionNumber: String
@@ -49,27 +49,28 @@ class Session: NSManagedObject {
   }
   
   var isParty: Bool {
-    return title.lowercaseString.containsString("party")
+    return title.lowercased().contains("party")
   }
 
-  func formatDate(format: String) -> String {
+  func formatDate(_ format: String) -> String {
+    // TODO: more efficient way than setting the format each time?
     formatter.dateFormat = format
-    formatter.timeZone = NSTimeZone(name: "US/Eastern")!
+    formatter.timeZone = TimeZone(identifier: "US/Eastern")!
 
-    return formatter.stringFromDate(date)
+    return formatter.string(from: date)
   }
 
-  class func sessionCount(context: NSManagedObjectContext) -> Int {
-    let fetch = NSFetchRequest(entityName: "Session")
+  class func sessionCount(_ context: NSManagedObjectContext) -> Int {
+    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Session")
     fetch.includesSubentities = false
-    return context.countForFetchRequest(fetch, error: nil)
+    return (try? context.count(for: fetch)) ?? 0
   }
 
-  class func sessionByIdentifier(identifier: String, context: NSManagedObjectContext) -> Session? {
-    let fetch = NSFetchRequest(entityName: "Session")
+  class func sessionByIdentifier(_ identifier: String, context: NSManagedObjectContext) -> Session? {
+    let fetch = NSFetchRequest<NSFetchRequestResult>(entityName: "Session")
     fetch.predicate = NSPredicate(format: "identifier = %@", argumentArray: [identifier])
     do {
-      let results = try context.executeFetchRequest(fetch)
+      let results = try context.fetch(fetch)
       guard let result = results.first as? Session else { return nil }
       return result
     } catch {
@@ -77,7 +78,7 @@ class Session: NSManagedObject {
     }
   }
 
-  class func sessionByIdentifierOrNew(identifier: String, context: NSManagedObjectContext) -> Session {
-    return sessionByIdentifier(identifier, context: context) ?? Session(entity: NSEntityDescription.entityForName("Session", inManagedObjectContext: context)!, insertIntoManagedObjectContext: context)
+  class func sessionByIdentifierOrNew(_ identifier: String, context: NSManagedObjectContext) -> Session {
+    return sessionByIdentifier(identifier, context: context) ?? Session(entity: NSEntityDescription.entity(forEntityName: "Session", in: context)!, insertInto: context)
   }
 }

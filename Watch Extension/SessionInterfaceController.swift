@@ -10,12 +10,12 @@ import WatchKit
 
 class SessionInterfaceController: WKInterfaceController {
   
-  @IBOutlet private weak var titleLabel: WKInterfaceLabel!
-  @IBOutlet private weak var leftPresenterImage: WKInterfaceImage!
-  @IBOutlet private weak var rightPresenterImage: WKInterfaceImage!
-  @IBOutlet private weak var timeLabel: WKInterfaceLabel!
-  @IBOutlet private weak var roomLabel: WKInterfaceLabel!
-  @IBOutlet private weak var descriptionLabel: WKInterfaceLabel!
+  @IBOutlet fileprivate weak var titleLabel: WKInterfaceLabel!
+  @IBOutlet fileprivate weak var leftPresenterImage: WKInterfaceImage!
+  @IBOutlet fileprivate weak var rightPresenterImage: WKInterfaceImage!
+  @IBOutlet fileprivate weak var timeLabel: WKInterfaceLabel!
+  @IBOutlet fileprivate weak var roomLabel: WKInterfaceLabel!
+  @IBOutlet fileprivate weak var descriptionLabel: WKInterfaceLabel!
   
   var session: Session? {
     didSet {
@@ -28,17 +28,17 @@ class SessionInterfaceController: WKInterfaceController {
       let description = NSAttributedString(string: session.description!, attributes: [NSParagraphStyleAttributeName: paragraphStyle])
       descriptionLabel.setAttributedText(description)
       guard let presenters = session.presenters else { return }
-      for (index, image) in [leftPresenterImage, rightPresenterImage].enumerate() {
+      for (index, image) in [leftPresenterImage, rightPresenterImage].enumerated() {
         guard index < presenters.count else { break }
-        image.setImage(Avatar.cache.avatarForIdentifier(presenters[index].id))
-        image.setHidden(false)
+        image?.setImage(Avatar.cache.avatarForIdentifier(presenters[index].id))
+        image?.setHidden(false)
       }
     }
   }
   
-  override func awakeWithContext(context: AnyObject?) {
-    super.awakeWithContext(context)
-    guard let context = context as? [String: String], rawValue = context["schedule"], schedule = Schedule(rawValue: rawValue), id = context["id"] else { return }
+  override func awake(withContext context: Any?) {
+    super.awake(withContext: context)
+    guard let context = context as? [String: String], let rawValue = context["schedule"], let schedule = Schedule(rawValue: rawValue), let id = context["id"] else { return }
     Proxy.defaultProxy.sessionsForSchedule(schedule) { sessions in
       self.session = sessions.filter { $0.id == id }.first
     }

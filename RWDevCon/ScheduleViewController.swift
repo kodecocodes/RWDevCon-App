@@ -24,9 +24,9 @@ class ScheduleViewController: UIViewController {
   override func awakeFromNib() {
     super.awakeFromNib()
 
-    if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
+    if UIDevice.current.userInterfaceIdiom == .pad {
       self.preferredContentSize = CGSize(width: 320.0, height: 600.0)
-      self.splitViewController?.preferredDisplayMode = .AllVisible
+      self.splitViewController?.preferredDisplayMode = .allVisible
     }
   }
 
@@ -42,26 +42,31 @@ class ScheduleViewController: UIViewController {
 //    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[backgroundGrey]|", options: nil, metrics: nil, views: ["backgroundGrey": backgroundGrey]))
 //    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[backgroundGrey]|", options: nil, metrics: nil, views: ["backgroundGrey": backgroundGrey]))
     
-    NSLayoutConstraint.activateConstraints([
-      backgroundGrey.topAnchor.constraintEqualToAnchor(view.topAnchor),
-      backgroundGrey.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
-      backgroundGrey.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor),
-      backgroundGrey.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor)
+    NSLayoutConstraint.activate([
+      backgroundGrey.topAnchor.constraint(equalTo: view.topAnchor),
+      backgroundGrey.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      backgroundGrey.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      backgroundGrey.trailingAnchor.constraint(equalTo: view.trailingAnchor)
     ])
     
-    let friday = NSDate(timeIntervalSince1970: 1457676000) // WTF Greg!?
+    let thursday = Date(timeIntervalSince1970: 1490853600) // WTF Greg!?
+    
+    let vc0 = storyboard?.instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
+    vc0.coreDataStack = coreDataStack
+    vc0.startDate = thursday
+    scheduleTableViewControllers.append(vc0)
 
-    let vc1 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
+    let vc1 = storyboard?.instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
     vc1.coreDataStack = coreDataStack
-    vc1.startDate = friday
+    vc1.startDate = Date(timeInterval: 60*60*24, since: thursday)
     scheduleTableViewControllers.append(vc1)
 
-    let vc2 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
+    let vc2 = storyboard?.instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
     vc2.coreDataStack = coreDataStack
-    vc2.startDate = NSDate(timeInterval: 60*60*24, sinceDate: friday)
+    vc2.startDate = Date(timeInterval: 60*60*24*2, since: thursday)
     scheduleTableViewControllers.append(vc2)
 
-    let vc3 = storyboard?.instantiateViewControllerWithIdentifier("ScheduleTableViewController") as! ScheduleTableViewController
+    let vc3 = storyboard?.instantiateViewController(withIdentifier: "ScheduleTableViewController") as! ScheduleTableViewController
     vc3.coreDataStack = coreDataStack
     vc3.startDate = nil
     scheduleTableViewControllers.append(vc3)
@@ -71,11 +76,11 @@ class ScheduleViewController: UIViewController {
     view.addSubview(contentView)
 //    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[contentView]|", options: nil, metrics: nil, views: ["contentView": contentView]))
 //    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[contentView]|", options: nil, metrics: nil, views: ["contentView": contentView]))
-    NSLayoutConstraint.activateConstraints([
-      contentView.topAnchor.constraintEqualToAnchor(view.topAnchor),
-      contentView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor),
-      contentView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor),
-      contentView.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor)
+    NSLayoutConstraint.activate([
+      contentView.topAnchor.constraint(equalTo: view.topAnchor),
+      contentView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+      contentView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      contentView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
     ])
 
     bottomView = UIView()
@@ -85,49 +90,63 @@ class ScheduleViewController: UIViewController {
 //    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomView]|", options: nil, metrics: nil, views: ["bottomView": bottomView]))
 //    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[bottomView(==bottomHeight)]|", options: nil, metrics: ["bottomHeight": bottomHeight], views: ["bottomView": bottomView]))
     
-    NSLayoutConstraint.activateConstraints([
-      bottomView.leadingAnchor.constraintEqualToAnchor(view.leadingAnchor),
-      bottomView.trailingAnchor.constraintEqualToAnchor(view.trailingAnchor),
-      bottomView.heightAnchor.constraintEqualToConstant(bottomHeight),
-      bottomView.bottomAnchor.constraintEqualToAnchor(view.bottomAnchor)
+    NSLayoutConstraint.activate([
+      bottomView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      bottomView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      bottomView.heightAnchor.constraint(equalToConstant: bottomHeight),
+      bottomView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
     ])
 
     let bottomColor = UIView()
     bottomColor.translatesAutoresizingMaskIntoConstraints = false
-    bottomColor.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.95)
+    bottomColor.backgroundColor = UIColor.white.withAlphaComponent(0.95)
     bottomView.addSubview(bottomColor)
 //    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[bottomColor]|", options: nil, metrics: nil, views: ["bottomColor": bottomColor]))
 //    NSLayoutConstraint.activateConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[bottomColor]|", options: nil, metrics: nil, views: ["bottomColor": bottomColor]))
-    NSLayoutConstraint.activateConstraints([
-      bottomColor.topAnchor.constraintEqualToAnchor(bottomView.topAnchor),
-      bottomColor.bottomAnchor.constraintEqualToAnchor(bottomView.bottomAnchor),
-      bottomColor.leadingAnchor.constraintEqualToAnchor(bottomView.leadingAnchor),
-      bottomColor.trailingAnchor.constraintEqualToAnchor(bottomView.trailingAnchor)
+    NSLayoutConstraint.activate([
+      bottomColor.topAnchor.constraint(equalTo: bottomView.topAnchor),
+      bottomColor.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor),
+      bottomColor.leadingAnchor.constraint(equalTo: bottomView.leadingAnchor),
+      bottomColor.trailingAnchor.constraint(equalTo: bottomView.trailingAnchor)
     ])
 
-    segmentedControl = UISegmentedControl(items: ["Friday", "Saturday", "My Schedule"])
-    // TODO: default segment
-    segmentedControl.selectedSegmentIndex = 0
+    let segmentItems = ["Thursday", "Friday", "Saturday", "My Schedule"]
+    segmentedControl = UISegmentedControl(items: segmentItems)
+    
+    
+    // attempt to select the current day
+    var calendar = Calendar.current
+    calendar.locale = Locale(identifier: "en_US")
+    let weekday = calendar.component(.weekday, from: Date())
+    let currentWeekdaySymbol = calendar.weekdaySymbols[weekday - 1]
+    segmentedControl.selectedSegmentIndex = segmentItems.index(of: currentWeekdaySymbol) ?? 0
+    
+    segmentedControl.apportionsSegmentWidthsByContent = true
+
     segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-    segmentedControl.backgroundColor = UIColor.whiteColor()
+    segmentedControl.backgroundColor = UIColor.white
     segmentedControl.tintColor = UIColor(red: 0, green: 109.0/255, blue: 55.0/255, alpha: 1.0)
     bottomView.addSubview(segmentedControl)
-    NSLayoutConstraint.activateConstraints([
-      NSLayoutConstraint(item: segmentedControl, attribute: .CenterX, relatedBy: .Equal, toItem: bottomView, attribute: .CenterX, multiplier: 1.0, constant: 0),
-      NSLayoutConstraint(item: segmentedControl, attribute: .CenterY, relatedBy: .Equal, toItem: bottomView, attribute: .CenterY, multiplier: 1.0, constant: 0),
+    NSLayoutConstraint.activate([
+        NSLayoutConstraint(item: segmentedControl, attribute: .leading, relatedBy: .equal, toItem: bottomView, attribute: .leading, multiplier: 1.0, constant: 20),
+        NSLayoutConstraint(item: segmentedControl, attribute: .trailing, relatedBy: .equal, toItem: bottomView, attribute: .trailing, multiplier: 1.0, constant: -20),
+//      NSLayoutConstraint(item: segmentedControl, attribute: .centerX, relatedBy: .equal, toItem: bottomView, attribute: .centerX, multiplier: 1.0, constant: 0),
+      NSLayoutConstraint(item: segmentedControl, attribute: .centerY, relatedBy: .equal, toItem: bottomView, attribute: .centerY, multiplier: 1.0, constant: 0),
       ])
-    segmentedControl.addTarget(self, action: "segmentChanged:", forControlEvents: .ValueChanged)
+    segmentedControl.addTarget(self, action: #selector(ScheduleViewController.segmentChanged(_:)), for: .valueChanged)
+    
 
-    navigationController?.navigationBar.barStyle = UIBarStyle.Default
-    navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pattern-64tall"), forBarMetrics: UIBarMetrics.Default)
-    navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-    navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+    navigationController?.navigationBar.barStyle = UIBarStyle.default
+    navigationController?.navigationBar.setBackgroundImage(UIImage(named: "pattern-64tall"), for: UIBarMetrics.default)
+    navigationController?.navigationBar.tintColor = UIColor.white
+    navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AvenirNext-Regular", size: 17)!, NSForegroundColorAttributeName: UIColor.white]
   }
 
-  override func viewWillAppear(animated: Bool) {
+  override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
     navigationController?.setNavigationBarHidden(true, animated: animated)
+    
   }
 
   override func viewDidLayoutSubviews() {
@@ -142,30 +161,30 @@ class ScheduleViewController: UIViewController {
 
     contentView.addSubview(vc2.view)
     addChildViewController(vc2)
-    vc2.didMoveToParentViewController(self)
+    vc2.didMove(toParentViewController: self)
 
     swapToViewController(vc1, animated: false)
   }
 
-  func segmentChanged(sender: UISegmentedControl) {
+  func segmentChanged(_ sender: UISegmentedControl) {
     let toVC = scheduleTableViewControllers[sender.selectedSegmentIndex]
     swapToViewController(toVC, animated: false)
   }
 
-  func swapToViewController(toVC: ScheduleTableViewController, animated: Bool = true) {
+  func swapToViewController(_ toVC: ScheduleTableViewController, animated: Bool = true) {
     var fromVC = childViewControllers.first as? ScheduleTableViewController
 
-    segmentedControl.enabled = false
+    segmentedControl.isEnabled = false
 
     if fromVC != nil && fromVC! == toVC {
       fromVC = nil
     }
 
     if let fromSelected = fromVC?.selectedIndexPath {
-      fromVC?.tableView.deselectRowAtIndexPath(fromSelected, animated: false)
+      fromVC?.tableView.deselectRow(at: fromSelected as IndexPath, animated: false)
     }
 
-    fromVC?.willMoveToParentViewController(nil)
+    fromVC?.willMove(toParentViewController: nil)
     addChildViewController(toVC)
 
     toVC.view.frame = contentView.bounds
@@ -175,34 +194,34 @@ class ScheduleViewController: UIViewController {
       toVC.isActive = true
       contentView.addSubview(toVC.view)
 
-      toVC.didMoveToParentViewController(self)
+      toVC.didMove(toParentViewController: self)
       toVC.viewDidAppear(animated)
 
       if let toSelected = toVC.tableView.indexPathForSelectedRow {
-        toVC.tableView.deselectRowAtIndexPath(toSelected, animated: false)
+        toVC.tableView.deselectRow(at: toSelected, animated: false)
       }
       
-      self.segmentedControl.enabled = true
+      self.segmentedControl.isEnabled = true
     } else {
-      UIView.transitionFromView(fromVC!.view, toView: toVC.view, duration: animated ? 0.2 : 0, options: .TransitionCrossDissolve, completion: { (completed) -> Void in
+      UIView.transition(from: fromVC!.view, to: toVC.view, duration: animated ? 0.2 : 0, options: .transitionCrossDissolve, completion: { (completed) -> Void in
         fromVC!.isActive = false
         toVC.isActive = true
 
-        toVC.didMoveToParentViewController(self)
+        toVC.didMove(toParentViewController: self)
         toVC.viewDidAppear(animated)
         fromVC!.view.removeFromSuperview()
         fromVC!.removeFromParentViewController()
 
         if let toSelected = toVC.tableView.indexPathForSelectedRow {
-          toVC.tableView.deselectRowAtIndexPath(toSelected, animated: false)
+          toVC.tableView.deselectRow(at: toSelected, animated: false)
         }
 
-        self.segmentedControl.enabled = true
+        self.segmentedControl.isEnabled = true
       })
     }
   }
 
-  override func preferredStatusBarStyle() -> UIStatusBarStyle {
-    return UIStatusBarStyle.LightContent
+  override var preferredStatusBarStyle : UIStatusBarStyle {
+    return UIStatusBarStyle.lightContent
   }
 }

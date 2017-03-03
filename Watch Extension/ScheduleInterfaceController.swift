@@ -11,29 +11,29 @@ import WatchKit
 class ScheduleInterfaceController: WKInterfaceController {
   
   enum State {
-    case Loading
-    case Empty
-    case Loaded([Session])
+    case loading
+    case empty
+    case loaded([Session])
   }
   
-  var state = State.Loading {
+  var state = State.loading {
     didSet {
       switch state {
-      case .Loading:
+      case .loading:
         table.setNumberOfRows(1, withRowType: "Loading")
-      case .Empty:
+      case .empty:
         table.setNumberOfRows(1, withRowType: "Empty")
-        guard let schedule = schedule, row = table.rowControllerAtIndex(0) as? EmptyRowController else { return }
+        guard let schedule = schedule, let row = table.rowController(at: 0) as? EmptyRowController else { return }
         switch schedule {
-        case .Favorites:
+        case .favorites:
           row.message = "Failed to load your schedule. Please make sure you have added some sessions, and your phone is within range."
-        case .Friday, .Saturday:
+        case .thursday, .friday, .saturday:
           row.message = "Failed to load the schedule. Please make sure your phone is within range."
         }
-      case .Loaded(let sessions):
+      case .loaded(let sessions):
         table.setNumberOfRows(sessions.count, withRowType: "Session")
-        for (index, session) in sessions.enumerate() {
-          guard let row = table.rowControllerAtIndex(index) as? SessionRowController else { continue }
+        for (index, session) in sessions.enumerated() {
+          guard let row = table.rowController(at: index) as? SessionRowController else { continue }
           row.session = session
         }
       }
@@ -43,35 +43,35 @@ class ScheduleInterfaceController: WKInterfaceController {
   
   @IBOutlet weak var table: WKInterfaceTable!
   
-  override func awakeWithContext(context: AnyObject?) {
-    super.awakeWithContext(context)
+  override func awake(withContext context: Any?) {
+    super.awake(withContext: context)
     guard let schedule = context as? String else { return }
-    self.schedule = Schedule(rawValue: schedule.lowercaseString)
+    self.schedule = Schedule(rawValue: schedule.lowercased())
     setTitle(schedule == "Favorites" ? "My Schedule" : schedule)
   }
   
   override func willActivate() {
     super.willActivate()
     guard let schedule = schedule else { return }
-    if !Proxy.defaultProxy.hasCachedSessionsForSchedule(schedule) { state = .Loading }
+    if !Proxy.defaultProxy.hasCachedSessionsForSchedule(schedule) { state = .loading }
     Proxy.defaultProxy.sessionsForSchedule(schedule) { sessions in
-      self.state = sessions.count > 0 ? .Loaded(sessions) : .Empty
+      self.state = sessions.count > 0 ? .loaded(sessions) : .empty
     }
   }
   
-  override func contextForSegueWithIdentifier(segueIdentifier: String, inTable table: WKInterfaceTable, rowIndex: Int) -> AnyObject? {
+  override func contextForSegue(withIdentifier segueIdentifier: String, in table: WKInterfaceTable, rowIndex: Int) -> Any? {
     guard segueIdentifier == "Session" else { return nil }
     switch state {
-    case .Loading, .Empty:
+    case .loading, .empty:
       return nil
-    case .Loaded(let sessions):
+    case .loaded(let sessions):
       return ["schedule": schedule!.rawValue, "id": sessions[rowIndex].id!]
     }
   }
   
   deinit {
-    if let schedule = schedule where schedule == .Favorites {
-      Proxy.defaultProxy.removeSessionsForSchedule(.Favorites)
+    if let schedule = schedule, schedule == .favorites {
+      Proxy.defaultProxy.removeSessionsForSchedule(.favorites)
     }
   }
   

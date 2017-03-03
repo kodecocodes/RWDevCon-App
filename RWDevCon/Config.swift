@@ -4,34 +4,34 @@ import Foundation
 let SessionDataUpdatedNotification = "com.razeware.rwdevcon.notification.sessionDataUpdated"
 
 class Config {
-  class func applicationDocumentsDirectory() -> NSURL {
-    let fileManager = NSFileManager.defaultManager()
+  class func applicationDocumentsDirectory() -> URL {
+    let fileManager = FileManager.default
 
-    if let containerURL = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.com.razeware.rwdevcon") {
+    if let containerURL = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.com.razeware.rwdevcon") {
       return containerURL
     }
 
-    let urls = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask) as [NSURL]
+    let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask) as [URL]
     return urls[0]
   }
   
-  class func userDefaults() -> NSUserDefaults {
-    return NSUserDefaults(suiteName: "group.com.razeware.rwdevcon") ?? NSUserDefaults.standardUserDefaults()
+  class func userDefaults() -> UserDefaults {
+    return UserDefaults(suiteName: "group.com.razeware.rwdevcon") ?? UserDefaults.standard
   }
 
   class func favoriteSessions() -> [String: String] {
-    if let favs = userDefaults().dictionaryForKey("favoriteSessions") as? [String: String] {
+    if let favs = userDefaults().dictionary(forKey: "favoriteSessions") as? [String: String] {
       return favs
     }
     return [:]
   }
   
   class func nukeFavorites() {
-    userDefaults().removeObjectForKey("favoriteSessions")
+    userDefaults().removeObject(forKey: "favoriteSessions")
     userDefaults().synchronize()
   }
   
-  class func registerFavorite(session: Session) {
+  class func registerFavorite(_ session: Session) {
     var favs = favoriteSessions()
     favs[session.startDateTimeString] = session.identifier
 
@@ -39,7 +39,7 @@ class Config {
     userDefaults().synchronize()
   }
 
-  class func unregisterFavorite(session: Session) {
+  class func unregisterFavorite(_ session: Session) {
     var favs = favoriteSessions()
     favs[session.startDateTimeString] = nil
 

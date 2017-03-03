@@ -14,7 +14,7 @@ class DetailTableViewCell: UITableViewCell {
   override func prepareForReuse() {
     super.prepareForReuse()
 
-    valueButton?.removeTarget(nil, action: nil, forControlEvents: UIControlEvents.AllTouchEvents)
+    valueButton?.removeTarget(nil, action: nil, for: UIControlEvents.allTouchEvents)
   }
 
 }
