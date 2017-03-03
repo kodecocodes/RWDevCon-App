@@ -506,7 +506,7 @@
 				TargetAttributes = {
 					78B7A9CD1A3E9876002AAF7F = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = X28LAA5D4H;
+						DevelopmentTeam = KFCNEC27GU;
 						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -516,12 +516,12 @@
 					};
 					7B7B884C1C3EA37000102F5E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = X28LAA5D4H;
+						DevelopmentTeam = KFCNEC27GU;
 						LastSwiftMigration = 0820;
 					};
 					7B7B88581C3EA37100102F5E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = X28LAA5D4H;
+						DevelopmentTeam = KFCNEC27GU;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -771,12 +771,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X28LAA5D4H;
+				DEVELOPMENT_TEAM = KFCNEC27GU;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = RWDevCon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cw.razeware.RWDevCon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWDevCon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -789,12 +789,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X28LAA5D4H;
+				DEVELOPMENT_TEAM = KFCNEC27GU;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = RWDevCon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cw.razeware.RWDevCon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWDevCon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
@@ -808,12 +808,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = X28LAA5D4H;
+				DEVELOPMENT_TEAM = KFCNEC27GU;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = Watch_Extension;
 				INFOPLIST_FILE = Watch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cw.razeware.RWDevCon.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWDevCon.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -831,12 +831,12 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = X28LAA5D4H;
+				DEVELOPMENT_TEAM = KFCNEC27GU;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				IBSC_MODULE = Watch_Extension;
 				INFOPLIST_FILE = Watch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cw.razeware.RWDevCon.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWDevCon.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -851,11 +851,11 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = X28LAA5D4H;
+				DEVELOPMENT_TEAM = KFCNEC27GU;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cw.razeware.RWDevCon.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWDevCon.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -871,11 +871,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = X28LAA5D4H;
+				DEVELOPMENT_TEAM = KFCNEC27GU;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.cw.razeware.RWDevCon.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.razeware.RWDevCon.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
