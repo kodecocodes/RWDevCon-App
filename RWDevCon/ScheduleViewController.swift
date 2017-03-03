@@ -156,14 +156,8 @@ class ScheduleViewController: UIViewController {
 
     firstTime = false
 
-    let vc1 = scheduleTableViewControllers[0]
-    let vc2 = scheduleTableViewControllers[1]
-
-    contentView.addSubview(vc2.view)
-    addChildViewController(vc2)
-    vc2.didMove(toParentViewController: self)
-
-    swapToViewController(vc1, animated: false)
+    let scheduleViewToShowAtLaunch = scheduleTableViewControllers[segmentedControl.selectedSegmentIndex]
+    swapToViewController(scheduleViewToShowAtLaunch, animated: false)
   }
 
   func segmentChanged(_ sender: UISegmentedControl) {
