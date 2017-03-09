@@ -6,6 +6,7 @@ let MyScheduleSomethingChangedNotification = "com.razeware.rwdevcon.notification
 class SessionViewController: UITableViewController {
   var coreDataStack: CoreDataStack!
   var session: Session!
+  var scheduleDataSource: ScheduleDataSource!
 
   struct Sections {
     static let info = 0
@@ -156,10 +157,31 @@ class SessionViewController: UITableViewController {
   }
 
   func myScheduleButton(_ sender: UIButton) {
-    session.isFavorite = !session.isFavorite
-
-    tableView.reloadSections(IndexSet(integer: Sections.info), with: .automatic)
-    NotificationCenter.default.post(name: Notification.Name(rawValue: MyScheduleSomethingChangedNotification), object: self, userInfo: ["session": session])
+    
+    let setFavoriteBlock = { [weak self] in
+      guard let strongSelf = self else { return }
+      
+      strongSelf.session.isFavorite = !strongSelf.session.isFavorite
+      
+      strongSelf.tableView.reloadSections(IndexSet(integer: Sections.info), with: .automatic)
+      NotificationCenter.default.post(name: Notification.Name(rawValue: MyScheduleSomethingChangedNotification), object: self, userInfo: ["session": strongSelf.session])
+    }
+    
+    if let conflictingIdentifier = Config.conflictingFavoriteIdentifier(session), let conflictingSession = scheduleDataSource.session(with: conflictingIdentifier) {
+      let alert = UIAlertController(title: "Replace Existing Session?", message: "You've already added \"\(conflictingSession.title)\" to your schedule for this timeslot. Do you want to replace it?", preferredStyle: .actionSheet)
+      let replaceAction = UIAlertAction(title: "Replace", style: .destructive) { (_) in
+        setFavoriteBlock()
+      }
+      
+      let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+      
+      alert.addAction(replaceAction)
+      alert.addAction(cancelAction)
+      
+      present(alert, animated: true, completion: nil)
+    } else {
+      setFavoriteBlock()
+    }
   }
 
   func twitterButton(_ sender: UIButton) {

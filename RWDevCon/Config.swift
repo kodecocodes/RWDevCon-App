@@ -31,6 +31,10 @@ class Config {
     userDefaults().synchronize()
   }
   
+  class func conflictingFavoriteIdentifier(_ session: Session) -> String? {
+    return favoriteSessions()[session.startDateTimeString]
+  }
+  
   class func registerFavorite(_ session: Session) {
     var favs = favoriteSessions()
     favs[session.startDateTimeString] = session.identifier
