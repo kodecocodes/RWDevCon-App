@@ -58,5 +58,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSCameraUsageDescription</key>
+	<string>RWDevCon uses your camera to share pictures from the conference.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>RWDevCon allows you to select pictures from your photo library to share.</string>
 </dict>
 </plist>

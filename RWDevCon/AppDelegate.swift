@@ -169,6 +169,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       session.sessionNumber = dict["sessionNumber"] as? String ?? ""
       session.sessionDescription = dict["sessionDescription"] as? String ?? ""
       session.title = dict["title"] as? String ?? ""
+      session.tweetBody = dict["tweetBody"] as? String ?? ""
 
       session.track = allTracks[dict["trackId"] as! Int]
       session.room = allRooms[dict["roomId"] as! Int]
