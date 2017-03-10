@@ -191,6 +191,7 @@ class ScheduleTableViewController: UITableViewController {
     if let destNav = segue.destination as? UINavigationController {
       if let dest = destNav.topViewController as? SessionViewController {
         dest.coreDataStack = coreDataStack
+        dest.scheduleDataSource = dataSource
 
         selectedIndexPath = tableView.indexPathForSelectedRow
         lastSelectedIndexPath = tableView.indexPathForSelectedRow

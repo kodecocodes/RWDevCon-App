@@ -817,7 +817,9 @@
 			<key>title</key>
 			<string>RxSwift in Practice</string>
 			<key>sessionDescription</key>
-			<string>RxSwift, and its companion framework RxCocoa, allow you to create reactive apps for iOS and macOS. Glancing upon some Rx code might be intimidating without a proper introduction but in this session we will start in Playgrounds, learn the core concepts, and then move on to building a real iOS application in Xcode. Just beware - you might like programming with RxSwift too much :]</string>
+			<string>RxSwift, and its companion framework RxCocoa, allow you to create reactive apps for iOS and macOS. Glancing upon some Rx code might be intimidating without a proper introduction but in this session we will start in Playgrounds, learn the core concepts, and then move on to building a real iOS application in Xcode. Just beware - you might like programming with RxSwift too much :]
+
+Note: The lab for this session takes place during the first set of labs on Saturday morning.</string>
 			<key>presenters</key>
 			<array>
 				<string>marin</string>
@@ -830,7 +832,7 @@
 			<key>active</key>
 			<true/>
 			<key>date</key>
-			<date>2017-03-31T20:45:00Z</date>
+			<date>2017-04-01T13:45:00Z</date>
 			<key>duration</key>
 			<integer>90</integer>
 			<key>trackId</key>
@@ -848,7 +850,7 @@
 				<string>marin</string>
 			</array>
 			<key>roomId</key>
-			<integer>1</integer>
+			<integer>9</integer>
 		</dict>
 		<key>12</key>
 		<dict>
@@ -1365,9 +1367,9 @@
 			<key>sessionNumber</key>
 			<string>22</string>
 			<key>title</key>
-			<string>Accessibility &amp; Internationalization</string>
+			<string>Deploying Server-Side Swift Apps with Docker</string>
 			<key>sessionDescription</key>
-			<string>Does your app speak Swahili? Or cater for the colour blind? No? Then this session’s for you! Learn how to reach exciting new audiences by taking full advantage of the fantastic Internationalisation and Accessibility support provided by Apple’s iOS frameworks.</string>
+			<string>Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. In this session you&apos;ll learn how to package up your server-side Swift app as a custom Docker image, and leverage Docker Compose to take that image and create a container that can be used for both local development and in production. You&apos;ll also learn about multiple containers, and how to set up dependencies between them.</string>
 			<key>presenters</key>
 			<array>
 				<string>mic</string>
@@ -1390,9 +1392,9 @@
 			<key>sessionNumber</key>
 			<string>Lab 22</string>
 			<key>title</key>
-			<string>Lab: Accessibility &amp; Internationalization</string>
+			<string>Lab: Deploying Server-Side Swift Apps with Docker</string>
 			<key>sessionDescription</key>
-			<string>Does your app speak Swahili? Or cater for the colour blind? No? Then this session’s for you! Learn how to reach exciting new audiences by taking full advantage of the fantastic Internationalisation and Accessibility support provided by Apple’s iOS frameworks.</string>
+			<string>Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. In this session you&apos;ll learn how to package up your server-side Swift app as a custom Docker image, and leverage Docker Compose to take that image and create a container that can be used for both local development and in production. You&apos;ll also learn about multiple containers, and how to set up dependencies between them.</string>
 			<key>presenters</key>
 			<array>
 				<string>mic</string>
@@ -1499,6 +1501,29 @@
 			</array>
 			<key>roomId</key>
 			<integer>2</integer>
+		</dict>
+		<key>firebaseLab</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>date</key>
+			<date>2017-03-31T20:45:00Z</date>
+			<key>duration</key>
+			<integer>90</integer>
+			<key>trackId</key>
+			<integer>2</integer>
+			<key>column</key>
+			<integer>6</integer>
+			<key>sessionNumber</key>
+			<string>Lab FB</string>
+			<key>title</key>
+			<string>Lab: Firebase</string>
+			<key>sessionDescription</key>
+			<string>TBD</string>
+			<key>presenters</key>
+			<array/>
+			<key>roomId</key>
+			<integer>6</integer>
 		</dict>
 		<key>inspiration1</key>
 		<dict>
@@ -1865,9 +1890,11 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>last</key>
 			<string>Berlin</string>
 			<key>twitter</key>
-			<string></string>
+			<string>jab2109</string>
 			<key>bio</key>
-			<string></string>
+			<string>Josh is a freelance iOS engineer who loves building thoughtful user experiences on mobile. He&apos;s built apps for the iPhone and iPad since 2008.
+
+Josh recently finished culinary school in Austin, TX. When he&apos;s not coding, he&apos;s probably cooking or dreaming of food.</string>
 		</dict>
 		<key>joshua</key>
 		<dict>

@@ -72,6 +72,9 @@ class ScheduleDataSource: NSObject {
     return times
   }
 
+  func session(with identifier: String) -> Session? {
+    return allSessions.filter { $0.identifier == identifier }.first
+  }
 
   internal func sessionForIndexPath(_ indexPath: IndexPath) -> Session {
     let sessions = arrayOfSessionsForSection(indexPath.section)
