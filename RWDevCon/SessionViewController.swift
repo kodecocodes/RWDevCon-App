@@ -1,5 +1,6 @@
 import Foundation
 import UIKit
+import Social
 
 let MyScheduleSomethingChangedNotification = "com.razeware.rwdevcon.notifications.myScheduleChanged"
 
@@ -7,7 +8,7 @@ class SessionViewController: UITableViewController {
   var coreDataStack: CoreDataStack!
   var session: Session!
   var scheduleDataSource: ScheduleDataSource!
-
+  
   struct Sections {
     static let info = 0
     static let description = 1
@@ -37,6 +38,75 @@ class SessionViewController: UITableViewController {
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
+  }
+  
+  @IBAction func share(_ sender: UIBarButtonItem) {
+    let actionSheet = UIAlertController(title: "Compose Tweet", message: "Would you like to include a picture with your Tweet? (Please do!)", preferredStyle: .actionSheet)
+    
+    let takePictureAction = UIAlertAction(title: "Take Picture", style: .default) { [weak self] (_) in
+      guard let strongSelf = self else { return }
+      strongSelf.present(strongSelf.imagePickerController(sourceType: .camera), animated: true, completion: nil)
+    }
+    
+    let selectPictureAction = UIAlertAction(title: "Select from Library", style: .default) { [weak self] (_) in
+      guard let strongSelf = self else { return }
+      strongSelf.present(strongSelf.imagePickerController(sourceType: .photoLibrary), animated: true, completion: nil)
+    }
+    
+    let noPictureAction = UIAlertAction(title: "No Picture", style: .default) { [weak self] (_) in
+      self?.presentTwitterShareSheet(with: nil)
+    }
+    
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+
+    actionSheet.addAction(takePictureAction)
+    actionSheet.addAction(selectPictureAction)
+    actionSheet.addAction(noPictureAction)
+    actionSheet.addAction(cancelAction)
+    
+    present(actionSheet, animated: true, completion: nil)
+  }
+  
+  private func imagePickerController(sourceType: UIImagePickerControllerSourceType) -> UIImagePickerController {
+    let imagePickerController = UIImagePickerController()
+    imagePickerController.sourceType = sourceType
+    
+    if sourceType == .camera {
+      imagePickerController.cameraFlashMode = .off
+    }
+    
+    imagePickerController.delegate = self
+    
+    return imagePickerController
+  }
+  
+  fileprivate func presentTwitterShareSheet(with image: UIImage?) {
+    
+    guard let composeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter) else { return }
+    
+    let presenters = Array(session.presenters) as? [Person]
+    let twitterHandles = presenters?.flatMap { $0.twitter }
+    
+    let replacementString: String
+    if let twitterHandles = twitterHandles {
+      switch twitterHandles.count {
+      case 1: replacementString = "with @\(twitterHandles[0])"
+      case 2: replacementString = "with @\(twitterHandles[0]) and @\(twitterHandles[1])"
+      default: replacementString = ""
+      }
+    } else {
+      replacementString = ""
+    }
+    
+    let tweetBody = session.tweetBody.replacingOccurrences(of: "{with}", with: replacementString)
+    
+    composeViewController.setInitialText(tweetBody)
+    
+    if let image = image {
+      composeViewController.add(image)
+    }
+    
+    present(composeViewController, animated: true, completion: nil)
   }
 
   // MARK: - Table view data source
@@ -186,5 +256,15 @@ class SessionViewController: UITableViewController {
 
   func twitterButton(_ sender: UIButton) {
     UIApplication.shared.openURL(URL(string: "http://twitter.com/\(sender.title(for: UIControlState())!)")!)
+  }
+}
+
+extension SessionViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+  func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+    let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage
+    dismiss(animated: true) { [weak self] in
+      self?.presentTwitterShareSheet(with: editedImage ?? originalImage)
+    }
   }
 }

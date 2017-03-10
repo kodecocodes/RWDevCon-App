@@ -301,7 +301,14 @@
                         </connections>
                     </tableView>
                     <extendedEdge key="edgesForExtendedLayout" top="YES"/>
-                    <navigationItem key="navigationItem" id="Lqd-fa-caN"/>
+                    <navigationItem key="navigationItem" id="Lqd-fa-caN">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Hrc-Ce-Fvo">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="share:" destination="k5c-GZ-GbD" id="Syc-Js-tB6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="DLO-EJ-Kdb" kind="show" identifier="roomSegue" id="6sf-Tq-3VN"/>
                     </connections>
@@ -342,7 +349,7 @@
                                 <rect key="frame" x="0.0" y="22" width="375" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jaj-pb-R9n" id="Ybz-92-yIc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="62"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Session Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.75" translatesAutoresizingMaskIntoConstraints="NO" id="0IP-HJ-jLB">
