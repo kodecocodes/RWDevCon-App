@@ -1045,7 +1045,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Practical Unit Testing I</string>
 			<key>sessionDescription</key>
-			<string>Unit tests allow you to develop without fear and ship with con dence. They can even serve as documentation for your code and make everything easier to understand. But you already know this, don’t you? In this session you will explore ways to add at least one more unit test to your app.</string>
+			<string>Unit tests allow you to develop without fear and ship with confidence. They can even serve as documentation for your code and make everything easier to understand. But you already know this, don’t you? In this session you will explore ways to add at least one more unit test to your app.</string>
 			<key>presenters</key>
 			<array>
 				<string>jack</string>
@@ -1070,7 +1070,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>sessionNumber</key>
 			<string>Lab 14</string>
 			<key>sessionDescription</key>
-			<string>Unit tests allow you to develop without fear and ship with con dence. They can even serve as documentation for your code and make everything easier to understand. But you already know this, don’t you? In this session you will explore ways to add at least one more unit test to your app.</string>
+			<string>Unit tests allow you to develop without fear and ship with confidence. They can even serve as documentation for your code and make everything easier to understand. But you already know this, don’t you? In this session you will explore ways to add at least one more unit test to your app.</string>
 			<key>title</key>
 			<string>Lab: Practical Unit Testing I</string>
 			<key>presenters</key>
@@ -1099,7 +1099,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Server Side Swift with Perfect</string>
 			<key>sessionDescription</key>
-			<string>Perfect is an open source server side Swift framework that allows you to create web apps, or web APIs, purely in Swift. In this session, you’ll learn how to create your  rst web app in Swift from scratch, including templating, persistence, and authentication.</string>
+			<string>Perfect is an open source server side Swift framework that allows you to create web apps, or web APIs, purely in Swift. In this session, you’ll learn how to create your REST web app in Swift from scratch, including templating, persistence, and authentication.</string>
 			<key>presenters</key>
 			<array>
 				<string>ray</string>
@@ -1126,7 +1126,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Lab: Server Side Swift with Perfect</string>
 			<key>sessionDescription</key>
-			<string>Perfect is an open source server side Swift framework that allows you to create web apps, or web APIs, purely in Swift. In this session, you’ll learn how to create your  rst web app in Swift from scratch, including templating, persistence, and authentication.</string>
+			<string>Perfect is an open source server side Swift framework that allows you to create web apps, or web APIs, purely in Swift. In this session, you’ll learn how to create your REST web app in Swift from scratch, including templating, persistence, and authentication.</string>
 			<key>presenters</key>
 			<array>
 				<string>ray</string>
@@ -1207,7 +1207,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Practical Unit Testing II</string>
 			<key>sessionDescription</key>
-			<string>Continuous Integration (CI) is the art of automatically translating your code into a build that can be easily accessed by project stakeholders. In the  rst half of this session, Gemma will talk through di erent aspects of CI setup design, followed by a review of fundamentals that can be applied to any CI solution. In the latter half, she’ll demo CI setup for a project created in Practical Unit Testing I.</string>
+			<string>Continuous Integration (CI) is the art of automatically translating your code into a build that can be easily accessed by project stakeholders. In the first half of this session, Gemma will talk through di erent aspects of CI setup design, followed by a review of fundamentals that can be applied to any CI solution. In the latter half, she’ll demo CI setup for a project created in Practical Unit Testing I.</string>
 			<key>presenters</key>
 			<array>
 				<string>gemma</string>
@@ -1234,7 +1234,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Lab: Practical Unit Testing II</string>
 			<key>sessionDescription</key>
-			<string>Continuous Integration (CI) is the art of automatically translating your code into a build that can be easily accessed by project stakeholders. In the  rst half of this session, Gemma will talk through di erent aspects of CI setup design, followed by a review of fundamentals that can be applied to any CI solution. In the latter half, she’ll demo CI setup for a project created in Practical Unit Testing I.</string>
+			<string>Continuous Integration (CI) is the art of automatically translating your code into a build that can be easily accessed by project stakeholders. In the first half of this session, Gemma will talk through di erent aspects of CI setup design, followed by a review of fundamentals that can be applied to any CI solution. In the latter half, she’ll demo CI setup for a project created in Practical Unit Testing I.</string>
 			<key>presenters</key>
 			<array>
 				<string>gemma</string>
@@ -1261,7 +1261,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Cocoa Bindings</string>
 			<key>sessionDescription</key>
-			<string>In this session, Jake will cover the basic of bindings, how to set them up in Interface Builder, some common debugging pitfalls, and some binding related tools (like value transformers and number formatters.</string>
+			<string>In this session, Jake will cover the basic of bindings, how to set them up in Interface Builder, some common debugging pitfalls, and some binding related tools (like value transformers and number formatters.)</string>
 			<key>presenters</key>
 			<array>
 				<string>jake</string>
@@ -1288,7 +1288,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Lab: Cocoa Bindings</string>
 			<key>sessionDescription</key>
-			<string>In this session, Jake will cover the basic of bindings, how to set them up in Interface Builder, some common debugging pitfalls, and some binding related tools (like value transformers and number formatters.</string>
+			<string>In this session, Jake will cover the basic of bindings, how to set them up in Interface Builder, some common debugging pitfalls, and some binding related tools (like value transformers and number formatters.)</string>
 			<key>presenters</key>
 			<array>
 				<string>jake</string>
@@ -1315,7 +1315,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Engaging On-Boarding</string>
 			<key>sessionDescription</key>
-			<string>Users abandon apps when they can’t figure out how to use it fast enough. To lower the abandonment rate for your app, create an on-boarding experience that keeps the user engaged, informed and delighted the  rst time they open your app. In this session we’ll talk about the pros and cons on on-boarding, when to use it, and best practices. Finally, we will brainstorm and implement our own on-boarding experience!</string>
+			<string>Users abandon apps when they can’t figure out how to use it fast enough. To lower the abandonment rate for your app, create an on-boarding experience that keeps the user engaged, informed and delighted the first time they open your app. In this session we’ll talk about the pros and cons on on-boarding, when to use it, and best practices. Finally, we will brainstorm and implement our own on-boarding experience!</string>
 			<key>presenters</key>
 			<array>
 				<string>lea</string>
@@ -1342,7 +1342,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Lab: Engaging On-Boarding</string>
 			<key>sessionDescription</key>
-			<string>Users abandon apps when they can’t figure out how to use it fast enough. To lower the abandonment rate for your app, create an on-boarding experience that keeps the user engaged, informed and delighted the  rst time they open your app. In this session we’ll talk about the pros and cons on on-boarding, when to use it, and best practices. Finally, we will brainstorm and implement our own on-boarding experience!</string>
+			<string>Users abandon apps when they can’t figure out how to use it fast enough. To lower the abandonment rate for your app, create an on-boarding experience that keeps the user engaged, informed and delighted the first time they open your app. In this session we’ll talk about the pros and cons on on-boarding, when to use it, and best practices. Finally, we will brainstorm and implement our own on-boarding experience!</string>
 			<key>presenters</key>
 			<array>
 				<string>lea</string>
@@ -1585,7 +1585,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Game AI with GameplayKit</string>
 			<key>sessionDescription</key>
-			<string>GameplayKit is an independent Apple framework that game developers may use to help them create better games, with less e ort. In this session, the focus and emphasis will be placed on using GameplayKit to add arti cial intelligence (AI) to your games.</string>
+			<string>GameplayKit is an independent Apple framework that game developers may use to help them create better games, with less effort. In this session, the focus and emphasis will be placed on using GameplayKit to add artificial intelligence (AI) to your games.</string>
 			<key>presenters</key>
 			<array>
 				<string>tammy</string>
@@ -1612,7 +1612,7 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>title</key>
 			<string>Lab: Game AI with GameplayKit</string>
 			<key>sessionDescription</key>
-			<string>GameplayKit is an independent Apple framework that game developers may use to help them create better games, with less e ort. In this session, the focus and emphasis will be placed on using GameplayKit to add arti cial intelligence (AI) to your games.</string>
+			<string>GameplayKit is an independent Apple framework that game developers may use to help them create better games, with less effort. In this session, the focus and emphasis will be placed on using GameplayKit to add artificial intelligence (AI) to your games.</string>
 			<key>presenters</key>
 			<array>
 				<string>tammy</string>
@@ -1621,6 +1621,34 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<integer>2</integer>
 			<key>tweetBody</key>
 			<string>I, for one, welcome our new robot overlords. Learning about AI in GameplayKit {with} at #RWDevCon!</string>
+		</dict>
+		<key>25</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>date</key>
+			<date>2017-04-01T20:00:00Z</date>
+			<key>duration</key>
+			<integer>75</integer>
+			<key>trackId</key>
+			<integer>0</integer>
+			<key>column</key>
+			<integer>3</integer>
+			<key>sessionNumber</key>
+			<string>25</string>
+			<key>title</key>
+			<string>Swift Algorithm Club Workshop</string>
+			<key>sessionDescription</key>
+			<string>Are you a problem solver? Think you can handle the questions we give you? Come join us at the Swift Algorithm Workshop, where you get together, meet awesome people, and solve a few of problems. The SAC workshop will be a fun collaborative technical interview. Attendees will pair up and tackle questions together.</string>
+			<key>presenters</key>
+			<array>
+				<string>kelvin</string>
+				<string>vincent</string>
+			</array>
+			<key>roomId</key>
+			<integer>6</integer>
+			<key>tweetBody</key>
+			<string>Sorting out how to recursively attend #RWDevCon every year {with} in the Swift Algorithm Club Workshop!</string>
 		</dict>
 		<key>firebaseLab</key>
 		<dict>
@@ -1637,11 +1665,19 @@ Note: The lab for this session takes place during the first set of labs on Satur
 			<key>sessionNumber</key>
 			<string>Lab FB</string>
 			<key>title</key>
-			<string>Lab: Firebase</string>
+			<string>Building a real-time chat application with Firebase</string>
 			<key>sessionDescription</key>
-			<string>TBD</string>
+			<string>In this instructor-led codelab, attendees will be guided through the steps necessary to create a functional chat application using Firebase.
+
+Learn how to authenticate users, store messages, stream data in real-time, track usage, reporting crashes, and monetize your app. All without the need for a backend server.
+
+Prerequisites: a basic understanding of Xcode, Swift/Objective-C, and a Mac OS device with an up to date version of Xcode and cocoapods
+
+https://codelabs.developers.google.com/codelabs/firebase-ios-swift</string>
 			<key>presenters</key>
-			<array/>
+			<array>
+				<string>jamesdaniels</string>
+			</array>
 			<key>roomId</key>
 			<integer>6</integer>
 			<key>tweetBody</key>
@@ -2002,6 +2038,19 @@ Outside of coding, he enjoys cramming as much outdoor activity into summer as he
 			<key>bio</key>
 			<string></string>
 		</dict>
+		<key>jamesdaniels</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>first</key>
+			<string>James</string>
+			<key>last</key>
+			<string>Daniels</string>
+			<key>twitter</key>
+			<string>jamesuriah</string>
+			<key>bio</key>
+			<string>Hacker • Startup Junkie • New Englander • Developer Relations @Google @Firebase • President @AppBlade • @TechStars ’09—prone to rants</string>
+		</dict>
 		<key>jawwad</key>
 		<dict>
 			<key>active</key>
@@ -2055,6 +2104,21 @@ Josh recently finished culinary school in Austin, TX. When he&apos;s not coding,
 			<string>kishinmanglani</string>
 			<key>bio</key>
 			<string>Kishin has extensive experience building apps. He works as a freelance developer. Some of the more notable clients he&apos;s worked with are Cover, Venmo, Bustle, and Hatch Labs, which made Tinder. Kishin also teaches all things iOS at General Assembly in New York.</string>
+		</dict>
+		<key>kelvin</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>first</key>
+			<string>Kelvin</string>
+			<key>last</key>
+			<string>Lau</string>
+			<key>twitter</key>
+			<string>KelvinlauKL</string>
+			<key>bio</key>
+			<string>Kelvin is a physicist turned Swift iOS Developer. He&apos;s also one of the two maintainers for the Swift Algorithm Club. While he&apos;s currently entrenched with iOS development, he often reminisces of his aspirations to be part of the efforts in space exploration. 
+
+Outside of programming work, he&apos;s an aspiring entrepreneur and musician.</string>
 		</dict>
 		<key>lea</key>
 		<dict>
@@ -2293,6 +2357,21 @@ When he&apos;s not coding, René loves to snow ski, ocean kayak, and root for th
 			<string>vwenderlich</string>
 			<key>bio</key>
 			<string>Vicki Wenderlich discovered a love of digital art in 2009, and has been making app art and digital illustrations ever since. She is passionate about helping people pursue their dreams, and makes free app art for developers available on her website, www.gameartguppy.com.</string>
+		</dict>
+		<key>vincent</key>
+		<dict>
+			<key>active</key>
+			<true/>
+			<key>first</key>
+			<string>Vincent</string>
+			<key>last</key>
+			<string>Ngo</string>
+			<key>twitter</key>
+			<string>vincentngo2</string>
+			<key>bio</key>
+			<string>Vincent is a writer, guitarist, and developer. He currently works at Capital One as an iOS developer attempting to make banking insanely great. 
+
+When Vincent is not working he enjoys coding for fun, playing video games, enjoying time with family and friends and golfing. With hard work and dedication he hopes to one day become a golfer to play in small tournaments.</string>
 		</dict>
 	</dict>
 	<key>rooms</key>
