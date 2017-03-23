@@ -172,7 +172,8 @@ class SessionViewController: UITableViewController {
         cell.valueButton.setTitleColor(view.tintColor, for: UIControlState())
         cell.valueButton.addTarget(self, action: #selector(SessionViewController.roomDetails(_:)), for: .touchUpInside)
       } else {
-        cell.valueButton.setTitleColor(UIColor.darkText, for: UIControlState())
+        cell.valueButton.setTitleColor(view.tintColor, for: UIControlState())
+        cell.valueButton.addTarget(self, action: #selector(SessionViewController.generalMap(_:)), for: .touchUpInside)
       }
       return cell
     } else if indexPath.section == Sections.info {
@@ -224,6 +225,10 @@ class SessionViewController: UITableViewController {
       roomVC.title = session.room.name
       navigationController?.pushViewController(roomVC, animated: true)
     }
+  }
+  
+  func generalMap(_ sender: UIButton) {
+    performSegue(withIdentifier: "GeneralMapViewController", sender: nil)
   }
 
   func myScheduleButton(_ sender: UIButton) {
