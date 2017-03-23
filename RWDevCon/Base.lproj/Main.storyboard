@@ -311,11 +311,45 @@
                     </navigationItem>
                     <connections>
                         <segue destination="DLO-EJ-Kdb" kind="show" identifier="roomSegue" id="6sf-Tq-3VN"/>
+                        <segue destination="bvA-JB-7ai" kind="show" identifier="GeneralMapViewController" id="8ob-Q0-io2"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jGf-4Q-IGo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4669" y="1048"/>
+        </scene>
+        <!--General Map View Controller-->
+        <scene sceneID="kDp-hh-4eg">
+            <objects>
+                <viewController storyboardIdentifier="GeneralMapViewController" id="bvA-JB-7ai" customClass="GeneralMapViewController" customModule="RWDevCon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xP9-bC-mnB"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Oa-eP-RyD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="alj-lS-P8b">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CNe-nI-wCc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CNe-nI-wCc" secondAttribute="trailing" id="8ae-Lf-Tzm"/>
+                            <constraint firstItem="8Oa-eP-RyD" firstAttribute="top" secondItem="CNe-nI-wCc" secondAttribute="bottom" id="CeO-Bg-vun"/>
+                            <constraint firstItem="CNe-nI-wCc" firstAttribute="leading" secondItem="alj-lS-P8b" secondAttribute="leading" id="XVF-N1-d9L"/>
+                            <constraint firstItem="CNe-nI-wCc" firstAttribute="top" secondItem="xP9-bC-mnB" secondAttribute="bottom" id="veO-xM-t9N"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="CNe-nI-wCc" id="tic-fV-JP2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTf-pA-2Pi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5614" y="1048"/>
         </scene>
         <!--Schedule View Controller-->
         <scene sceneID="OJw-3f-SvX">

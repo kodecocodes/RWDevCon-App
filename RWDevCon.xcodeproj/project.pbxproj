@@ -66,6 +66,8 @@
 		831B33011E56CA0800A6D59A /* Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B32F51E56C9E400A6D59A /* Gloss.swift */; };
 		831B33021E56CA0800A6D59A /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B32EE1E56C9D800A6D59A /* Operators.swift */; };
 		831B33041E56CF5800A6D59A /* RWDevCon2017.plist in Resources */ = {isa = PBXBuildFile; fileRef = 831B33031E56CF5800A6D59A /* RWDevCon2017.plist */; };
+		833F7EB11E842D7000B256E4 /* RWDevcon_Map_2017_v1.3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 833F7EB01E842D7000B256E4 /* RWDevcon_Map_2017_v1.3.pdf */; };
+		833F7EB31E842EDD00B256E4 /* GeneralMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833F7EB21E842EDD00B256E4 /* GeneralMapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +178,8 @@
 		831B32F41E56C9E400A6D59A /* ExtensionDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExtensionDictionary.swift; path = Shared/Gloss/Sources/ExtensionDictionary.swift; sourceTree = SOURCE_ROOT; };
 		831B32F51E56C9E400A6D59A /* Gloss.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Gloss.swift; path = Shared/Gloss/Sources/Gloss.swift; sourceTree = SOURCE_ROOT; };
 		831B33031E56CF5800A6D59A /* RWDevCon2017.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = RWDevCon2017.plist; path = RWDevCon/RWDevCon2017.plist; sourceTree = "<group>"; };
+		833F7EB01E842D7000B256E4 /* RWDevcon_Map_2017_v1.3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = RWDevcon_Map_2017_v1.3.pdf; sourceTree = "<group>"; };
+		833F7EB21E842EDD00B256E4 /* GeneralMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralMapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +298,7 @@
 				78F256771A4162DA0040AC63 /* DetailTableViewCell.swift */,
 				78F256791A4167F40040AC63 /* LabelTableViewCell.swift */,
 				78048CBA1A66E04A00435241 /* RoomViewController.swift */,
+				833F7EB21E842EDD00B256E4 /* GeneralMapViewController.swift */,
 			);
 			name = "Session Details";
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 		7B45155D1C282BDE00F512AA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				833F7EB01E842D7000B256E4 /* RWDevcon_Map_2017_v1.3.pdf */,
 				831B33031E56CF5800A6D59A /* RWDevCon2017.plist */,
 				7B992F2C1C29778F009BF3C2 /* RWDevCon2016.plist */,
 			);
@@ -556,6 +562,7 @@
 				78B7A9DC1A3E9876002AAF7F /* Main.storyboard in Resources */,
 				78B7A9E11A3E9876002AAF7F /* LaunchScreen.xib in Resources */,
 				7B5C7FBF1C4D33CE00A052F5 /* Speakers.xcassets in Resources */,
+				833F7EB11E842D7000B256E4 /* RWDevcon_Map_2017_v1.3.pdf in Resources */,
 				78B7A9DE1A3E9876002AAF7F /* Images.xcassets in Resources */,
 				831B33041E56CF5800A6D59A /* RWDevCon2017.plist in Resources */,
 				781EBADA1A5F754A009A7AA5 /* affinia-liaison-floorplan.jpg in Resources */,
@@ -607,6 +614,7 @@
 				78B7AA361A415C96002AAF7F /* PresenterTableViewCell.swift in Sources */,
 				78B7AA2F1A414E58002AAF7F /* Person.swift in Sources */,
 				78F256781A4162DA0040AC63 /* DetailTableViewCell.swift in Sources */,
+				833F7EB31E842EDD00B256E4 /* GeneralMapViewController.swift in Sources */,
 				78B7AA271A4147DC002AAF7F /* CoreDataStack.swift in Sources */,
 				831B32FB1E56C9E400A6D59A /* Gloss.swift in Sources */,
 				78CBC28B1A6537F200FC839A /* ScheduleTableViewController.swift in Sources */,
