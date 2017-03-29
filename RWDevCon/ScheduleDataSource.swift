@@ -15,10 +15,27 @@ typealias TableCellConfigurationBlock = (_ cell: ScheduleTableViewCell, _ indexP
 class ScheduleDataSource: NSObject {
   var coreDataStack: CoreDataStack!
 
-  var startDate: Date?
-  var endDate: Date?
-  var favoritesOnly = false
-
+  
+  var startDate: Date? {
+    didSet {
+      resetCache()
+    }
+  }
+  var endDate: Date? {
+    didSet {
+      resetCache()
+    }
+  }
+  
+  var favoritesOnly = false {
+    didSet {
+      resetCache()
+    }
+  }
+  
+  var dicoCacheSessions = [Int:[Session]]()
+  
+  var reloadCacheAllSessions = true
   let hourHeaderHeight: CGFloat = 40
   let numberOfTracksInSchedule = 3
   let numberOfHoursInSchedule = 11
@@ -28,24 +45,31 @@ class ScheduleDataSource: NSObject {
   
   var tableCellConfigurationBlock: TableCellConfigurationBlock?
 
+  
+  fileprivate var sessions : [Session] = []
+  
   var allSessions: [Session] {
-    let fetch = NSFetchRequest<Session>(entityName: "Session")
-
-    if self.startDate != nil && self.endDate != nil {
-      fetch.predicate = NSPredicate(format: "(active = %@) AND (date >= %@) AND (date <= %@)", argumentArray: [true, self.startDate!, self.endDate!])
-    } else if favoritesOnly {
-      fetch.predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, Array(Config.favoriteSessions().values)])
-    } else {
-      fetch.predicate = NSPredicate(format: "active = %@", argumentArray: [true])
+    if reloadCacheAllSessions {
+      let fetch = NSFetchRequest<Session>(entityName: "Session")
+      
+      if self.startDate != nil && self.endDate != nil {
+        fetch.predicate = NSPredicate(format: "(active = %@) AND (date >= %@) AND (date <= %@)", argumentArray: [true, self.startDate!, self.endDate!])
+      } else if favoritesOnly {
+        fetch.predicate = NSPredicate(format: "active = %@ AND identifier IN %@", argumentArray: [true, Array(Config.favoriteSessions().values)])
+      } else {
+        fetch.predicate = NSPredicate(format: "active = %@", argumentArray: [true])
+      }
+      fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true), NSSortDescriptor(key: "column", ascending: true)]
+      
+      do {
+        let results = try coreDataStack.context.fetch(fetch)
+        sessions = results
+      } catch {
+        sessions = []
+      }
+      reloadCacheAllSessions = false
     }
-    fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true), NSSortDescriptor(key: "column", ascending: true)]
-    
-    do {
-      let results = try coreDataStack.context.fetch(fetch)
-      return results
-    } catch {
-      return []
-    }
+    return sessions
   }
 
   var distinctTimes: [String] {
@@ -84,21 +108,33 @@ class ScheduleDataSource: NSObject {
   // MARK: Private Utilities
   
   fileprivate func arrayOfSessionsForSection(_ section: Int) -> [Session] {
+    if let array = dicoCacheSessions[section] {
+      return array
+    }
+    
+    var ret :[Session] = []
     if favoritesOnly {
       let weekday = distinctTimes[section]
-      return allSessions.filter({ (session) -> Bool in
+      ret = allSessions.filter({ (session) -> Bool in
         return session.startDateTimeString.hasPrefix(weekday)
       })
     } else {
       let startTimeString = distinctTimes[section]
-      return allSessions.filter({ (session) -> Bool in
+      ret = allSessions.filter({ (session) -> Bool in
         return session.startDateTimeString == startTimeString
       })
     }
+    dicoCacheSessions[section] = ret
+    return ret
   }
   
   fileprivate func groupDictionaryForSection(_ section: Int) -> NSDictionary {
     return ["Header": distinctTimes[section]]
+  }
+  
+  fileprivate func resetCache() {
+    reloadCacheAllSessions = true
+    dicoCacheSessions.removeAll()
   }
   
 }
@@ -110,7 +146,8 @@ extension ScheduleDataSource: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return arrayOfSessionsForSection(section).count
+    let ret =  arrayOfSessionsForSection(section).count
+    return ret
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
