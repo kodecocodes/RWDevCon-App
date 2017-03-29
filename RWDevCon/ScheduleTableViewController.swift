@@ -50,7 +50,7 @@ class ScheduleTableViewController: UITableViewController {
     let logoImageView = UIImageView(image: UIImage(named: "logo-rwdevcon"))
     logoImageView.translatesAutoresizingMaskIntoConstraints = false
     let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: logoImageView.frame.height + 48))
-    header.backgroundColor = UIColor(patternImage: UIImage(named: "pattern-grey")!)
+    view.backgroundColor = UIColor(patternImage: UIImage(named: "pattern-grey")!)
     header.addSubview(logoImageView)
 
     NSLayoutConstraint.activate([
