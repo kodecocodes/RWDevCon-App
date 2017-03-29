@@ -46,6 +46,7 @@ class ScheduleDataSource: NSObject {
   var tableCellConfigurationBlock: TableCellConfigurationBlock?
 
   
+  fileprivate var distTimes : [String] = []
   fileprivate var sessions : [Session] = []
   
   var allSessions: [Session] {
@@ -62,8 +63,7 @@ class ScheduleDataSource: NSObject {
       fetch.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true), NSSortDescriptor(key: "track.trackId", ascending: true), NSSortDescriptor(key: "column", ascending: true)]
       
       do {
-        let results = try coreDataStack.context.fetch(fetch)
-        sessions = results
+        sessions = try coreDataStack.context.fetch(fetch)
       } catch {
         sessions = []
       }
@@ -73,27 +73,30 @@ class ScheduleDataSource: NSObject {
   }
 
   var distinctTimes: [String] {
-    var times = [String]()
-
-    if favoritesOnly {
-      for session in self.allSessions {
-        let last = times.last
-        let thisDayOfWeek = session.startDateDayOfWeek
-
-        if (last == nil) || (last != nil && last! != thisDayOfWeek) {
-          times.append(thisDayOfWeek)
+    if distTimes.count == 0 {
+      var times = [String]()
+      
+      if favoritesOnly {
+        for session in self.allSessions {
+          let last = times.last
+          let thisDayOfWeek = session.startDateDayOfWeek
+          
+          if (last == nil) || (last != nil && last! != thisDayOfWeek) {
+            times.append(thisDayOfWeek)
+          }
+        }
+      } else {
+        for session in self.allSessions {
+          let last = times.last
+          if (last == nil) || (last != nil && last! != session.startDateTimeString) {
+            times.append(session.startDateTimeString)
+          }
         }
       }
-    } else {
-      for session in self.allSessions {
-        let last = times.last
-        if (last == nil) || (last != nil && last! != session.startDateTimeString) {
-          times.append(session.startDateTimeString)
-        }
-      }
+      
+      distTimes = times
     }
-
-    return times
+    return distTimes
   }
 
   func session(with identifier: String) -> Session? {
@@ -135,6 +138,7 @@ class ScheduleDataSource: NSObject {
   fileprivate func resetCache() {
     reloadCacheAllSessions = true
     dicoCacheSessions.removeAll()
+    distTimes = []
   }
   
 }
@@ -146,8 +150,7 @@ extension ScheduleDataSource: UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    let ret =  arrayOfSessionsForSection(section).count
-    return ret
+    return arrayOfSessionsForSection(section).count
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
