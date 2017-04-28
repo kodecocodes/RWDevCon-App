@@ -444,7 +444,7 @@
 			<key>title</key>
 			<string>Custom Controls, Part II</string>
 			<key>sessionDescription</key>
-			<string>Having created a great looking control in Part I, you’ll be wondering how you can make it fully interactive, embracing the unique opportunity that touch-based devices offer. You’ll start out by creating a custom gesture recogniser, before stepping back to a more technical level and discovering how to use iOS frameworks to make a reusable, distributable package that you can share with all your friends!</string>
+			<string>Having created a great looking control in Part I, you’ll be wondering how you can make it fully interactive, embracing the unique opportunity that touch-based devices offer. You’ll start out by creating a custom gesture recognizer, before stepping back to a more technical level and discovering how to use iOS frameworks to make a reusable, distributable package that you can share with all your friends!</string>
 			<key>presenters</key>
 			<array>
 				<string>sam</string>
