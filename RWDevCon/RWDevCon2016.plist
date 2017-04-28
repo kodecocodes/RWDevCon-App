@@ -219,7 +219,7 @@
 			<key>title</key>
 			<string>Beginning UIStackView</string>
 			<key>sessionDescription</key>
-			<string>Over the past few years you’ve probably come to love Auto Layout; it makes device agnostic layouts a breeze. But you probably find yourself making the same patterns of constraints over and over again. Well, the layout gods have heard your cries for help, and in iOS 9 furnished you with UIStackView. In this session you’ll build your  rst stack view and learn the true power of easily constructing realistic layouts without Auto Layout constraints.</string>
+			<string>Over the past few years you’ve probably come to love Auto Layout; it makes device agnostic layouts a breeze. But you probably find yourself making the same patterns of constraints over and over again. Well, the layout gods have heard your cries for help, and in iOS 9 furnished you with UIStackView. In this session you’ll build your first stack view and learn the true power of easily constructing realistic layouts without Auto Layout constraints.</string>
 			<key>presenters</key>
 			<array>
 				<string>sam</string>
