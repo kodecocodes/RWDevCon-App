@@ -144,7 +144,7 @@
 			<key>title</key>
 			<string>Concluding Remarks</string>
 			<key>sessionDescription</key>
-      <string>RWDevCon has a special event at the end of the conference you won’t want to miss, so make sure you stay till the end... or don’t cry to us later! :P</string>
+			<string>RWDevCon has a special event at the end of the conference you won’t want to miss, so make sure you stay till the end... or don’t cry to us later! :P</string>
 			<key>presenters</key>
 			<array>
 				<string>ray</string>
@@ -644,7 +644,7 @@
 			<key>title</key>
 			<string>Swift and C Interoperability</string>
 			<key>sessionDescription</key>
-      <string>Swift’s type system encourages safety and forces us to write better code. However, this can be problematic when working with C. You may not see this as an immediate problem, since you’re coding in Swift, right? But what if your next project includes a legacy C codebase or open source C lib you need to wrap? This session will teach you how to work safely with C from Swift, what the obstacles and caveats are, and how wrap your C code so it’s far more Swift-y.</string>
+			<string>Swift’s type system encourages safety and forces us to write better code. However, this can be problematic when working with C. You may not see this as an immediate problem, since you’re coding in Swift, right? But what if your next project includes a legacy C codebase or open source C lib you need to wrap? This session will teach you how to work safely with C from Swift, what the obstacles and caveats are, and how wrap your C code so it’s far more Swift-y.</string>
 			<key>presenters</key>
 			<array>
 				<string>mic</string>
@@ -844,7 +844,7 @@
 			<key>title</key>
 			<string>Going AFK</string>
 			<key>sessionDescription</key>
-      <string>We all enjoy writing code, but sometimes your career as a coder can benefit from stepping away from the keyboard. Drawing on personal stories from twenty years in technology, James’ examples serve as a guide showing how your own outside interests and experiences can make a difference in your life as a coder in unexpected ways. It may just change the way you look at the time you spend AFK.</string>
+			<string>We all enjoy writing code, but sometimes your career as a coder can benefit from stepping away from the keyboard. Drawing on personal stories from twenty years in technology, James’ examples serve as a guide showing how your own outside interests and experiences can make a difference in your life as a coder in unexpected ways. It may just change the way you look at the time you spend AFK.</string>
 			<key>presenters</key>
 			<array>
 				<string>james</string>
@@ -919,7 +919,7 @@
 			<key>title</key>
 			<string>Lab - Building Extraordinary Apps with Firebase</string>
 			<key>sessionDescription</key>
-      <string>CoreData got you down? Sick of setting up servers? Want to focus on building beautiful interfaces or adding new features quickly, rather than tedious boilerplate networking code? Come learn how to build extraordinary iOS apps with Firebase!
+			<string>CoreData got you down? Sick of setting up servers? Want to focus on building beautiful interfaces or adding new features quickly, rather than tedious boilerplate networking code? Come learn how to build extraordinary iOS apps with Firebase!
         
 Firebase is a mobile platform that makes building offline first, realtime apps simple. We handle tough problems like authentication, sub-second data synchronization, and disk persistence. In this code lab, we’ll explore how Firebase solves these problems by building a chat application using Swift and JSQMessagesViewController.</string>
 			<key>presenters</key>
@@ -944,9 +944,9 @@ Firebase is a mobile platform that makes building offline first, realtime apps s
 			<key>title</key>
 			<string>Lab - Couchbase</string>
 			<key>sessionDescription</key>
-      <string>Building apps that work offline is hard: worrying about sync, networking code, and security... all while trying to get your app to market. Couchbase Mobile, a full-stack NoSQL mobile database, can help! In this workshop, you’ll build an iOS app in Swift with Couchbase Mobile and see how using an embedded NoSQL database using sync means zero networking code for you and much less time to market.</string>
+			<string>Building apps that work offline is hard: worrying about sync, networking code, and security... all while trying to get your app to market. Couchbase Mobile, a full-stack NoSQL mobile database, can help! In this workshop, you’ll build an iOS app in Swift with Couchbase Mobile and see how using an embedded NoSQL database using sync means zero networking code for you and much less time to market.</string>
 			<key>presenters</key>
-      <array/>
+			<array/>
 			<key>roomId</key>
 			<integer>3</integer>
 		</dict>
@@ -1249,7 +1249,7 @@ Jerry enjoys spending time on the beach with his wife and kids, SCUBA diving, an
 			<key>twitter</key>
 			<string>micpringle</string>
 			<key>bio</key>
-      <string>Mic Pringle is a developer by trade, but regularly turns his hand to book and tutorial editing, video tutorial making, and hosting the official raywenderlich.com podcast. Mic is 1/6th of Razeware, the team behind raywenderlich.com. An iOS developer by trade, Mic has recently found himself dabbling in Ruby, PHP, and JavaScript.
+			<string>Mic Pringle is a developer by trade, but regularly turns his hand to book and tutorial editing, video tutorial making, and hosting the official raywenderlich.com podcast. Mic is 1/6th of Razeware, the team behind raywenderlich.com. An iOS developer by trade, Mic has recently found himself dabbling in Ruby, PHP, and JavaScript.
         
 When not knee-deep in code, Mic enjoys spending time with his wife Lucy and their daughter Evie, watching his beloved Fulham FC, and weather permitting, tearing up the English countryside on his Harley Davidson.</string>
 		</dict>
