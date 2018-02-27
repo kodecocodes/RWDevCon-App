@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SessionCell" customModule="RWDevCon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="75"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="OoH-4j-377">
+                    <rect key="frame" x="15" y="14.5" width="290" height="46"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swE-6f-0cB">
+                            <rect key="frame" x="0.0" y="18" width="10" height="10"/>
+                            <color key="backgroundColor" red="0.28627450980000002" green="0.0039215686269999999" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="swE-6f-0cB" secondAttribute="height" multiplier="1:1" id="9a6-9v-isW"/>
+                                <constraint firstAttribute="height" constant="10" id="wa8-KT-BtF"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="tfu-n2-qG1">
+                            <rect key="frame" x="25" y="0.0" width="210" height="46"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1k-XU-PyX">
+                                    <rect key="frame" x="0.0" y="0.0" width="210" height="21.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMM-Ei-h0j">
+                                            <rect key="frame" x="0.0" y="0.0" width="210" height="21.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                            <color key="textColor" red="0.023529411764705882" green="0.40392156862745099" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="eMM-Ei-h0j" secondAttribute="trailing" id="3L1-TH-55Q"/>
+                                        <constraint firstItem="eMM-Ei-h0j" firstAttribute="leading" secondItem="b1k-XU-PyX" secondAttribute="leading" id="b9e-YA-fWa"/>
+                                        <constraint firstItem="eMM-Ei-h0j" firstAttribute="top" secondItem="b1k-XU-PyX" secondAttribute="top" id="bRl-n9-TMi"/>
+                                        <constraint firstAttribute="bottom" secondItem="eMM-Ei-h0j" secondAttribute="bottom" id="vcZ-sF-0mc"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Room" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mkn-HN-Bab">
+                                    <rect key="frame" x="0.0" y="25.5" width="210" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="rwconnect" translatesAutoresizingMaskIntoConstraints="NO" id="rLx-NK-WWE">
+                            <rect key="frame" x="250" y="3" width="40" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="40" id="cPm-kS-0Ul"/>
+                                <constraint firstAttribute="width" secondItem="rLx-NK-WWE" secondAttribute="height" multiplier="1:1" id="rKd-xs-ih1"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="OoH-4j-377" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="9Qx-6X-Qvq"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="OoH-4j-377" secondAttribute="trailing" constant="15" id="A34-aU-haH"/>
+                <constraint firstItem="OoH-4j-377" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="ncJ-3h-GF1"/>
+                <constraint firstItem="OoH-4j-377" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="15" id="ody-dE-tkE"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="OoH-4j-377" secondAttribute="bottom" constant="15" id="qMz-sT-pu7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="rwconnectImageView" destination="rLx-NK-WWE" id="u0T-Pp-X53"/>
+                <outlet property="subtitleLabel" destination="mkn-HN-Bab" id="3jR-mf-3ST"/>
+                <outlet property="talkTypeIcon" destination="swE-6f-0cB" id="j43-B1-kRa"/>
+                <outlet property="titleLabel" destination="eMM-Ei-h0j" id="3Oa-3g-qwf"/>
+                <outletCollection property="verticalSpacing" destination="ody-dE-tkE" collectionClass="NSMutableArray" id="YLL-xH-bhl"/>
+                <outletCollection property="verticalSpacing" destination="qMz-sT-pu7" collectionClass="NSMutableArray" id="D4l-yk-Hnl"/>
+            </connections>
+            <point key="canvasLocation" x="7" y="-247.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="rwconnect" width="100" height="100"/>
+    </resources>
+</document>
