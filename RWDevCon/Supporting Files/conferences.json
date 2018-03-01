@@ -1,0 +1,784 @@
+[
+  {
+    "date": {
+      "duration": 244799,
+      "start": 1522900800
+    },
+    "id": "rwdevcon-2018",
+    "name": "RWDevCon 2018",
+    "sessions": [
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1522926000
+        },
+        "description": "Enjoy some light snacks while you register for the workshop day!",
+        "id": "rwconnect-0",
+        "location": "Edison A\/B\/C\/D",
+        "title": "Breakfast & Registration",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1522945800
+        },
+        "description": "Bon appetit!",
+        "id": "rwconnect-1",
+        "location": "Edison Foyer",
+        "title": "Lunch",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 7200,
+          "start": 1522965600
+        },
+        "description": "Everyone\u2019s invited! Come meet the team, collect your badge, and get to know your fellow conference attendees.",
+        "id": "rwconnect-2",
+        "location": "Edison Foyer",
+        "title": "RWConnect Opening Reception & Early Registration",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523012400
+        },
+        "description": "Enjoy a light breakfast while you pick up your RWDevCon 2018 badge!",
+        "id": "rwconnect-3",
+        "location": "Edison Foyer",
+        "title": "Breakfast & Registration",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523033100
+        },
+        "description": "Bon appetit!",
+        "id": "rwconnect-4",
+        "location": "Edison Foyer",
+        "title": "Lunch",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523033100
+        },
+        "description": "Do you like board games? Stop by the Board Game Zone during day 1 and day 2 lunch, play some games led by our volunteers, and make some new friends! This is a guided activity that is great for both introverts and extroverts.",
+        "id": "rwconnect-5",
+        "location": "Edison Foyer",
+        "title": "RWConnect Board Game Zone",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523033100
+        },
+        "description": "On Day 1 (Friday) during lunch, meet and greet with fellow women who code for an informal discussion! :]",
+        "id": "rwconnect-6",
+        "location": "Edison Foyer",
+        "title": "RWConnect Women's Meetup",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523021400
+        },
+        "description": "Want to bring your family with you to the conference? Our volunteers are organizing some fun family activities for families to enjoy together in Washington D.C. while you are at the conference. Just meet in the lobby at 9:30AM sharp each day!",
+        "id": "rwconnect-7",
+        "location": "Edison Foyer",
+        "title": "RWConnect Family Fun Day",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 7200,
+          "start": 1523048400
+        },
+        "description": "Sleep is overrated. Join your fellow attendees in coming up with ideas, testing your skills, and collaborating on a new project. A hackathon is a perfect way to see just how much you can get accomplished in a short period of time. Code for as long or as little as you like \u2013 go all night if you wish!",
+        "id": "rwconnect-8",
+        "location": "Edison Foyer",
+        "title": "RWConnect Hackathon",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523098800
+        },
+        "description": "Enjoy a light breakfast while you pick up your RWDevCon 2018 badge!",
+        "id": "rwconnect-9",
+        "location": "Edison Foyer",
+        "title": "Breakfast & Registration",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523107800
+        },
+        "description": "Want to bring your family with you to the conference? Our volunteers are organizing some fun family activities for families to enjoy together in Washington D.C. while you are at the conference. Just meet in the lobby at 9:30AM sharp each day!",
+        "id": "rwconnect-17",
+        "location": "Edison Foyer",
+        "title": "RWConnect Family Fun Day",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523115900
+        },
+        "description": "Bon appetit!",
+        "id": "rwconnect-16",
+        "location": "Edison Foyer",
+        "title": "Lunch",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523115900
+        },
+        "description": "Do you like board games? Stop by the Board Game Zone during day 1 and day 2 lunch, play some games led by our volunteers, and make some new friends! This is a guided activity that is great for both introverts and extroverts.",
+        "id": "rwconnect-18",
+        "location": "Edison Foyer",
+        "title": "RWConnect Board Game Zone",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 14400,
+          "start": 1523055600
+        },
+        "description": "Join James Dempsey on Saturday night for the RWConnect Trivia Night! Split into small teams to answer iOS, Swift, and Apple trivia questions to win \u201coptional prizes\u201d - which could be an amazing prize, or could be nil!",
+        "id": "rwconnect-10",
+        "location": "Carlyle Club",
+        "title": "RWConnect Trivia Night",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 4500,
+          "start": 1523036700
+        },
+        "description": "Get an overview of the new RWConnect Open Spaces event coming this afternoon, and learn how you can be a part of it!",
+        "id": "rwconnect-11",
+        "location": "Edison A\/B\/C\/D",
+        "speakers": [
+          {
+            "bio": "DevRel @particle | Founder of @CarrotPantsPub 🥕👖| writer, speaker, maker & optimistic nay-sayer | My spirit animal is a 555 timer chip",
+            "name": "Brandon Satrom",
+            "photo_name": "brandon-satrom",
+            "twitter_handle": "BrandonSatrom"
+          }
+        ],
+        "title": "RWConnect Open Spaces Introduction",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 7200,
+          "start": 1523048400
+        },
+        "description": "Connect with other conference attendees on the topics you\u2019re most passionate about! Topics will be proposed and led by fellow attendees, and they are a great way to share what you\u2019ve learned, and learn from others.",
+        "id": "rwconnect-12",
+        "location": "Edison A\/B\/C\/D",
+        "title": "RWConnect Open Spaces",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 14400,
+          "start": 1523055600
+        },
+        "description": "Join us at the Carlyle Club, an old-school supper club right across the street from the hotel. There will be delicious food, an open bar, and an awesome stage perfect for the ultimate RWDevCon show: RWConnect Trivia Night! Must be 21 or over.",
+        "id": "rwconnect-13",
+        "location": "Carlyle Club",
+        "title": "RWDevCon Party",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 2700,
+          "start": 1523132100
+        },
+        "description": "RWDevCon has a special event at the end of the conference you won\u2019t want to miss, so make sure you stay till the end... or don\u2019t cry to us later!",
+        "id": "rwconnect-14",
+        "location": "All rooms",
+        "title": "Concluding Remarks",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 7200,
+          "start": 1523134800
+        },
+        "description": "It\u2019s so hard to say goodbye. We ease the pain with one last chance to mix and mingle with the speakers and the new friends you\u2019ve met!",
+        "id": "rwconnect-15",
+        "location": "Edison Foyer",
+        "title": "RWConnect Closing Receptions",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 900,
+          "start": 1522929600
+        },
+        "description": "Workshop Welcoming Remarks",
+        "id": "workshop-0",
+        "location": "Edison A\/B\/C\/D",
+        "title": "Workshop Welcoming Remarks",
+        "type": "keynote"
+      },
+      {
+        "date": {
+          "duration": 14400,
+          "start": 1522931400
+        },
+        "description": "In this workshop, you\u2019ll construct your own collection type and do a deep dive into the semantics, performance, and expectations of each Swift collection protocol. In the second half of the workshop, you\u2019ll explore ways to write your code that takes advantage of this new knowledge. You\u2019ll walk away with advanced knowledge and techniques that will augment your daily Swift development.",
+        "id": "workshop-1",
+        "location": "Edison A\/B\/C",
+        "speakers": [
+          {
+            "bio": "Kelvin is a Swift Developer. He currently maintains the Swift Algorithm Club. In his free time, he dabbles in web development and server side Swift.\n\nOutside of programming work, he's an aspiring entrepreneur. You can find him on his twitter at @KelvinlauKL",
+            "name": "Kelvin Lau",
+            "photo_name": "kelvin-lau",
+            "twitter_handle": "KelvinlauKL"
+          },
+          {
+            "bio": "Vincent is a writer, guitarist, and developer. He currently works at Capital One as an iOS developer.\n\nWhen Vincent is not working he enjoys coding for fun, playing video games, enjoying time with family and friends and golfing. With hard work and dedication he hopes to one day become a golfer to play in small tournaments.",
+            "name": "Vincent Ngo",
+            "photo_name": "vincent-ngo",
+            "twitter_handle": "VincentNgo2"
+          }
+        ],
+        "title": "Swift Algorithms Workshop",
+        "type": "workshop"
+      },
+      {
+        "date": {
+          "duration": 14400,
+          "start": 1522949400
+        },
+        "description": "Have you been working with iOS for a few years now but always been a little bit too nervous to jump into Instruments and try to track down some problems in your app? Maybe I\u2019m way o  and you\u2019re a little newer to the game and you\u2019re just really interested in trying to improve your app\u2019s performance. Either way, by the end of this workshop you\u2019ll have a good feel for how to use Instruments to dive deep into what\u2019s happening while your app is working and see exactly where the bottlenecks are.",
+        "id": "workshop-3",
+        "location": "Edison A\/B\/C",
+        "speakers": [
+          {
+            "bio": "Luke is currently an iOS developer at Fyusion.\nSometimes he tweets and blogs.\n\nHe basically speaks in references so if you catch one be sure to let him know.",
+            "name": "Luke Parham",
+            "photo_name": "luke-parham",
+            "twitter_handle": "lukeparham"
+          }
+        ],
+        "title": "Practical Instruments Workshop",
+        "type": "workshop"
+      },
+      {
+        "date": {
+          "duration": 14400,
+          "start": 1522931400
+        },
+        "description": "With Apple\u2019s new CoreML and Vision frameworks, you can now add machine learning AI to your apps. In this hands-on workshop, you\u2019ll learn what machine learning actually is, how to train a model, and integrate it into an app.",
+        "id": "workshop-2",
+        "location": "Edison D",
+        "speakers": [
+          {
+            "bio": "Prior to software development, Patrick played Chess professionally. Chess sparked his deep interest in pattern recognition & artificial Intelligence.\n\nHe went on to study Bioinformatics & Computer Science. During his studies, he worked with leading scientists to build novel analysis software for biomedical research. He then founded, Expat Inc, to find ways to make such innovations available at an affordable price to all. He now holds several granted & pending machine learning patents. They leverage them to power, Stock Market Sensei, a transparent daily stock analysis platform in use by thousands.\n\nHis mobile development experience has primarily been in building apps from scratch to revenue.",
+            "name": "Patrick Kwete",
+            "photo_name": "patrick-kwete",
+            "twitter_handle": "pbkwete"
+          },
+          {
+            "bio": "Audrey Tam retired at the end of 2012 from a 25-year career as a computer science academic. Her teaching included Pascal, C\/C++, Java, Java web services, web app development in php and mysql, user interface design and evaluation, and iOS programming. Before moving to Australia, she worked on Fortran and PL\/1 simulation software at IBM's development lab in Silicon Valley. Audrey now teaches short courses in iOS app development to non-programmers, and attends nearly all Melbourne Cocoaheads monthly meetings.",
+            "name": "Audrey Tam",
+            "photo_name": "audrey-tam",
+            "twitter_handle": "mataharimau"
+          }
+        ],
+        "title": "Machine Learning Workshop",
+        "type": "workshop"
+      },
+      {
+        "date": {
+          "duration": 14400,
+          "start": 1522949400
+        },
+        "description": "If you watched that stunning augmented reality (AR) demonstration at WWDC 2017 and thought \u201cI\u2019d like to make apps like that someday,\u201d \u201csomeday\u201d starts at this workshop. You\u2019ll learn about the features of Apple\u2019s ARKit augmented reality framework, harness data from the camera and your users\u2019 motions, present information and draw images over real-world scenes, and make the world your View Controller!",
+        "id": "workshop-4",
+        "location": "Edison D",
+        "speakers": [
+          {
+            "bio": "Joey landed his first programming job in the \u201990s with a HyperCard (remember that?) resume and by going out for beer with the managers of the company where he wanted to work until they caved and hired him.\n\nSince then, he\u2019s worked at a San Francisco startup during the dot-com bubble, done tech evangelism for Tucows, Microsoft, and Shopify, valiantly tried to make Windows Phone happen, and once had a very short stint as an accordion-playing go-go dancer at a Toronto nightclub. He\u2019s currently the Lead Product Manager at Sourcetoad.\n\nJoey lives, works, and engages in nincompoopery in Tampa, Florida, where he runs Tampa iOS Meetup (and helps out at the Android and Xamarin Meetups, too!), plays unlikely rock and pop tunes on his accordion, and generally does what he can to avoid becoming a \u201cFlorida Man\u201d news story.",
+            "name": "Joey deVilla",
+            "photo_name": "joe-devilla",
+            "twitter_handle": "AccordionGuy"
+          }
+        ],
+        "title": "ARKit Workshop",
+        "type": "workshop"
+      },
+      {
+        "date": {
+          "duration": 2700,
+          "start": 1523016000
+        },
+        "description": "Tammy Coron will deliver the keynote with a talk titled \"The Red Thread of Fate\"",
+        "id": "talk-0",
+        "location": "Edison A\/B\/C\/D\/E\/F\/G",
+        "speakers": [
+          {
+            "bio": "Writer \u2022 Illustrator \u2022 Developer \u2022 Speaker\n\nTammy Coron is an independent creative professional and the host of Roundabout: Creative Chaos. She's also the co-founder of Day Of The Indie, the organizer behind Indie DevStock, and the founder of Just Write Code.\n\nFor more information, visit TammyCoron.com.",
+            "name": "Tammy Coron",
+            "photo_name": "tammy-coron",
+            "twitter_handle": "Paradox927"
+          }
+        ],
+        "title": "Keynote & Opening Remarks",
+        "type": "keynote"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523019600
+        },
+        "description": "Learn how to make and manage a Living Style Guide for your application, which can show all of the building blocks for your application both in and out of context. With a Living Style Guide, you always have a quick way to view the building blocks of your application, the ability to build out new views quickly and consistently, and the power to make changes in one place which are re ected throughout your whole app.",
+        "id": "talk-1",
+        "location": "Edison A\/B\/C",
+        "speakers": [
+          {
+            "bio": "Ellen Shapiro is the Lead Mobile Developer for SpotHero in Chicago, Illinois. She is working in her spare time to help bring Hum to life. She\u2019s also developed several independent applications through her personal company, Designated Nerd Software.\n\nWhen she's not writing code, she's usually tweeting about it.",
+            "name": "Ellen Shapiro",
+            "photo_name": "ellen-shapiro",
+            "twitter_handle": "designatednerd"
+          }
+        ],
+        "title": "Living Style Guides",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523019600
+        },
+        "description": "Swift 4 introduced the Codable API and compiler support for simplifying how serialization is done and for supporting all Swift types including value types such as enums and structs. This session will cover strategies for using Codable to build models for real world RESTful JSON APIs. But that\u2019s not all. Once your models are Codable, you can leverage this machinery to go beyond JSON. Find out how in this session.",
+        "id": "talk-2",
+        "location": "Edison D",
+        "speakers": [
+          {
+            "bio": "Ray Fix is using Swift to help create Revolve--the next generation in research microscopy at Echo. He also serves as the iOS tutorials topics master at RayWenderlich.com.\n\nRay is mostly-fluent in spoken and written Japanese and stays healthy by walking, jogging, and playing ultimate frisbee. When he is not doing one of those things, he is writing and dreaming of code in Swift. \u3088\u308d\u3057\u304f\u304a\u9858\u3044\u81f4\u3057\u307e\u3059\u3002",
+            "name": "Ray Fix",
+            "photo_name": "ray-fix",
+            "twitter_handle": "rayfix"
+          }
+        ],
+        "title": "Swift 4 Serialization",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523019600
+        },
+        "description": "Modularity in code goes hand-in-hand with readability, testablity, reusability, scalability, and reliability, along with many other ilities. This session covers how to make modules, figure out what code goes in a module, and then how to use those modules for maximum success. You\u2019ll learn best practices in code encapsulation and reuse, learn some programming buzz words, and level up your Xcode skills.",
+        "id": "talk-3",
+        "location": "Edison E\/F\/G",
+        "speakers": [
+          {
+            "bio": "Michael Katz envisions a world where mobile apps always work, respect users\u2019 privacy, and integrate well with their users\u2019 life. When not coding, he can be found with his family playing board games, brewing, gardening, and watching the Yankees.",
+            "name": "Mike Katz",
+            "photo_name": "mike-katz",
+            "twitter_handle": "TheMikeKatz"
+          }
+        ],
+        "title": "Architecting Modules",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523026800
+        },
+        "description": "Netflix remains the leader in the binge-watching, evening-wasting habits of modern TV viewers. How hard could it be to copy this model? Quite hard, as it turns out. In this session, you\u2019ll learn how to solve challenges unique to the architecture and construction of video streaming apps. You\u2019ll discover some interesting iOS features you weren\u2019t aware of before, and how to use these in your own apps.",
+        "id": "talk-4",
+        "location": "Edison A\/B\/C",
+        "speakers": [
+          {
+            "bio": "Sam is a strange mashup of developer, writer and trainer. By day you'll find him recording videos for Razeware, writing tutorials, attending conferences and generally being a good guy. By night he's likely to be out entertaining people, armed with his trombone and killer dance moves.\n\nHe'd like it very much if you were to follow him on twitter at @iwantmyrealname, seek him out as sammyd on GitHub, or check his personal site iwantmyreal.name.",
+            "name": "Sam Davies",
+            "photo_name": "sam-davies",
+            "twitter_handle": "iwantmyrealname"
+          }
+        ],
+        "title": "Building a Video Player App",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523026800
+        },
+        "description": "Auto Layout takes effort to learn, and can be notoriously painful to do so. But once you have the basics, how can you become efficient at applying, editing and debugging constraints? In this session we will examine some best practices for AutoLayout, looking at examples via Interface Builder and in code. The session will focus primarily on AutoLayout for iOS.",
+        "id": "talk-5",
+        "location": "Edison D",
+        "speakers": [
+          {
+            "bio": "Gemma has been an iOS Developer since 2009 and loves travel, coffee, wine and code. Originally from Melbourne, Australia, she now resides in fabulous Brooklyn. She spends her 9-5 as an Engineering Manager at Etsy, looking after the 'Buy on Etsy' mobile apps. ",
+            "name": "Gemma Barlow",
+            "photo_name": "gemma-barlow",
+            "twitter_handle": "gemmakbarlow"
+          }
+        ],
+        "title": "Auto Layout Best Practices",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523026800
+        },
+        "description": "Architecture is the design of functional, safe, sustainable and aesthetically pleasing software. There are many ways to architect your applications like the common MVC, MVP and MVVM patterns. This session will get you comfortable with clean architecture and show you how to transform a basic application built using MVC to a clean architecture using VIPER that is scalable.",
+        "id": "talk-6",
+        "location": "Edison E\/F\/G",
+        "speakers": [
+          {
+            "bio": "Anthony is a Lead iOS Engineer at Globant and the recruiter for RayWenderlich.com. In his spare time he likes to play golf, go see a movie at least once a week, continue to learn and spend time with his family.",
+            "name": "Anthony Lockett",
+            "photo_name": "anthony-lockett",
+            "twitter_handle": "TheRealLockett"
+          }
+        ],
+        "title": "Clean Architecture on iOS",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 4500,
+          "start": 1523036700
+        },
+        "description": "We have a ton of tools at our disposal when we program. We also have a tenaciousness to spend most of our lives on things that don\u2019t work. Finally, some of us also have a superpower: We remember to step back from our app and look at it from the user\u2019s point of view. In this talk we apply our tools, tenaciousness, and superpower to the game of life.",
+        "id": "inspiration-0",
+        "location": "Edison A\/B\/C\/D",
+        "speakers": [
+          {
+            "bio": "Dad, husband, and storyteller...Podcaster,writer and editor.",
+            "name": "Daniel Steinberg",
+            "photo_name": "daniel-steinberg",
+            "twitter_handle": "dimsumthinking"
+          }
+        ],
+        "title": "The Game of Life",
+        "type": "inspiration"
+      },
+      {
+        "date": {
+          "duration": 4500,
+          "start": 1523036700
+        },
+        "description": "TBD",
+        "id": "inspiration-1",
+        "location": "Edison A\/B\/C\/D",
+        "speakers": [
+          {
+            "bio": "just a girl, standing in front of a raccoon, asking for an adventure",
+            "name": "Cate Huston",
+            "photo_name": "cate-huston",
+            "twitter_handle": "catehstn"
+          }
+        ],
+        "title": "Inspiration Talk",
+        "type": "inspiration"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523042100
+        },
+        "description": "Learn the fundamentals of Android development through this tutorial. You\u2019ll build an app from scratch that walks you through Android layout, resources, list views, navigation, networking and material design. Along the way, I\u2019ll compare and contrast the concepts with those found in building iOS apps.",
+        "id": "talk-7",
+        "location": "Edison A\/B\/C",
+        "speakers": [
+          {
+            "bio": "Christine is an Engineer on the Developer Advocacy team at Facebook. In this role, she is focused on helping grow the mobile developer ecosystem with emphasis on Android, iOS, and the mobile web. Prior to Facebook, Christine headed up engineering at Mshift, a mobile banking software provider, delivering iPhone apps and mobile browser-based products.",
+            "name": "Christine Abernathy",
+            "photo_name": "christine-abernathy",
+            "twitter_handle": "abernathyca"
+          }
+        ],
+        "title": "Android for iOS Developers",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523042100
+        },
+        "description": "When you\u2019re asked to include charts or graphs in an app, don\u2019t panic and reach for a third- party library. In this session you\u2019ll learn how to make your own fancy-looking data visualisations, with animations and color e ects as a bonus!",
+        "id": "talk-8",
+        "location": "Edison D",
+        "speakers": [
+          {
+            "bio": "Richard is an iOS developer for MartianCraft, prolific Stack Overflow participant and author of a development blog, Command Shift. When he's not in front of a computer he is usually building Lego horse powered spaceships (don't ask!) with his daughter.",
+            "name": "Rich Turton",
+            "photo_name": "rich-turton",
+            "twitter_handle": "richturton"
+          }
+        ],
+        "title": "The Art of the Chart",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523042100
+        },
+        "description": "Have you ever run into a legacy app with a Massive View Controller or other architectural problems? In this session, you\u2019ll learn how to give legacy apps a spring cleaning. You\u2019ll learn how to iteratively split apart code, add testing, and prevent problems from happening again.",
+        "id": "talk-9",
+        "location": "Edison E\/F\/G",
+        "speakers": [
+          {
+            "bio": "iOS and Android tech lead at Novoda, speaker, and tech editor on this here website, Ray Wenderlich!",
+            "name": "Alex Curran",
+            "photo_name": "alex-curran",
+            "twitter_handle": "amlcurran"
+          }
+        ],
+        "title": "Spring Cleaning Your App",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523102400
+        },
+        "description": "Automated testing tools for iOS have come a long way since the initial release of the iPhone SDK. Learn how to improve your app\u2019s quality by using TDD to build both the model and user interface layers of an application. You\u2019ll learn what TDD is, how it can be used in unit tests to verify simple model objects, code that uses a remote API, and user interface code. Plus: some tricks for writing tests easier!",
+        "id": "talk-10",
+        "location": "Edison A\/B\/C",
+        "speakers": [
+          {
+            "bio": "iOS Team Lead for raywenderlich.com\n\nAndy loves writing iOS applications, being a dad, doing anything outside, and playing guitar. He realizes there's always room for improvement, and thus is always trying to get better at what he does.\n\nWhen not working on raywenderlich.com, he blogs in the minor leagues at cleanswifter.com.",
+            "name": "Andy Obusek",
+            "photo_name": "andy-obusek",
+            "twitter_handle": "obusek"
+          }
+        ],
+        "title": "Improving App Quality with Test Driven Development",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523102400
+        },
+        "description": "In this session, you will learn how to use WKWebView to embed HTML that looks seamless with iOS native controls. This can save a lot of time by not having to build storyboards (or UI) for substantial areas of your apps, and you can even repurpose the same content in Android. Learn how to structure CSS\/fonts, intercept hyperlink taps, integrate Javascript with Swift, and more!",
+        "id": "talk-11",
+        "location": "Edison D",
+        "speakers": [
+          {
+            "bio": "Eric Soto is a Professional Software Engineer and certified Agile-Scrum Master specializing in Apple iOS and macOS Apps. He is based in Palm Beach Florida, and routinely works with clients all across the US including many major brands. During his 30 year career, Eric has accumulated extensive experience in REST APIs, web applications, server back-end systems, automated infrastructure deployments and more. Learn more at ericsoto.net.",
+            "name": "Eric Soto",
+            "photo_name": "eric-soto",
+            "twitter_handle": "ericwastaken"
+          }
+        ],
+        "title": "Advanced WKWebView",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523102400
+        },
+        "description": "In the past few years, a number of examples of Clean Architecture on Android have been presented within the Android community. This session will discuss some of the history and theory behind Clean Architecture, show an example app use case from the \u201coutside-in\u201d, and then demonstrate the development of a new app use case from the \u201cinside-out\u201d.",
+        "id": "talk-12",
+        "location": "Edison E\/F\/G",
+        "speakers": [
+          {
+            "bio": "Joe\u2019s path to software development began in the fields of computational physics and systems engineering. He has been a mobile software developer on iOS and Android since 2009. He now lives in Boston and is Android Team Lead for raywenderlich.com.",
+            "name": "Joe Howard",
+            "photo_name": "joe-howard",
+            "twitter_handle": "orionthewake"
+          }
+        ],
+        "title": "Clean Architecture on Android",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523109600
+        },
+        "description": "If you watched that stunning augmented reality (AR) demonstration at WWDC 2017 and thought \u201cI\u2019d like to make apps like that someday,\u201d \u201csomeday\u201d starts at this workshop. You\u2019ll learn about the features of Apple\u2019s ARKit augmented reality framework, harness data from the camera and your users\u2019 motions, present information and draw images over real-world scenes, and make the world your View Controller!",
+        "id": "talk-13",
+        "location": "Edison A\/B\/C",
+        "speakers": [
+          {
+            "bio": "Joey landed his first programming job in the \u201990s with a HyperCard (remember that?) resume and by going out for beer with the managers of the company where he wanted to work until they caved and hired him.\n\nSince then, he\u2019s worked at a San Francisco startup during the dot-com bubble, done tech evangelism for Tucows, Microsoft, and Shopify, valiantly tried to make Windows Phone happen, and once had a very short stint as an accordion-playing go-go dancer at a Toronto nightclub. He\u2019s currently the Lead Product Manager at Sourcetoad.\n\nJoey lives, works, and engages in nincompoopery in Tampa, Florida, where he runs Tampa iOS Meetup (and helps out at the Android and Xamarin Meetups, too!), plays unlikely rock and pop tunes on his accordion, and generally does what he can to avoid becoming a \u201cFlorida Man\u201d news story.",
+            "name": "Joey deVilla",
+            "photo_name": "joey-devilla",
+            "twitter_handle": "AccordionGuy"
+          }
+        ],
+        "title": "Getting Started with ARKit",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523109600
+        },
+        "description": "Learn three different ways of creating and manipulating custom views. First, learn how to supercharge your IB through code and create unique views using storyboards. Next, dive into creating flexible and reusable views. Finally, bring it all together with some CoreGraphics and CoreAnimation pizazz!",
+        "id": "talk-14",
+        "location": "Edison D",
+        "speakers": [
+          {
+            "bio": "Lea is a Product Manager for mobile at Rent the Runway. She writes about iOS, UX and UI, teaches iOS classes at GA and volunteers for Girls Who Code. In her free time she plays piano, and tries to use code and technology to make art. Or she just doodles and listens to MIKA.",
+            "name": "Lea Marolt Sonnenschein",
+            "photo_name": "lea-sonnenschein",
+            "twitter_handle": "hellosunschein"
+          }
+        ],
+        "title": "Custom Views",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523109600
+        },
+        "description": "Building an iOS app is easy. Building a successful one however needs more effort. This session will focus on automating your builds, using continuous integration to test and deploy them, and finally integrating analytics and tracking once your app is released to prepare for the next iteration. You will walk away with a toolset for building an efficient app development workflow.",
+        "id": "talk-15",
+        "location": "Edison E\/F\/G",
+        "speakers": [
+          {
+            "bio": "Namrata is a Mobile Developer at Stagename doing native Android and iOS development. Apart from developing apps, she is passionate about travelling, food and hiking with her dog. You can reach out to her on Twitter, LinkedIn or follow her on GitHub.",
+            "name": "Namrata Bandekar",
+            "photo_name": "namrata-bandekar",
+            "twitter_handle": "NamrataCodes"
+          }
+        ],
+        "title": "App Development Workflow",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523119500
+        },
+        "description": "Metal is a low level framework that allows you to control your code down to the bit level. However, many common operations don\u2019t require you to get down to that level because they are handled by Core Image and SceneKit. This session will show you what operations you get with SceneKit and how you can go deeper with Metal when you need to without losing the convenience of SceneKit.",
+        "id": "talk-16",
+        "location": "Edison A\/B\/C",
+        "speakers": [
+          {
+            "bio": "I am a consultant, author, and speaker from Madison, WI. I am the coauthor of the Swift Apprentice and the iOS SDK books from the Pragmatic Programmers. I blog random thoughts at http:\/\/redqueencoder.com. I live with an attempted grumble of pugs.",
+            "name": "Janie Clayton",
+            "photo_name": "janie-clayton",
+            "twitter_handle": "RedQueenCoder"
+          }
+        ],
+        "title": "Integrating Metal Shaders with SceneKit",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523119500
+        },
+        "description": "As an iOS developer, the most important tool you use is Xcode. Learn how to supercharge your e ciency with various tips and tricks.",
+        "id": "talk-17",
+        "location": "Edison D",
+        "speakers": [
+          {
+            "bio": "Jawwad is a freelance iOS Developer interested in the Healthcare and Education space (and is currently available for contract work). He enjoys teaching and was the original founder of the of the NYC iOS Study Group. He's worked for companies as large as The New York Times, and as small as GateGuru, a 6 person startup.",
+            "name": "Jawwad Ahmad",
+            "photo_name": "jawwad-ahmad",
+            "twitter_handle": "jawwadahmad"
+          }
+        ],
+        "title": "Xcode Tips & Tricks",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 6300,
+          "start": 1523119500
+        },
+        "description": "In this tutorial we will combine all the cutting edge architecture design techniques such as reactive programming, dependency injection, protocol oriented programming, unidirectional data flow, use cases, and more in order to master the art of designing codebases that can easily change over time. Learn what causes code to change, how to minimize the effort to deal with those changes, and how to apply this in your own apps (such as switching from RxSwift to ReactiveSwift, from Core Data to Realm, or from one view implementation to another!)",
+        "id": "talk-18",
+        "location": "Edison E\/F\/G",
+        "speakers": [
+          {
+            "bio": "Rene is an iOS Client Architect at Atlassian, where he is known for his expertise in user interface engineering with UIKit, Core Animation, and Core Graphics. He has been engineering iOS apps since 2009.\n\nWhen he's not coding, Ren\u00e9 loves to snow ski, ocean kayak, and root for the Texas Longhorns.",
+            "name": "Rene Cacheaux",
+            "photo_name": "rene-cacheaux",
+            "twitter_handle": "rcachATX"
+          }
+        ],
+        "title": "Advanced Unidirectional Architecture",
+        "type": "talk"
+      },
+      {
+        "date": {
+          "duration": 4500,
+          "start": 1523126700
+        },
+        "description": "TBD",
+        "id": "inspiration-2",
+        "location": "Edison A\/B\/C\/D",
+        "speakers": [
+          {
+            "bio": "iOS Software Engineer. Ex-Radio DJ. Nigh-Podcaster. Philosopher.",
+            "name": "Andrei Freeman",
+            "photo_name": "andrei-freeman",
+            "twitter_handle": "LordAndrei"
+          }
+        ],
+        "title": "Embracing the Different",
+        "type": "inspiration"
+      },
+      {
+        "date": {
+          "duration": 4500,
+          "start": 1523126700
+        },
+        "description": "TBD",
+        "id": "inspiration-3",
+        "location": "Edison A\/B\/C\/D",
+        "speakers": [
+          {
+            "bio": "Mac and iOS developer, trainer, and songwriter. Front man of James Dempsey and the Breakpoints. Occasional quip vendor.",
+            "name": "James Dempsey",
+            "photo_name": "james-dempsey",
+            "twitter_handle": "jamesdempsey"
+          }
+        ],
+        "title": "TBD",
+        "type": "inspiration"
+      },
+      {
+        "date": {
+          "duration": 4500,
+          "start": 1523126700
+        },
+        "description": "Developers have referred to the App Store Review process as a black box, one that can\u2019t be understood. In this talk, I\u2019ll share the lessons we learned from the inside of the App Store, and how we managed to help change the world, one app at a time.",
+        "id": "inspiration-4",
+        "location": "Edison A\/B\/C\/D",
+        "speakers": [
+          {
+            "bio": "Currently spending most of my time kiteboarding, angel investing, and working on some new augmented reality technology.",
+            "name": "Phillip Shoemaker",
+            "photo_name": "phillip-shoemaker",
+            "twitter_handle": "RWDevCon"
+          }
+        ],
+        "title": "Lessons from the App Store",
+        "type": "inspiration"
+      }
+    ]
+  }
+]

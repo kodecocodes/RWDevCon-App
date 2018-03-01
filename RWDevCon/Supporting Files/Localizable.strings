@@ -1,0 +1,21 @@
+"ADD_FAVORITE" = "Add favorite";
+"DELETE_FAVORITE" = "Delete favorite";
+"SHARE_ACTION_SHEET_TITLE" = "Compose Tweet";
+"SHARE_ACTION_SHEET_MESSAGE" = "Would you like to include a picture with your Tweet? (Please do!)";
+"SHARE_ACTION_SHEET_TAKE_PICTURE" = "Take Picture";
+"SHARE_ACTION_SHEET_SELECT_PICTURE" = "Select from Library";
+"SHARE_ACTION_SHEET_NO_PICTURE" = "No Picture!";
+"SHARE_ACTION_SHEET_CANCEL" = "Cancel";
+"SHARE_SESSION_BODY" = "Watching %@ by %@";
+"SHARE_SESSION_SPEAKER_CONCATENATION" = " and ";
+
+"FAVORITE_NOTIFICATION_ALERT_TITLE" = "Notify when Session Starts?";
+"FAVORITE_NOTIFICATION_ALERT_MESSAGE" = "We can notify you when a session you've favorited is about to start.";
+"FAVORITE_NOTIFICATION_ALERT_CANCEL" = "Don't Notify";
+"FAVORITE_NOTIFICATION_ALERT_OK" = "Notify";
+
+"NOTIFICATION_TITLE" = "Favorite Session Starting Soon";
+"NOTIFICATION_SUBTITLE_FORMAT" = "%@ is starting soon in %@";
+
+"MARK_AS_FAVORITE" = "Favorite";
+"UNMARK_AS_FAVORITE" = "Unfavorite";
