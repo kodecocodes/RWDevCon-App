@@ -60,8 +60,8 @@
 		D2D606C820452AA6009A857D /* ViewControllerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D606AD20452AA6009A857D /* ViewControllerRouter.swift */; };
 		D2D606D020452BB7009A857D /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2D606CF20452BB7009A857D /* NotificationCenter.framework */; };
 		D2D606DA20452BB7009A857D /* Today.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D2D606CE20452BB7009A857D /* Today.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		D2D606E320452BF9009A857D /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2D606DF20452BF8009A857D /* Today.storyboard */; };
 		D2D606E420452BF9009A857D /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D606E120452BF8009A857D /* TodayViewController.swift */; };
+		D2F80E2C204F24870081CCA0 /* Today.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2F80E2A204F24870081CCA0 /* Today.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,9 +168,9 @@
 		D2D606AD20452AA6009A857D /* ViewControllerRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerRouter.swift; sourceTree = "<group>"; };
 		D2D606CE20452BB7009A857D /* Today.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Today.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2D606CF20452BB7009A857D /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		D2D606E020452BF8009A857D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Today.storyboard; sourceTree = "<group>"; };
 		D2D606E120452BF8009A857D /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		D2D606E220452BF8009A857D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2F80E2B204F24870081CCA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Today.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,7 +283,7 @@
 		D2D6068520452A57009A857D /* Today */ = {
 			isa = PBXGroup;
 			children = (
-				D2D606DE20452BF8009A857D /* Base.lproj */,
+				D2F80E2A204F24870081CCA0 /* Today.storyboard */,
 				D2D606E220452BF8009A857D /* Info.plist */,
 				D2D606E120452BF8009A857D /* TodayViewController.swift */,
 			);
@@ -347,15 +347,6 @@
 				D2D606AB20452AA6009A857D /* conferences.json */,
 			);
 			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D2D606DE20452BF8009A857D /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				D2D606DF20452BF8009A857D /* Today.storyboard */,
-			);
-			name = Base.lproj;
-			path = "../../RWDevCon-ng/Today/Base.lproj";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -532,9 +523,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2F80E2C204F24870081CCA0 /* Today.storyboard in Resources */,
 				D2D353A520452CAA00CE386E /* SessionCell.xib in Resources */,
 				D2C194C820468199003A1B2E /* Images.xcassets in Resources */,
-				D2D606E320452BF9009A857D /* Today.storyboard in Resources */,
 				D2C194C720468186003A1B2E /* conferences.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -633,10 +624,10 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D2D606DF20452BF8009A857D /* Today.storyboard */ = {
+		D2F80E2A204F24870081CCA0 /* Today.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2D606E020452BF8009A857D /* Base */,
+				D2F80E2B204F24870081CCA0 /* Base */,
 			);
 			name = Today.storyboard;
 			sourceTree = "<group>";
