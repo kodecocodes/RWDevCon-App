@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="Today" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V7i-5E-3UY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rwdevcon-bg" translatesAutoresizingMaskIntoConstraints="NO" id="3bs-gP-2Dh">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tm6-DJ-cfP">
+                                        <rect key="frame" x="95.5" y="8.5" width="129.5" height="64.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;x&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4b-7u-O8o">
+                                                <rect key="frame" x="0.0" y="0.0" width="129.5" height="36"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="until RWDevCon!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o6Y-38-uV6">
+                                                <rect key="frame" x="0.0" y="44" width="129.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="tm6-DJ-cfP" firstAttribute="centerY" secondItem="V7i-5E-3UY" secondAttribute="centerY" id="GNe-93-Thy"/>
+                                    <constraint firstAttribute="bottom" secondItem="3bs-gP-2Dh" secondAttribute="bottom" id="Lzm-f1-w6x"/>
+                                    <constraint firstItem="3bs-gP-2Dh" firstAttribute="leading" secondItem="V7i-5E-3UY" secondAttribute="leading" id="aig-SL-MbR"/>
+                                    <constraint firstAttribute="trailing" secondItem="3bs-gP-2Dh" secondAttribute="trailing" id="f1u-KG-OJ5"/>
+                                    <constraint firstItem="tm6-DJ-cfP" firstAttribute="centerX" secondItem="V7i-5E-3UY" secondAttribute="centerX" id="hEg-jU-Kgn"/>
+                                    <constraint firstAttribute="top" secondItem="3bs-gP-2Dh" secondAttribute="top" id="tHX-wy-y5A"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HEh-oL-BFC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="M4Y-Lb-cyx" id="HA1-uG-0dk"/>
+                                    <outlet property="delegate" destination="M4Y-Lb-cyx" id="d5j-LX-9s8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HEh-oL-BFC" secondAttribute="bottom" id="0JI-W4-XVj"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="V7i-5E-3UY" secondAttribute="bottom" id="8Bc-X9-Ied"/>
+                            <constraint firstItem="HEh-oL-BFC" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="JW0-Y1-lGp"/>
+                            <constraint firstAttribute="trailing" secondItem="V7i-5E-3UY" secondAttribute="trailing" id="NLA-Ak-Uch"/>
+                            <constraint firstItem="V7i-5E-3UY" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="topMargin" id="O3h-NE-0mJ"/>
+                            <constraint firstItem="V7i-5E-3UY" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="joP-JR-Qq7"/>
+                            <constraint firstAttribute="trailing" secondItem="HEh-oL-BFC" secondAttribute="trailing" id="wT9-Nz-cbM"/>
+                            <constraint firstItem="HEh-oL-BFC" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" id="zYz-2Q-fTb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="cFp-w8-6Z7" appends="YES" id="67V-dt-fyO"/>
+                        </connections>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="80"/>
+                    <connections>
+                        <outlet property="countdownContainer" destination="V7i-5E-3UY" id="7qH-wB-pVk"/>
+                        <outlet property="countdownSubtitle" destination="o6Y-38-uV6" id="WOk-3h-Hhy"/>
+                        <outlet property="countdownTitle" destination="h4b-7u-O8o" id="Nvk-8U-hqF"/>
+                        <outlet property="tableView" destination="HEh-oL-BFC" id="OcA-eQ-9wy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="cFp-w8-6Z7">
+                    <connections>
+                        <action selector="launchApp" destination="M4Y-Lb-cyx" id="oPe-06-DJG"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="rwdevcon-bg" width="1104" height="1104"/>
+    </resources>
+</document>
