@@ -445,7 +445,7 @@
 				TargetAttributes = {
 					78B7A9CD1A3E9876002AAF7F = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = BSNUWEVTVD;
+						DevelopmentTeam = KFCNEC27GU;
 						LastSwiftMigration = 0930;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -465,7 +465,7 @@
 					};
 					D2D606CD20452BB7009A857D = {
 						CreatedOnToolsVersion = 9.3;
-						DevelopmentTeam = BSNUWEVTVD;
+						DevelopmentTeam = KFCNEC27GU;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
@@ -732,7 +732,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BSNUWEVTVD;
+				DEVELOPMENT_TEAM = KFCNEC27GU;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/RWDevCon/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -753,7 +753,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BSNUWEVTVD;
+				DEVELOPMENT_TEAM = KFCNEC27GU;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/RWDevCon/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -875,7 +875,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = BSNUWEVTVD;
+				DEVELOPMENT_TEAM = KFCNEC27GU;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = Today/Info.plist;
@@ -916,7 +916,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = BSNUWEVTVD;
+				DEVELOPMENT_TEAM = KFCNEC27GU;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = Today/Info.plist;
