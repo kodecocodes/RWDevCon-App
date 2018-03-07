@@ -16,7 +16,7 @@
 		D2C194C1204654A3003A1B2E /* TodayInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C194BA20465479003A1B2E /* TodayInterfaceController.swift */; };
 		D2C194C2204654A3003A1B2E /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C194BB20465479003A1B2E /* ExtensionDelegate.swift */; };
 		D2C194C3204654A3003A1B2E /* DaySelectionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C194BC20465479003A1B2E /* DaySelectionInterfaceController.swift */; };
-		D2C194C4204654A7003A1B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C194B220465479003A1B2E /* Assets.xcassets */; };
+		D2C194C4204654A7003A1B2E /* WatchAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C194B220465479003A1B2E /* WatchAssets.xcassets */; };
 		D2C194C5204654AC003A1B2E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C194B320465479003A1B2E /* Interface.storyboard */; };
 		D2C194C620465683003A1B2E /* conferences.json in Resources */ = {isa = PBXBuildFile; fileRef = D2D606AB20452AA6009A857D /* conferences.json */; };
 		D2C194C720468186003A1B2E /* conferences.json in Resources */ = {isa = PBXBuildFile; fileRef = D2D606AB20452AA6009A857D /* conferences.json */; };
@@ -125,12 +125,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		355F2BF3204F3577002BD1BC /* RWDevCon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RWDevCon.entitlements; sourceTree = "<group>"; };
 		78B7A9CE1A3E9876002AAF7F /* RWDevCon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RWDevCon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B7A9D21A3E9876002AAF7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78B7A9DD1A3E9876002AAF7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7B7B884D1C3EA37000102F5E /* Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B7B88591C3EA37100102F5E /* Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2C194B220465479003A1B2E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D2C194B220465479003A1B2E /* WatchAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WatchAssets.xcassets; sourceTree = "<group>"; };
 		D2C194B420465479003A1B2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		D2C194B520465479003A1B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C194B720465479003A1B2E /* SessionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionInterfaceController.swift; sourceTree = "<group>"; };
@@ -235,6 +236,7 @@
 		78B7A9D01A3E9876002AAF7F /* RWDevCon */ = {
 			isa = PBXGroup;
 			children = (
+				355F2BF3204F3577002BD1BC /* RWDevCon.entitlements */,
 				D2D6069320452AA5009A857D /* Extensions */,
 				D2D606A120452AA5009A857D /* Models */,
 				D2D606A720452AA6009A857D /* Supporting Files */,
@@ -250,7 +252,7 @@
 		D2C194B120465479003A1B2E /* Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				D2C194B220465479003A1B2E /* Assets.xcassets */,
+				D2C194B220465479003A1B2E /* WatchAssets.xcassets */,
 				D2C194B320465479003A1B2E /* Interface.storyboard */,
 				D2C194B520465479003A1B2E /* Info.plist */,
 			);
@@ -442,6 +444,12 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 0;
 							};
+							com.apple.Keychain = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
 						};
 					};
 					7B7B884C1C3EA37000102F5E = {
@@ -505,7 +513,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2C194C5204654AC003A1B2E /* Interface.storyboard in Resources */,
-				D2C194C4204654A7003A1B2E /* Assets.xcassets in Resources */,
+				D2C194C4204654A7003A1B2E /* WatchAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,6 +729,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RWDevCon/RWDevCon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KFCNEC27GU;
@@ -742,6 +751,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = RWDevCon/RWDevCon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = KFCNEC27GU;
@@ -760,7 +770,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -783,7 +793,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;

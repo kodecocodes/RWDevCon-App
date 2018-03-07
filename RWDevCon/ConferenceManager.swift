@@ -30,7 +30,7 @@ import Foundation
 
 private let kFavoriteSessionsKey = "favoriteSessions"
 private let kConferencesFileName = "conferences.json"
-private let kSessionsURL = "https://raw.githubusercontent.com/raywenderlich/RWDevCon-App/blob/master/RWDevCon/Supporting%20Files/conferences.json"
+private let kSessionsURL = "https://raw.githubusercontent.com/raywenderlich/RWDevCon-App/master/RWDevCon/Supporting%20Files/conferences.json"
 
 final class ConferenceManager {
   static var allConferences: [Conference] = []

@@ -229,7 +229,7 @@
           "duration": 900,
           "start": 1522929600
         },
-        "description": "Workshop Welcoming Remarks",
+        "description": "This is a short welcome for the pre-conference workshop attendees, to explain the basics of the conference. The full opening remarks and keynote come on Friday!",
         "id": "workshop-0",
         "location": "Edison A\/B\/C\/D",
         "title": "Workshop Welcoming Remarks",
@@ -328,16 +328,28 @@
           "duration": 2700,
           "start": 1523016000
         },
-        "description": "Tammy Coron will deliver the keynote with a talk titled \"The Red Thread of Fate\"",
+        "description": "Ray and Vicki will kick off the conference, and Tammy Coron will deliver the keynote with a talk titled \"The Red Thread of Fate\".",
         "id": "talk-0",
         "location": "Edison A\/B\/C\/D\/E\/F\/G",
         "speakers": [
+          {
+            "bio": "Ray is part of a great team - the raywenderlich.com team, a group of over 100 developers and editors from across the world. He and the rest of the team are passionate both about making apps and teaching others the techniques to make them. When Ray’s not programming, he’s probably playing video games, role playing games, or board games.",
+            "name": "Ray Wenderlich",
+            "photo_name": "ray-wenderlich",
+            "twitter_handle": "rwenderlich"
+          },
+          {
+            "bio": "Vicki is Ray’s wife and business partner. She is a digital artist who creates illustrations, game art, and a lot of other art or design work for the tutorials and books on raywenderlich.com. She also runs gameartguppy.com, which is a website where she creates free and and inexpensive art assets for game developers to use in their games. When she’s not making art, she loves hiking, a good glass of wine, and attempting to create the perfect cheese plate.",
+            "name": "Vicki Wenderlich",
+            "photo_name": "vicki-wenderlich",
+            "twitter_handle": "vwenderlich"
+          },
           {
             "bio": "Writer \u2022 Illustrator \u2022 Developer \u2022 Speaker\n\nTammy Coron is an independent creative professional and the host of Roundabout: Creative Chaos. She's also the co-founder of Day Of The Indie, the organizer behind Indie DevStock, and the founder of Just Write Code.\n\nFor more information, visit TammyCoron.com.",
             "name": "Tammy Coron",
             "photo_name": "tammy-coron",
             "twitter_handle": "Paradox927"
-          }
+          },
         ],
         "title": "Keynote & Opening Remarks",
         "type": "keynote"
@@ -480,7 +492,7 @@
           "duration": 4500,
           "start": 1523036700
         },
-        "description": "TBD",
+        "description": "As individuals we - implicitly or explicitly - define success, as do teams. But how do these definitions and incentives impact how and what we build? Let's talk about the ways in which the dysfunctions of your organization become the dysfunctions of your product.",
         "id": "inspiration-1",
         "location": "Edison A\/B\/C\/D",
         "speakers": [
@@ -491,8 +503,27 @@
             "twitter_handle": "catehstn"
           }
         ],
-        "title": "Inspiration Talk",
+        "title": "Successfully Derailed Product",
         "type": "inspiration"
+      },
+      {
+        "date": {
+          "duration": 4500,
+          "start": 1523036700
+        },
+        "description": "Kitura is the REST API framework in Swift written by IBM, and has been in development since Swift was open sourced. In this workshop, I'll get you started with a fully functional API using the latest and greatest features of Swift. You'll have an API that uses Codable for GET, POST, and DELETE requests - simplifying the code you have to write. Finally, I'll introduce you to Kitura's new ORM feature, so you can eliminate the need for an external database!",
+        "id": "inspiration-1",
+        "location": "Edison E\/F\/G",
+        "speakers": [
+          {
+            "bio": "Swift and other things at @IBM, organizer of @swiftcloudshop and @weirdswiftatx. I have been told that I have a very large microphone attached to my desk.",
+            "name": "David Okun",
+            "photo_name": "david-okun",
+            "twitter_handle": "dokun24"
+          }
+        ],
+        "title": "Server Side Swift with Kitura",
+        "type": "workshop"
       },
       {
         "date": {
@@ -727,7 +758,7 @@
           "duration": 4500,
           "start": 1523126700
         },
-        "description": "TBD",
+        "description": "We all have things that make us unique: from our experiences and our interests, to our own bodies and minds. Many of these things we hang on a coat rack when we sit down in a cube or in front of a computer. Some of these things we view as assets and others we view as detriments. Learning how to accept and leverage all of them can make us more versatile and more creative individuals; and as a result work better to navigate the insanity of our industries.",
         "id": "inspiration-2",
         "location": "Edison A\/B\/C\/D",
         "speakers": [
@@ -746,7 +777,7 @@
           "duration": 4500,
           "start": 1523126700
         },
-        "description": "TBD",
+        "description": "We strive to write great code and create apps that delight users. But anger, frustration, and even fear can lead us down a path to the dark side. Through stories and examples, we’ll explore how the success of our technology is not just in the code that we write, but also in how we treat our fellow coders.",
         "id": "inspiration-3",
         "location": "Edison A\/B\/C\/D",
         "speakers": [
@@ -757,7 +788,7 @@
             "twitter_handle": "jamesdempsey"
           }
         ],
-        "title": "TBD",
+        "title": "The Dark Side",
         "type": "inspiration"
       },
       {
@@ -778,7 +809,26 @@
         ],
         "title": "Lessons from the App Store",
         "type": "inspiration"
-      }
+      },
+      {
+        "date": {
+          "duration": 4500,
+          "start": 1523126700
+        },
+        "description": "Cloud Firestore is the next-generation document-object database in the cloud from Firebase. In this workshop, we'll help you understand all of the features of Cloud Firestore, and how to best use it in developing production ready scalable apps. This workshop will provide you with a general introduction to NoSQL databases, and then will cover more advanced topics like querying, transactions, security rules, offline support, pagination, and more!",
+        "id": "inspiration-1",
+        "location": "Edison E\/F\/G",
+        "speakers": [
+          {
+            "bio": "Developer Advocate at @Google. Lover of all things @Firebase and iOS.",
+            "name": "Jen Person",
+            "photo_name": "jen-person",
+            "twitter_handle": "thatjenperson"
+          }
+        ],
+        "title": "Cloud Firestore Workshop",
+        "type": "workshop"
+      },
     ]
   }
 ]
