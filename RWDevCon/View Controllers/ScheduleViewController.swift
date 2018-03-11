@@ -118,7 +118,10 @@ final class ScheduleViewController: UIViewController, SessionFavoriter {
       destination.popoverPresentationController?.delegate = self
       destination.conferences = ConferenceManager.allConferences
       destination.selectedConference = conference
-      destination.completion = { [weak self] in self?.updateForConference($0) }
+      destination.completion = { [weak self] in
+        self?.updateForConference($0)
+        self?.dimView.removeFromSuperview()
+      }
     }
   }
 }
