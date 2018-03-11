@@ -10,6 +10,7 @@
 		78B7A9DE1A3E9876002AAF7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B7A9DD1A3E9876002AAF7F /* Images.xcassets */; };
 		7B7B885A1C3EA37100102F5E /* Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7B7B88591C3EA37100102F5E /* Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7B7B88671C3EA37100102F5E /* Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7B7B884D1C3EA37000102F5E /* Watch.app */; };
+		D237D592205501C700D3D443 /* MapPresentationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D237D591205501C700D3D443 /* MapPresentationSegue.swift */; };
 		D2C194BE204654A3003A1B2E /* SessionInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C194B720465479003A1B2E /* SessionInterfaceController.swift */; };
 		D2C194BF204654A3003A1B2E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C194B820465479003A1B2E /* ComplicationController.swift */; };
 		D2C194C0204654A3003A1B2E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C194B920465479003A1B2E /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		D2C194C620465683003A1B2E /* conferences.json in Resources */ = {isa = PBXBuildFile; fileRef = D2D606AB20452AA6009A857D /* conferences.json */; };
 		D2C194C720468186003A1B2E /* conferences.json in Resources */ = {isa = PBXBuildFile; fileRef = D2D606AB20452AA6009A857D /* conferences.json */; };
 		D2C194C820468199003A1B2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78B7A9DD1A3E9876002AAF7F /* Images.xcassets */; };
+		D2CEBAE62055075300CA3BF0 /* MapPresentationSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CEBAE52055075300CA3BF0 /* MapPresentationSegue.swift */; };
 		D2D353A520452CAA00CE386E /* SessionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D6069B20452AA5009A857D /* SessionCell.xib */; };
 		D2D353A620452CAA00CE386E /* SessionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D6069E20452AA5009A857D /* SessionCell.swift */; };
 		D2D353A820452CBA00CE386E /* ConferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D606A620452AA5009A857D /* ConferenceManager.swift */; };
@@ -141,6 +143,7 @@
 		D2C194BB20465479003A1B2E /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		D2C194BC20465479003A1B2E /* DaySelectionInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaySelectionInterfaceController.swift; sourceTree = "<group>"; };
 		D2C194BD20465479003A1B2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2CEBAE52055075300CA3BF0 /* MapPresentationSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPresentationSegue.swift; sourceTree = "<group>"; };
 		D2D353B42045319400CE386E /* Speakers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Speakers.xcassets; sourceTree = "<group>"; };
 		D2D6068E20452AA5009A857D /* ConferenceSelectionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConferenceSelectionTableViewController.swift; sourceTree = "<group>"; };
 		D2D6068F20452AA5009A857D /* SessionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +245,7 @@
 				D2D606A720452AA6009A857D /* Supporting Files */,
 				D2D6068D20452AA5009A857D /* View Controllers */,
 				D2D6069620452AA5009A857D /* Views */,
+				D2CEBAE52055075300CA3BF0 /* MapPresentationSegue.swift */,
 				D2D606A520452AA5009A857D /* SessionFavoriter.swift */,
 				D2D606A620452AA5009A857D /* ConferenceManager.swift */,
 				D2D6069F20452AA5009A857D /* SessionSharer.swift */,
@@ -546,6 +550,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2D606B520452AA6009A857D /* ScheduleSectionHeaderView.swift in Sources */,
+				D237D592205501C700D3D443 /* MapPresentationSegue.swift in Sources */,
 				D2D606AE20452AA6009A857D /* ConferenceSelectionTableViewController.swift in Sources */,
 				D2D606BB20452AA6009A857D /* SessionCell.swift in Sources */,
 				D2D606C020452AA6009A857D /* Conference.swift in Sources */,
@@ -560,6 +565,7 @@
 				D2D606B220452AA6009A857D /* ConferenceMapViewController.swift in Sources */,
 				D2D606BE20452AA6009A857D /* Session.swift in Sources */,
 				D2D606B020452AA6009A857D /* SplitViewController.swift in Sources */,
+				D2CEBAE62055075300CA3BF0 /* MapPresentationSegue.swift in Sources */,
 				D2D606B420452AA6009A857D /* UIImageView+URL.swift in Sources */,
 				D2D606C520452AA6009A857D /* AppDelegate.swift in Sources */,
 				D2D606B120452AA6009A857D /* ScheduleViewController.swift in Sources */,

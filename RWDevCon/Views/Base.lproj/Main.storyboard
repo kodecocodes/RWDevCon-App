@@ -108,7 +108,7 @@
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" title="Map" id="dlY-1M-Ae0">
                             <connections>
-                                <segue destination="FSh-Ul-PCb" kind="presentation" modalPresentationStyle="pageSheet" id="FUm-M0-4X8"/>
+                                <segue destination="FSh-Ul-PCb" kind="presentation" customClass="MapPresentationSegue" customModule="RWDevCon" customModuleProvider="target" id="FUm-M0-4X8"/>
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="NOJ-kZ-2g4">
@@ -216,7 +216,7 @@
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                                 <state key="normal" title="&lt;location&gt;"/>
                                                                 <connections>
-                                                                    <segue destination="FSh-Ul-PCb" kind="presentation" modalPresentationStyle="pageSheet" id="W0g-kZ-WXy"/>
+                                                                    <segue destination="FSh-Ul-PCb" kind="presentation" customClass="MapPresentationSegue" customModule="RWDevCon" customModuleProvider="target" id="W0g-kZ-WXy"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;time&gt;" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJC-8O-80T">
@@ -435,7 +435,7 @@
         <image name="rwconnect" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FUm-M0-4X8"/>
+        <segue reference="W0g-kZ-WXy"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.023529411760000001" green="0.4039215686" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
 </document>

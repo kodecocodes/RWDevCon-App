@@ -59,11 +59,11 @@ final class TodayViewController: UIViewController {
   private func updateUI() {
     NCWidgetController.widgetController().setHasContent(!displayedSessions.isEmpty,
                                                         forWidgetWithBundleIdentifier: kWidgetIdentifier)
+    let shouldShowCountdown = ConferenceManager.current.date.start > Date()
+    countdownContainer.isHidden = !shouldShowCountdown
+    tableView.isHidden = shouldShowCountdown
 
-    countdownContainer.isHidden = !displayedSessions.isEmpty
-    tableView.isHidden = displayedSessions.isEmpty
-
-    if !displayedSessions.isEmpty {
+    if !shouldShowCountdown {
       extensionContext?.widgetLargestAvailableDisplayMode = .expanded
       tableView.reloadData()
     }
