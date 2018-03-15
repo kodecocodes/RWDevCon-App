@@ -511,7 +511,7 @@
           "duration": 4500,
           "start": 1523036700
         },
-        "description": "Kitura is the REST API framework in Swift written by IBM, and has been in development since Swift was open sourced. In this workshop, I'll get you started with a fully functional API using the latest and greatest features of Swift. You'll have an API that uses Codable for GET, POST, and DELETE requests - simplifying the code you have to write. Finally, I'll introduce you to Kitura's new ORM feature, so you can eliminate the need for an external database!",
+        "description": "Kitura is the REST API framework in Swift written by IBM, and has been in development since Swift was open sourced. In this workshop, I’ll get you started with a fully functional API using the latest and greatest features of Swift. You’ll have an API that uses Codable for GET, POST, and DELETE requests - simplifying the code you have to write. Finally, I’ll introduce you to Kitura’s new ORM feature, which builds on top of Codable to make saving data even easier than before!",
         "id": "inspiration-5",
         "location": "Edison E\/F\/G",
         "speakers": [
