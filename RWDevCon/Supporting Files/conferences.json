@@ -80,7 +80,7 @@
         },
         "description": "On Day 1 (Friday) during lunch, meet and greet with fellow women who code for an informal discussion! :]",
         "id": "rwconnect-6",
-        "location": "Edison Foyer",
+        "location": "Curie",
         "title": "RWConnect Women's Meetup",
         "type": "rwconnect"
       },
@@ -91,7 +91,7 @@
         },
         "description": "Want to bring your family with you to the conference? Our volunteers are organizing some fun family activities for families to enjoy together in Washington D.C. while you are at the conference. Just meet in the lobby at 9:30AM sharp each day!",
         "id": "rwconnect-7",
-        "location": "Edison Foyer",
+        "location": "Hotel Lobby",
         "title": "RWConnect Family Fun Day",
         "type": "rwconnect"
       },
@@ -102,7 +102,7 @@
         },
         "description": "Sleep is overrated. Join your fellow attendees in coming up with ideas, testing your skills, and collaborating on a new project. A hackathon is a perfect way to see just how much you can get accomplished in a short period of time. Code for as long or as little as you like \u2013 go all night if you wish!",
         "id": "rwconnect-8",
-        "location": "Edison Foyer",
+        "location": "Wright",
         "title": "RWConnect Hackathon",
         "type": "rwconnect"
       },
@@ -124,7 +124,7 @@
         },
         "description": "Want to bring your family with you to the conference? Our volunteers are organizing some fun family activities for families to enjoy together in Washington D.C. while you are at the conference. Just meet in the lobby at 9:30AM sharp each day!",
         "id": "rwconnect-17",
-        "location": "Edison Foyer",
+        "location": "Hotel Lobby",
         "title": "RWConnect Family Fun Day",
         "type": "rwconnect"
       },
@@ -187,9 +187,20 @@
         },
         "description": "Connect with other conference attendees on the topics you\u2019re most passionate about! Topics will be proposed and led by fellow attendees, and they are a great way to share what you\u2019ve learned, and learn from others.",
         "id": "rwconnect-12",
-        "location": "Edison A\/B\/C\/D",
+        "location": "Edison Foyer",
         "title": "RWConnect Open Spaces",
         "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 7200,
+          "start": 1523048400
+        },
+        "description": "Join Dru & Janie in a special live recording of a raywenderlich.com podcast episode!",
+        "id": "live-podcast",
+        "location": "Edison D",
+        "title": "raywenderlich.com Live Podcast",
+        "type": "talk"
       },
       {
         "date": {
