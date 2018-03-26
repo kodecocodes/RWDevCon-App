@@ -89,10 +89,10 @@
           "duration": 3600,
           "start": 1523021400
         },
-        "description": "Want to bring your family with you to the conference? Our volunteers are organizing some fun family activities for families to enjoy together in Washington D.C. while you are at the conference. Just meet in the lobby at 9:30AM sharp each day!",
+        "description": "Families and Adults, come connect and go explore together!\n\nIf you signed up for a Guided Tour with USA Guided Tours, they’ll come pick you up.\n\nOtherwise, bring ideas and figure it out with others OR bring solid plans and share!",
         "id": "rwconnect-7",
         "location": "Hotel Lobby",
-        "title": "RWConnect Family Fun Day",
+        "title": "RWConnect Family Connect & Go",
         "type": "rwconnect"
       },
       {
@@ -122,10 +122,10 @@
           "duration": 3600,
           "start": 1523107800
         },
-        "description": "Want to bring your family with you to the conference? Our volunteers are organizing some fun family activities for families to enjoy together in Washington D.C. while you are at the conference. Just meet in the lobby at 9:30AM sharp each day!",
+        "description": "Families and Adults, come connect and go explore together!\n\nIf you signed up for a Guided Tour with USA Guided Tours, they’ll come pick you up.\n\nOtherwise, bring ideas and figure it out with others OR bring solid plans and share!",
         "id": "rwconnect-17",
         "location": "Hotel Lobby",
-        "title": "RWConnect Family Fun Day",
+        "title": "RWConnect Family Connect & Go",
         "type": "rwconnect"
       },
       {
@@ -148,6 +148,39 @@
         "id": "rwconnect-18",
         "location": "Edison Foyer",
         "title": "RWConnect Board Game Zone",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1522965600
+        },
+        "description": "Let’s meet and start to connect! Brought the kids? Please bring the whole family. Single or group adults? Please come also so we can connect you with others.\n\nA rep from USA Guided Tours will be onsite with info on various tours. Learn more about the tour options at https://usaguidedtours.com/. We recommend you book at the meet & greet so that we can keep our groups together! Note that all tours are self-pay.",
+        "id": "rwconnect-19",
+        "location": "Bell Conference Room",
+        "title": "RWConnect Family Meet & Greet",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523052000
+        },
+        "description": "For those with families: Pizza and a Movie (“Coco”, Disney Pixar OR “Emoji Movie”). Pizza, Water & Soft Drinks will be provided.\n\nFor the adults: Bring dinner. Snacks, beer and wine will be provided and there is a dining table in the same space so theadults can sit and eat.\n\nIf you would rather hang out with other adults, still come! Have a beer or wine and then pair up with others that want to go out to dinner or some other evening activity.",
+        "id": "rwconnect-20",
+        "location": "Presidential Suite (9th Floor)",
+        "title": "RWConnect Family Fun Night",
+        "type": "rwconnect"
+      },
+      {
+        "date": {
+          "duration": 3600,
+          "start": 1523138400
+        },
+        "description": "For those with families: Let the family hang out and play one last time and become pen-pals? Bring pens and paper so we can exchange addresses, etc.\n\nFor lone/group adults: Form a group and go to dinner? Go or a night bus tour?\n\nFor All: Possibly others might be in town longer? Plan further?",
+        "id": "rwconnect-21",
+        "location": "Bell Conference Room",
+        "title": "RWConnect Family Pen-Pal Get Together",
         "type": "rwconnect"
       },
       {
