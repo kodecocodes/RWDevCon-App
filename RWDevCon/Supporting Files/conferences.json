@@ -460,7 +460,7 @@
           "duration": 6300,
           "start": 1523026800
         },
-        "description": "Netflix remains the leader in the binge-watching, evening-wasting habits of modern TV viewers. How hard could it be to copy this model? Quite hard, as it turns out. In this session, you\u2019ll learn how to solve challenges unique to the architecture and construction of video streaming apps. You\u2019ll discover some interesting iOS features you weren\u2019t aware of before, and how to use these in your own apps.",
+        "description": "Netflix remains the leader in the binge-watching, evening-wasting habits of modern TV viewers. How hard could it be to copy this model? Quite hard, as it turns out. raywenderlich.com has a wide range of video content, but none of it is available through an iOS app. In this session you'll learn about some of the architecture decisions and 3rd-party frameworks used in the soon-to-be-real-world raywenderlich.com video streaming app. From discovering how to use Moya to abstract the network layer into something beautiful, through to using Realm as an auto-syncing local cache, you'll take a speedy tour through some of the more interesting parts of building a clone of the Netflix app.",
         "id": "talk-4",
         "location": "Edison A\/B\/C",
         "speakers": [
@@ -471,7 +471,7 @@
             "twitter_handle": "iwantmyrealname"
           }
         ],
-        "title": "Building a Video Player App",
+        "title": "Cloning Netflix",
         "type": "talk"
       },
       {
