@@ -353,7 +353,7 @@
           "duration": 14400,
           "start": 1522949400
         },
-        "description": "If you watched that stunning augmented reality (AR) demonstration at WWDC 2017 and thought \u201cI\u2019d like to make apps like that someday,\u201d \u201csomeday\u201d starts at this workshop. You\u2019ll learn about the features of Apple\u2019s ARKit augmented reality framework, harness data from the camera and your users\u2019 motions, present information and draw images over real-world scenes, and make the world your View Controller!",
+        "description": "This session will get you started in making the world your view controller! You\u2019ll build two apps that cover a lot of ARKit ground: a Bob Ross tribute that takes painting into the third dimension, and a recreation of that popular catalog app from everyone\u2019s favorite semi-disposable Swedish furniture company. Along the way, we\u2019ll sneak in a lot of augmented reality programming principles, techniques, and tricks, but you\u2019ll have so much fun that you won\u2019t even realize that you\u2019re learning new things!",
         "id": "workshop-4",
         "location": "Edison D",
         "speakers": [
@@ -650,7 +650,7 @@
           "duration": 6300,
           "start": 1523102400
         },
-        "description": "In this session, you will learn how to use WKWebView to embed HTML that looks seamless with iOS native controls. This can save a lot of time by not having to build storyboards (or UI) for substantial areas of your apps, and you can even repurpose the same content in Android. Learn how to structure CSS\/fonts, intercept hyperlink taps, integrate Javascript with Swift, and more!",
+        "description": "Web Kit\u2019s WKWebView is Apple\u2019s replacement for the limited UIWebView control and it\u2019s more than just for \u201cweb browser apps\u201c. Introduced with iOS 8, WKWebView has the same power as the built-in Safari App but as a public API. Performance optimizations, such as the Nitro JIT JavaScript engine, make WKWebView a powerful platform to display HTML and CSS (and to interpret javascript) easily within your apps. With Web Kit you can re-use content coming from a web CMS or local html file, and more! In this session, you will implement WKWebView to load both local and remote content that interacts with your app seamlessly. You will learn how to properly use CSS and custom fonts with your local content, how to intercept hyperlink taps (to redirect to in-app actions), and more.",
         "id": "talk-11",
         "location": "Edison D",
         "speakers": [
@@ -707,7 +707,7 @@
           "duration": 6300,
           "start": 1523109600
         },
-        "description": "Learn three different ways of creating and manipulating custom views. First, learn how to supercharge your IB through code and create unique views using storyboards. Next, dive into creating flexible and reusable views. Finally, bring it all together with some CoreGraphics and CoreAnimation pizazz!",
+        "description": "While Apple gives some fantastic UI building blocks to start with, they soon become a burden rather than a blessing when you have to do the same, verbose thing over and over again. In this session, you\u2019ll first learn how to use generics help you wrangle the boiler-plate code of UITableViews and UITableViewCells. Next, you\u2019ll learn how to recreate the presentation and dismissal animations of one of the most delightful iOS11 apps. The session will help demystify the process of re-creating animations and teach you a couple of tricks you can easily use to create satisfying transitions.",
         "id": "talk-14",
         "location": "Edison D",
         "speakers": [
